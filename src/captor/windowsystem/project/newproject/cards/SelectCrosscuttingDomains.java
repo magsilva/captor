@@ -13,6 +13,11 @@ import captor.modelsystem.Project;
 public class SelectCrosscuttingDomains extends FITCard {
 
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -9035848541698385885L;
+
 	public SelectCrosscuttingDomains(Model model, Project project){
 		super(model,project);
 	}
