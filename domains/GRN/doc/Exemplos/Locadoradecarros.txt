@@ -1,0 +1,108 @@
+use Locadoradecarros;
+
+create table IdCode (
+	className char(35),
+	lastIdCode integer);
+
+create table Cliente(
+  	idCode integer not null, 
+  	description char(35),
+	endereco   char(30),
+	cidade   char(20),
+	estado   char(2),
+	telefone   char(12),
+	email   char(30),
+	documentoIdentidade   char(12),
+	dataNascimento   date);
+	
+create table Unidadedemedida(
+  	idCode integer not null, 
+  	description char(35));
+	
+create table Itemdavenda(
+	transaction integer,
+	resource integer,
+	value float,
+	quantity float);
+
+create table Locacaodecarro(
+	number integer not null,
+	date date,
+	observation char(60),
+	status char(1),
+        totalPrice float,
+        totalDiscount float,
+        destinationParty integer,
+	resource integer,
+	instanceCode char(10),
+	finishingDate date,
+	returnDate date,
+	reservationNumber integer,
+	fineValue float,
+	saleNumber integer,
+	saleValue float,
+	horaRetirada   char(5),
+	horaPrevistaDevolucao   char(5),
+	quilometragemRetirada   float,
+	vlrCombustivel   float,
+	horaDevolucao   char(5),
+	quilometragemDevolucao   float,
+	tipoPagamento   char(10),
+	nroDocPagamento   integer);
+	
+create table Carro(
+	resourceIdCode integer not null, 
+	code char(10),
+	allocation char(35),
+	status char(1),
+	fabricante   char(30),
+	marca   char(20),
+	modelo   char(20),
+	ano   integer);
+	
+create table Reservadecarro(
+	number integer not null,
+	date date,
+	observation char(60),
+	status char(1),
+        totalPrice float,
+        totalDiscount float,
+        destinationParty integer,
+	resource integer,
+	instanceCode char(10),
+	beginDate date,
+	endDate date,
+	horaRetirada   char(5),
+	horaPrevistaDevolucao   char(5),
+	dataCancelamento   date,
+	nroCartaoCredito   float);
+
+create table Tipodeservico(
+	idCode integer not null, 
+	description char(35),
+	quantityInStock float,
+	reSupplyLevel float,
+	measureUnity integer,
+	valor   float);
+ 	
+create table Vendadeservico(
+	number integer not null,
+	date date,
+	observation char(60),
+	status char(1),
+        totalPrice float,
+        totalDiscount float,
+        destinationParty integer,
+	freight float,
+	taxes float);
+	
+create table Categoriadecarro(
+	idCode integer not null, 
+	description char(35),
+	valorDiaria   float,
+	valorSemanal   float,
+	valorMensal   float,
+	nroCarros   integer);
+ 	
+
+quit

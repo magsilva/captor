@@ -1,0 +1,196 @@
+use Oficinacarrao;
+
+create table IdCode (
+	className char(35),
+	lastIdCode integer);
+
+create table Comissao(
+        transaction integer,
+        executor integer,
+        dueDate date,
+        paymentDate date,
+        value float,
+        status char(1));
+
+create table Taxademulta(
+        percentageRate float,
+        lowernumber integer,
+        uppernumber integer); 
+
+create table Tecnico(
+        idCode integer not null,
+        description char(35),
+        specialty char(25),
+        percentage float,
+        minimumValue float,
+        salary float);
+
+create table Fornecedor(
+        idCode integer not null, 
+        description char(35),
+        cidade   char(20),
+        telefone   char(15),
+        fax   char(15));
+	
+create table Jurosdofornecedor(
+	  percentageRate float,
+	  number integer);	
+
+create table Veiculo(
+       idCode integer not null, 
+       description char(35),
+       Modelo integer,
+       status char(1),
+       ano   char(4),
+       cor   char(15));
+ 	
+create table Consertodeveiculo(
+        number integer not null,
+        date date,
+        observation char(60),
+        status char(1),
+        totalPrice float,
+        totalDiscount float,
+        destinationParty integer,
+        resource integer,
+        faultsPresented char(80),
+        totalTasks float,
+        totalParts float,
+        exitDate date);
+	
+create table Itemdopedido(
+        transaction integer,
+        resource integer,
+        value float,
+        quantity float);
+	
+create table Check(	
+	  transactionNumber integer,
+	  installmentNumber integer,
+	  accountNumber char(10),
+	  bank char(20),
+	  checkNumber char(8));
+
+create table Unidadedemedida(
+         idCode integer not null, 
+         description char(35));
+	
+create table Compra(
+	  number integer not null,
+	  date date,
+	  observation char(60),
+	  status char(1),
+        totalPrice float,
+        totalDiscount float,
+        destinationParty integer,
+          executor integer,
+	  freight float,
+	  taxes float,
+	  tradeNumber integer);
+	
+create table Taxadejuros(
+	  percentageRate float,
+	  number integer);	
+
+create table Pedido(
+	  number integer not null,
+	  date date,
+	  observation char(60),
+	  status char(1),
+        totalPrice float,
+        totalDiscount float,
+        destinationParty integer,
+	  freight float,
+	  taxes float);
+	
+create table Parcelaapagar(	
+	    transactionNumber integer,
+	  installmentNumber integer,	
+	  dueDate date,
+	  paymentDate date,
+	  totalValue float,
+	  status char(1),
+	  interest float,
+	  fine float,
+	  paymentStrategyClassNumber integer);
+
+create table Almoxarife(
+        idCode integer not null,
+        description char(35),
+        specialty char(25),
+        percentage float,
+        minimumValue float,
+        salary float);
+
+create table Parcelaareceber(
+          transactionNumber integer,
+	  installmentNumber integer,	
+	  dueDate date,
+	  paymentDate date,
+	  totalValue float,
+	  status char(1),
+	  interest float,
+	  fine float,
+	  paymentStrategyClassNumber integer);
+
+create table Cliente(
+       idCode integer not null, 
+       description char(35),
+       endereco   char(40),
+       cidade   char(20),
+       telefone   char(15),
+       email   char(35));
+	
+create table Pecausadanoconserto(	
+	transaction integer,
+	part integer,
+	qtty float,
+	cost float,
+	executor integer);
+
+create table Cash(
+        transactionNumber integer,
+        installmentNumber integer,
+        suppliedValue float);
+
+create table Peca(
+       idCode integer not null, 
+       description char(35),
+       Categoria integer,
+       quantityInStock float,
+       reSupplyLevel float,
+       measureUnity integer,
+       cost float,
+       salePrice float);
+ 	
+create table Itemdacompra(
+        transaction integer,
+        resource integer,
+        value float,
+        quantity float);
+	
+create table Tarefademaodeobra(	
+	  transaction integer,
+	  problemToSolve char(30),
+	  laborDescription char(40),
+	  hoursSpent float,
+	  cost float,
+          executor integer
+);
+
+create table Modelo(
+        idCode integer not null, 
+        description char(35));
+	
+create table Multaaofornecedor(
+      percentageRate float,
+      lowernumber integer,
+      uppernumber integer); 
+
+create table Categoria(
+      idCode integer not null, 
+      description char(35));
+	
+
+
+quit

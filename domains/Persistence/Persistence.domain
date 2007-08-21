@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<forms>
+
+      <name>Persistence</name>
+
+      <form isRoot="true">
+            <id>1.1</id>
+
+            <enabled>true</enabled>
+
+            <name>System Description</name>
+
+            <variant>Default</variant>
+
+            <nextForms>
+            
+							<nextForm>
+								<id>2.*</id>
+								<minChilds>1</minChilds>
+								<maxChilds>N</maxChilds>
+							</nextForm>
+							
+            </nextForms>
+
+            <help>Descricao do sistema.</help>
+
+            <formComponents>
+            
+              <formComponent>
+            	  <fullname>captor.windowsystem.formcomponent.std.textareapanel.TextAreaPanel</fullname>
+            		
+            		<parameters>
+            		  <parameter>
+            			 <name>id</name>
+            			 <value>systemDescription</value>
+            		</parameter>
+            		<parameter>
+            			<name>label</name>
+            			<value>Descricao do sistema</value>
+           			</parameter>
+
+           		</parameters>
+            		
+            	</formComponent>
+            	
+            </formComponents>
+            
+      </form>
+
+	<!--______________________________________________________________________-->
+
+      <form>
+            <id>2.1</id>
+
+            <enabled>true</enabled>
+
+            <name>Package Specification</name>
+
+            <variant>Default</variant>
+
+            <nextForms>
+							
+							<nextForm>
+								<id>3.*</id>
+								<minChilds>1</minChilds>
+								<maxChilds>N</maxChilds>
+							</nextForm>
+							
+            </nextForms>
+
+            <help>Nome do pacote. O nome do pacote deve estar no formato: string/string/string</help>
+
+            <formComponents>
+            
+              <formComponent>
+            	  <fullname>captor.windowsystem.formcomponent.std.textpanel.TextPanel</fullname>
+            		
+            		<parameters>
+            		  <parameter>
+            			 <name>id</name>
+            			 <value>packageName</value>
+            		</parameter>
+            		<parameter>
+            			<name>label</name>
+            			<value>Package name</value>
+           			</parameter>
+            		<parameter>
+            			<name>regexp</name>
+            			<value>([a-zA-Z]+[a-zA-Z\-0-9]+)+([\\/][a-zA-Z]+[a-zA-Z\-0-9]+)*</value>
+           			</parameter>
+            		<parameter>
+            			<name>use</name>
+            			<value>required</value>
+           			</parameter>
+
+           		</parameters>
+            		
+            	</formComponent>
+            	
+            </formComponents>
+            
+      </form>
+
+	<!--______________________________________________________________________-->
+
+	<form>
+		<id>3.1</id>
+		<enabled>true</enabled>
+		<name>Class specification</name>
+		<variant>Default</variant>
+
+		<formComponents>
+
+              <formComponent>
+            	  <fullname>captor.windowsystem.formcomponent.std.textpanel.TextPanel</fullname>
+            		
+            		<parameters>
+            		  <parameter>
+            			 <name>id</name>
+            			 <value>packageName</value>
+            		</parameter>
+            		<parameter>
+            			<name>label</name>
+            			<value>Package name</value>
+           			</parameter>
+            		<parameter>
+            			<name>read_from</name>
+            			<value>parent(2.1)->packageName</value>
+           			</parameter>
+            		</parameters>
+            		
+            	</formComponent>
+
+              <formComponent>
+            	  <fullname>captor.windowsystem.formcomponent.std.textpanel.TextPanel</fullname>
+            		
+            		<parameters>
+            		  <parameter>
+            			 <name>id</name>
+            			 <value>tableName</value>
+            		</parameter>
+            		<parameter>
+            			<name>label</name>
+            			<value>Table name</value>
+           			</parameter>
+            		<parameter>
+            			<name>regexp</name>
+            			<value>[A-Za-z]+([a-zA-Z\-_0-9]+)*[A-Za-z0-9]+</value>
+           			</parameter>
+            		<parameter>
+            			<name>use</name>
+            			<value>required</value>
+           			</parameter>
+            		</parameters>
+            		
+            	</formComponent>
+
+              <formComponent>
+            	  <fullname>captor.windowsystem.formcomponent.std.textpanel.TextPanel</fullname>
+            		
+            		<parameters>
+            		  <parameter>
+            			 <name>id</name>
+            			 <value>className</value>
+            		</parameter>
+            		<parameter>
+            			<name>label</name>
+            			<value>Class name</value>
+           			</parameter>
+            		<parameter>
+            			<name>regexp</name>
+            			<value>[A-Z]+([a-zA-Z\-0-9]+)*[A-Za-z0-9]+</value>
+           			</parameter>
+            		<parameter>
+            			<name>use</name>
+            			<value>required</value>
+           			</parameter>
+            		</parameters>
+            		
+            	</formComponent>
+
+              <formComponent>
+            	  <fullname>captor.windowsystem.formcomponent.std.tablepanel.TablePanel</fullname>
+            		
+            		<parameters>
+            		  <parameter>
+            			 <name>id</name>
+            			 <value>attributes</value>
+            		</parameter>
+            		<parameter>
+            			<name>label</name>
+            			<value>Attributes</value>
+           			</parameter>
+            		<parameter>
+            			<name>colname1</name>
+            			<value>Class attribute</value>
+           			</parameter>
+            		<parameter>
+            			<name>colname2</name>
+            			<value>Table attribute</value>
+           			</parameter>
+            		<parameter>
+            			<name>colname3</name>
+            			<value>Type</value>
+           			</parameter>
+            		<parameter>
+            			<name>regexp1</name>
+            			<value>[a-zA-Z]+([a-zA-Z\-_0-9]+)*[A-Za-z0-9]+</value>
+           			</parameter>
+            		<parameter>
+            			<name>regexp2</name>
+            			<value>[a-zA-Z]+([a-zA-Z\-_0-9]+)*[A-Za-z0-9]+</value>
+           			</parameter>
+            		<parameter>
+            			<name>regexp3</name>
+            			<value>[int]*[String]*</value>
+           			</parameter>
+            		</parameters>
+            		
+            	</formComponent>
+
+		</formComponents>
+		
+	</form>
+
+</forms>

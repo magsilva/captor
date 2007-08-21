@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<forms>
+	<name>FWS</name>
+
+
+	<form isRoot="true">
+		<id>1.1</id>
+		<enabled>true</enabled>
+		
+		<name>FWS Specification</name>
+ 		<variant>Default</variant>
+ 		
+		<nextForms>
+		  <!--
+			<nextForm>
+				<id>2.*</id>
+				<minChilds>1</minChilds>
+				<maxChilds>1</maxChilds>
+			</nextForm>
+			-->
+			<nextForm>
+				<id>3.*</id>
+				<minChilds>1</minChilds>
+				<maxChilds>1</maxChilds>
+			</nextForm>
+		</nextForms>
+		
+		<help>Este formulário ajuda a configurar
+o sistema de bóias náuticas.</help>
+		
+		<formComponents>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.std.textpanel.TextPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>id</name>
+						<value>ApplicationTitle</value>
+					</parameter>
+					<parameter>
+						<name>use</name>
+						<value>required</value>
+					</parameter>
+					<parameter>
+						<name>label</name>
+						<value>Application title</value>
+					</parameter>
+					<parameter>
+						<name>default_value</name>
+						<value>Floating Weather Station System</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+			
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.std.textpanel.TextPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>id</name>
+						<value>ApplicationId</value>
+					</parameter>
+					<parameter>
+						<name>use</name>
+						<value>required</value>
+					</parameter>
+					<parameter>
+						<name>label</name>
+						<value>Application id</value>
+					</parameter>
+					<parameter>
+						<name>default_value</name>
+						<value>1</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+
+		</formComponents>
+			
+	</form>
+
+	<!--==============================================================================================-->
+	
+  <form>
+		<id>2.1</id>
+		<enabled>true</enabled>
+		
+		<name>Simulator Specification</name>
+ 		<variant>Default</variant>
+ 		
+		<help>Este formulário ajuda a configurar
+o ambiente de simulação do sistema.</help>
+		
+		<formComponents>
+		
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.std.textpanel.TextPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>id</name>
+						<value>WindGeneratorHost</value>
+					</parameter>
+					<parameter>
+						<name>use</name>
+						<value>required</value>
+					</parameter>
+					<parameter>
+						<name>label</name>
+						<value>Wind generator host</value>
+					</parameter>
+					<parameter>
+						<name>default_value</name>
+						<value>localhost</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.std.textpanel.TextPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>id</name>
+						<value>WindGeneratorPort</value>
+					</parameter>
+					<parameter>
+						<name>use</name>
+						<value>required</value>
+					</parameter>
+					<parameter>
+						<name>label</name>
+						<value>Wind generator port</value>
+					</parameter>
+					<parameter>
+						<name>default_value</name>
+						<value>4017</value>
+					</parameter>
+					<parameter>
+						<name>regexp</name>
+						<value>[0-9]+</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.std.textpanel.TextPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>id</name>
+						<value>ControlTowerHost</value>
+					</parameter>
+					<parameter>
+						<name>use</name>
+						<value>required</value>
+					</parameter>
+					<parameter>
+						<name>label</name>
+						<value>Control tower host</value>
+					</parameter>
+					<parameter>
+						<name>default_value</name>
+						<value>localhost</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.std.textpanel.TextPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>id</name>
+						<value>ControlTowerPort</value>
+					</parameter>
+					<parameter>
+						<name>use</name>
+						<value>required</value>
+					</parameter>
+					<parameter>
+						<name>label</name>
+						<value>Control tower port</value>
+					</parameter>
+					<parameter>
+						<name>default_value</name>
+						<value>4018</value>
+					</parameter>
+					<parameter>
+						<name>regexp</name>
+						<value>[0-9]+</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+
+		</formComponents>
+			
+	</form>
+	
+	<!--==============================================================================================-->
+
+	<form>
+		<id>3.1</id>
+		<enabled>true</enabled>
+		
+		<name>Buoy Specification</name>
+ 		<variant>Default</variant>
+ 		
+		<nextForms>
+			<nextForm>
+				<id>4.*</id>
+				<minChilds>4</minChilds>
+				<maxChilds>20</maxChilds>
+			</nextForm>
+		</nextForms>
+		
+		<help>Este formulário ajuda a configurar
+o sistema de bóias náuticas.</help>
+		
+		<formComponents>
+		
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.std.comboboxpanel.ComboBoxPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>id</name>
+						<value>MsgType</value>
+					</parameter>
+					<parameter>
+						<name>use</name>
+						<value>required</value>
+					</parameter>
+					<parameter>
+						<name>label</name>
+						<value>Message Type</value>
+					</parameter>
+					<parameter>
+						<name>elements</name>
+						<value>SHORTMSG:LONGMSG</value>
+					</parameter>
+					<parameter>
+						<name>default_value</name>
+						<value>SHORTMSG</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.std.comboboxpanel.ComboBoxPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>id</name>
+						<value>TransmitPeriod</value>
+					</parameter>
+					<parameter>
+						<name>use</name>
+						<value>required</value>
+					</parameter>
+					<parameter>
+						<name>label</name>
+						<value>Transmit Period</value>
+					</parameter>
+					<parameter>
+						<name>elements</name>
+						<value>1:5:10:20:30:50:100:150:200:250:300:350:400:450:500:550:600</value>
+					</parameter>
+					<parameter>
+						<name>default_value</name>
+						<value>1</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.std.comboboxpanel.ComboBoxPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>id</name>
+						<value>SensorPeriod</value>
+					</parameter>
+					<parameter>
+						<name>use</name>
+						<value>required</value>
+					</parameter>
+					<parameter>
+						<name>label</name>
+						<value>Sensor Period</value>
+					</parameter>
+					<parameter>
+						<name>elements</name>
+						<value>1:5:10:20:30:50:100:150:200:250:300:350:400:450:500:550:600</value>
+					</parameter>
+					<parameter>
+						<name>default_value</name>
+						<value>5</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.std.comboboxpanel.ComboBoxPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>id</name>
+						<value>HistoryLength</value>
+					</parameter>
+					<parameter>
+						<name>use</name>
+						<value>required</value>
+					</parameter>
+					<parameter>
+						<name>label</name>
+						<value>History Length</value>
+					</parameter>
+					<parameter>
+						<name>elements</name>
+						<value>1:2:3:4:5:6:7:8:9:10</value>
+					</parameter>
+					<parameter>
+						<name>default_value</name>
+						<value>5</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.std.comboboxpanel.ComboBoxPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>id</name>
+						<value>HighResolutionWeight</value>
+					</parameter>
+					<parameter>
+						<name>use</name>
+						<value>required</value>
+					</parameter>
+					<parameter>
+						<name>label</name>
+						<value>High Resolution Weight</value>
+					</parameter>
+					<parameter>
+						<name>elements</name>
+						<value>1:5:10:20:30:40:50:60:70:80:90:100</value>
+					</parameter>
+					<parameter>
+						<name>default_value</name>
+						<value>50</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.std.comboboxpanel.ComboBoxPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>id</name>
+						<value>LowResolutionWeight</value>
+					</parameter>
+					<parameter>
+						<name>use</name>
+						<value>required</value>
+					</parameter>
+					<parameter>
+						<name>label</name>
+						<value>Low Resolution Weight</value>
+					</parameter>
+					<parameter>
+						<name>elements</name>
+						<value>1:5:10:20:30:40:50:60:70:80:90:100</value>
+					</parameter>
+					<parameter>
+						<name>default_value</name>
+						<value>50</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.fws.fwsvalidator.FWSValidator</fullname>
+			</formComponent>
+
+		</formComponents>
+			
+	</form>
+
+	<!--==============================================================================================-->
+		
+	<form>
+		<id>4.1</id>
+		<enabled>true</enabled>
+		
+		<name>Sensor Configuration</name>
+ 		<variant>Default</variant>
+ 		
+		<help>Este formulário ajuda a configurar
+uma bóia náutica.</help>
+		
+		<formComponents>
+		
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.std.comboboxpanel.ComboBoxPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>id</name>
+						<value>Resolution</value>
+					</parameter>
+					<parameter>
+						<name>use</name>
+						<value>required</value>
+					</parameter>
+					<parameter>
+						<name>label</name>
+						<value>Resolution</value>
+					</parameter>
+					<parameter>
+						<name>elements</name>
+						<value>High:Low</value>
+					</parameter>
+					<parameter>
+						<name>default_value</name>
+						<value>Low</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+
+		</formComponents>
+			
+	</form>
+	
+	<!--==============================================================================================-->
+</forms>

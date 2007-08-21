@@ -1,0 +1,41 @@
+<composer name="FIT">
+
+	<!--______________________________________________________________________-->
+
+	<main>
+
+		<callTask id="grn"/>
+		<callTask id="sql"/>
+		
+	</main>
+
+	<!--______________________________________________________________________-->
+
+	<tasks>
+
+		<task id="grn">
+		
+				<compose>
+					<template>grn.st</template>
+					<newFilename>grn.st</newFilename>
+				</compose>
+				
+		</task>
+		
+		<!--______________________________________________________________________-->
+	
+		<task id="sql">
+		
+			<compose>
+				<template>sql.sql</template>
+				<newFilename>sql.sql</newFilename>
+				<!--<newFilename>${/pldata/project/name}_sql/${/pldata/project/name}_sql.sql</newFilename>-->
+			</compose>
+		
+		</task>
+	
+	</tasks>
+	
+	<!--______________________________________________________________________-->
+
+</composer>

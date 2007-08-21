@@ -1,0 +1,95 @@
+<composer name="FIT">
+
+	<!--______________________________________________________________________-->
+
+	<main>
+
+		<callTask id="FWS"/>
+		<callTask id="MessageFormat"/>
+		<callTask id="SensorMonitor"/>
+		
+		<callTask id="MessageFormatTest"/>
+		<callTask id="UML"/>
+		
+		<!--
+		tests
+		<if test="  equal ( /asd  , 'aaa' )   ">
+			<callTask id="MessageFormat"/>
+		</if>
+
+		<if test="equal(a/formsData/forms/form/data/textatt@@,'Floating Weather Station System')">
+			<callTask id="MessageFormat"/>
+		</if>
+
+		<for-each select="/formsData/forms/form/form/form">
+			<callTask id="FWS"/>
+		</for-each>
+		-->
+
+	</main>
+
+	<!--______________________________________________________________________-->
+
+	<tasks>
+
+		<task id="FWS">
+		
+				<compose>
+					<template>fws/FWS.java</template>
+					<newFilename>src/fws/FWS.java</newFilename>
+					<!--<newFilename>c:\a\b\c\FWS.java</newFilename>-->
+				</compose>
+				
+		</task>
+		
+		<!--______________________________________________________________________-->
+	
+		<task id="MessageFormat">
+		
+				<compose>
+					<template>fws/MessageFormat.java</template>
+					<newFilename>src/fws/MessageFormat.java</newFilename>
+				</compose>
+				
+		</task>
+		
+		<!--______________________________________________________________________-->
+		
+		<task id="SensorMonitor">
+		
+				<compose>
+					<template>fws/SensorMonitor.java</template>
+					<newFilename>src/fws/SensorMonitor.java</newFilename>
+				</compose>
+				
+		</task>
+
+		<!--______________________________________________________________________-->
+		
+		<task id="MessageFormatTest">
+		
+				<compose>
+					<template>testcase/MessageFormatTest.java</template>
+					<newFilename>src/testcase/MessageFormatTest.java</newFilename>
+				</compose>
+				
+		</task>
+	
+		<!--______________________________________________________________________-->
+		
+		<task id="UML">
+		
+				<compose>
+					<template>doc/Model.xmi</template>
+					<newFilename>doc/${formsData/project/name}.xmi</newFilename>
+				</compose>
+				
+		</task>
+
+	<!--______________________________________________________________________-->
+
+	</tasks>
+	
+	<!--______________________________________________________________________-->
+
+</composer>

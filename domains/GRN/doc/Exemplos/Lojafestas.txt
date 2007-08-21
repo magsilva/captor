@@ -1,0 +1,163 @@
+use Lojafestas;
+
+create table IdCode (
+	className char(35),
+	lastIdCode integer);
+
+create table Multadofornecedor(
+	percentageRate float,
+      	lowernumber integer,
+	uppernumber integer);
+
+create table Fornecedor(
+  	idCode integer not null, 
+	description char(35),
+	endereco   char(35),
+	cidade   char(25),
+	telefone   char(15),
+	fax   char(15));
+	
+create table Jurosdofornecedor(
+	  percentageRate float,
+	  number integer);	
+
+create table Itemreservado(
+	  transaction integer,
+	  resource integer,
+	  value float,
+	  quantity float);
+	
+create table Itemvendido(
+	  transaction integer,
+	  resource integer,
+	  value float,
+	  quantity float);
+	
+create table Check(	
+	  transactionNumber integer,
+	  installmentNumber integer,
+	  accountNumber char(10),
+	  bank char(20),
+	  checkNumber char(8));
+
+create table Produto(
+	idCode integer not null, 
+	description char(35),
+	estadodoproduto integer,
+	quantityInStock float,
+	reSupplyLevel float,
+	measureUnity integer,
+	precoDeVenda   float,
+	podeseralugado   integer);
+ 	
+create table Unidadedemedida(
+	idCode integer not null, 
+	description char(35));
+
+create table Itempedido(
+	  transaction integer,
+	  resource integer,
+	  value float,
+	  quantity float);
+	
+create table Itemalugado(
+	  transaction integer,
+	  resource integer,
+	  value float,
+	  quantity float);
+	
+create table Compra(
+	  number integer not null,
+	  date date,
+	  observation char(60),
+	  status char(1),
+        totalPrice float,
+        totalDiscount float,
+        destinationParty integer,
+	  freight float,
+	  taxes float,
+	  tradeNumber integer);
+	
+create table Pedido(
+	  number integer not null,
+	  date date,
+	  observation char(60),
+	  status char(1),
+        totalPrice float,
+        totalDiscount float,
+        destinationParty integer,
+	  freight float,
+	  taxes float);
+	
+create table Cliente(
+  	idCode integer not null, 
+	description char(35),
+	endereco   char(35),
+	telefone   char(15));
+	
+create table Alugueldeproduto(
+	number integer not null,
+	date date,
+	observation char(60),
+	status char(1),
+        totalPrice float,
+        totalDiscount float,
+        destinationParty integer,
+	finishingDate date,
+	returnDate date,
+	reservationNumber integer,
+	fineValue float,
+	saleNumber integer,
+	saleValue float);
+	
+create table Itemcomprado(
+	  transaction integer,
+	  resource integer,
+	  value float,
+	  quantity float);
+	
+create table Cash(	
+	transactionNumber integer,
+	installmentNumber integer,
+	suppliedValue float);
+
+create table Estadodoproduto(
+  	idCode integer not null, 
+ 	description char(35));
+	
+create table Contasapagar(	
+	transactionNumber integer,
+	installmentNumber integer,	
+	dueDate date,
+	paymentDate date,
+	totalValue float,
+	status char(1),
+	interest float,
+	fine float,
+	paymentStrategyClassNumber integer);
+
+create table Reservadeproduto(
+	  number integer not null,
+	  date date,
+	  observation char(60),
+	  status char(1),
+        totalPrice float,
+        totalDiscount float,
+        destinationParty integer,
+	  beginDate date,
+	  endDate date);
+	
+create table Vendadeproduto(
+	  number integer not null,
+	  date date,
+	  observation char(60),
+	  status char(1),
+        totalPrice float,
+        totalDiscount float,
+        destinationParty integer,
+	  freight float,
+	  taxes float);
+	
+
+
+quit

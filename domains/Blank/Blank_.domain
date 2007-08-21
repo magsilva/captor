@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<forms>
+
+      <name>Blank</name>
+
+      <form isRoot="true">
+            <id>1.1</id>
+
+            <enabled>true</enabled>
+
+            <name>Form1</name>
+
+            <variant>Default</variant>
+
+            <nextForms>
+            </nextForms>
+
+            <help>Help text.</help>
+
+            <formComponents>
+            
+              <formComponent>
+            	  <fullname>captor.windowsystem.formcomponent.std.textpanel.TextPanel</fullname>
+            		
+            		<parameters>
+            		  <parameter>
+            			 <name>id</name>
+            			 <value>textId</value>
+            		</parameter>
+            		<parameter>
+            			<name>label</name>
+            			<value>Text Label</value>
+            			</parameter>
+            		</parameters>
+            		
+            	</formComponent>
+            	
+            </formComponents>
+            
+      </form>
+
+</forms>

@@ -1,0 +1,25 @@
+<?xml version="1.0" standalone="yes"?>
+
+<project name="Blank" default="exec" basedir="../">
+
+	<!--______________________________________________________________________-->
+
+<!--PROJECT_GENERATED_DATA - DO_NOT_EDIT-->
+<property name="project_path" location="C:\Dev\Captor\projects\A"/>
+<property name="project_output_path" location="C:\Dev\Captor\projects\"/>
+<property name="install_path" location="C:\Dev\Captor\"/>
+<property name="project_name" value="A"/>
+<property name="interaction_0" value="0"/>
+<!--PROJECT_GENERATED_DATA - DO_NOT_EDIT-->
+
+	<!--______________________________________________________________________-->
+
+	<target name="exec">
+		<!-- Do something -->
+	</target>
+	
+	<!--______________________________________________________________________-->
+	
+</project>	
+	
+	

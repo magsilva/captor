@@ -1,0 +1,33 @@
+<?xml version="1.0" standalone="yes"?>
+
+<project name="FIT" default="exec" basedir=".">
+
+	<!--______________________________________________________________________-->
+
+<!--PROJECT_GENERATED_DATA - DO_NOT_EDIT-->
+<property name="project_path" location="C:\Documents and Settings\edisonj\Desktop\Mestrado\Dev\Captor\projects\NovoDominio"/>
+<property name="project_output_path" location="C:\Documents and Settings\edisonj\Desktop\Mestrado\Dev\Captor\projects\"/>
+<property name="install_path" location="C:\Documents and Settings\edisonj\Desktop\Mestrado\Dev\Captor\"/>
+<property name="project_name" value="NovoDominio"/>
+<property name="interaction_0" value="0"/>
+<!--PROJECT_GENERATED_DATA - DO_NOT_EDIT-->
+	
+	<!--______________________________________________________________________-->
+
+	<target name="exec">
+		<mkdir dir="${install_path}/domains/${project_name}"/>
+		<mkdir dir="${install_path}/domains/${project_name}/templates"/>
+
+		<copy file="${install_path}\domains\Blank\rules.xml" tofile="${install_path}\domains\${project_name}\rules.xml"/>
+		<copy file="${install_path}\domains\Blank\pre-build.xml" tofile="${install_path}\domains\${project_name}\pre-build.xml"/>
+		<copy file="${install_path}\domains\Blank\pos-build.xml" tofile="${install_path}\domains\${project_name}\pos-build.xml"/>
+		<copy file="${install_path}\domains\Blank\templates\main.xsl" tofile="${install_path}\domains\${project_name}\templates\main.xsl"/>
+
+		<copy file="${project_output_path}\interaction_0\${project_name}.domain" tofile="${install_path}\domains\${project_name}\${project_name}.domain"/>
+	</target>
+	
+	<!--______________________________________________________________________-->
+	
+</project>	
+	
+	

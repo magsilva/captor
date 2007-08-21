@@ -1,0 +1,205 @@
+<?xml version="1.0" standalone="yes"?>
+
+<project name="FIT" default="deploy_interaction_0" basedir="../">
+
+	<!--______________________________________________________________________-->
+
+<!--PROJECT_GENERATED_DATA - DO_NOT_EDIT-->
+<property name="project_path" location="C:\Documents and Settings\edisonj\Desktop\Mestrado\Dev\Captor\projects\FWS123\"/>
+<property name="project_output_path" location="C:\Documents and Settings\edisonj\Desktop\Mestrado\Dev\Captor\projects\"/>
+<property name="install_path" location="C:\Documents and Settings\edisonj\Desktop\Mestrado\Dev\Captor\"/>
+<property name="project_name" value="FWS123"/>
+<property name="interaction_0" value="0"/>
+<!--PROJECT_GENERATED_DATA - DO_NOT_EDIT-->
+
+	<!--______________________________________________________________________-->
+
+
+	<property name="src" location="src"/>
+	<property name="bin" location="bin"/>
+
+	<!--______________________________________________________________________-->
+
+	<target name="deploy_interaction_0" depends="deploy_interaction_1">
+	
+		<!--Copiar o ambiente os arquivos do janel do ambiente de simulacao-->	
+		<copy todir="${project_output_path}/interaction_0/simulator">
+			<fileset dir="${install_path}/domains/FWS/resources/simulator">
+				<include name="**/*.exe" />
+				<include name="**/*.lap" />
+				<include name="**/*.jar" />
+			</fileset>
+		</copy>
+
+		<!--Copiar o arquivo do ant-->
+		<copy todir="${project_output_path}/interaction_0/dev/scripts">
+			<fileset dir="${install_path}/domains/FWS/resources/dev/scripts">
+				<include name="**/*.xml" />
+			</fileset>
+		</copy>
+		
+		<!--Copiar o jar do ant-->
+		<copy todir="${project_output_path}/interaction_0/dev/testcase/lib">
+			<fileset dir="${install_path}/domains/FWS/resources/dev/testcase/lib">
+				<include name="**/*.jar" />
+			</fileset>
+		</copy>
+		
+		<!--Copiar o bat do ant-->
+		<copy todir="${project_output_path}/interaction_0/dev/testcase">
+			<fileset dir="${install_path}/domains/FWS/resources/dev/testcase">
+				<include name="**/*.bat" />
+			</fileset>
+		</copy>
+		
+		<!--Copiar o arquivo o arquivo dos componentes-->
+		<copy todir="${project_output_path}/interaction_0/src/fwslib">
+			<fileset dir="${install_path}/domains/FWS/resources/src/fwslib/">
+				<include name="**/*.java" />
+			</fileset>
+		</copy>
+		
+		<!--Copiar o arquivo o arquivo dos componentes-->
+		<copy todir="${project_output_path}/interaction_0/src/fwslib/driver">
+			<fileset dir="${install_path}/domains/FWS/resources/src/fwslib/driver">
+				<include name="**/*.java" />
+			</fileset>
+		</copy>
+		
+		<!--Copiar o ambiente os arquivos do janel da aplicacao-->	
+		<copy todir="${project_output_path}/interaction_0">
+			<fileset dir="${install_path}/domains/FWS/resources">
+				<include name="**/*.exe" />
+				<include name="**/*.lap" />
+				<include name="**/*.doc" />
+			</fileset>
+		</copy>
+
+  <copy todir="${project_output_path}/interaction_0/api">
+    <fileset dir="${install_path}/domains/FWS/resources/api"/>
+  </copy>
+
+		
+	</target>
+	
+	<!--______________________________________________________________________-->
+
+	<target name="deploy_interaction_1" depends="deploy_interaction_2" if="interaction_1">
+	
+		<!--Copiar o ambiente os arquivos do janel do ambiente de simulacao-->	
+		<copy todir="${project_output_path}/interaction_1/simulator">
+			<fileset dir="${install_path}/domains/FWS/resources/simulator">
+				<include name="**/*.exe" />
+				<include name="**/*.lap" />
+				<include name="**/*.jar" />
+			</fileset>
+		</copy>
+
+		<!--Copiar o arquivo do ant-->
+		<copy todir="${project_output_path}/interaction_1/dev/scripts">
+			<fileset dir="${install_path}/domains/FWS/resources/dev/scripts">
+				<include name="**/*.xml" />
+			</fileset>
+		</copy>
+		
+		<!--Copiar o jar do ant-->
+		<copy todir="${project_output_path}/interaction_1/dev/testcase/lib">
+			<fileset dir="${install_path}/domains/FWS/resources/dev/testcase/lib">
+				<include name="**/*.jar" />
+			</fileset>
+		</copy>
+		
+		<!--Copiar o bat do ant-->
+		<copy todir="${project_output_path}/interaction_1/dev/testcase">
+			<fileset dir="${install_path}/domains/FWS/resources/dev/testcase">
+				<include name="**/*.bat" />
+			</fileset>
+		</copy>
+		
+		<!--Copiar o arquivo o arquivo dos componentes-->
+		<copy todir="${project_output_path}/interaction_1/src/fwslib">
+			<fileset dir="${install_path}/domains/FWS/resources/src/fwslib/">
+				<include name="**/*.java" />
+			</fileset>
+		</copy>
+		
+		<!--Copiar o arquivo o arquivo dos componentes-->
+		<copy todir="${project_output_path}/interaction_1/src/fwslib/driver">
+			<fileset dir="${install_path}/domains/FWS/resources/src/fwslib/driver">
+				<include name="**/*.java" />
+			</fileset>
+		</copy>
+		
+		<!--Copiar o ambiente os arquivos do janel da aplicacao-->	
+		<copy todir="${project_output_path}/interaction_1">
+			<fileset dir="${install_path}/domains/FWS/resources">
+				<include name="**/*.exe" />
+				<include name="**/*.lap" />
+			</fileset>
+		</copy>
+		
+	</target>
+
+	<!--______________________________________________________________________-->
+
+	<target name="deploy_interaction_2" if="interaction_2">
+	
+		<!--Copiar o ambiente os arquivos do janel do ambiente de simulacao-->	
+		<copy todir="${project_output_path}/interaction_2/simulator">
+			<fileset dir="${install_path}/domains/FWS/resources/simulator">
+				<include name="**/*.exe" />
+				<include name="**/*.lap" />
+				<include name="**/*.jar" />
+			</fileset>
+		</copy>
+
+		<!--Copiar o arquivo do ant-->
+		<copy todir="${project_output_path}/interaction_2/dev/scripts">
+			<fileset dir="${install_path}/domains/FWS/resources/dev/scripts">
+				<include name="**/*.xml" />
+			</fileset>
+		</copy>
+		
+		<!--Copiar o jar do ant-->
+		<copy todir="${project_output_path}/interaction_2/dev/testcase/lib">
+			<fileset dir="${install_path}/domains/FWS/resources/dev/testcase/lib">
+				<include name="**/*.jar" />
+			</fileset>
+		</copy>
+		
+		<!--Copiar o bat do ant-->
+		<copy todir="${project_output_path}/interaction_2/dev/testcase">
+			<fileset dir="${install_path}/domains/FWS/resources/dev/testcase">
+				<include name="**/*.bat" />
+			</fileset>
+		</copy>
+		
+		<!--Copiar o arquivo o arquivo dos componentes-->
+		<copy todir="${project_output_path}/interaction_2/src/fwslib">
+			<fileset dir="${install_path}/domains/FWS/resources/src/fwslib/">
+				<include name="**/*.java" />
+			</fileset>
+		</copy>
+		
+		<!--Copiar o arquivo o arquivo dos componentes-->
+		<copy todir="${project_output_path}/interaction_2/src/fwslib/driver">
+			<fileset dir="${install_path}/domains/FWS/resources/src/fwslib/driver">
+				<include name="**/*.java" />
+			</fileset>
+		</copy>
+		
+		<!--Copiar o ambiente os arquivos do janel da aplicacao-->	
+		<copy todir="${project_output_path}/interaction_2">
+			<fileset dir="${install_path}/domains/FWS/resources">
+				<include name="**/*.exe" />
+				<include name="**/*.lap" />
+			</fileset>
+		</copy>
+		
+	</target>
+
+	<!--______________________________________________________________________-->
+
+</project>	
+	
+	

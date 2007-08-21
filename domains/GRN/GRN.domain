@@ -1,0 +1,2029 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<forms>
+	<name>GRN</name>
+
+	<!--==============================================================================================-->
+
+	<!--IDENTIFICAR O RECURSO-->
+	<form isRoot="true">
+		<id>1.1</id>
+		<enabled>true</enabled>
+		
+		<name>IDENTIFICAR O RECURSO</name>
+ 		<variant>Default</variant>
+ 		
+		<nextForms>
+			<nextForm>
+				<id>2.*</id>
+				<minChilds>1</minChilds>
+				<maxChilds>1</maxChilds>
+			</nextForm>
+		</nextForms>
+		
+		<help>Este padrão ajuda a identificar o
+recurso que será utilizado na gestão
+de recursos de negócio.</help>
+		
+		<formComponents>
+		
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Recurso</value>
+					</parameter>
+					<parameter>
+						<name>SYS_ATT1</name>
+						<value>IdCode:integer:0</value>
+					</parameter>
+					<parameter>
+						<name>SYS_ATT2</name>
+						<value>description:char:10</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>TipoDoRecurso</value>
+					</parameter>
+					<parameter>
+						<name>SYS_ATT1</name>
+						<value>IdCode:integer:0</value>
+					</parameter>
+					<parameter>
+						<name>SYS_ATT2</name>
+						<value>description:char:10</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+
+		</formComponents>
+			
+	</form>
+
+	<!--==============================================================================================-->
+
+	<form>
+		<id>1.2</id>
+		<enabled>true</enabled>
+		<name>IDENTIFICAR O RECURSO</name>
+		<variant>Recurso sem tipo</variant>
+		<extends>1.1</extends>
+		
+		<formComponents>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Recurso</value>
+					</parameter>
+					<parameter>
+						<name>SYS_ATT1</name>
+						<value>IdCode:integer:0</value>
+					</parameter>
+					<parameter>
+						<name>SYS_ATT2</name>
+						<value>description:char:10</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+		</formComponents>
+		
+	</form>
+
+	<!--==============================================================================================-->
+
+	<form>
+		<id>1.3</id>
+		<enabled>true</enabled>
+
+		<name>IDENTIFICAR O RECURSO</name>
+		<variant>Multiplos tipos</variant>
+		<extends>1.1</extends>
+		
+		<formComponents>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Recurso</value>
+					</parameter>
+					<parameter>
+						<name>SYS_ATT1</name>
+						<value>IdCode:integer:0</value>
+					</parameter>
+					<parameter>
+						<name>SYS_ATT2</name>
+						<value>description:char:10</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>TipoDoRecurso1</value>
+					</parameter>
+					<parameter>
+						<name>SYS_ATT1</name>
+						<value>IdCode:integer:0</value>
+					</parameter>
+					<parameter>
+						<name>SYS_ATT2</name>
+						<value>description:char:10</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+			
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>TipoDoRecurso2</value>
+					</parameter>
+					<parameter>
+						<name>SYS_ATT1</name>
+						<value>IdCode:integer:0</value>
+					</parameter>
+					<parameter>
+						<name>SYS_ATT2</name>
+						<value>description:char:10</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+			
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>TipoDoRecurso3</value>
+					</parameter>
+					<parameter>
+						<name>class_use</name>
+						<value>not_required</value>
+					</parameter>
+					<parameter>
+						<name>SYS_ATT1</name>
+						<value>IdCode:integer:0</value>
+					</parameter>
+					<parameter>
+						<name>SYS_ATT2</name>
+						<value>description:char:10</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>TipoDoRecurso4</value>
+					</parameter>
+					<parameter>
+						<name>class_use</name>
+						<value>not_required</value>
+					</parameter>
+					<parameter>
+						<name>SYS_ATT1</name>
+						<value>IdCode:integer:0</value>
+					</parameter>
+					<parameter>
+						<name>SYS_ATT2</name>
+						<value>description:char:10</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+		</formComponents>
+		
+	</form>
+
+	<!--==============================================================================================-->
+
+	<form>
+		<id>1.4</id>
+		<name>IDENTIFICAR O RECURSO</name>
+		<variant>Tipos aninhados - Um nível</variant>
+		<extends>1.1</extends>
+
+		<formComponents>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Recurso</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>TipoDoRecurso</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>TipoAninhado</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+		</formComponents>
+		
+	</form>
+
+	<!--==============================================================================================-->
+
+	<form>
+		<id>1.5</id>
+		<name>IDENTIFICAR O RECURSO</name>
+		<variant>Tipos aninhados - Dois níveis</variant>
+		<extends>1.1</extends>
+
+		<formComponents>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Recurso</value>
+					</parameter>
+					<parameter>
+						<name>SYS_ATT1</name>
+						<value>IdCode:integer:0</value>
+					</parameter>
+					<parameter>
+						<name>SYS_ATT2</name>
+						<value>description:char:10</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>TipoDoRecurso</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>RecursoAninhado1</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>RecursoAninhado2</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+		</formComponents>
+		
+	</form>
+		
+	<!--==============================================================================================-->
+		
+	<!--QUANTIFICAR O RECURSO-->
+	<form>
+		<id>2.1</id>
+		<enabled>true</enabled>
+		
+		<name>QUANTIFICAR RECURSO</name>
+		<variant>Recurso simples</variant>
+		
+		<nextForms>
+			<nextForm>
+				<id>3.*</id>
+				<minChilds>0</minChilds>
+				<maxChilds>1</maxChilds>
+			</nextForm>
+			
+			<nextForm>
+				<id>4.*</id>
+				<minChilds>0</minChilds>
+				<maxChilds>1</maxChilds>
+			</nextForm>
+
+			<nextForm>
+				<id>6.*</id>
+				<minChilds>0</minChilds>
+				<maxChilds>1</maxChilds>
+			</nextForm>
+			
+			<nextForm>
+				<id>9.*</id>
+				<minChilds>0</minChilds>
+				<maxChilds>1</maxChilds>
+			</nextForm>
+			
+		</nextForms>
+		
+		<help>Este padrão ajuda a quantificar
+o recurso de negócio que será 
+utilizado na gestão de recursos 
+de negócio.</help>
+
+		<formComponents>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Recurso</value>
+					</parameter>
+					<parameter>
+						<name>read_from</name>
+						<value>parent(1.*)->Recurso</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+		</formComponents>
+	</form>
+
+	<!--==============================================================================================-->
+
+	<form>
+		<id>2.2</id>
+		<enabled>true</enabled>
+
+		<name>QUANTIFICAR RECURSO</name>
+		<variant>Recurso instanciavel</variant>
+		<extends>2.1</extends>
+
+		<formComponents>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Recurso</value>
+					</parameter>
+					<parameter>
+						<name>read_from</name>
+						<value>parent(1.*)->Recurso</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>InstanciaDoRecurso</value>
+					</parameter>
+					<parameter>
+						<name>SYS_ATT1</name>
+						<value>resourceIdCode:integer:0</value>
+					</parameter>
+					<parameter>
+						<name>SYS_ATT2</name>
+						<value>code:char:10</value>
+					</parameter>
+					<parameter>
+						<name>SYS_ATT3</name>
+						<value>allocation:char:35</value>
+					</parameter>
+					<parameter>
+						<name>SYS_ATT4</name>
+						<value>status:char:1</value>
+					</parameter>
+
+				</parameters>
+			</formComponent>
+		</formComponents>
+	</form>
+	
+	<!--==============================================================================================-->
+
+	<form>
+		<id>2.3</id>
+		<name>QUANTIFICAR RECURSO</name>
+		<variant>Recurso mensurável</variant>
+		<extends>2.1</extends>
+
+		<formComponents>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Recurso</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>UnidadeDeMedida</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+		</formComponents>
+		
+	</form>
+	
+	<!--==============================================================================================-->
+
+	<form>
+		<id>2.4</id>
+		<name>QUANTIFICAR RECURSO</name>
+		<variant>Recurso em lotes</variant>
+		<extends>2.1</extends>
+		
+		<formComponents>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Recurso</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>LoteDoRecurso</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>UnidadeDeMedida</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+		</formComponents>
+		
+	</form>
+
+	<!--==============================================================================================-->
+
+	<!--ARMAZENAR O RECURSO-->
+	<form>
+		<id>3.1</id>
+		<name>ARMAZENAR O RECURSO</name>
+		<variant>Default</variant>
+		
+		<help>Este padrão ajuda a armazenar o
+recurso que será utilizado na gestão
+de recursos de negócios.</help>
+
+		<formComponents>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Recurso</value>
+					</parameter>
+					<parameter>
+						<name>read_from</name>
+						<value>parent(2.*)->parent(1.*)->Recurso</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Armazem</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+				<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>ZonaDeArmazenamento</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>LocalDeArmazenamento</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>CondicaoDeArmazenamento</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Origem</value>
+					</parameter>
+					<parameter>
+						<name>class_use</name>
+						<value>not_required</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+		</formComponents>
+	</form>
+	
+	<!--========================================================================================================-->
+
+	<!--LOCAR O RECURSO-->
+	<form>
+		<id>4.1</id>
+		<enabled>true</enabled>
+		<name>LOCAR O RECURSO</name>
+		
+		<variant>Default</variant>
+			<nextForms>
+			<nextForm>
+				<id>5.*</id>
+				<minChilds>0</minChilds>
+				<maxChilds>1</maxChilds>
+			</nextForm>
+			
+			<nextForm>
+				<id>11.*</id>
+				<minChilds>0</minChilds>
+				<maxChilds>1</maxChilds>
+			</nextForm>
+			
+			<nextForm>
+				<id>12.*</id>
+				<minChilds>0</minChilds>
+				<maxChilds>1</maxChilds>
+			</nextForm>
+			
+			<nextForm>
+				<id>13.*</id>
+				<minChilds>0</minChilds>
+				<maxChilds>1</maxChilds>
+			</nextForm>
+			
+		</nextForms>
+		
+		<help>Este padrão tem por finalidade
+ajudar na configuração da locação do 
+recurso que esta sendo editado.</help>
+		
+		
+		<formComponents>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Recurso</value>
+					</parameter>
+					<parameter>
+						<name>read_from</name>
+						<value>parent(2.*)->parent(1.*)->Recurso</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+			
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Aluguel</value>
+					</parameter>
+					<parameter>
+						<name>SYS_ATT1</name>
+						<value>number:integer:0</value>
+					</parameter>
+					<parameter>
+						<name>SYS_ATT2</name>
+						<value>date:date:0</value>
+					</parameter>
+					<parameter>
+						<name>SYS_ATT3</name>
+						<value>observation:char:60</value>
+					</parameter>
+					<parameter>
+						<name>SYS_ATT4</name>
+						<value>totalPrice:float:0</value>
+					</parameter>
+					<parameter>
+						<name>SYS_ATT5</name>
+						<value>totalDiscount:float:0</value>
+					</parameter>
+					<parameter>
+						<name>SYS_ATT6</name>
+						<value>destinationParty:integer:0</value>
+					</parameter>
+					<parameter>
+						<name>SYS_ATT7</name>
+						<value>finishingDate:date:0</value>
+					</parameter>
+					<parameter>
+						<name>SYS_ATT8</name>
+						<value>returnDate:date:0</value>
+					</parameter>
+					<parameter>
+						<name>SYS_ATT9</name>
+						<value>fineValue:float:0</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+			
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Destino</value>
+					</parameter>
+					<parameter>
+						<name>SYS_ATT1</name>
+						<value>idCode:integer:0</value>
+					</parameter>
+					<parameter>
+						<name>SYS_ATT2</name>
+						<value>description:char:35</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>TaxaDeMulta</value>
+					</parameter>
+					<parameter>
+						<name>class_use</name>
+						<value>not_required</value>
+					</parameter>
+					<parameter>
+						<name>attributes</name>
+						<value>false</value>
+					</parameter>
+					<parameter>
+						<name>SYS_ATT1</name>
+						<value>percentageRate:float:0</value>
+					</parameter>
+					<parameter>
+						<name>SYS_ATT2</name>
+						<value>lowNumber:integer:0</value>
+					</parameter>
+					<parameter>
+						<name>SYS_ATT3</name>
+						<value>upperNumber:integer:0</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Origem</value>
+					</parameter>
+					<parameter>
+						<name>class_use</name>
+						<value>not_required</value>
+					</parameter>
+					<parameter>
+						<name>SYS_ATT1</name>
+						<value>idCode:integer:0</value>
+					</parameter>
+					<parameter>
+						<name>SYS_ATT2</name>
+						<value>description:char:35</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+		</formComponents>
+		
+	</form>
+
+	<!--==============================================================================================-->
+	
+	<form>
+		<id>4.2</id>
+		<name>LOCAR O RECURSO</name>
+		<variant>Venda associada com aluguel</variant>
+		<extends>4.1</extends>
+
+		<formComponents>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Recurso</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Destino</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Aluguel</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>TaxaDeMulta</value>
+					</parameter>
+					<parameter>
+						<name>class_use</name>
+						<value>not_required</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Origem</value>
+					</parameter>
+					<parameter>
+						<name>class_use</name>
+						<value>not_required</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Venda</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+		</formComponents>
+		
+	</form>
+
+	<!--==============================================================================================-->
+	
+	<form>
+		<id>5.1</id>
+		<name>RESERVAR O RECURSO</name>
+		<variant>Default</variant>
+
+		<nextForms>
+			<nextForm>
+				<id>11.*</id>
+				<minChilds>0</minChilds>
+				<maxChilds>1</maxChilds>
+			</nextForm>
+			
+			<nextForm>
+				<id>12.*</id>
+				<minChilds>0</minChilds>
+				<maxChilds>1</maxChilds>
+			</nextForm>
+			
+			<nextForm>
+				<id>13.*</id>
+				<minChilds>0</minChilds>
+				<maxChilds>1</maxChilds>
+			</nextForm>
+			
+		</nextForms>
+		<formComponents>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Recurso</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Destino</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Reserva</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Aluguel</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Origem</value>
+					</parameter>
+					<parameter>
+						<name>class_use</name>
+						<value>not_required</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+		</formComponents>
+	</form>
+	
+	<!--==============================================================================================-->
+	
+	<!--COMERCIALIZAR O RECURSO-->	
+	<form>
+		<id>6.1</id>
+		<name>COMERCIALIZAR O RECURSO</name>
+		<variant>Compra - Default</variant>
+
+		<nextForms>
+			<nextForm>
+				<id>7.*</id>
+				<minChilds>0</minChilds>
+				<maxChilds>1</maxChilds>
+			</nextForm>
+			
+			<nextForm>
+				<id>8.*</id>
+				<minChilds>0</minChilds>
+				<maxChilds>1</maxChilds>
+			</nextForm>
+			
+			<nextForm>
+				<id>16.*</id>
+				<minChilds>0</minChilds>
+				<maxChilds>1</maxChilds>
+			</nextForm>
+			
+			<nextForm>
+				<id>12.*</id>
+				<minChilds>0</minChilds>
+				<maxChilds>1</maxChilds>
+			</nextForm>
+			
+			<nextForm>
+				<id>13.*</id>
+				<minChilds>0</minChilds>
+				<maxChilds>1</maxChilds>
+			</nextForm>
+			
+		</nextForms>
+		
+		<formComponents>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Recurso</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Destino</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Venda</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Origem</value>
+					</parameter>
+					<parameter>
+						<name>class_use</name>
+						<value>not_required</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+		</formComponents>
+		
+	</form>
+	
+	<!--==============================================================================================-->
+	
+	<form>
+		<id>6.2</id>
+		<name>COMERCIALIZAR O RECURSO</name>
+		<variant>Venda</variant>
+		<extends>6.1</extends>
+		<formComponents>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Recurso</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Destino</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Venda</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Origem</value>
+					</parameter>
+					<parameter>
+						<name>class_use</name>
+						<value>not_required</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+		</formComponents>
+		
+	</form>
+	
+	<!--==============================================================================================-->
+	
+	<!--COTAR O RECURSO-->
+	<form>
+		<id>7.1</id>
+		<name>COTAR O RECURSO</name>
+		<variant>Default</variant>
+		<nextForms>
+			<nextForm>
+				<id>11.*</id>
+				<minChilds>0</minChilds>
+				<maxChilds>1</maxChilds>
+			</nextForm>
+			
+			<nextForm>
+				<id>12.*</id>
+				<minChilds>0</minChilds>
+				<maxChilds>1</maxChilds>
+			</nextForm>
+			
+			<nextForm>
+				<id>13.*</id>
+				<minChilds>0</minChilds>
+				<maxChilds>1</maxChilds>
+			</nextForm>
+			
+		</nextForms>
+		<formComponents>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Recurso</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Destino</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Cotacao</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Venda</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>ItemDeCotacao</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Origem</value>
+					</parameter>
+					<parameter>
+						<name>class_use</name>
+						<value>not_required</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+		</formComponents>
+		
+	</form>
+	
+	<!--==============================================================================================-->
+
+	<!--CONFERERIR A ENTREGA DO RECURSO-->
+	<form>
+		<id>8.1</id>
+		<name>CONFERERIR A ENTREGA DO RECURSO</name>
+		<variant>Entrega de venda</variant>
+		<nextForms>
+			<nextForm>
+				<id>11.*</id>
+				<minChilds>0</minChilds>
+				<maxChilds>1</maxChilds>
+			</nextForm>
+			
+			<nextForm>
+				<id>12.*</id>
+				<minChilds>0</minChilds>
+				<maxChilds>1</maxChilds>
+			</nextForm>
+			
+			<nextForm>
+				<id>13.*</id>
+				<minChilds>0</minChilds>
+				<maxChilds>1</maxChilds>
+			</nextForm>
+			
+		</nextForms>
+	
+		<formComponents>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Recurso</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Destino</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Entrega</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+							<name>class</name>
+							<value>Venda</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Origem</value>
+					</parameter>
+					<parameter>
+						<name>class_use</name>
+						<value>not_required</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+		</formComponents>
+	</form>
+	
+	<!--==============================================================================================-->
+	
+	<form>
+		<id>8.2</id>
+		<name>CONFERERIR A ENTREGA DO RECURSO</name>
+		<variant>Entrega de compra</variant>
+		<extends>8.1</extends>
+		<formComponents>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Recurso</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Destino</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Entrega</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Venda</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Origem</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+		</formComponents>
+			
+	</form>
+	
+	<!--==============================================================================================-->
+
+	<!--MANTER O RECURSO-->
+	<form>
+		<id>9.1</id>
+		<name>MANTER O RECURSO</name>
+		<variant>Default</variant>
+		<nextForms>
+			<nextForm>
+				<id>10.*</id>
+				<minChilds>0</minChilds>
+				<maxChilds>1</maxChilds>
+			</nextForm>
+			
+			<nextForm>
+				<id>17.*</id>
+				<minChilds>0</minChilds>
+				<maxChilds>1</maxChilds>
+			</nextForm>
+			
+			<nextForm>
+				<id>12.*</id>
+				<minChilds>0</minChilds>
+				<maxChilds>1</maxChilds>
+			</nextForm>
+			
+			<nextForm>
+				<id>13.*</id>
+				<minChilds>0</minChilds>
+				<maxChilds>1</maxChilds>
+			</nextForm>
+			
+			<nextForm>
+				<id>14.*</id>
+				<minChilds>0</minChilds>
+				<maxChilds>1</maxChilds>
+			</nextForm>
+			
+			<nextForm>
+				<id>15.*</id>
+				<minChilds>0</minChilds>
+				<maxChilds>1</maxChilds>
+			</nextForm>
+			
+		</nextForms>
+		<formComponents>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Recurso</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Destino</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Manutencao</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Origem</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+		</formComponents>
+
+	</form>
+
+	<!--==============================================================================================-->
+
+	<!--COTAR A MANUTENÇÃO-->
+	<form>
+		<id>10.1</id>
+		<name>COTAR A MANUTENÇÃO</name>
+		<variant>Default</variant>
+		<nextForms>
+			<nextForm>
+				<id>11.*</id>
+				<minChilds>0</minChilds>
+				<maxChilds>1</maxChilds>
+			</nextForm>
+			
+			<nextForm>
+				<id>12.*</id>
+				<minChilds>0</minChilds>
+				<maxChilds>1</maxChilds>
+			</nextForm>
+			
+			<nextForm>
+				<id>13.*</id>
+				<minChilds>0</minChilds>
+				<maxChilds>1</maxChilds>
+			</nextForm>
+			
+		</nextForms>
+		
+		<formComponents>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Recurso</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Destino</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>CotacaoDaManutencao</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Manutencao</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Origem</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+		</formComponents>
+			
+	</form>
+
+	<!--==============================================================================================-->
+
+	<!--IDENTIFICAR AS TAREFAS DA MANUTENÇÃO-->
+	<form>
+		<id>14.1</id>
+		<name>IDENTIFICAR AS TAREFAS DA MANUTENÇÃO</name>
+		<variant>Default</variant>
+		<formComponents>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Recurso</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>TarefaDeManutencao</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>ExecutorDaTransacao</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Manutencao</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+		</formComponents>
+	</form>
+	
+	<!--==============================================================================================-->
+	
+	<form>
+		<id>14.2</id>
+		<name>IDENTIFICAR AS TAREFAS DA MANUTENÇÃO</name>
+		<variant>Sem executor por tarefa</variant>
+		<extends>14.1</extends>
+		<formComponents>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Recurso</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>TarefaDeManutencao</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Manutencao</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+		</formComponents>
+		
+	</form>
+	
+	<!--==============================================================================================-->
+	
+	<!--IDENTIFICAR AS PEÇAS DA MANUTENÇÃO-->
+	<form>
+		<id>15.1</id>
+		<name>IDENTIFICAR AS PEÇAS DA MANUTENÇÃO</name>
+		<variant>Default</variant>
+		
+		<formComponents>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Recurso</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>PecaUsadaNaManutencao</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Peca</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Manutencao</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+		</formComponents>
+	</form>
+	
+	<!--==============================================================================================-->
+
+	<!--ITEMIZAR A TRANSAÇÃO DO RECURSO-->
+	<form>
+		<id>11.1</id>
+		<enabled>true</enabled>
+
+		<name>ITEMIZAR A TRANSAÇÃO DO RECURSO</name>
+		<variant>Default</variant>
+		<formComponents>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Recurso</value>
+					</parameter>
+					
+					<parameter>
+						<name>read_from</name>
+						<value>parent(*.*)->parent(2.*)->parent(1.*)->Recurso</value>
+					</parameter>
+					
+				</parameters>
+			</formComponent>
+			
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Transacao</value>
+					</parameter>
+					
+					<parameter>
+						<name>read_from</name>
+						<value>parent(*.*)->Aluguel</value>
+					</parameter>
+					
+				</parameters>
+			</formComponent>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>ItemDaTransacao</value>
+					</parameter>
+					<parameter>
+						<name>attributes</name>
+						<value>false</value>
+					</parameter>
+					
+					<parameter>
+						<name>SYS_ATT1</name>
+						<value>transaction:integer:0</value>
+					</parameter>
+					<parameter>
+						<name>SYS_ATT2</name>
+						<value>resource:char:35</value>
+					</parameter>
+					<parameter>
+						<name>SYS_ATT3</name>
+						<value>value:float:0</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+		</formComponents>
+	</form>
+
+	<!--ITEMIZAR A TRANSAÇÃO DO RECURSO-->
+	<form>
+		<id>16.1</id>
+		<enabled>true</enabled>
+
+		<name>ITEMIZAR A TRANSAÇÃO DO RECURSO</name>
+		<variant>Default</variant>
+		<formComponents>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Recurso</value>
+					</parameter>
+					
+					<parameter>
+						<name>read_from</name>
+						<value>parent(*.*)->parent(2.*)->parent(1.*)->Recurso</value>
+					</parameter>
+					
+				</parameters>
+			</formComponent>
+			
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Transacao</value>
+					</parameter>
+					
+					<parameter>
+						<name>read_from</name>
+						<value>parent(*.*)->Venda</value>
+					</parameter>
+					
+				</parameters>
+			</formComponent>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>ItemDaTransacao</value>
+					</parameter>
+					<parameter>
+						<name>attributes</name>
+						<value>false</value>
+					</parameter>
+					
+					<parameter>
+						<name>SYS_ATT1</name>
+						<value>transaction:integer:0</value>
+					</parameter>
+					<parameter>
+						<name>SYS_ATT2</name>
+						<value>resource:char:35</value>
+					</parameter>
+					<parameter>
+						<name>SYS_ATT3</name>
+						<value>value:float:0</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+		</formComponents>
+	</form>
+
+	<!--ITEMIZAR A TRANSAÇÃO DO RECURSO-->
+	<form>
+		<id>17.1</id>
+		<enabled>true</enabled>
+
+		<name>ITEMIZAR A TRANSAÇÃO DO RECURSO</name>
+		<variant>Default</variant>
+		<formComponents>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Recurso</value>
+					</parameter>
+					
+					<parameter>
+						<name>read_from</name>
+						<value>parent(*.*)->parent(2.*)->parent(1.*)->Recurso</value>
+					</parameter>
+					
+				</parameters>
+			</formComponent>
+			
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Transacao</value>
+					</parameter>
+					
+					<parameter>
+						<name>read_from</name>
+						<value>parent(*.*)->Manutencao</value>
+					</parameter>
+					
+				</parameters>
+			</formComponent>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>ItemDaTransacao</value>
+					</parameter>
+					<parameter>
+						<name>attributes</name>
+						<value>false</value>
+					</parameter>
+					
+					<parameter>
+						<name>SYS_ATT1</name>
+						<value>transaction:integer:0</value>
+					</parameter>
+					<parameter>
+						<name>SYS_ATT2</name>
+						<value>resource:char:35</value>
+					</parameter>
+					<parameter>
+						<name>SYS_ATT3</name>
+						<value>value:float:0</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+		</formComponents>
+	</form>
+
+	<!--==============================================================================================-->
+
+	<!--PAGAR PELA TRANSAÇÃO DO RECURSO-->
+	<form>
+		<id>12.1</id>
+		<name>PAGAR PELA TRANSAÇÃO DO RECURSO</name>
+		<variant>Default</variant>
+
+		<formComponents>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Recurso</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>TaxaDeMulta</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Juros</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Pagamento</value>
+				</parameter>
+				</parameters>
+			</formComponent>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Dinheiro</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>CartaoDeCredito</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Cheque</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Fatura</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>MoneyOrder</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>CashOnDelivery</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>TranferenciaEletronica</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Transacao</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+		</formComponents>
+	</form>
+
+	<!--==============================================================================================-->
+
+	<!--IDENTIFICAR O EXECUTOR DA TRANSAÇÃO-->
+	<form>
+		<id>13.1</id>
+		<name>IDENTIFICAR O EXECUTOR DA TRANSAÇÃO</name>
+		<variant>Default</variant>
+		<formComponents>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Recurso</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>ExecutorDaTransacao</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Comissao</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Transacao</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+		</formComponents>
+	</form>
+	
+	<!--==============================================================================================-->
+	
+	<form>
+		<id>13.2</id>
+		<name>IDENTIFICAR O EXECUTOR DA TRANSAÇÃO</name>
+		<variant>Comissao de acordo com as transacoes</variant>
+		<extends>13.1</extends>
+		<formComponents>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Recurso</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>ExecutorDaTransacao</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Comissao</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Pagamento</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Transacao</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+		</formComponents>
+			
+	</form>				
+	
+	<!--==============================================================================================-->
+	
+	<form>
+		<id>14.3</id>
+		<name>IDENTIFICAR O EXECUTOR DA TRANSAÇÃO</name>
+		<variant>Sem comissao</variant>
+		<extends>13.1</extends>
+		<formComponents>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Recurso</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>ExecutorDaTransacao</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Transacao</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+		</formComponents>
+		
+	</form>				
+		
+</forms>

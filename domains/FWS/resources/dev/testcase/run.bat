@@ -1,0 +1,1 @@
+java -classpath lib\junit.jar;..\..\bin junit.swingui.TestRunner  testcase.MessageFormatTest

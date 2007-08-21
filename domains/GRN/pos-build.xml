@@ -1,0 +1,48 @@
+<?xml version="1.0" standalone="yes"?>
+
+<project name="FIT" default="exec" basedir="../">
+
+	<!--______________________________________________________________________-->
+
+<!--PROJECT_GENERATED_DATA - DO_NOT_EDIT-->
+<property name="project_path" location="C:\Documents and Settings\edisonj\Desktop\Mestrado\Dev\Captor\projects\GRN\"/>
+<property name="project_output_path" location="C:\Documents and Settings\edisonj\Desktop\Mestrado\Dev\Captor\projects\"/>
+<property name="install_path" location="C:\Documents and Settings\edisonj\Desktop\Mestrado\Dev\Captor\"/>
+<property name="project_name" value="GRN"/>
+<property name="interaction_0" value="0"/>
+<!--PROJECT_GENERATED_DATA - DO_NOT_EDIT-->
+
+	<!--______________________________________________________________________-->
+
+
+	<property name="src" location="src"/>
+	<property name="bin" location="bin"/>
+
+	<!--SET THE CLASSPATH-->
+	<path id="classpath">
+		<fileset dir="lib">
+			<include name="**/*.jar"/>
+		</fileset>
+		<fileset dir="dev/libdev">
+			<include name="**/*.jar"/>
+			<include name="junit3.8.1/**/*.jar"/>
+		</fileset>
+		<fileset dir="dev/libdev/saxon6_5_3">
+			<include name="**/*.jar"/>
+		</fileset>
+	</path>
+	
+	<!--______________________________________________________________________-->
+
+	<target name="exec">
+		<!-- Create the time stamp -->
+		<tstamp/>
+		<!-- Create the bin directory structure used by compile -->
+		<copy file="${project_output_path}\interaction_0\grn.st" tofile="C:\grn.st"/>
+	</target>
+	
+	<!--______________________________________________________________________-->
+	
+</project>	
+	
+	

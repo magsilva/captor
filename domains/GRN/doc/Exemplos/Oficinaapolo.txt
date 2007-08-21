@@ -1,0 +1,64 @@
+use Oficinaapolo;
+
+create table IdCode (
+	className char(35),
+	lastIdCode integer);
+
+
+create table Cliente(
+  	idCode integer not null, 
+ 	description char(35),
+	endereco   char(35),
+	telefone   char(15),
+	email   char(30),
+	cidade   char(20));
+	
+create table Fabricante(
+  	idCode integer not null, 
+ 	description char(35));
+	
+create table Comissao(	
+        transaction integer,
+        executor integer,
+        dueDate date,
+        paymentDate date,
+        value float,
+        status char(1));
+
+create table Consertodeaparelho(
+	number integer not null,
+	date date,
+	observation char(60),
+	status char(1),
+        totalPrice float,
+        totalDiscount float,
+        destinationParty integer,
+	resource integer,
+	executor integer,
+	faultsPresented char(80),
+	tasks char(50),
+	totalTasks float,
+	parts char(50),
+	totalParts float,
+	exitDate date);
+	
+create table Tecnico(	
+        idCode integer not null,
+        description char(35),
+        specialty char(25),
+        percentage float,
+        minimumValue float,
+        salary float);
+
+create table Tipodeaparelho(
+  	idCode integer not null, 
+  	description char(35));
+	
+create table Aparelho(
+  	idCode integer not null, 
+  	description char(35),
+	Tipodeaparelho integer,
+	status char(1),
+	fabricante  integer);
+ 	
+quit

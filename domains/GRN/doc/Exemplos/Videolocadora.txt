@@ -1,0 +1,60 @@
+use Videolocadora;
+	create table IdCode (
+	className char(35),
+	lastIdCode integer);
+
+create table Cliente(
+ 	idCode integer not null, 
+ 	description char(35),
+	endereco char(35),
+	cidade char(35),
+	estado char(2),
+	telefone char(15),
+	email char(30),
+	documentoIdent char(30),
+	datanascimento date);
+	
+create table Locacao(
+        number integer not null,
+	date date,
+	observation char(60),
+	status char(1),
+        totalPrice float,
+        totalDiscount float,
+        destinationParty integer,
+        finishingDate date,
+	returnDate date,
+	fineValue float);
+	
+create table Multa(
+        percentageRate float,
+	lowernumber integer,
+	uppernumber integer);	
+
+create table Genero(
+  	idCode integer not null, 
+ 	description char(35));
+	
+create table Filme(
+ 	idCode integer not null, 
+ 	description char(35),
+	Genero integer,
+	atoresPrincipais char(50),
+	anoDoFilme char(4),
+	precoDeLocacao float,
+	diretor char(30),
+	dubladaOuLegendada char(1));
+ 	
+create table FitaDeVideo (			
+  resourceIdCode integer not null,
+  code char(10),
+  allocation char(35),
+  status char(1));
+
+create table ItemLocacao (
+  transaction integer,
+  resource integer,
+  value integer,
+  instanceCode char(10));
+
+quit

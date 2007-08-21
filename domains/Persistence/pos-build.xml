@@ -1,0 +1,38 @@
+<?xml version="1.0" standalone="yes"?>
+
+<project name="FIT" default="exec" basedir="../">
+
+	<!--______________________________________________________________________-->
+
+<!--PROJECT_GENERATED_DATA - DO_NOT_EDIT-->
+<property name="project_path" location="C:\Documents and Settings\edisonj\Desktop\Mestrado\Dev\Captor\projects\AS\"/>
+<property name="project_output_path" location="C:\Documents and Settings\edisonj\Desktop\Mestrado\Dev\Captor\projects\"/>
+<property name="install_path" location="C:\Documents and Settings\edisonj\Desktop\Mestrado\Dev\Captor\"/>
+<property name="project_name" value="AS"/>
+<property name="interaction_0" value="0"/>
+<!--PROJECT_GENERATED_DATA - DO_NOT_EDIT-->
+
+	<!--______________________________________________________________________-->
+
+	<target name="exec">
+		<copy todir="${project_output_path}/interaction_0/lib">
+			<fileset dir="${install_path}/domains/Persistence/resources/lib">
+				<include name="**/*.jar" />
+			</fileset>
+		</copy>
+
+		<copy todir="${project_output_path}/interaction_0">
+			<fileset dir="${install_path}/domains/Persistence/resources">
+				<include name="**/*.properties" />
+				<include name="**/*.xml" />
+			</fileset>
+		</copy>
+
+		<!--<copy file="${install_path}\domains\Persistence\resources\compila.bat" tofile="${project_output_path}/interaction_0/compila.bat"/>-->
+		<!--<copy file="${install_path}\domains\Persistence\resources\roda.bat" tofile="${project_output_path}/interaction_0/roda.bat"/>-->
+		<copy file="${install_path}\domains\Persistence\resources\Main.java" tofile="${project_output_path}/interaction_0/src/Main.java"/>
+	</target>
+	
+	<!--______________________________________________________________________-->
+	
+</project>

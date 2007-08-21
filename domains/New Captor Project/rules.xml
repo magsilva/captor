@@ -1,0 +1,28 @@
+<composer name="FIT">
+
+	<!--______________________________________________________________________-->
+
+	<main>
+
+		<callTask id="pl"/>
+		
+	</main>
+
+	<!--______________________________________________________________________-->
+
+	<tasks>
+
+		<task id="pl">
+		
+				<compose>
+					<template>pl.xsl</template>
+					<newFilename>${formsData/project/name}.domain</newFilename>
+				</compose>
+				
+		</task>
+	
+	</tasks>
+	
+	<!--______________________________________________________________________-->
+
+</composer>

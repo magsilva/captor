@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.ajdt.core.ASPECTJRT_CONTAINER"/>
+	<classpathentry kind="lib" path="lib/ant.jar"/>
+	<classpathentry kind="lib" path="lib/ant-launcher.jar"/>
+	<classpathentry kind="lib" path="lib/commons-io-1.0.jar"/>
+	<classpathentry kind="lib" path="lib/help.jar"/>
+	<classpathentry kind="lib" path="lib/jaxb-api.jar"/>
+	<classpathentry kind="lib" path="lib/jaxb-impl.jar"/>
+	<classpathentry kind="lib" path="lib/jaxb-libs.jar"/>
+	<classpathentry kind="lib" path="lib/jaxb-xjc.jar"/>
+	<classpathentry kind="lib" path="lib/jh.jar"/>
+	<classpathentry kind="lib" path="lib/jhall.jar"/>
+	<classpathentry kind="lib" path="lib/jhbasic.jar"/>
+	<classpathentry kind="lib" path="lib/jsearch.jar"/>
+	<classpathentry kind="lib" path="lib/namespace.jar"/>
+	<classpathentry kind="lib" path="lib/relaxngDatatype.jar"/>
+	<classpathentry kind="lib" path="lib/res.jar"/>
+	<classpathentry kind="lib" path="lib/testpanel.jar"/>
+	<classpathentry kind="lib" path="lib/xalan.jar"/>
+	<classpathentry kind="lib" path="lib/xsdlib.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

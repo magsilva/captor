@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<forms>
+	<name>New Captor Project</name>
+
+
+	<form isRoot="true">
+		<id>1.1</id>
+		<enabled>true</enabled>
+		
+		<name>Projeto Captor</name>
+ 		<variant>Default</variant>
+
+		<nextForms>
+		
+			<nextForm>
+				<id>2.1</id>
+				<minChilds>1</minChilds>
+				<maxChilds>N</maxChilds>
+			</nextForm>
+			
+		</nextForms>
+		
+		<help>Este formulário descreve um novo
+projeto da ferramenta Captor.</help>
+		
+		<formComponents>
+
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.std.textareapanel.TextAreaPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>id</name>
+						<value>pl_name</value>
+					</parameter>
+					<parameter>
+						<name>label</name>
+						<value>Descrição do projeto</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+
+		</formComponents>
+			
+	</form>
+
+	<!--==============================================================================================-->
+
+	<form>
+		<id>2.1</id>
+		<enabled>true</enabled>
+		
+		<name>Novo formulário</name>
+ 		<variant>Default</variant>
+ 		
+		<nextForms>
+		
+			<nextForm>
+				<id>3.1</id>
+				<minChilds>1</minChilds>
+				<maxChilds>N</maxChilds>
+			</nextForm>
+			
+		</nextForms>
+		
+		<help>Este padrão ajuda a definir um
+novo padrão.</help>
+		
+		<formComponents>
+
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.ncp.formidpanel.FormIdPanel</fullname>
+			</formComponent>
+
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.ncp.formnamepanel.FormNamePanel</fullname>
+				<parameters>
+					<parameter>
+						<name>id</name>
+						<value>pt_name</value>
+					</parameter>
+					<parameter>
+						<name>label</name>
+						<value>Nome do formulário</value>
+					</parameter>
+					<parameter>
+						<name>use</name>
+						<value>required</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.ncp.nextpatternspanel.NextFormsPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>id</name>
+						<value>1</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+
+		</formComponents>
+			
+	</form>
+
+	<!--==============================================================================================-->
+
+	<form>
+		<id>3.1</id>
+		<enabled>true</enabled>
+		
+		<name>Variante</name>
+ 		<variant>Default</variant>
+ 		
+		<help>Este padrão ajuda a definir uma
+nova variante.</help>
+		
+		<formComponents>
+
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.ncp.variantidpanel.VariantIdPanel</fullname>
+			</formComponent>
+		
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.ncp.variantname.VariantNamePanel</fullname>
+				<parameters>
+					<parameter>
+						<name>id</name>
+						<value>variant_name</value>
+					</parameter>
+					<parameter>
+						<name>label</name>
+						<value>Nome da variante</value>
+					</parameter>
+					<parameter>
+						<name>use</name>
+						<value>required</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.ncp.fcomponentpanel.FComponentPanel</fullname>
+			</formComponent>
+
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.std.textareapanel.TextAreaPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>id</name>
+						<value>help</value>
+					</parameter>
+					<parameter>
+						<name>label</name>
+						<value>Texto de ajuda</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+
+		</formComponents>
+			
+	</form>
+
+	<!--==============================================================================================-->
+		
+</forms>

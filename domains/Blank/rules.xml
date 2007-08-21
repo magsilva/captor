@@ -1,0 +1,28 @@
+<composer name="FIT">
+
+	<!--______________________________________________________________________-->
+
+	<main>
+
+		<callTask id="main"/>
+		
+	</main>
+
+	<!--______________________________________________________________________-->
+
+	<tasks>
+
+		<task id="main">
+		
+				<compose>
+					<template>main.xsl</template>
+					<newFilename>${formsData/project/name}.txt</newFilename>
+				</compose>
+				
+		</task>
+	
+	</tasks>
+	
+	<!--______________________________________________________________________-->
+
+</composer>
