@@ -1,1 +1,0 @@
-del c:\captor

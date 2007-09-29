@@ -1,1 +1,0 @@
-move captor c:\captor
