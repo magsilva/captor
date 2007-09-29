@@ -67,7 +67,7 @@ public class MetaModelValidator {
         vr.newLine();
         vr.appendBuffer("Step 2 - Apply the extends mechanism to normalize the tree.\n");
         
-        //colocar o mecanismo de extensão pra normalizar a árvore
+        //colocar o mecanismo de extensï¿½o pra normalizar a ï¿½rvore
         DomainSystem d = new DomainSystem(model);
         String ret = d.extendsMechanism(forms);
         if ( ret != null )  {
@@ -79,7 +79,7 @@ public class MetaModelValidator {
         vr.appendBuffer("- Extends mechanism successfully applied.");
         vr.dident();
 
-        //fazer a validação semantica
+        //fazer a validaï¿½ï¿½o semantica
         vr.newLine();
         vr.appendBuffer("Step 3 - Checking semantic restrictions:\n");
         SemanticValidator sv = new SemanticValidator(model, vr);
@@ -130,7 +130,7 @@ public class MetaModelValidator {
             return;
         } catch ( JAXBException e3 )  {
             //guiView.setErrorView("Metal-model invalid format - " + e3.toString());
-            //Esta exceção vai ser tratada no vec.hasEvents   ;o)
+            //Esta exceï¿½ï¿½o vai ser tratada no vec.hasEvents   ;o)
         }
         
         StringBuffer buffer = new StringBuffer();
