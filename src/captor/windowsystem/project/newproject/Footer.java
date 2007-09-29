@@ -57,10 +57,10 @@ public class Footer extends JPanel implements ActionListener  {
         finish.addActionListener(this);
         cancel.addActionListener(this);
 
-        back.setPreferredSize(new Dimension(75,400));
-        next.setPreferredSize(new Dimension(75,400));
-        finish.setPreferredSize(new Dimension(75,400));
-        cancel.setPreferredSize(new Dimension(75,400));
+        back.setPreferredSize(new Dimension(85, 400));
+        next.setPreferredSize(new Dimension(85, 400));
+        finish.setPreferredSize(new Dimension(85, 400));
+        cancel.setPreferredSize(new Dimension(85, 400));
         
         finish.setEnabled(false);
         back.setEnabled(false);
@@ -70,14 +70,13 @@ public class Footer extends JPanel implements ActionListener  {
         Dimension maxSize = new Dimension(500, 450);
         add(new Box.Filler(minSize, prefSize, maxSize));
         
+        add(cancel);
         add(new JLabel("  "));
         add(back);
         add(new JLabel("  "));
         add(next);
         add(new JLabel("  "));
         add(finish);
-        add(new JLabel("  "));
-        add(cancel);
         add(new JLabel("  "));
     }
     
@@ -190,7 +189,7 @@ public class Footer extends JPanel implements ActionListener  {
         String ppath = model.getProject().getPath().concat(System.getProperty("file.separator")).concat(model.getProject().getName().concat(".cap"));
         model.getConfig().getGuiHiddenConfig().addLastOpenProject(ppath);
         
-        //abrir a primeira interação!
+        //abrir a primeira interaï¿½ï¿½o!
         FormNavigatorListener fnl = new FormNavigatorListener(model);
         fnl.newInteraction();
     }

@@ -1,0 +1,125 @@
+\documentclass[12pt, a4paper]{article}
+
+%******************* Importado Pacotes *********************************************
+
+\usepackage[brazil]{babel}
+\usepackage[pdftex]{graphicx}
+\usepackage[ansinew]{inputenc} % permite acentuação correta
+\usepackage{times}    
+\usepackage{setspace} 
+\usepackage{xspace}   
+\usepackage{float}
+\usepackage{color}
+\usepackage{colortbl}
+\usepackage{verbatim}
+\usepackage{textfit}
+\usepackage{multirow}
+\usepackage{alltt}
+\usepackage[T1]{fontenc}
+\usepackage[verbose,left=25mm,right=25mm,top=30mm,bottom=30mm]{geometry} % margens
+\usepackage{ae}
+\usepackage{fancyhdr}
+\usepackage{fancybox}
+\usepackage{multicol}
+\usepackage{listings}
+
+\usepackage{placeins} 
+\usepackage{url}
+\usepackage[%numbers,
+            authoryear,
+            sort&compress,]{natbib}
+\usepackage[compact]{titlesec}  
+%\usepackage[pdftex]{hyperref}  % gera os hiperlinks no pdf
+
+\usepackage[pdftex,plainpages=false]{hyperref}
+
+\hypersetup{colorlinks=true,debug=false,
+  linkcolor=black,%%%cor do tableofcontents,\ref,\footnote,etc
+  citecolor=black, %%% cor do \cite
+  urlcolor=black, %%% cor do \url e \href
+  pdftitle={Gerador de aplicação Captor},
+  pdfauthor={Edison Kicho Shimabukuro Junior},
+  pdfsubject={Exercício de aprendizado do gerador de aplicação Captor}}
+
+\pdfcompresslevel=9
+\DeclareGraphicsExtensions{.png,.jpg,.pdf,.mps} 
+
+
+%*****************************  Definicoes de estilo   ************************
+
+\bibliographystyle{res/icmc2}
+
+\widowpenalty=10000
+\clubpenalty=10000
+\exhyphenpenalty=10000
+
+% comandos para definir espaço entre figuras, captions e texto
+\setlength{\abovecaptionskip}{0.2cm}
+\setlength\textfloatsep{12pt}
+\setlength\floatsep{12pt}
+
+\setcounter{secnumdepth} {3} % Ajusta o numero de capítulos para 3 níveis
+\setcounter{tocdepth} {3} % Faz com que os 3 níveis de capítulos apareçam no índice
+\definecolor{gray}{rgb}{0.7,0.7,0.7} % definição de cor cinza
+
+%*********************   Titulo e Resumo  ******************************************
+
+\begin{document}
+
+\input{res/capa}
+
+\definecolor{lbcolor}{rgb}{0.9,0.9,0.9}
+\lstset{backgroundcolor=\color{lbcolor},rulecolor=}
+\lstset{commentstyle=\textit, stringstyle=\upshape,showspaces=false}
+\lstset{numbers=left, numberstyle=\tiny, stepnumber=2, numbersep=5pt}
+\lstset{frame=none}
+
+\pagestyle{plain}
+\thispagestyle{plain}
+\renewcommand{\thepage}{\roman{page}}
+\setcounter{page}{1}
+\tableofcontents
+
+\newpage
+\onehalfspace
+
+\pagestyle{fancy}   % define estilo de página
+\fancyfoot[C]{\thepage}  % insere numero da pagina no rodapé
+\fancyhead[R]{\leftmark}
+\lhead{}            % define o cabeçalho do lado direito como sendo vazio
+\chead{}					  % define o cabeçalho do centro como sendo vazio
+\let\cite=\citep    % define o formato/tipo de citações.
+
+
+%*******************************************************************************
+
+\newpage
+\renewcommand{\thepage}{\arabic{page}}
+\setcounter{page}{1}
+
+%**********************************************************************************************
+
+\section{Introdução}\label{sec:persistencia}
+\input{introducao}
+
+\section{Persitência de dados}\label{sec:implementar}
+\input{persistencia}
+
+\section{Configuração da ferramenta}\label{sec:configurar}
+\input{exercicio1}
+
+\section{Utilização da ferramenta}\label{sec:utilizar}
+\input{exercicio2}
+
+%******************  Bibliografia  ********************************************
+
+\newpage
+\renewcommand{\bibname}{Referências}
+\bibliography{res/refs}
+
+\addcontentsline{toc}{section}{\bibname}
+
+%***************************************
+
+\end{document}
+

@@ -1,0 +1,37 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>textobject</title><link rel="stylesheet" href="defguide.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.51.1"><link rel="home" href="sdocbook.html" title="Simplified DocBook"><link rel="up" href="ref-elements.html" title="Simplified DocBook Element Reference"><link rel="previous" href="term.html" title="term"><link rel="next" href="tfoot.html" title="tfoot"></head><body><div class="navheader"><table border="0" cellpadding="0" cellspacing="0" width="100%" summary="Navigation table"><tr><td align="left">&nbsp;<a title="Simplified DocBook" href="sdocbook.html"><img src="figures/nav-home.png" alt="Home" border="0"></a>&nbsp;<a title="term" href="term.html"><img src="figures/nav-prev.png" alt="Prev" border="0"></a>&nbsp;<a title="Simplified DocBook Element Reference" href="ref-elements.html"><img src="figures/nav-up.png" alt="Up" border="0"></a>&nbsp;<a title="tfoot" href="tfoot.html"><img src="figures/nav-next.png" alt="Next" border="0"></a></td><td align="right"><i>DocBook: The Definitive Guide</i> Version 0.0.1 <span class="alpha-version">(<a href="co01.html"><em>Alpha</em></a>)</span> </td></tr></table></div><div class="refentry"><a name="textobject.element"></a><div class="titlepage"><div><h1 class="title">textobject</h1></div><div><p class="releaseinfo">$Revision: 1.1 $</p></div><div><p class="pubdate">$Date: 2005/07/03 00:15:36 $</p></div></div><div class="refnamediv"><p>textobject &#8212; A wrapper for a text description of an object and its associated meta-information</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><h3><span class="bold"><b>Content Model</b></span></h3><pre class="synopsis">textobject ::=
+(<a href="objectinfo.html"><tt class="sgmltag-element">objectinfo</tt></a>?,
+ (<a href="phrase.html"><tt class="sgmltag-element">phrase</tt></a>|
+  (<a href="itemizedlist.html"><tt class="sgmltag-element">itemizedlist</tt></a>|<a href="orderedlist.html"><tt class="sgmltag-element">orderedlist</tt></a>|<a href="variablelist.html"><tt class="sgmltag-element">variablelist</tt></a>|<a href="note.html"><tt class="sgmltag-element">note</tt></a>|<a href="literallayout.html"><tt class="sgmltag-element">literallayout</tt></a>|
+   <a href="programlisting.html"><tt class="sgmltag-element">programlisting</tt></a>|<a href="para.html"><tt class="sgmltag-element">para</tt></a>|<a href="blockquote.html"><tt class="sgmltag-element">blockquote</tt></a>)+))</pre><h3><span class="bold"><b>Attributes</b></span></h3><p><span class="common.attributes">Common attributes</span></p></div><div class="refsect1"><h2>Description</h2><p>
+A <tt class="sgmltag-element">TextObject</tt> is a wrapper containing a textual description
+of a media object, and its associated meta-information.
+<tt class="sgmltag-element">TextObject</tt>s are only allowed in <tt class="sgmltag-element">MediaObject</tt>s as
+a fall-back option, they cannot be the primary content.
+</p><p>
+There are two different forms of <tt class="sgmltag-element">TextObject</tt>, and it is
+not unreasonable for a media object to contain both of them.
+</p><p>
+In the first form, the content of a <tt class="sgmltag-element">TextObject</tt> is
+simply a <tt class="sgmltag-element">Phrase</tt>. This form is a mechanism for
+providing a simple &#8220;alt text&#8221; for a media object. The
+phrase might be used, for example, as the value of the
+<tt class="sgmltag-attribute">ALT</tt> attribute on an HTML <tt class="sgmltag-element">IMG</tt>,
+with the primary content of the image coming from one of the other
+objects in the media object.
+</p><p>
+In the second form, the content of <tt class="sgmltag-element">TextObject</tt> is a longer,
+prose description.  This form could be used when rendering to devices
+that are incapable of displaying any of the other alternatives.
+</p><div class="refsect2"><a name="dbreproc.textobject"></a><h3>Processing expectations</h3><p>
+May be formatted inline or as a displayed block, depending on context. It might not be rendered at all, depending on its placement
+within a <tt class="sgmltag-element">MediaObject</tt> or <tt class="sgmltag-element">InlineMediaObject</tt> and
+the constraints on the publishing system.  For a more detailed description
+of the semantics involved, see <tt class="sgmltag-element">MediaObject</tt>.
+</p></div><div class="refsect2"><h3>Parents</h3><p>These elements contain textobject:
+<span class="simplelist"><a href="inlinemediaobject.html"><tt class="sgmltag-element">inlinemediaobject</tt></a>, <a href="mediaobject.html"><tt class="sgmltag-element">mediaobject</tt></a></span>.</p></div><div class="refsect2"><h3>Children</h3><p>The following elements occur in textobject:
+<span class="simplelist"><a href="blockquote.html"><tt class="sgmltag-element">blockquote</tt></a>, <a href="itemizedlist.html"><tt class="sgmltag-element">itemizedlist</tt></a>, <a href="literallayout.html"><tt class="sgmltag-element">literallayout</tt></a>, <a href="note.html"><tt class="sgmltag-element">note</tt></a>, <a href="objectinfo.html"><tt class="sgmltag-element">objectinfo</tt></a>, <a href="orderedlist.html"><tt class="sgmltag-element">orderedlist</tt></a>, <a href="para.html"><tt class="sgmltag-element">para</tt></a>, <a href="phrase.html"><tt class="sgmltag-element">phrase</tt></a>, <a href="programlisting.html"><tt class="sgmltag-element">programlisting</tt></a>, <a href="variablelist.html"><tt class="sgmltag-element">variablelist</tt></a></span>.</p></div></div><div class="refsect1"><h2>See Also</h2><p><span class="simplelist"><a href="audioobject.html"><tt class="sgmltag-element">audioobject</tt></a>, <a href="caption.html"><tt class="sgmltag-element">caption</tt></a>, <a href="imageobject.html"><tt class="sgmltag-element">imageobject</tt></a>, <a href="inlinemediaobject.html"><tt class="sgmltag-element">inlinemediaobject</tt></a>, <a href="mediaobject.html"><tt class="sgmltag-element">mediaobject</tt></a>, <a href="videoobject.html"><tt class="sgmltag-element">videoobject</tt></a></span>.
+</p></div><div class="refsect1"><h2>Examples</h2><p>For examples, see
+<span class="simplelist"><a href="audioobject.html"><tt class="sgmltag-element">audioobject</tt></a>, <a href="imageobject.html"><tt class="sgmltag-element">imageobject</tt></a>, <a href="inlinemediaobject.html"><tt class="sgmltag-element">inlinemediaobject</tt></a>, <a href="videoobject.html"><tt class="sgmltag-element">videoobject</tt></a></span>.
+</p></div></div><div class="navfooter"><table width="100%" summary="Navigation table"><tr><td width="40%" align="left"><a href="term.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a href="sdocbook.html">Home</a></td><td width="40%" align="right">&nbsp;<a href="tfoot.html">Next</a></td></tr><tr><td width="40%" align="left">term&nbsp;</td><td width="20%" align="center"><a href="ref-elements.html">Up</a></td><td width="40%" align="right">&nbsp;tfoot</td></tr></table></div><div class="copyrightfooter"><p><a href="dbcpyright.html">Copyright</a> &copy; 1999, 2000, 2001, 2002 <a href="http://www.oreilly.com/">O'Reilly &amp; Associates, Inc.</a> All rights reserved.</p></div></body></html>

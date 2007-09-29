@@ -1,0 +1,111 @@
+\noindent A ferramenta Captor fornece apoio para a criação e edição de projetos. Cada projeto é definido por um nome, um diretório onde a especificação é armazenada e um diretório onde os arquivos de saída são armazenados após a geração dos artefatos.
+
+Na Figura \ref{fig:interaction} é apresentado a utilização da ferramenta Captor, configurada com o arquivo de configuração principal apresentado na Listagem \ref{lst:configFileCaptor}.
+
+\begin{figure} [!ht]
+ \centering
+  \bfseries
+  \includegraphics [width=0.9\textwidth] {res/interaction}
+  \caption {Utilizacão da ferramenta Captor}
+  \label{fig:interaction}
+\end{figure}
+
+Em um projeto, o engenheiro de aplicação pode editar uma ou mais especificações por meio de uma ou mais árvores de formulários. O usuário pode editar diversas árvores de formulários por meio de diversas interações. Cada interação possuí uma árvore de formulários que define a especificação de uma aplicação. 
+
+Na Figura \ref{fig:interaction} é apresentado a interface da ferraenta Captor sendo utilizado para editar duas especificações. O  engenheiro de aplicação criou duas interações que podem ser acessadas pelos elementos ``Interaction 1'' e ``Interaction 2'' do menu da barra esquerda da ferramenta. Durante a transformação dos artefatos, os arquivos de saída dessas especificações são armazenados no caminho de diretório: /output\_dir/interaction\_0 e /output\_dir/interaction\_1, onde /output\_dir é o diretório de saída que é definido no momento em que o engenheiro de aplicação cria um projeto na ferramenta Captor.
+
+\subsection{Pre e Pos transformação de artefatos}
+
+O Ant \cite{ant} é uma ferramenta que auxilia na compilação e instalação de projetos Java. Essa ferramenta oferece diversas funcionalidades para a instalação de aplicações Java e não Java, tais como: copiar arquivos, apagar arquivos, mover arquivos, compactar arquivos em diversos formatos, integração com mecanismos de controle de versão, execução de aplicativos externos,  compilação automática de aplicativos Java, entre outras funcinalidades.
+
+A ferramenta Captor pode ser configurada para realizar o processamento dos arquivos com a ferramenta Ant antes e depois do processo de transformação de artefatos. Se existir um arquivo do Ant com o nome /install\_dir/domains/nome\_do\_dominio/pre-build.xml o Ant será chamado com esse arquivo como parâmetro antes da ferramenta executar a transformação dos artefatos. Se existir um arquivo do Ant com o nome ``/install\_dir/domains/ nome\_do\_dominio/pos-build.xml'' o Ant será chamado com esse arquivo como parâmetro depois da ferramenta executar a transformação dos artefatos. 
+
+Se o engenheiro de aplicação achar necessário, ele pode criar os arquivos de pre e pos transformação no diretorio: /diretorio\_do\_projeto/pre-build.xml  e ``/diretorio\_do\_projeto/ pro-build.xml'', onde o diretório /diretorio\_do\_projeto representa o caminho de diretório selecionado para armazenar os arquivos do projeto durante a criação de projeto. Se esses arquivos existirem, a ferramenta cancela as execuções do Ant que utilizam os \textit{scripts} contidos no diretório de domínio e executa o Ant com esses arquivos do diretório de projeto.
+
+O \textit{script} do Ant não pode obter informações sobre os dados do projeto que está sendo transformado previamente. Para poder copiar ou mover arquivos de posição, o Ant deve ter o conhecimento do local de saída dos diretórios transformados pela ferramenta Captor, entre outras informações. Para resolver esse problema, o usuário pode inserir as linhas contidas na Listagem \ref{lst:antNone} no \textit{script} do Ant.
+
+\lstset{language=xml}
+\begin{lstlisting}[caption=Pré-processamento do \textit{script} do Ant,label=lst:antNone]
+<!--PROJECT\_GENERATED\_DATA - DO\_NOT\_EDIT-->
+<!--PROJECT\_GENERATED\_DATA - DO\_NOT\_EDIT-->
+\end{lstlisting}
+
+Antes de executar o Ant, a ferramenta Captor realiza o pre-processmento dos arquivo   de pre e pos transformação para criar as seguintes variáveis:
+
+\lstset{language=xml}
+\begin{lstlisting}[caption=Resultado do pré-processamento do \textit{script} do Ant,label=lst:antFull]
+<!--PROJECT_GENERATED_DATA - DO_NOT_EDIT-->
+<property name=``install_path'' location=``/Captor''/>
+<property name=``project_name'' value=``FWS1''/>
+<property name=``project_path'' location=``/Captor/projects/foo''/>
+<property name=``project_output_path'' location=``/output''/>
+<property name=``interaction_0'' value=``0''/>
+<property name=``interaction_1'' value=``1''/>
+<!--PROJECT_GENERATED_DATA - DO_NOT_EDIT-->
+\end{lstlisting}
+
+A variavel ``install\_path'' indica o local de instalação da ferramenta Captor. A variável ``project\_name'' indica o nome do projeto, as variáveis ``project\_path'' e ``project\_output\_path'' indicam o diretório do projeto e o diretório para onde os arquivos trasnformados são armazenados. As variáveis ``interaction\_X'' indicam quantas interações foram editadas na ferramenta.
+
+Uma das principais funcionalidades da ferramenta Ant utilizada em conjunto com a ferramenta Captor é a copia automática dos arquivos de saída para o diretório de arquivos de desenvolvimento ou, se o usuário utilizar zonas de segurança o Ant pode ser executado para copiar os arquivos modificados manualmente do diretório de desenvolvimento para o diretório de saída do gerador antes que o processo de transformação seja iniciado.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Mensagens de erro durante a validação da especificação e os seus significados}
+
+Diversas mensagens de erro de validação podem aparecer no painel de visualização de erros enquanto o engenheiro de domíno edita a especificação da aplicação. \footnote{Se o painel de visuaalização de erros não estiver aparecendo, clique no menu Windows->Show View->Error.}.
+
+Existem dois tipos de erros de validação: os erros de falha na validação de um formulário e os erros de checagem estrutural. Nas Subsecções \ref{subsec:m1} e \ref{subsec:m2} são apresentados detalhes de como interpretar essas mensagens de erro.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection{Erros de validação de formulários}\label{subsec:m1}
+
+Os dados inseridos nos formulários precisam ser validados. Quando o usuário insere um dado incorreto em algum campo do formulário, a ferramenta emite uma mensagem de erro avisando o usuário que não foi possível validar a especificação corretamente.\\
+
+\textbf{Mensagem:} Form validation error\\
+
+\textbf{Saída de exemplo:}\\
+
+\textit{Error in form: Interaction 1->Form1}\\
+
+\textit{Message error:} \\
+
+  \textit{* Age is not a number.}\\
+
+\textbf{Significado:}\\
+
+	A linha ``Error in form: Interaction 1->Form1'' indica em qual formulário ocorreu o erro. Nesse caso, o erro ocorreu no formulário raíz com nome igual a ``Form1'' localizado na interação 1.
+	
+	A mensagem de erro ``Age is not a number'' indica que o campo de idade não possuí um valor válido.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection{Erros de checagem estrutural}\label{subsec:m2}
+
+Para obter uma especificação completa, alguns formulários podem ter o preenchimento obrigatório. Se o usuário não preencher todos os formulários obrigatórios, a ferramenta deve emitir uma mesangem de erro notificando o usuário. \\
+
+\textbf{Mensagem:} Structural form validation error\\
+
+\textbf{Output de exemplo:}\\
+
+\textit{The form: Interaction 1->Form1 require one of these forms:} \\
+
+\textit{child(Form2) or child(Form3)->child(Form4)}\\
+
+\textit{AND}\\
+
+\textit{child(Form5)}\\
+
+\textit{Insert the required forms indicated above to get a valid specification.}\\
+
+\textbf{Significado:}\\
+
+A linha ``The form: Interaction 1->Form1 require one of these forms:'' indica que o formulário raíz com nome igual a ``Form1'' da interação 1, possuí uma dependência obrigatória com os formulários indicados na mensagem de erro.
+
+Os formulários que devem ter preenchimento obrigatório são especificados nas regras lógicas da mensagem. Nesse caso, o formulário raíz Form1 da interação 1 deve possuir:\\
+
+	(\textit{um filho com nome igual a Form2} \textbf{OU} \textit{um filho com nome igual a Form3 que deve possuir um filho com nome igual a Form4}) \textbf{E} (\textit{um filho com nome igual a Form5}).
+	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

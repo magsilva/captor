@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!--Testando forms/form/nextForm/multiplicity branca-->
+
+<forms>
+	
+	<name>GRN</name>
+
+	<form isRoot="true">
+		<id>1.1</id>
+		<name>IDENTIFICAR O RECURSO</name>
+ 		<variant>Default</variant>
+ 		
+		<nextForms>
+			<nextForm><id>2.*</id><multiplicity></multiplicity></nextForm>
+		</nextForms>
+
+		<formComponents>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Recurso</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+		</formComponents>
+			
+	</form>
+
+
+	<form>
+		<id>2.1</id>
+		<name>QUANTIFICAR O RECURSO</name>
+ 		<variant>Default</variant>
+ 		
+		<formComponents>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Recurso</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+		</formComponents>
+			
+	</form>
+</forms>

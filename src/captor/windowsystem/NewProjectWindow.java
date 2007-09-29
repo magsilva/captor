@@ -13,7 +13,7 @@ import captor.windowsystem.project.newproject.Header;
 
 
 /** @author Kicho
- * Janela que permite que o usuário crie um novo projeto.
+ * Janela que permite que o usuï¿½rio crie um novo projeto.
  */
 public class NewProjectWindow extends CaptorFrame  {
     

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!--Testando o nome da LP ( GRN ).-->
+
+<forms>
+	<name>GRN</name>
+
+	<form isRoot="true">
+		<id>1.1</id>
+		<name>IDENTIFICAR O RECURSO</name>
+ 		<variant>Default</variant>
+
+		<formComponents>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Recurso</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+		</formComponents>
+			
+	</form>
+
+		
+</forms>

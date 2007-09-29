@@ -1,0 +1,50 @@
+<?xml version="1.0" standalone="yes"?>
+
+<project name="Captor" default="buildRelease" basedir="../../">
+
+	<!--_________________EDIT THIS VALUES TO RUN______________________________-->
+	<!--______________________________________________________________________-->
+
+	<property name="outputDir" value="C:\Temp"/>
+	<property name="version" value="1.0"/>
+
+
+	<!--_________________DO NOT EDIT THE VALUES ABOVE_________________________-->
+	<!--______________________________________________________________________-->
+	<!--______________________________________________________________________-->
+
+	<property name="outputZipFile" value="${outputDir}/captor-dev-${version}.zip"/>
+	<property name="outputTarGzFile" value="${outputDir}/captor-dev-${version}.tar.gz"/>
+	<property name="outputTarBzip2File" value="${outputDir}/captor-dev-${version}.tar.bz2"/>
+
+	<!--______________________________________________________________________-->
+
+	<target name="clean" description="Clean Up" >
+		<delete file="${outputZipFile}"/>
+		<delete file="${outputTarGzFile}"/>
+		<delete file="${outputTarBzip2File}"/>
+	</target>
+	
+	<!--______________________________________________________________________-->
+
+	<target name="buildRelease" description="Build Release" depends="clean">
+		
+		<zip destfile="${outputZipFile}" basedir="."/>
+		
+		<tar compression="gzip" longfile="gnu" destfile="${outputTarGzFile}" basedir=".">
+	  	<tarfileset dir="${tempCaptorDir}" mode="755" username="kicho" group="users"/>
+		</tar>
+		
+		<tar compression="bzip2" longfile="gnu" destfile="${outputTarBzip2File}" basedir=".">
+	  	<tarfileset dir="${tempCaptorDir}" mode="755" username="kicho" group="users"/>
+		</tar>
+
+		<!--
+		<delete dir="${tempCaptorDir}"/>
+		-->
+		
+	</target>
+	
+</project>	
+	
+	

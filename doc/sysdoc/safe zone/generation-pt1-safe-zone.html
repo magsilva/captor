@@ -1,0 +1,937 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>java.net: Extensible Code Generation with Java, Part 1</title>
+	
+	<meta name="description" content="Jack Herrington introduces an XSLT-based workflow for automatically generating Java code from XML descriptor files.">
+	<meta name="keywords" content="java.net,code generation,xslt,saxon,Programming, Web Services and XML,Jack Herrington,">
+	<meta name="date" content="May. 12, 2004"><!--  CSS stylesheet  -->
+
+
+<link rel="stylesheet" href="generation-pt1-safe-zone_files/simple.css" type="text/css"><!-- stopindex --><!--  Common body tag  --></head>
+
+
+
+<body leftmargin="0" topmargin="0" rightmargin="0" bgcolor="#ffffff" marginheight="0" marginwidth="0">
+<a name="top"></a>
+
+<!--  Masthead  -->
+<div>
+<table style="background: transparent url(/images/header_new_bg.gif) repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;" border="0" cellpadding="0" cellspacing="0" height="25" width="100%">
+<tbody><tr>
+<td rowspan="2" width="100%"><a href="http://www.java.net/"><img src="generation-pt1-safe-zone_files/header_jnet.gif" alt="The Source for Java Technology Collaboration" border="0" height="53" width="520"></a></td>
+ <td style="vertical-align: middle;" nowrap="nowrap">
+ <div id="login">
+ 
+  <form name="loginform" id="loginform" action="https://www.dev.java.net/servlets/TLogin" method="post">
+  <input name="redir" value="http://today.java.net/pub/a/today/2004/05/12/generation1.html" type="hidden">
+  <div>
+  <strong>User:</strong>
+   <input name="loginID" id="loginID" value="" size="7" maxlength="32" type="text">
+   <strong>Password:</strong>
+
+   <input name="password" id="password" value="" size="7" maxlength="32" type="password">
+   <input name="Login" class="buttonred" id="Button" value="Login" type="submit"> </div>
+  <div class="small" align="right"><strong> <a href="https://www.dev.java.net/servlets/Join">Register</a>  | <a href="https://www.dev.java.net/servlets/TLogin">Login help</a>   &nbsp;&nbsp;&nbsp;</strong></div> 
+</form>
+ 
+</div>
+</td> 
+</tr>
+</tbody></table>
+<div class="space"></div>
+
+<!--  Tabs  -->
+
+
+<noindex>
+</noindex><div class="tabs" id="toptabs">
+<table border="0" cellpadding="4" cellspacing="0">
+<tbody>
+<tr>
+<td><a href="https://www.dev.java.net/servlets/StartPage">My       pages</a> </td>
+<td><a href="http://community.java.net/projects/">Projects</a></td>
+<td><a href="http://community.java.net/">Communities</a>   </td>
+<th><a href="http://www.java.net/">java.net</a></th>
+</tr></tbody></table></div>
+
+
+
+
+<table id="main" border="0" cellpadding="2" cellspacing="2" width="100%">
+  <tbody>
+  <tr valign="top">
+    <td id="leftcol" rowspan="2" width="150">
+	<img src="generation-pt1-safe-zone_files/a.gif" height="1" width="150"><br>
+<div id="navcolumn">
+<!--   COMMUNITY LINKS   -->
+<noindex>
+</noindex><div class="toolgroup" id="communitylinks">
+<div class="label"><strong>Get Involved</strong></div>
+<div class="body">
+<div><a href="https://java-net.dev.java.net/">java-net Project</a></div>
+<div><a href="http://www.java.net/request_project.csp">Request a Project</a></div>
+<div><a href="http://community.java.net/help_wanted/">Project&nbsp;Help&nbsp;Wanted&nbsp;Ads</a></div>
+<div><a href="http://community.java.net/projects/publicize.csp">Publicize your Project</a></div>
+<!-- <div><a href="#">Success Stories</a></div>  -->
+<div><a href="http://today.java.net/cs/user/create/bl">Submit Content</a></div>
+</div>
+</div>
+
+<div class="toolgroup" id="communitylinks">
+<div class="label"><strong>Get Informed</strong></div>
+<div class="body">
+<div><a href="http://www.java.net/about.csp">About java.net</a></div>
+<div><a href="http://today.java.net/pub/q/articles">Articles</a></div>
+<div><a href="http://weblogs.java.net/">Weblogs</a></div>
+<div><a href="http://today.java.net/today/news/">News</a></div>
+<div><a href="http://www.java.net/events">Events</a></div>
+<div><a href="http://today.java.net/today/alsotoday.csp">Also in Java Today</a></div>
+<div><a href="http://safari.java.net/">java.net Online Books</a></div>
+<div><a href="http://today.java.net/today/archive/">java.net Archives</a></div>
+</div>
+</div>
+
+<div class="toolgroup" id="communitylinks">
+<div class="label"><strong>Get Connected</strong></div>
+<div class="body">
+<div><a href="http://forums.java.net/">java.net Forums</a></div>
+<div><a href="http://wiki.java.net/">Wiki</a> and <a href="http://wiki.java.net/bin/view/Javapedia/WebHome">Javapedia</a></div>
+<div><a href="http://wiki.java.net/bin/view/People/WebHome">People</a> and <a href="http://partners.java.net/">Partners</a> <em><font color="#ff0000">New!</font></em></div>
+<div><a href="http://community.java.net/jugs/listing.csp">Java User Groups</a></div>
+<div><!--  <a href="https://java-net.dev.java.net/servlets/ProjectMailingListList">Newsletters</a> and  --><a href="http://today.java.net/pub/q/rsschannels">RSS Feeds</a></div>
+</div>
+</div>
+
+<div class="toolgroup" id="communitylinks">
+<div class="label"><b>Search</b></div>
+<div class="body">
+<form action="http://onesearch.sun.com/search/developers/index.jsp">
+<input name="col" value="javanet" type="hidden">
+<div><input name="qt" class="medium" size="14" onfocus="if( this.value==this.defaultValue ) this.value='';" value="" type="text">
+<input class="buttonred" value=" » " border="0" type="submit"></div>
+</form>
+</div>
+</div>
+
+
+</div>
+<br>
+</td>
+<td colspan="2" height="3"><img src="generation-pt1-safe-zone_files/a.gif" height="3" width="1"><br></td>
+</tr>
+<tr> 
+<td width="10"><img src="generation-pt1-safe-zone_files/a.gif" height="1" width="10"></td>
+<td valign="top" width="100%">
+
+<!--  begin discuss-print-email-blog options  -->
+<noindex>
+</noindex><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td class="smaller" valign="top">&nbsp;</td>
+<td width="10">&nbsp;</td>
+<td align="right" valign="bottom"><div class="sitelinks" style="padding: 0px;">
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<!--  email option  -->
+<td align="right" valign="bottom"><img src="generation-pt1-safe-zone_files/ic_email.gif" alt=" " border="0" height="12" hspace="4" vspace="1" width="14"></td>
+<td class="smaller" nowrap="nowrap" valign="bottom"><a href="mailto:?subject=Extensible%20Code%20Generation%20with%20Java,%20Part%201&amp;body=http://today.java.net/pub/a/today/2004/05/12/generation1.html">E-mail</a></td>
+
+<!--  print option  -->
+<td>&nbsp;&nbsp;</td>
+<td align="right" valign="bottom"><img src="generation-pt1-safe-zone_files/ic_print.gif" alt=" " border="0" height="12" hspace="4" width="14"></td>
+<td class="smaller" nowrap="nowrap" valign="bottom"><a href="http://today.java.net/lpt/a/90">Print</a></td>
+
+<!--  discuss  -->
+<td>&nbsp;&nbsp;</td>
+
+<td align="right" valign="bottom"><img src="generation-pt1-safe-zone_files/ic_discuss.gif" alt=" " border="0" height="12" hspace="4" width="13"></td>
+<td class="smaller" nowrap="nowrap" valign="bottom"><a href="http://today.java.net/pub/a/today/2004/05/12/generation1.html?page=last#thread">Discuss</a></td>
+
+
+<!--  blog  -->
+<td>&nbsp;&nbsp;</td>
+<td align="right" valign="bottom"><img src="generation-pt1-safe-zone_files/ic_blog.gif" alt=" " border="0" height="12" hspace="4" width="14"></td>
+<td class="smaller" nowrap="nowrap" valign="bottom"><a href="http://today.java.net/cs/user/print/a/90?x-t=blog_link.view&amp;x-layout=blank" onclick="window.open('/cs/user/print/a/90?x-t=blog_link.view&x-layout=blank','Blog','toolbar=no,width=600,height=400,status=no,location=no,scrollbars=yes,resizable=yes,menubar=yes');return false">Blog</a></td> 
+</tr>
+</tbody></table></div>
+</td></tr>
+</tbody></table>
+
+<!--  end discuss-print-email-blog options  -->
+
+<div style="clear: both;"></div>
+<div class="contentdivider"><table class="grey4" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr><td><img src="generation-pt1-safe-zone_files/a.gif" alt=" " border="0" height="4" width="1"></td></tr></tbody></table></div>
+
+<!--  content here  -->
+<!-- CS_PAGE_BREAK -->
+<h2>
+<img src="generation-pt1-safe-zone_files/111-codegen.gif" alt="Extensible Code Generation with Java, Part 1" align="left" border="0" height="91" hspace="10" vspace="0" width="111">
+Extensible Code Generation with Java, Part 1</h2>
+by <a href="http://today.java.net/pub/au/184">Jack Herrington</a><br>
+05/12/2004<br clear="all"><br>
+<!--  sidebar begins  -->
+<!--  don't move sidebars  -->
+<!--  sidebar ends  -->
+
+<!--  sidebar begins  -->
+<!--  TOC  -->
+<table align="right" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr><td bgcolor="#000000"><img src="generation-pt1-safe-zone_files/a.gif" height="1" width="10"></td></tr>
+<tr><td>
+<table align="right" border="0" cellpadding="6" cellspacing="0">
+<tbody><tr><td><img src="generation-pt1-safe-zone_files/a.gif" height="1" width="10"><br>
+<b>Contents</b></td></tr>
+<tr><td><a href="#The_Basics">The Basics</a></td></tr>
+<tr><td><a href="#The_Problem">The Problem</a></td></tr>
+<tr><td><a href="#Subclassing_Solution">Subclassing Solution</a></td></tr>
+<tr><td><a href="#Next_time_Safe_Zones">Next Time: Safe Zones</a></td></tr>
+<tr><td><a href="#Summary">Summary</a></td></tr>
+<tr><td><a href="#Resources">Resources</a></td></tr>
+</tbody></table>
+</td></tr>
+<tr><td bgcolor="#000000"><img src="generation-pt1-safe-zone_files/a.gif" height="1" width="10"></td></tr>
+</tbody></table>
+<!--  sidebar ends  -->
+
+<p>Code generation is a key new trend in engineering, one that you need
+to understand well. The reason is simple: today's modern frameworks are
+extremely code-intensive. Using a code generator to build the code for
+you can save you a lot of time, both in writing the code and fixing the
+inevitable bugs that spring from swathes of hand-written code.</p>
+
+<p>There are a number of code generation options for Java development.
+These range from canned solutions that generate whole applications
+(e.g. Compuware's <a href="http://www.compuware.com/products/optimalj/">OptimalJ</a>), to open source generators (e.g. <a href="http://xdoclet.sourceforge.net/">XDoclet</a>), to custom-built solutions. This article focuses on using <a href="http://www.w3.org/Style/XSL/">XSLT</a> to build custom generators.  More information about XSLT is presented <a href="#learnxslt">below</a>.</p>
+
+<p>Building a custom generator is an easy, fun, and cheap (free) way to
+understand how generation works. With a new understanding about code
+generation in hand, you will be able to evaluate off-the-shelf tools as
+well as have the ability to write something yourself.</p>
+
+<p>Let's start with the basics of code generation.</p>
+
+<h2 id="The_Basics">The Basics</h2>
+
+<p>Code generation is using one application to build code for another
+application. In this case, XSLT will be our generator application.
+Input for a code generator can come in many forms (source code,
+database schemas, XML models, etc.). Regardless of the source, we call
+the input the <i>model</i> because it represents (models) what is to
+be built. On the other side are the templates. The templates render the
+model into code, or other artifacts such as documentation. Figure 1
+illustrates this process.</p>
+
+<p><img src="generation-pt1-safe-zone_files/figure1.gif" alt="Figure 1" height="115" width="464"><br>
+<i>Figure 1. Flow chart for basic XSLT-based code generation</i></p>
+
+<p>There are two types of code generation: passive and active. In the
+passive model, you generate the code once and then tweak it. In the
+active model, you generate the code continuously (often as part of a
+build process). As changes to the model are made, the generator will be
+run and new code is created.</p>
+
+<p>It's easy to think about how to use code generation on new projects
+that build new code, but what about existing an code base? We all love
+new code, but most of us get paid to work on old code. Is there a way
+we can use code generation to aid us in extending and maintaining
+existing applications?</p>
+
+<h2 id="The_Problem">The Problem</h2>
+
+<p>There are several problems with applying code generation to existing
+code bases. You may have custom homebrew APIs that need custom work.
+These APIs may have an inconsistent interface, which makes coding to
+them difficult. You may have, as is often the case, a bunch of classes
+that could probably be generated, but have small changes required for
+each case. Some examples would be custom error-checking or validation
+within the class, or cross-dependency special cases where two classes
+depend on each other in a unique on-off way.</p>
+
+<p>With either legacy code or new code, the problem with code
+generation often comes down to, "Can you generate 100 percent of the
+code, or only 90 percent? And if only 90 percent, then what happens to
+that other 10 percent?" There are two basic solutions: the first is
+generate partial classes. These are base classes that you can then
+subclass to build custom behaviors. A second option is to generate code
+with <em>safe zones</em>. When you want to extend the functionality
+you add your code into these safe zones and it will be preserved
+between generation cycles.</p>
+
+<p>Before we get into the specifics, we should step back for a second
+to give a general overview of code-generation basics to bring you up to
+speed.</p>
+
+<h2 id="Subclassing_Solution">Subclassing Solution</h2>
+
+<p>We start with the input model that will be used for both generators. This model is copied from an <a href="http://www.ftponline.com/javapro/2004_03/online/j2ee_gnaccarato_03_10_04/default.aspx">article on IOM-based generation</a> by Giuseppe Naccarato.</p>
+
+<pre><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;Content&gt;
+
+  &lt;Class name="Customer" stereotype=""&gt;
+    &lt;Attribute name="code" type="integer"/&gt;
+    &lt;Attribute name="description" type="string"/&gt;
+  &lt;/Class&gt;
+
+  &lt;Class name="Order" stereotype=""&gt;
+    &lt;Attribute name="number" type="integer"/&gt;
+    &lt;Attribute name="date" type="date"/&gt;
+    &lt;Operation name="getTotalAmount" returnType="double"&gt;
+       &lt;Parameter name="calculateVAT" type="boolean"/&gt;
+    &lt;/Operation&gt;
+  &lt;/Class&gt;
+
+  &lt;Association name=""&gt;
+    &lt;Role class="Order" multiplicity="*"
+        name="" type="start"/&gt;
+    &lt;Role class="Customer" multiplicity="1"
+        name="" type="end"/&gt;
+  &lt;/Association&gt;
+
+&lt;/Content&gt;</code></pre>
+
+<p>There are two important structures, the <code>Class</code> tag, which contains enough information to create a single class, and the <code>Association</code> tag, which creates a connection between two classes. In the example case, we are creating two classes, <code>Customer</code> and <code>Order</code>, and associating them. One <code>Customer</code> can have multiple <code>Order</code>s.</p>
+
+<p>Each class tag has some sub-tags and attributes that define it in more detail. For example, the attribute tags in the <code>Order</code>
+class specify that there should be both a number and a date on the
+order. In addition there should be an operation (a method) called <code>getTotalAmount</code> that takes a <em>value-added tax</em> Boolean as a parameter. The model doesn't specify what <code>getTotalAmount</code>
+should do, that's up to us as engineers to fill in. We do that either
+by subclassing, or by adding code into a safe zone, as we will see.</p>
+
+<p>The next step is to use XSLT to generate Java source code files from
+the model. An XSLT template is an XML file that contains both
+processing directives and template output. You need an XSLT processor
+(such as Michael Kay's excellent <a href="http://saxon.sourceforge.net/">Saxon</a>
+XSLT processor) to take the XML and the XSLT as input and to create one
+or more files as output. The flow is illustrated in Figure 2.</p>
+
+<p><img src="generation-pt1-safe-zone_files/figure2.gif" alt="Figure 2" height="208" width="411"><br>
+<i>Figure 2. Flow for Saxon-based XSLT code generation</i></p>
+
+<p>Our XSLT template file is called <i>main.xsl</i>. Note that the
+excerpts in this article have some line breaks added for web-page
+formatting -- part two of this series will have downloadable source, in
+which you can examine the original formatting. At any rate, <i>main.xsl</i> starts with a little preamble:</p>
+
+<pre><code>&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
+&lt;xsl:stylesheet
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+    version="1.1"&gt;
+
+&lt;xsl:output <strong>method="text"</strong> /&gt;</code></pre>
+
+<p>Because we are generating Java source code (and not XML), we set the output mode to <code>text</code>.</p>
+
+<p>The next thing to do is write a template that matches the root node
+of the XML input tree. This template will build a file for each of the
+Java class tags:</p>
+
+<pre><code>&lt;!-- The main template loops over all of the
+    classes and creates a file for each one --&gt; 
+
+&lt;xsl:template match="/"&gt;
+    <strong>&lt;xsl:for-each select="Content/Class"&gt;
+       &lt;xsl:variable name="filename"
+       select="concat('output/',@name,'Base.java')" /&gt;</strong>
+       &lt;xsl:message&gt;Creating
+            &lt;xsl:value-of select="$filename" /&gt;&lt;/xsl:message&gt;
+       &lt;xsl:document href="{$filename}" method="text"&gt;
+       <strong>&lt;xsl:call-template name="java-class"&gt;</strong>
+           &lt;xsl:with-param name="class" select="." /&gt;
+           &lt;xsl:with-param name="associations"
+              select="/Content" /&gt;
+       &lt;/xsl:call-template&gt;
+       &lt;/xsl:document&gt;
+    &lt;/xsl:for-each&gt;
+&lt;/xsl:template&gt;</code></pre>
+
+<p>The first <code>for-each</code> statement iterates over all of the class tags. The variable statement then builds the file name for the Java class file. The <code>call-template</code> tag then invokes a template that will build the Java to go in the file.</p>
+
+<p>Now that we are cycling over the model to pick out the classes and
+to build the Java files, we need to build the actual contents. That is
+handled in the next template block:</p>
+
+<pre><code>&lt;!-- The main template for a Java class --&gt; 
+
+&lt;xsl:template name="java-class"&gt;
+&lt;xsl:param name="class" /&gt;
+&lt;xsl:param name="associations" /&gt;
+/* This file has been generated */
+
+import java.util.*;
+
+public class <strong>&lt;xsl:value-of select="$class/@name" /&gt;Base</strong> {</code></pre>
+
+<p>Here you can start to see the beginnings of the Java class. The highlighted part is where we put in the name of the class.</p>
+
+<p>The next step is to build the attributes:</p>
+
+<pre><code>&lt;!-- Builds the attributes --&gt; 
+
+<strong>&lt;xsl:for-each select="$class/Attribute"&gt;
+&lt;xsl:if test="@type='integer'"&gt;</strong>
+  private int &lt;xsl:value-of select="@name" /&gt;;
+  public int get&lt;xsl:value-of select="@name" /&gt;()
+    {return this.&lt;xsl:value-of select="@name" /&gt;;}
+  public void set&lt;xsl:value-of select="@name" /&gt;
+    (int &lt;xsl:value-of select="@name" /&gt;)
+    {this.&lt;xsl:value-of select="@name" /&gt;=&lt;xsl:value-of select="@name" /&gt;;}
+&lt;/xsl:if&gt;
+&lt;xsl:if test="@type='date'"&gt;
+  private Date &lt;xsl:value-of select="@name" /&gt;;
+  public Date get&lt;xsl:value-of select="@name" /&gt;()
+    {return this.&lt;xsl:value-of select="@name" /&gt;;}
+  public void set&lt;xsl:value-of select="@name" /&gt;
+    (Date &lt;xsl:value-of select="@name" /&gt;)
+    {this.&lt;xsl:value-of select="@name" /&gt;=&lt;xsl:value-of select="@name" /&gt;;}
+&lt;/xsl:if&gt;
+&lt;/xsl:for-each&gt;</code></pre>
+
+<p>It looks pretty hairy, but it's really quite simple. The <code>for-each</code> statement iterates through all of the attributes, and the <code>if</code> statement checks for various types of attributes. The code within the <code>if</code> builds the right methods for each data type.</p>
+
+<p>XSLT has a reputation for being very complex and verbose. I can't
+agree with the complexity part, but it does score heavily in the
+verbosity department, as this section shows. My recommendation to any
+XSLT programmer is to get an editor to help with the grunt work. I use <a href="http://www.oxygenxml.com/">oXygen</a>.
+It has excellent intellisense for XSLT and with version 4.0, it now
+includes an XSLT debugger. Suffice it to say, with the right tools,
+XSLT can be a joy.</p>
+
+<p>Back to the task at hand, the next segment deals with the associations:</p>
+
+<pre><code>&lt;!-- Builds the locals for any associated classes --&gt; 
+
+<strong>&lt;xsl:for-each select="$associations/Association"&gt;</strong>
+&lt;xsl:variable name="startrole"
+    select="./Role[@type='start']"/&gt;
+&lt;xsl:variable name="endrole"
+    select="./Role[@type='end']"/&gt;
+&lt;xsl:variable name="endvar" 
+    select="translate($endrole/@class,'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+                    'abcdefghijklmnopqrstuvwxyz')"/&gt;
+<strong>&lt;xsl:if test="$startrole/@class=$class/@name"&gt;</strong>
+  private &lt;xsl:value-of
+    select="concat( $endrole/@class, ' ', $endvar )"/&gt;;
+  public &lt;xsl:value-of select="$endrole/@class"/&gt;
+    get&lt;xsl:value-of select="$endrole/@class"/&gt;()
+    {return this.&lt;xsl:value-of select="$endvar" /&gt;;}
+  public void  set&lt;xsl:value-of select="$endrole/@class"/&gt;
+    (&lt;xsl:value-of select="concat( $endrole/@class, ' ', $endvar )"/&gt; )
+    {this.&lt;xsl:value-of select="$endvar" /&gt;=&lt;xsl:value-of select="$endvar" /&gt;;}
+&lt;/xsl:if&gt;
+&lt;/xsl:for-each&gt;</code></pre>
+
+<p>This is pretty complex, but it boils down to iterating through all
+of the associations in the model, then finding out if any are relevant
+to this class. If they are, then we build a little code to add the
+associated fields into the class and create some accessors for them.</p>
+
+<p>The final segment builds the operations of the class:</p>
+
+<pre><code>&lt;!-- Builds the operations --&gt; 
+
+<strong>&lt;xsl:for-each select="$class/Operation"&gt;</strong>
+  public &lt;xsl:value-of select="concat( @returnType, ' ', @name)" /&gt;
+    ( &lt;xsl:call-template name="operation-params"&gt;
+      &lt;xsl:with-param name="operation" select="." /&gt;
+      &lt;/xsl:call-template&gt; ) {
+&lt;xsl:variable name="zoneid"
+    select="concat( $class/@name, '-', @name)" /&gt;
+    &lt;xsl:if test="@returnType='double'"&gt;return 0.0;&lt;/xsl:if&gt;
+  }
+&lt;/xsl:for-each&gt;
+
+}
+&lt;/xsl:template&gt;
+
+&lt;!-- A helper template to build the parameters
+    for an operation --&gt; 
+
+<strong>&lt;xsl:template name="operation-params"&gt;</strong>
+&lt;xsl:param name="operation" /&gt;
+&lt;xsl:for-each select="Parameter"&gt;
+&lt;xsl:value-of select="concat( @type, ' ', @name )"/&gt;
+&lt;/xsl:for-each&gt;
+&lt;/xsl:template&gt;
+
+&lt;/xsl:stylesheet&gt;</code></pre>
+
+<p>The XSLT code iterates through the operations and builds a stub
+method for each. The little helper template just makes it easier to
+build comma-separated lists of arguments.</p>
+
+<p>To apply the template to the input file, we run the following at the command prompt:</p>
+
+<pre><code>% <strong>java com.icl.saxon.StyleSheet input.xml main.xsl</strong>
+Creating output/CustomerBase.java
+Creating output/OrderBase.java</code></pre>
+
+<p>The new <em>OrderBase.java</em> file contains:</p>
+
+<pre><code>/* This file has been generated */
+
+import java.util.*;
+
+public class OrderBase {
+  private int number;
+  public int getnumber() {return this.number;}
+  public void setnumber(int number) {this.number=number;}
+
+  private Date date;
+  public Date getdate() {return this.date;}
+  public void setdate(Date date) {this.date=date;}
+
+  private Customer customer;
+  public Customer getCustomer() {return this.customer;}
+  public void  setCustomer(Customer customer ) {this.customer=customer;}
+
+  public double getTotalAmount( boolean calculateVAT ) {
+     return 0.0;
+  }
+}</code></pre>
+
+<p>Not a work of beauty, by any means. But that has less to do with the
+technology and more to do with the brevity and lack of tuning in the
+template. In your templates you should add JavaDoc and error checking,
+and try and keep the formatting as clean as possible.</p>
+
+<p>Let's step back to take a look at the big picture. The class that
+was generated is suitable for subclassing. In fact, the example will
+not compile because <code>Customer</code> has not yet been implemented, only <code>CustomerBase</code> has. So we <em>must</em> implement a derived class, if only to get the system to compile!</p>
+
+<h2 id="Next_time_Safe_Zones">Next Time: Safe Zones</h2>
+
+<p>The other approach to extending generated code is through the use of
+safe zones. In part two of this series, we'll look at what safe zones
+are and jump through some hoops to get them to work.</p>
+
+<p><em><a href="http://today.java.net/pub/au/184">Jack Herrington</a> is a software engineer with over twenty years of experience on numerous platforms and languages.</em></p>
+
+<div class="grayline"></div>
+
+<h5 id="learnxslt">Learn More About XSLT</h5>
+
+<p>If you are still hesitant about XSLT, consider that there is a
+three-fold benefit of learning the XSLT you will need to use the
+techniques in this article. First, you will be learning a valuable tool
+for converting XML from one form to another, or into a web page, or
+into text. Second, you will be learning the related XPath technology,
+which is a very powerful system for specifying nodes in a tree. And
+last, you will have learned the functional programming model, which is
+at the heart of XSLT.</p>
+
+<p>For more information about XSLT I recommend that you read Michael
+Kay's "XSLT: For Programmers." It is a great introduction to XSLT from
+someone who is a key leader in the field.</p>
+
+<div class="pad3x0">
+<table bgcolor="#000000" border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td><img src="generation-pt1-safe-zone_files/a.gif" alt=" " border="0" height="1" width="1"></td></tr></tbody></table></div>
+
+
+<!--  end content  -->
+<img src="generation-pt1-safe-zone_files/trans.gif" alt=" " height="1" width="490"><br>
+
+
+
+
+<p>View all <a href="http://today.java.net/pub/q/articles">java.net Articles</a>.</p>
+
+
+<a name="thread"></a>
+
+<div class="feedback">
+<div class="rbox">
+<div class="rboxtop"><div></div></div>
+<div class="rbcontent">
+<b>Are you ready to start using code-generation techniques?</b><br>
+<div class="clear"></div>
+<div class="tb_left"><a href="http://today.java.net/cs/user/create/cs_msg?x-lr=cs_disc/1413&amp;x-lr2=a/90&amp;page="><img src="generation-pt1-safe-zone_files/button_post.gif" alt="Post Comment" border="0" height="20" vspace="4" width="118"></a>
+</div>
+<!--  rbcontent & rbox closed in cs_disc/thread_header.view  -->
+<div class="tb_right">
+
+<a href="http://today.java.net/pub/a/today/2004/05/12/generation1.html?page=last&amp;x-maxdepth=0#thread"><img src="generation-pt1-safe-zone_files/button_main_threads.gif" alt="Full Threads" title="Display main threads only" border="0" hspace="6" vspace="4"></a>
+<a href="http://today.java.net/pub/a/today/2004/05/12/generation1.html?page=last&amp;x-order=date#thread"><img src="generation-pt1-safe-zone_files/button_old.gif" alt="Oldest First" title="Sort oldest posts first" border="0" vspace="4"></a>
+
+</div>
+<div class="clear"></div>
+<!--  closing divs from a/print.view, et al  -->
+
+</div>
+<div class="rboxbot"><div></div></div>
+</div>
+
+
+
+<p>Showing messages 1 through 29 of 29.
+
+</p>
+<ul>
+
+<!--  Trackback   -->
+</ul>
+<ul>
+
+<!--  Trackback   -->
+</ul>
+<ul>
+
+<!--  Trackback   -->
+</ul>
+<ul>
+
+<!--  Trackback   -->
+</ul>
+<ul>
+
+<!--  Trackback   -->
+</ul>
+<ul>
+
+<!--  Trackback   -->
+</ul>
+<ul>
+
+<!--  Trackback   -->
+</ul>
+<ul>
+
+<!--  Trackback   -->
+</ul>
+<ul>
+
+<!--  Trackback   -->
+</ul>
+<ul>
+
+<!--  Trackback   -->
+</ul>
+<ul>
+
+<!--  Trackback   -->
+</ul>
+<ul>
+
+<!--  Trackback   -->
+</ul>
+<ul>
+
+<!--  Trackback   -->
+</ul>
+<ul>
+
+<li>
+<a name="5271"></a>
+<b>Some xsl wrong?</b><br>
+2004-06-28 09:08:14&nbsp;
+
+
+
+[<a href="http://today.java.net/cs/user/create/cs_msg?x-lr=cs_msg/5271&amp;x-lr2=/90" title="Reply to this message">Reply</a> | <a href="http://today.java.net/cs/user/view/cs_msg/5271">View</a>] 
+
+<br>
+<br>
+Nothing is wrong with the XSL. It works as shown.</li>
+
+</ul>
+<ul>
+
+<li>
+<a name="4408"></a>
+<b>Data Model is more important</b><br>
+2004-05-16 06:27:01&nbsp;ragsvasan
+
+
+
+[<a href="http://today.java.net/cs/user/create/cs_msg?x-lr=cs_msg/4408&amp;x-lr2=a/90" title="Reply to this message">Reply</a> | <a href="http://today.java.net/cs/user/view/cs_msg/4408">View</a>] 
+
+<br>
+<br>
+I believe one has to pay more attention to the data model before
+venturing into writing a generator. Many a times the model is already
+fixed and you are working with/around its deficiencies. Only a few
+times you are lucky to define your own, and can't pass up the
+opportunity to come up with YAML (yet another markup language). I have
+not had much success in defining a manageable ML. I would like to see
+some articles on this topic.</li>
+
+</ul>
+<ul>
+
+<li>
+<a name="4407"></a>
+<b>Mixing output code with parsing logic</b><br>
+2004-05-16 06:16:06&nbsp;ragsvasan
+
+
+
+[<a href="http://today.java.net/cs/user/create/cs_msg?x-lr=cs_msg/4407&amp;x-lr2=a/90" title="Reply to this message">Reply</a> | <a href="http://today.java.net/cs/user/view/cs_msg/4407">View</a>] 
+
+<br>
+<br>
+I hav been using code genration methods for several of my projects.
+There is one major issue I found with using XSLT, which is mixing your
+output producing code with the parse logic. There isn't an easy way to
+visualize how your output will look like. You spend a lot of time
+adjusting the formatting and fixing trivial bugs. Maintenance of this
+code over the lifetime of the project becomes progressively more
+difficult.<br>
+<br>
+I found greater success with a template driven strategy like Velocity or better yet <a href="http://today.java.net/pub/a/today/2004/05/12/www.template-toolkit.org"> perl template-toolkit </a>.
+Your data parsing code aand output generation code are cleanly separate
+and you now have the option of choosing different tools for each.
+Maintenance is simplified and the code ages well over the lifetime.<br>
+<br>
+When XSLT first came out, I was aall over it using it exclusively. Now I avoid it completely.</li>
+
+</ul>
+<ul>
+
+<li>
+<a name="4396"></a>
+<b>Velocity</b><br>
+2004-05-14 13:25:06&nbsp;scolebourne
+
+
+
+[<a href="http://today.java.net/cs/user/create/cs_msg?x-lr=cs_msg/4396&amp;x-lr2=a/90" title="Reply to this message">Reply</a> | <a href="http://today.java.net/cs/user/view/cs_msg/4396">View</a>] 
+
+<br>
+<br>
+I agree with another poster - Jakarta Velocity is a great way to code generate. XSLT is not something that is nice to learn.</li>
+
+<ul>
+
+<li>
+<a name="4406"></a>
+<b>Velocity v XSLT</b><br>
+2004-05-16 04:35:37&nbsp;toren03
+
+
+
+[<a href="http://today.java.net/cs/user/create/cs_msg?x-lr=cs_msg/4406&amp;x-lr2=a/90" title="Reply to this message">Reply</a> | <a href="http://today.java.net/cs/user/view/cs_msg/4406">View</a>] 
+
+<br>
+<br>
+I think the main gain of using xslt would be if the source is xml, but
+otherwise I 've gone the velocity route as well. Velocity has only a
+handful of commands and is quite flexible with passing parameters. <br>
+<br>
+A situation where xslt might be useful would be the following: The code
+parameter are stored in a database and therefore you could you retrieve
+the query as xml (as with the oracle classes) and immediately apply an
+xsl file upon the result set.</li>
+
+</ul>
+</ul>
+<ul>
+
+<li>
+<a name="4368"></a>
+<b>Some xsl wrong?</b><br>
+2004-05-13 18:51:17&nbsp;marsj
+
+
+
+[<a href="http://today.java.net/cs/user/create/cs_msg?x-lr=cs_msg/4368&amp;x-lr2=a/90" title="Reply to this message">Reply</a> | <a href="http://today.java.net/cs/user/view/cs_msg/4368">View</a>] 
+
+<br>
+<br>
+Is there any thing wrong with <br>
+&lt;xsl:stylesheet<br>
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform"<br>
+    version="1.1"&gt;<br>
+declare and <br>
+&lt;xsl:document /&gt; element.?<br>
+<br>
+If I am right, please fix it.</li>
+
+<ul>
+
+<li>
+<a name="5272"></a>
+<b>Some xsl wrong?</b><br>
+2004-06-28 09:08:20&nbsp;jherr
+
+
+
+[<a href="http://today.java.net/cs/user/create/cs_msg?x-lr=cs_msg/5272&amp;x-lr2=a/90" title="Reply to this message">Reply</a> | <a href="http://today.java.net/cs/user/view/cs_msg/5272">View</a>] 
+
+<br>
+<br>
+Nothing is wrong with the XSL. It works as shown.</li>
+
+</ul>
+</ul>
+<ul>
+
+<li>
+<a name="4348"></a>
+<b>velocity works too!</b><br>
+2004-05-13 04:23:13&nbsp;marsj
+
+
+
+[<a href="http://today.java.net/cs/user/create/cs_msg?x-lr=cs_msg/4348&amp;x-lr2=a/90" title="Reply to this message">Reply</a> | <a href="http://today.java.net/cs/user/view/cs_msg/4348">View</a>] 
+
+<br>
+<br>
+we had done the same work, not for Java class but for JSP page. Apache's velocity is also a good choise.</li>
+
+<ul>
+
+<li>
+<a name="4418"></a>
+<b>velocity works too!</b><br>
+2004-05-17 06:25:52&nbsp;jeanluc
+
+
+
+[<a href="http://today.java.net/cs/user/create/cs_msg?x-lr=cs_msg/4418&amp;x-lr2=a/90" title="Reply to this message">Reply</a> | <a href="http://today.java.net/cs/user/view/cs_msg/4418">View</a>] 
+
+<br>
+<br>
+Check out JAG.SOURCEFORGE.NET ....</li>
+
+</ul>
+</ul>
+<ul>
+
+<li>
+<a name="4316"></a>
+<b>see also the DocBook</b><br>
+2004-05-12 04:30:34&nbsp;felipegaucho
+
+
+
+[<a href="http://today.java.net/cs/user/create/cs_msg?x-lr=cs_msg/4316&amp;x-lr2=a/90" title="Reply to this message">Reply</a> | <a href="http://today.java.net/cs/user/view/cs_msg/4316">View</a>] 
+
+<br>
+<br>
+The DocBook is the next step in the book publishing area, code documentation and XML data tranport. And 100% related to XSLT<br>
+<br>
+check it out !</li>
+
+</ul>
+<ul>
+
+<!--  Trackback   -->
+</ul>
+<ul>
+
+<li>
+<a name="4294"></a>
+<b>just scratches the surface</b><br>
+2004-05-11 15:03:11&nbsp;larsona
+
+
+
+[<a href="http://today.java.net/cs/user/create/cs_msg?x-lr=cs_msg/4294&amp;x-lr2=a/90" title="Reply to this message">Reply</a> | <a href="http://today.java.net/cs/user/view/cs_msg/4294">View</a>] 
+
+<br>
+<br>
+See www.codegeneration.net for many more articles, code-generators, etc.</li>
+
+<ul>
+
+<li>
+<a name="4296"></a>
+<b>just scratches the surface</b><br>
+2004-05-11 17:15:31&nbsp;jherr
+
+
+
+[<a href="http://today.java.net/cs/user/create/cs_msg?x-lr=cs_msg/4296&amp;x-lr2=a/90" title="Reply to this message">Reply</a> | <a href="http://today.java.net/cs/user/view/cs_msg/4296">View</a>] 
+
+<br>
+<br>
+Thanks for the plug. Yeah, CGN is the place to go for the rest of the
+story (until, of course, the next part of this article.) ;-)</li>
+
+</ul>
+</ul>
+<ul>
+
+<li>
+<a name="4283"></a>
+<b>Code Generator</b><br>
+2004-05-11 12:12:22&nbsp;ronaldocosta
+
+
+
+[<a href="http://today.java.net/cs/user/create/cs_msg?x-lr=cs_msg/4283&amp;x-lr2=a/90" title="Reply to this message">Reply</a> | <a href="http://today.java.net/cs/user/view/cs_msg/4283">View</a>] 
+
+<br>
+<br>
+I use e-Gen Developer, www.egen.com.br</li>
+
+<ul>
+
+<li>
+<a name="6989"></a>
+<b>Code Generator</b><br>
+2004-09-19 21:23:24&nbsp;rathika
+
+
+
+[<a href="http://today.java.net/cs/user/create/cs_msg?x-lr=cs_msg/6989&amp;x-lr2=a/90" title="Reply to this message">Reply</a> | <a href="http://today.java.net/cs/user/view/cs_msg/6989">View</a>] 
+
+<br>
+<br>
+Hi there...<br>
+<br>
+I cannt open the browser 127.0.0.1:8080/egen (error: page cannt
+disply)and 127.0.1.1:8080/egen(error: gateway time out and server is
+unreachable) where i am using tomcat 1.4.29 and jdk 1.4.2..<br>
+<br>
+PLZ HELP ME!!! what to do to open the e-Gen browser....<br>
+<br>
+Regards<br>
+V.Rathika, singapore..</li>
+
+</ul>
+</ul>
+<ul>
+
+<!--  Trackback   -->
+</ul>
+
+
+</div>
+
+
+</td></tr></tbody></table>
+
+<!--  BEGIN VNV5 FOOTER   -->
+<!--  BEGIN VNV5 FOOTER   -->
+<table border="0" cellpadding="0" cellspacing="10" width="100%">
+<tbody><tr>
+<td>
+&nbsp;<a href="http://today.java.net/pub/q/java_net_rss"><img src="generation-pt1-safe-zone_files/xml.gif" alt="XML" align="middle" border="0" height="14" width="36"></a>&nbsp;<b>java.net RSS</b><br>
+<div class="grayline"></div>
+<table class="vatop" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td><img src="generation-pt1-safe-zone_files/a.gif" alt=" " border="0" height="1" width="190"><br>
+<a href="http://www.sun.com/"><img src="generation-pt1-safe-zone_files/logo_sun_small.gif" alt=" " border="0" height="29" vspace="5" width="61"></a></td>
+<td valign="top" width="60%">
+<div class="footer">
+<a href="https://java-net.dev.java.net/feedback.html">Feedback</a> &nbsp;|&nbsp;<a href="http://java.net/faq.csp">FAQ</a> &nbsp;|&nbsp;<a href="http://java.net/presscenter/">Press</a>&nbsp;|&nbsp;<a href="http://java.net/terms.csp">Terms of Participation</a><br>
+<a href="http://www.sun.com/share/text/termsofuse.html">Terms of Use</a> &nbsp;|&nbsp;
+<a href="http://www.sun.com/privacy/">Privacy</a> &nbsp;|&nbsp;
+<a href="http://www.sun.com/suntrademarks/">Trademarks</a>&nbsp;|&nbsp;<a href="https://java-net.dev.java.net/sitemap.html">Site Map</a>
+<br><span class="sp5">&nbsp;</span><br>
+Your use of this web site or any of its content or software indicates your agreement to be bound by these <a href="http://java.net/terms.csp">Terms of Participation</a>.<br>
+<span class="sp5">&nbsp;</span><br>
+Copyright © 1995-2004 Sun Microsystems, Inc.
+</div></td>
+<td align="right" valign="top" width="40%"><div class="footer">
+<a href="http://www.oreilly.com/"><img src="generation-pt1-safe-zone_files/montague_logo_oreilly.gif" alt="Oreilly Logo" border="0" height="19" width="74"></a><a href="http://www.collab.net/"><img src="generation-pt1-safe-zone_files/montague_logo_collabnet.gif" alt="Collabnet Logo" border="0" height="19" width="85"></a><br>
+Powered by Sun Microsystems, Inc.,<br> O'Reilly and CollabNet
+</div></td></tr>
+<!--  <tr><td colspan="3" valign="top" class="grey3"><img src="/im/a.gif" width="1" height="2" border="0" alt=" " /></td></tr>  -->
+</tbody></table>
+<div class="grayline"></div>
+</td></tr>
+</tbody></table>
+<!--  END VNV5 FOOTER  -->
+</div></body></html>

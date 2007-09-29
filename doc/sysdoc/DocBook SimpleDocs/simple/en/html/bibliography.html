@@ -1,0 +1,129 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>bibliography</title><link rel="stylesheet" href="defguide.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.51.1"><link rel="home" href="sdocbook.html" title="Simplified DocBook"><link rel="up" href="ref-elements.html" title="Simplified DocBook Element Reference"><link rel="previous" href="bibliodiv.html" title="bibliodiv"><link rel="next" href="bibliomisc.html" title="bibliomisc"></head><body><div class="navheader"><table border="0" cellpadding="0" cellspacing="0" width="100%" summary="Navigation table"><tr><td align="left">&nbsp;<a title="Simplified DocBook" href="sdocbook.html"><img src="figures/nav-home.png" alt="Home" border="0"></a>&nbsp;<a title="bibliodiv" href="bibliodiv.html"><img src="figures/nav-prev.png" alt="Prev" border="0"></a>&nbsp;<a title="Simplified DocBook Element Reference" href="ref-elements.html"><img src="figures/nav-up.png" alt="Up" border="0"></a>&nbsp;<a title="bibliomisc" href="bibliomisc.html"><img src="figures/nav-next.png" alt="Next" border="0"></a></td><td align="right"><i>DocBook: The Definitive Guide</i> Version 0.0.1 <span class="alpha-version">(<a href="co01.html"><em>Alpha</em></a>)</span> </td></tr></table></div><div class="refentry"><a name="bibliography.element"></a><div class="titlepage"><div><h1 class="title">bibliography</h1></div><div><p class="releaseinfo">$Revision: 1.1 $</p></div><div><p class="pubdate">$Date: 2005/07/03 00:15:37 $</p></div></div><div class="refnamediv"><p>bibliography &#8212; A bibliography</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><h3><span class="bold"><b>Content Model</b></span></h3><pre class="synopsis">bibliography ::=
+((<a href="title.html"><tt class="sgmltag-element">title</tt></a>,<a href="subtitle.html"><tt class="sgmltag-element">subtitle</tt></a>?,<a href="titleabbrev.html"><tt class="sgmltag-element">titleabbrev</tt></a>?)?,
+ (<a href="itemizedlist.html"><tt class="sgmltag-element">itemizedlist</tt></a>|<a href="orderedlist.html"><tt class="sgmltag-element">orderedlist</tt></a>|<a href="variablelist.html"><tt class="sgmltag-element">variablelist</tt></a>|<a href="note.html"><tt class="sgmltag-element">note</tt></a>|<a href="literallayout.html"><tt class="sgmltag-element">literallayout</tt></a>|
+  <a href="programlisting.html"><tt class="sgmltag-element">programlisting</tt></a>|<a href="para.html"><tt class="sgmltag-element">para</tt></a>|<a href="blockquote.html"><tt class="sgmltag-element">blockquote</tt></a>|<a href="mediaobject.html"><tt class="sgmltag-element">mediaobject</tt></a>|<a href="informaltable.html"><tt class="sgmltag-element">informaltable</tt></a>|
+  <a href="example.html"><tt class="sgmltag-element">example</tt></a>|<a href="figure.html"><tt class="sgmltag-element">figure</tt></a>|<a href="table.html"><tt class="sgmltag-element">table</tt></a>|<a href="sidebar.html"><tt class="sgmltag-element">sidebar</tt></a>|<a href="abstract.html"><tt class="sgmltag-element">abstract</tt></a>|<a href="authorblurb.html"><tt class="sgmltag-element">authorblurb</tt></a>|<a href="epigraph.html"><tt class="sgmltag-element">epigraph</tt></a>)*,
+ (<a href="bibliodiv.html"><tt class="sgmltag-element">bibliodiv</tt></a>+|<a href="bibliomixed.html"><tt class="sgmltag-element">bibliomixed</tt></a>+))</pre><h3><span class="bold"><b>Attributes</b></span></h3><p><span class="common.attributes">Common attributes</span></p><table border="1" width="100%" summary="Attributes"><tr><td><p><span class="bold"><b>Name</b></span></p></td><td><p><span class="bold"><b>Type</b></span></p></td><td><p><span class="bold"><b>Default</b></span></p></td></tr><tr><td align="left" valign="top">status</td><td align="left" valign="top">CDATA</td><td align="left" valign="top"><span class="emphasis"><em>None</em></span></td></tr></table></div><div class="refsect1"><h2>Description</h2><p>
+A bibliography. A DocBook bibliography may contain some preferatory matter,
+but its main content is a set of bibliography entries (either 
+<tt class="sgmltag-element">BiblioEntry</tt> or <tt class="sgmltag-element">BiblioMixed</tt>).  These may occur
+inside <tt class="sgmltag-element">BiblioDiv</tt>s, instead of appearing directly in the
+<tt class="sgmltag-element">Bibliograpy</tt>.
+</p><div class="refsect2"><h3>Processing expectations</h3><p>
+Formatted as a displayed block. A <tt class="sgmltag-element">Bibliography</tt> in a <tt class="sgmltag-element">Book</tt>
+frequently causes a forced page break in print media.
+</p><p>
+Some systems may display only those entries within a 
+<tt class="sgmltag-element">Bibliography</tt> that are cited in the containing document.
+This may be an interchange issue.
+</p><p>
+The two styles of bibliography entry have quite different processing
+expectations.  <tt class="sgmltag-element">BiblioEntry</tt>s are &#8220;raw;&#8221; they contain
+a database-like collection of named fields.  <tt class="sgmltag-element">BiblioMixed</tt>
+entries are &#8220;cooked;&#8221; the fields occur in the order in which
+they will be presented and additional punctuation may be sprinkled
+between the fields.
+</p><p>
+See 
+<tt class="sgmltag-element">BiblioEntry</tt> and <tt class="sgmltag-element">BiblioMixed</tt> for further discussion.
+</p></div><div class="refsect2"><h3>Parents</h3><p>These elements contain bibliography:
+<span class="simplelist"><a href="article.html"><tt class="sgmltag-element">article</tt></a></span>.</p></div><div class="refsect2"><h3>Children</h3><p>The following elements occur in bibliography:
+<span class="simplelist"><a href="abstract.html"><tt class="sgmltag-element">abstract</tt></a>, <a href="authorblurb.html"><tt class="sgmltag-element">authorblurb</tt></a>, <a href="bibliodiv.html"><tt class="sgmltag-element">bibliodiv</tt></a>, <a href="bibliomixed.html"><tt class="sgmltag-element">bibliomixed</tt></a>, <a href="blockquote.html"><tt class="sgmltag-element">blockquote</tt></a>, <a href="epigraph.html"><tt class="sgmltag-element">epigraph</tt></a>, <a href="example.html"><tt class="sgmltag-element">example</tt></a>, <a href="figure.html"><tt class="sgmltag-element">figure</tt></a>, <a href="informaltable.html"><tt class="sgmltag-element">informaltable</tt></a>, <a href="itemizedlist.html"><tt class="sgmltag-element">itemizedlist</tt></a>, <a href="literallayout.html"><tt class="sgmltag-element">literallayout</tt></a>, <a href="mediaobject.html"><tt class="sgmltag-element">mediaobject</tt></a>, <a href="note.html"><tt class="sgmltag-element">note</tt></a>, <a href="orderedlist.html"><tt class="sgmltag-element">orderedlist</tt></a>, <a href="para.html"><tt class="sgmltag-element">para</tt></a>, <a href="programlisting.html"><tt class="sgmltag-element">programlisting</tt></a>, <a href="sidebar.html"><tt class="sgmltag-element">sidebar</tt></a>, <a href="subtitle.html"><tt class="sgmltag-element">subtitle</tt></a>, <a href="table.html"><tt class="sgmltag-element">table</tt></a>, <a href="title.html"><tt class="sgmltag-element">title</tt></a>, <a href="titleabbrev.html"><tt class="sgmltag-element">titleabbrev</tt></a>, <a href="variablelist.html"><tt class="sgmltag-element">variablelist</tt></a></span>.</p></div></div><div class="refsect1"><h2>Attributes</h2><div class="variablelist"><dl><dt><span class="term">status</span></dt><dd><p>
+<tt class="sgmltag-attribute">Status</tt> identifies the editorial or publication 
+status of the <tt class="sgmltag-element">Bibliography</tt>.
+</p><p>
+Publication status might be used to control formatting (for example,
+printing a &#8220;draft&#8221; watermark on drafts) or processing (perhaps
+a document with a status of &#8220;final&#8221; should not include any
+components that are not final).
+</p></dd></dl></div></div><div class="refsect1"><h2>Examples</h2><p>
+The entries in a <tt class="sgmltag-element">Bibliography</tt> come in two
+general forms, &#8220;raw&#8221; and &#8220;cooked&#8221;.  A
+raw entry is a database-like collection of named fields:
+</p><div class="informalexample"><pre class="programlisting">&lt;!DOCTYPE bibliography PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+          "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd"&gt;
+&lt;bibliography&gt;
+&lt;title&gt;A Test Bibliography&lt;/title&gt;
+
+&lt;bibliodiv&gt;&lt;title&gt;Books&lt;/title&gt;
+
+&lt;biblioentry&gt;
+  &lt;abbrev&gt;AhoSethiUllman96&lt;/abbrev&gt;
+  &lt;authorgroup&gt;
+    &lt;author&gt;&lt;firstname&gt;Alfred V.&lt;/firstname&gt;&lt;surname&gt;Aho&lt;/surname&gt;&lt;/author&gt;
+    &lt;author&gt;&lt;firstname&gt;Ravi&lt;/firstname&gt;&lt;surname&gt;Sethi&lt;/surname&gt;&lt;/author&gt;
+    &lt;author&gt;&lt;firstname&gt;Jeffrey D.&lt;/firstname&gt;&lt;surname&gt;Ullman&lt;/surname&gt;&lt;/author&gt;
+  &lt;/authorgroup&gt;
+  &lt;copyright&gt;&lt;year&gt;1996&lt;/year&gt;
+             &lt;holder&gt;Bell Telephone Laboratories, Inc.&lt;/holder&gt;&lt;/copyright&gt;
+  &lt;editor&gt;&lt;firstname&gt;James T.&lt;/firstname&gt;&lt;surname&gt;DeWolf&lt;/surname&gt;&lt;/editor&gt;
+  &lt;isbn&gt;0-201-10088-6&lt;/isbn&gt;
+  &lt;publisher&gt;
+    &lt;publishername&gt;Addison-Wesley Publishing Company&lt;/publishername&gt;
+  &lt;/publisher&gt;
+  &lt;title&gt;Compilers, Principles, Techniques, and Tools&lt;/title&gt;
+&lt;/biblioentry&gt;
+
+&lt;biblioentry xreflabel="Kites75"&gt;
+  &lt;authorgroup&gt;
+    &lt;author&gt;&lt;firstname&gt;Andrea&lt;/firstname&gt;&lt;surname&gt;Bahadur&lt;/surname&gt;&lt;/author&gt;
+    &lt;author&gt;&lt;firstname&gt;Mark&lt;/firstname&gt;&lt;surname&gt;Shwarek&lt;/surname&gt;&lt;/author&gt;
+  &lt;/authorgroup&gt;
+  &lt;copyright&gt;&lt;year&gt;1974&lt;/year&gt;&lt;year&gt;1975&lt;/year&gt;
+     &lt;holder&gt;Product Development International Holding N. V.&lt;/holder&gt;
+     &lt;/copyright&gt;
+  &lt;isbn&gt;0-88459-021-6&lt;/isbn&gt;
+  &lt;publisher&gt;
+    &lt;publishername&gt;Plenary Publications International, Inc.&lt;/publishername&gt;
+  &lt;/publisher&gt;
+  &lt;title&gt;Kites&lt;/title&gt;
+  &lt;subtitle&gt;Ancient Craft to Modern Sport&lt;/subtitle&gt;
+  &lt;pagenums&gt;988-999&lt;/pagenums&gt;
+&lt;/biblioentry&gt;
+
+&lt;/bibliodiv&gt;
+&lt;bibliodiv&gt;&lt;title&gt;Periodicals&lt;/title&gt;
+
+&lt;biblioentry&gt;
+  &lt;abbrev&gt;Walsh97&lt;/abbrev&gt;
+  &lt;biblioset relation='journal'&gt;
+    &lt;title&gt;XML: Principles, Tools, and Techniques&lt;/title&gt;
+    &lt;publisher&gt;
+      &lt;publishername&gt;O'Reilly &amp;amp; Associates, Inc.&lt;/publishername&gt;
+    &lt;/publisher&gt;
+    &lt;issn&gt;1085-2301&lt;/issn&gt;
+    &lt;editor&gt;&lt;firstname&gt;Dan&lt;/firstname&gt;&lt;surname&gt;Connolly&lt;/surname&gt;&lt;/editor&gt;
+  &lt;/biblioset&gt;
+  &lt;biblioset relation='article'&gt;
+    &lt;title&gt;A Guide to XML&lt;/title&gt;
+    &lt;author&gt;&lt;surname&gt;Walsh&lt;/surname&gt;&lt;firstname&gt;Norman&lt;/firstname&gt;&lt;/author&gt;
+    &lt;copyright&gt;&lt;year&gt;1997&lt;/year&gt;&lt;holder&gt;ArborText, Inc.&lt;/holder&gt;&lt;/copyright&gt;
+    &lt;pagenums&gt;97-108&lt;/pagenums&gt;
+  &lt;/biblioset&gt;
+&lt;/biblioentry&gt;
+
+&lt;/bibliodiv&gt;
+
+&lt;/bibliography&gt;</pre></div><p>
+A cooked entry is formatted, including additional
+<i><tt>#PCDATA</tt></i>, so that it is easy to render.
+</p><div class="informalexample"><pre class="programlisting">&lt;!DOCTYPE bibliography PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+          "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd"&gt;
+&lt;bibliography&gt;&lt;title&gt;References&lt;/title&gt;
+
+&lt;bibliomixed&gt;
+  &lt;bibliomset relation='article'&gt;
+    &lt;surname&gt;Walsh&lt;/surname&gt;, &lt;firstname&gt;Norman&lt;/firstname&gt;.
+    &lt;title role='article'&gt;Introduction to Cascading Style Sheets&lt;/title&gt;.
+  &lt;/bibliomset&gt;
+  &lt;bibliomset relation='journal'&gt;
+    &lt;title&gt;The World Wide Web Journal&lt;/title&gt; 
+    &lt;volumenum&gt;2&lt;/volumenum&gt;&lt;issuenum&gt;1&lt;/issuenum&gt;.
+    &lt;publishername&gt;O'Reilly &amp;amp; Associates, Inc.&lt;/publishername&gt; and
+    &lt;corpname&gt;The World Wide Web Consortium&lt;/corpname&gt;.
+    &lt;pubdate&gt;Winter, 1996&lt;/pubdate&gt;&lt;/bibliomset&gt;.
+&lt;/bibliomixed&gt;
+
+&lt;/bibliography&gt;</pre></div></div></div><div class="navfooter"><table width="100%" summary="Navigation table"><tr><td width="40%" align="left"><a href="bibliodiv.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a href="sdocbook.html">Home</a></td><td width="40%" align="right">&nbsp;<a href="bibliomisc.html">Next</a></td></tr><tr><td width="40%" align="left">bibliodiv&nbsp;</td><td width="20%" align="center"><a href="ref-elements.html">Up</a></td><td width="40%" align="right">&nbsp;bibliomisc</td></tr></table></div><div class="copyrightfooter"><p><a href="dbcpyright.html">Copyright</a> &copy; 1999, 2000, 2001, 2002 <a href="http://www.oreilly.com/">O'Reilly &amp; Associates, Inc.</a> All rights reserved.</p></div></body></html>

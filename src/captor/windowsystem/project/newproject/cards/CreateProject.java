@@ -35,7 +35,8 @@ public class CreateProject extends FITCard implements ActionListener, KeyListene
     JPanel location;
     JLabel projectName;
     JTextField projectNameTF;
-    JTextField rootFolderTF, outputFolderTF;
+    JTextField rootFolderTF;
+    JTextField outputFolderTF;
     JButton browseProjectPath, browseOutputPath;        
     String rootFolderString;
     JCheckBox check;
@@ -51,15 +52,11 @@ public class CreateProject extends FITCard implements ActionListener, KeyListene
     
     //-------------------------------------------------------------------------
     
-    private void setDefaultSystemPath()  {
-        String path = model.getConfig().getSystemConfig().getInstallPath() + System.getProperty("file.separator") + "projects" + System.getProperty("file.separator");
-        path = path.replace("\\\\", "\\");
-        rootFolderTF.setText(path);
-        
-        path.concat(System.getProperty("file.separator") + "output" + System.getProperty("file.separator"));
-        path = path.replace("\\\\", "\\");
-        outputFolderTF.setText(path);
-        rootFolderString = path;
+    private void setDefaultSystemPath()
+    {
+        rootFolderString = model.getConfig().getSystemConfig().getInstallPath() + System.getProperty("file.separator") + "projects" + System.getProperty("file.separator");
+        rootFolderTF.setText(rootFolderString);
+        outputFolderTF.setText(rootFolderString);
     }
     
     //-------------------------------------------------------------------------
@@ -102,12 +99,14 @@ public class CreateProject extends FITCard implements ActionListener, KeyListene
     //-------------------------------------------------------------------------
     
     private JPanel createLocation()  {
-        JPanel location = new JPanel();
+        int labelMin = 90;
+        int rootWidth = 100;
+
+    	JPanel location = new JPanel();
         location.setLayout(new BoxLayout(location, BoxLayout.Y_AXIS));
-        TitledBorder title;
-        title = BorderFactory.createTitledBorder(MyIntl.NEW_PROJECT_WINDOW_LOCATION);
+
+        TitledBorder title = BorderFactory.createTitledBorder(MyIntl.NEW_PROJECT_WINDOW_LOCATION);
         location.setBorder(title);
-        title = BorderFactory.createTitledBorder(MyIntl.NEW_PROJECT_WINDOW_PROJECT_LAYOUT);
         
         JPanel projectPanel = new JPanel();
         JPanel outputPanel = new JPanel();
@@ -117,46 +116,45 @@ public class CreateProject extends FITCard implements ActionListener, KeyListene
         outputPanel.setLayout(new BoxLayout(outputPanel, BoxLayout.X_AXIS));
         overwritePanel.setLayout(new BoxLayout(overwritePanel, BoxLayout.X_AXIS));
         
+        // Project input path
         browseProjectPath = new JButton(MyIntl.NEW_PROJECT_WINDOW_BROWSE);
         browseProjectPath.setActionCommand("browseProjectPath");
         browseProjectPath.addActionListener(this);
-        JLabel directory = new JLabel(MyIntl.NEW_PROJECT_WINDOW_DIR);
         
-        int labelMin = 90;
-        int rootWidth = 100;
+        JLabel directory = new JLabel(MyIntl.NEW_PROJECT_WINDOW_DIR);      
         directory.setPreferredSize(new Dimension(labelMin, 20));
         
         rootFolderTF = new JTextField();
         rootFolderTF.setPreferredSize(new Dimension(rootWidth, 20));
         
         projectPanel.add(directory);
-        projectPanel.add(Box.createHorizontalGlue());
+        // projectPanel.add(Box.createHorizontalGlue());
         projectPanel.add(rootFolderTF);
         projectPanel.add(browseProjectPath);
         
+        
+        // Project output path
         browseOutputPath = new JButton(MyIntl.NEW_PROJECT_WINDOW_BROWSE);
         browseOutputPath.setActionCommand("browseOutputPath");
         browseOutputPath.addActionListener(this);
+        
         JLabel output = new JLabel(MyIntl.NEW_PROJECT_WINDOW_OUTPUT_DIR);
+        output.setPreferredSize(new Dimension(labelMin, 40));
+        
         outputFolderTF = new JTextField();
-        
-        outputFolderTF.setPreferredSize(new Dimension(rootWidth,20));
-        output.setPreferredSize(new Dimension(labelMin, 20));
-        
+        outputFolderTF.setPreferredSize(new Dimension(rootWidth, 30));
+                
         outputPanel.add(output);
-        outputPanel.add(Box.createHorizontalGlue());
+        // outputPanel.add(Box.createHorizontalGlue());
         outputPanel.add(outputFolderTF);
         outputPanel.add(browseOutputPath);
         
         
-//        JLabel overwriteLabel = new JLabel("   Overwrite existing resources without warning:");
-//        overwriteLabel.setPreferredSize(new Dimension(labelMin+134, 20));
-        
+        // Overwrite checkbox
         check = new JCheckBox(MyIntl.NEW_PROJECT_WINDOW_OVERWRITE);
         check.setPreferredSize(new Dimension(220, 15));
         check.addActionListener(this);
         check.setSelected(true);
-
         check.setPreferredSize(new Dimension(350, 30));
         add(check);
         
@@ -165,10 +163,8 @@ public class CreateProject extends FITCard implements ActionListener, KeyListene
         Dimension maxSize = new Dimension(5, 40);
         overwritePanel.add(new Box.Filler(minSize, prefSize, maxSize));
         overwritePanel.add(check);
-        overwritePanel.add(Box.createHorizontalGlue());
-        
-        
-        
+        // overwritePanel.add(Box.createHorizontalGlue());
+               
         location.add(projectPanel);
         
         minSize = new Dimension(100, 10);
@@ -184,12 +180,10 @@ public class CreateProject extends FITCard implements ActionListener, KeyListene
         location.add(overwritePanel);
         
         setDefaultSystemPath();
-        rootFolderTF.setEnabled(false);
-        outputFolderTF.setEnabled(false);
-        
+        rootFolderTF.setEnabled(true);
+        outputFolderTF.setEnabled(true);
         
         JPanel retPanel = new JPanel();
-        
         retPanel.setLayout(new BoxLayout(retPanel, BoxLayout.X_AXIS));
         
         minSize = new Dimension(15, 10);
@@ -217,6 +211,7 @@ public class CreateProject extends FITCard implements ActionListener, KeyListene
             ChooseDirectory cd = new ChooseDirectory(frame, model);
             String ret = cd.open();
             if ( ret != null )  {
+            	outputFolterString = ret + System.getProperty("file.separator") + projectNameTF.getText();
                 outputFolderTF.setText(ret);
             }
         }
@@ -255,10 +250,9 @@ public class CreateProject extends FITCard implements ActionListener, KeyListene
         
         
         project.setName(projectNameTF.getText());
-        project.setPath(rootFolderTF.getText() + System.getProperty("file.separator") + projectNameTF.getText());
         project.setPath(rootFolderTF.getText());
-        project.setOutputFolder(outputFolderTF.getText()+ System.getProperty("file.separator"));
-        project.setInputFolder(rootFolderTF.getText() + System.getProperty("file.separator") + "input"+ System.getProperty("file.separator"));
+        project.setInputFolder(rootFolderTF.getText() + System.getProperty("file.separator") + "input" + System.getProperty("file.separator"));
+        project.setOutputFolder(outputFolderTF.getText() + System.getProperty("file.separator") + "output" + System.getProperty("file.separator"));
         
         if ( check.isSelected() )  {
             project.setOverwriteResources(true);

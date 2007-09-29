@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="project" default="obfuscate" basedir=".">
+
+	<!-- edit the following lines to your needs            -->
+	<property name="project_name"   value="captor"/>
+	<property name="jar"            value="../../${project_name}.jar"/>
+	<property name="obfjar"         value="${project_name}_obf.jar"/>
+	<property name="obfuscationlog" value="${project_name}_obflog.txt"/>
+	<property name="mainclass"      value="captor.Captor"/>
+
+	<!-- obfuscate -->
+	<target name="obfuscate">
+
+		<taskdef name="obfuscate" classname="com.yworks.yguard.ObfuscatorTask" classpath="yguard.jar"/>
+
+			<delete file="../../captor_obf.jar"/>
+			<delete file="dev/yguard/captor_obf.jar"/>
+
+			<obfuscate mainclass="${mainclass}" logfile="${obfuscationlog}" replaceclassnamestrings="true">
+
+				<property name="error-checking" value="pedantic"/>
+
+				<externalclasses>
+					<pathelement location="../../lib/jaxb-api.jar"/>
+					<pathelement location="../../lib/jaxb-impl.jar"/>
+					<pathelement location="../../lib/jaxb-libs.jar"/>
+					<pathelement location="../../lib/jaxb-xjc.jar"/>
+				</externalclasses>	
+	
+				<expose>
+					
+					<class name="captor.projectsystem.build.mapper.**" methods="public" fields="public"/>
+					<class name="captor.domainsystem.**" methods="public" fields="public"/>
+					
+					<class name="captor.projectsystem.build.mapper.impl.**" methods="public" fields="public"/>
+					<class name="captor.domainsystem.impl.**" methods="public" fields="public"/>
+					
+					<class name="captor.projectsystem.build.mapper.impl.runtime.**" methods="public" fields="public"/>
+					<class name="captor.domainsystem.impl.runtime.**" methods="public" fields="public"/>
+
+					<class name="captor.windowsystem.formcomponent.*" methods="public" fields="public"/>
+					<class name="captor.windowsystem.formcomponent.**.*" methods="public" fields="public"/>
+					
+					<class name="captor.windowsystem.formcomponent.**.**.*" methods="public" fields="public"/>
+	           
+				</expose>
+
+				<adjust replacePath="false">
+					<include name="captor/projectsystem/build/mapper/*.properties"/>
+					<include name="captor/domainsystem/*.properties"/>
+					<include name="captor/projectsystem/build/mapper/*.ser"/>
+					<include name="captor/domainsystem/*.ser"/>
+				</adjust>
+
+				<inoutpair in="${jar}" out="${obfjar}"/>
+           
+		</obfuscate>
+        
+		<copy todir="../../">
+			<fileset dir=".">
+				<include name="**/captor_obf.jar"/>
+			</fileset>
+		</copy>
+        
+	</target>
+
+</project>
+
+ 

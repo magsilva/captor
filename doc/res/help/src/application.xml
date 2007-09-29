@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<book>
+
+	<bookinfo>
+    		<title>Ferramenta Captor</title>
+	</bookinfo>
+
+	<chapter>
+    		<title>Introdução</title>
+
+    		<para>
+Os geradores de aplicação são ferramentas projetadas para receber uma especificação de software, validar essa especificação e gerar artefatos, tais como: código-fonte, casos de teste, diagramas UML e outros tipos de documentos. O processo de uso de geradores de aplicação é apresentado na Figura abaixo.
+    		</para>
+
+    		<figure>
+    		  <title>Utilização de geradores de aplicação</title>
+          <graphic fileref="img/using.PNG" format="PNG"/>
+        </figure>
+
+    		<para>
+A ferramenta Captor é um gerador de aplicação configurável, ou seja, esta ferramenta pode ser configurada para receber diferentes especificações e gerar artefatos de software para diversas arquiteturas.
+    		</para>
+
+    		<para>
+Na Figura abaixo é apresentado o processo de configuração e utilização da ferramenta Captor para as instâncias I1 e I2. A Instância I1 pode receber especificações para o domínio T e pode produzir artefatos para as aplicações T1, T2 e Tn. A Instância I2 pode receber especificações para o domínio P e pode produzir artefatos para as aplicações P1, P2 e Pn.
+    		</para>
+
+    		<figure>
+    		  <title>Processo de utilização da ferramenta Captor</title>
+          <graphic fileref="img/usingCaptor.PNG" format="PNG"/>
+        </figure>
+
+    		<para>
+Assim como foi apresentado na Figura acima, a ferramenta Captor precisa ser configurada antes de ser utilizada para gerar artefatos em um domínio específico. O usuário que interage com a ferramenta durante a etapa de configuração é chamado engenheiro de domínio e o usuário que interage com a ferramenta durante a etapa de utilização é chamado engenheiro de aplicação.
+    		</para>
+
+    		<para>
+O processo de configuração e utilização é apresentado no Manual de uso da ferramenta localizado no diretório: /install_dir/doc/Manual.pdf.    		
+    		</para>
+
+    		<para>
+    		</para>
+
+	</chapter>
+
+	<!--______________________________________________________________________________________________________-->
+	
+	<chapter>
+  	<title>Sobre a ferramenta</title>
+
+		<section>
+	    		<title>Componentes da ferramenta Captor</title>
+	    		
+	    		<para>
+A interface gráfica da ferramenta Captor é formada por três componentes principais: o painel de navegação, o painel de edição de formulários e o painel de mensagens.
+	    		</para>
+
+ 		</section>
+
+  	
+		<section>
+	    		<title>Painel de navegação</title>
+	    		
+	    		<para>
+O painel de navegação permite que os formulários da especificação sejam criados e editados.
+	    		</para>
+
+ 		</section>
+ 		
+		<section>
+	    		<title>Painel de edição de formulários</title>
+	    		
+	    		<para>
+O painel de edição de formulários permite que o usuário edite os dados da especificação contidos nos formulários.
+	    		</para>
+
+ 		</section>
+ 		
+		<section>
+	    		<title>Barra de visualização de mensagens</title>
+
+	    		<para>
+A barra de visualização de mensagens permite que a ferramenta disponibilize para o usuário diversas mensagens. Dentre as mensagens disponibilizadas estão: mensagens de persistência de dados e geração de artefatos, mensagens de advertência e mensagens de erros.
+	    		</para>
+ 		</section>
+
+	</chapter>
+
+	<!--______________________________________________________________________________________________________-->
+	
+</book>

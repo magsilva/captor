@@ -1,0 +1,34 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>option</title><link rel="stylesheet" href="defguide.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.51.1"><link rel="home" href="sdocbook.html" title="Simplified DocBook"><link rel="up" href="ref-elements.html" title="Simplified DocBook Element Reference"><link rel="previous" href="objectinfo.html" title="objectinfo"><link rel="next" href="orderedlist.html" title="orderedlist"></head><body><div class="navheader"><table border="0" cellpadding="0" cellspacing="0" width="100%" summary="Navigation table"><tr><td align="left">&nbsp;<a title="Simplified DocBook" href="sdocbook.html"><img src="figures/nav-home.png" alt="Home" border="0"></a>&nbsp;<a title="objectinfo" href="objectinfo.html"><img src="figures/nav-prev.png" alt="Prev" border="0"></a>&nbsp;<a title="Simplified DocBook Element Reference" href="ref-elements.html"><img src="figures/nav-up.png" alt="Up" border="0"></a>&nbsp;<a title="orderedlist" href="orderedlist.html"><img src="figures/nav-next.png" alt="Next" border="0"></a></td><td align="right"><i>DocBook: The Definitive Guide</i> Version 0.0.1 <span class="alpha-version">(<a href="co01.html"><em>Alpha</em></a>)</span> </td></tr></table></div><div class="refentry"><a name="option.element"></a><div class="titlepage"><div><h1 class="title">option</h1></div><div><p class="releaseinfo">$Revision: 1.1 $</p></div><div><p class="pubdate">$Date: 2005/07/03 00:15:37 $</p></div></div><div class="refnamediv"><p>option &#8212; An option for a software command</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><h3><span class="bold"><b>Mixed Content Model</b></span></h3><pre class="synopsis">option ::=
+(#PCDATA|<a href="replaceable.html"><tt class="sgmltag-element">replaceable</tt></a>|<a href="inlinemediaobject.html"><tt class="sgmltag-element">inlinemediaobject</tt></a>)*</pre><h3><span class="bold"><b>Attributes</b></span></h3><p><span class="common.attributes">Common attributes</span></p></div><div class="refsect1"><h2>Description</h2><p>
+<tt class="sgmltag-element">Option</tt> identifies an optional argument to a software command.
+</p><div class="refsect2"><a name="dbreproc.option"></a><h3>Processing expectations</h3><p>
+Formatted inline.
+</p><p>
+DocBook does not specify whether or not a symbol (such as
+<tt>-</tt> or <tt>/</tt>) is generated before the content
+of <tt class="sgmltag-element">Option</tt>, or what that symbol might be.  Generating
+the text may or may not be desirable, but in either case, it is
+an interchange issue.
+</p></div><div class="refsect2"><h3>Future Changes</h3><p>
+<a class="indexterm" name="d0e19319"></a>
+The content model of <tt class="sgmltag-element">Option</tt> will be constrained to
+<tt>(#PCDATA | Replaceable | InlineGraphic)</tt> in 
+DocBook V4.0.
+</p></div><div class="refsect2"><h3>Parents</h3><p>These elements contain option:
+<span class="simplelist"><a href="attribution.html"><tt class="sgmltag-element">attribution</tt></a>, <a href="bibliomisc.html"><tt class="sgmltag-element">bibliomisc</tt></a>, <a href="citetitle.html"><tt class="sgmltag-element">citetitle</tt></a>, <a href="command.html"><tt class="sgmltag-element">command</tt></a>, <a href="computeroutput.html"><tt class="sgmltag-element">computeroutput</tt></a>, <a href="emphasis.html"><tt class="sgmltag-element">emphasis</tt></a>, <a href="entry.html"><tt class="sgmltag-element">entry</tt></a>, <a href="lineannotation.html"><tt class="sgmltag-element">lineannotation</tt></a>, <a href="link.html"><tt class="sgmltag-element">link</tt></a>, <a href="literal.html"><tt class="sgmltag-element">literal</tt></a>, <a href="literallayout.html"><tt class="sgmltag-element">literallayout</tt></a>, <a href="para.html"><tt class="sgmltag-element">para</tt></a>, <a href="phrase.html"><tt class="sgmltag-element">phrase</tt></a>, <a href="programlisting.html"><tt class="sgmltag-element">programlisting</tt></a>, <a href="quote.html"><tt class="sgmltag-element">quote</tt></a>, <a href="subtitle.html"><tt class="sgmltag-element">subtitle</tt></a>, <a href="term.html"><tt class="sgmltag-element">term</tt></a>, <a href="title.html"><tt class="sgmltag-element">title</tt></a>, <a href="titleabbrev.html"><tt class="sgmltag-element">titleabbrev</tt></a>, <a href="trademark.html"><tt class="sgmltag-element">trademark</tt></a>, <a href="ulink.html"><tt class="sgmltag-element">ulink</tt></a>, <a href="userinput.html"><tt class="sgmltag-element">userinput</tt></a></span>.</p></div><div class="refsect2"><h3>Children</h3><p>The following elements occur in option:
+<span class="simplelist"><a href="inlinemediaobject.html"><tt class="sgmltag-element">inlinemediaobject</tt></a>, <a href="replaceable.html"><tt class="sgmltag-element">replaceable</tt></a></span>.</p></div></div><div class="refsect1"><h2>See Also</h2><p><span class="simplelist"><a href="computeroutput.html"><tt class="sgmltag-element">computeroutput</tt></a>, <a href="literal.html"><tt class="sgmltag-element">literal</tt></a>, <a href="replaceable.html"><tt class="sgmltag-element">replaceable</tt></a>, <a href="userinput.html"><tt class="sgmltag-element">userinput</tt></a></span>.
+</p></div><div class="refsect1"><h2>Examples</h2><div class="informalexample"><pre class="programlisting">&lt;!DOCTYPE para PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+          "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd"&gt;
+&lt;para&gt;
+The &lt;option&gt;-a&lt;/option&gt; option on the &lt;acronym&gt;UNIX&lt;/acronym&gt;
+&lt;command&gt;ls&lt;/command&gt; command or the &lt;option&gt;/r&lt;/option&gt; option on the
+&lt;acronym&gt;DOS&lt;/acronym&gt; &lt;command&gt;attrib&lt;/command&gt;
+command, for example.
+&lt;/para&gt;</pre></div><div class="example-output"><p>
+The <tt>-a</tt> option on the UNIX
+<b>ls</b> command or the <tt>/r</tt> option on the
+DOS <b>attrib</b>
+command, for example.
+</p></div></div></div><div class="navfooter"><table width="100%" summary="Navigation table"><tr><td width="40%" align="left"><a href="objectinfo.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a href="sdocbook.html">Home</a></td><td width="40%" align="right">&nbsp;<a href="orderedlist.html">Next</a></td></tr><tr><td width="40%" align="left">objectinfo&nbsp;</td><td width="20%" align="center"><a href="ref-elements.html">Up</a></td><td width="40%" align="right">&nbsp;orderedlist</td></tr></table></div><div class="copyrightfooter"><p><a href="dbcpyright.html">Copyright</a> &copy; 1999, 2000, 2001, 2002 <a href="http://www.oreilly.com/">O'Reilly &amp; Associates, Inc.</a> All rights reserved.</p></div></body></html>

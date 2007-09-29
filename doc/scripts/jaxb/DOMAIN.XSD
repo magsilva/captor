@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+<xsd:element name="forms" type="formsType"/>
+
+<xsd:complexType name="formsType">
+  <xsd:sequence>
+    <xsd:element name="name">
+        <xsd:simpleType>
+            <xsd:restriction base="xsd:string">
+                <xsd:pattern value="([a-zA-ZçÇãÃáéíóúÁÉÍÓÚâêîôûÂÊÎÔÛUüÜ\.\s\-_0-9])+"/>
+            </xsd:restriction>
+        </xsd:simpleType>
+    </xsd:element>     
+    
+    <xsd:element name="form" type="formType" minOccurs="1" maxOccurs="unbounded"/>
+  </xsd:sequence>
+</xsd:complexType>
+
+
+<xsd:complexType name="formType">
+  <xsd:sequence>
+    <xsd:element name="id" minOccurs="1" maxOccurs="1">
+        <xsd:simpleType>
+            <xsd:restriction base="xsd:string">
+                <xsd:pattern value="([a-zA-ZçÇãÃáéíóúÁÉÍÓÚâêîôûÂÊÎÔÛUüÜ*\.\s\-_0-9])+"/>
+            </xsd:restriction>
+        </xsd:simpleType>
+    </xsd:element>     
+    
+    <xsd:element name="enabled" type="xsd:boolean" minOccurs="0" maxOccurs="1"/>
+    
+    <xsd:element name="name" minOccurs="1" maxOccurs="1">
+        <xsd:simpleType>
+            <xsd:restriction base="xsd:string">
+                <xsd:pattern value="([a-zA-ZçÇãÃáéíóúÁÉÍÓÚâêîôûÂÊÎÔÛUüÜ\.\s\-_0-9])+"/>
+            </xsd:restriction>
+        </xsd:simpleType>
+    </xsd:element>     
+    <xsd:element name="variant" minOccurs="1" maxOccurs="1"> 
+        <xsd:simpleType>
+            <xsd:restriction base="xsd:string">
+                <xsd:pattern value="([a-zA-ZçÇãÃáéíóúÁÉÍÓÚâêîôûÂÊÎÔÛUüÜ\.\s\-_0-9])+"/>
+            </xsd:restriction>
+        </xsd:simpleType>
+    </xsd:element>     
+    
+    <xsd:element name="extends" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+
+    <xsd:element name="nextForms" type="nextFormsType" minOccurs="0" maxOccurs="1"/>
+    <xsd:element name="help" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+    <xsd:element name="formComponents" type="formComponentsType" minOccurs="0" maxOccurs="1"/>
+
+  </xsd:sequence>
+  <xsd:attribute name="use">
+  	<!--
+	<xsd:simpleType>
+    		<xsd:restriction base="xsd:string">
+      			<xsd:enumeration value="required"/>
+    		</xsd:restriction>
+  	</xsd:simpleType>  
+  	-->
+  </xsd:attribute>
+  <xsd:attribute name="isRoot" type="xsd:boolean"/>
+</xsd:complexType>
+
+<xsd:complexType name="orType">
+  <xsd:sequence>
+        <xsd:element name="formPath" minOccurs="0" maxOccurs="unbounded" type="xsd:string">
+    		<!--
+        	<xsd:simpleType>
+	            <xsd:restriction base="xsd:string">
+        	        <xsd:pattern value="([a-zA-Z\.\s\-_0-9])+"/>
+	            </xsd:restriction>
+        	</xsd:simpleType>
+	        -->
+       </xsd:element> 
+  </xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name="formComponentsType">
+  <xsd:sequence>
+        <xsd:element name="formComponent" minOccurs="1" maxOccurs="unbounded" type="formComponentType"/>
+  </xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name="formComponentType">
+  <xsd:sequence>
+       <xsd:element name="fullname" minOccurs="1" maxOccurs="1">
+        	<xsd:simpleType>
+	            <xsd:restriction base="xsd:string">
+        	        <xsd:pattern value="([a-zA-Z\.\s\-_0-9])+"/>
+	            </xsd:restriction>
+        	</xsd:simpleType>
+       </xsd:element> 
+        
+        <xsd:element name="parameters" minOccurs="0" maxOccurs="1" type="parametersType"/>
+  </xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name="parametersType">
+  <xsd:sequence>
+        <xsd:element name="parameter" minOccurs="0" maxOccurs="unbounded" type="parameterType"/>
+  </xsd:sequence>
+</xsd:complexType>
+
+
+<xsd:complexType name="parameterType">
+  <xsd:sequence>
+    <xsd:element name="name" minOccurs="1" maxOccurs="1">
+        <xsd:simpleType>
+            <xsd:restriction base="xsd:string">
+                <xsd:pattern value="([a-zA-Z\.\s\-_0-9])+"/>
+            </xsd:restriction>
+        </xsd:simpleType>
+    </xsd:element> 
+        
+    <xsd:element name="value" minOccurs="1" maxOccurs="1" type="xsd:string">
+		<!-- 
+        <xsd:simpleType>
+            <xsd:restriction base="xsd:string">
+                <xsd:pattern value="([a-zA-Z\.\s\-_0-9])+"/>
+            </xsd:restriction>
+        </xsd:simpleType>
+        -->
+    </xsd:element> 
+  </xsd:sequence>
+</xsd:complexType>
+
+
+<xsd:complexType name="nextFormsType">
+  <xsd:sequence>
+        <xsd:element name="nextForm" minOccurs="0" maxOccurs="unbounded" type="nextFormType"/>
+  </xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name="nextFormType">
+  <xsd:sequence>
+        <xsd:element name="id" minOccurs="1" maxOccurs="1" type="xsd:string">
+    	<!--
+            <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                    <xsd:pattern value="([a-zA-ZçÇãÃáéíóúÁÉÍÓÚâêîôûÂÊÎÔÛUüÜ\.\s\-_0-9])+"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+        -->
+        </xsd:element>     
+        <xsd:element name="minChilds" minOccurs="1" maxOccurs="1">
+            <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                    <xsd:pattern value="([0-9nN])+"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+        </xsd:element>     
+        <xsd:element name="maxChilds" minOccurs="1" maxOccurs="1">
+            <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                    <xsd:pattern value="([0-9nN])+"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+        </xsd:element>     
+
+  </xsd:sequence>
+</xsd:complexType>
+
+</xsd:schema>

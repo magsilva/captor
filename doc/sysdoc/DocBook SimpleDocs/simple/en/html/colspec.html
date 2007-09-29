@@ -1,0 +1,82 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>colspec</title><link rel="stylesheet" href="defguide.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.51.1"><link rel="home" href="sdocbook.html" title="Simplified DocBook"><link rel="up" href="ref-elements.html" title="Simplified DocBook Element Reference"><link rel="previous" href="citetitle.html" title="citetitle"><link rel="next" href="command.html" title="command"></head><body><div class="navheader"><table border="0" cellpadding="0" cellspacing="0" width="100%" summary="Navigation table"><tr><td align="left">&nbsp;<a title="Simplified DocBook" href="sdocbook.html"><img src="figures/nav-home.png" alt="Home" border="0"></a>&nbsp;<a title="citetitle" href="citetitle.html"><img src="figures/nav-prev.png" alt="Prev" border="0"></a>&nbsp;<a title="Simplified DocBook Element Reference" href="ref-elements.html"><img src="figures/nav-up.png" alt="Up" border="0"></a>&nbsp;<a title="command" href="command.html"><img src="figures/nav-next.png" alt="Next" border="0"></a></td><td align="right"><i>DocBook: The Definitive Guide</i> Version 0.0.1 <span class="alpha-version">(<a href="co01.html"><em>Alpha</em></a>)</span> </td></tr></table></div><div class="refentry"><a name="colspec.element"></a><div class="titlepage"><div><h1 class="title">colspec</h1></div><div><p class="releaseinfo">$Revision: 1.1 $</p></div><div><p class="pubdate">$Date: 2005/07/03 00:15:41 $</p></div></div><div class="refnamediv"><p>colspec &#8212; Specifications for a column in a table</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><h3><span class="bold"><b>Content Model</b></span></h3><pre class="synopsis">colspec ::=
+EMPTY</pre><h3><span class="bold"><b>Attributes</b></span></h3><p></p><table border="1" width="100%" summary="Attributes"><tr><td><p><span class="bold"><b>Name</b></span></p></td><td><p><span class="bold"><b>Type</b></span></p></td><td><p><span class="bold"><b>Default</b></span></p></td></tr><tr><td align="left" valign="top">colnum</td><td align="left" valign="top">CDATA</td><td align="left" valign="top"><span class="emphasis"><em>None</em></span></td></tr><tr><td align="left" valign="top">char</td><td align="left" valign="top">CDATA</td><td align="left" valign="top"><span class="emphasis"><em>None</em></span></td></tr><tr><td align="left" valign="top">colsep</td><td align="left" valign="top">CDATA</td><td align="left" valign="top"><span class="emphasis"><em>None</em></span></td></tr><tr><td align="left" valign="top">colwidth</td><td align="left" valign="top">CDATA</td><td align="left" valign="top"><span class="emphasis"><em>None</em></span></td></tr><tr><td align="left" valign="top">charoff</td><td align="left" valign="top">CDATA</td><td align="left" valign="top"><span class="emphasis"><em>None</em></span></td></tr><tr><td align="left" valign="top">colname</td><td align="left" valign="top">CDATA</td><td align="left" valign="top"><span class="emphasis"><em>None</em></span></td></tr><tr><td align="left" valign="top">rowsep</td><td align="left" valign="top">CDATA</td><td align="left" valign="top"><span class="emphasis"><em>None</em></span></td></tr><tr><td align="left" valign="top">align</td><td align="left" valign="top"><p><span class="emphasis"><em>Enumeration:</em></span>
+</p><table class="simplelist" border="0" summary="Simple list"><tr><td>center</td></tr><tr><td>char</td></tr><tr><td>justify</td></tr><tr><td>left</td></tr><tr><td>right</td></tr></table></td><td align="left" valign="top"><span class="emphasis"><em>None</em></span></td></tr></table></div><div class="refsect1"><h2>Description</h2><p>
+The attributes of this empty element specify the presentation characteristics
+of entries in a column of a table.
+</p><p>
+Each <tt class="sgmltag-element">ColSpec</tt> refers to a single column.  Columns are numbered
+sequentially from left to right in the table.  If the 
+<tt class="sgmltag-attribute">ColNum</tt> attribute is not specified, the
+<tt class="sgmltag-element">ColSpec</tt> is for the next column after the preceeding
+<tt class="sgmltag-element">ColSpec</tt> or column 1 if it is the first <tt class="sgmltag-element">ColSpec</tt>.
+</p><div class="refsect2"><h3>Processing expectations</h3><p>
+Suppressed. This element is expected to obey the semantics
+of the <i>CALS Table Model
+Document Type Definition</i>, as specified by <i>
+<a href="http://www.oasis-open.org/html/a502.htm" target="_top">OASIS
+Technical Memorandum TM 9502:1995</a>
+</i>.
+</p></div><div class="refsect2"><h3>Parents</h3><p>These elements contain colspec:
+<span class="simplelist"><a href="entrytbl.html"><tt class="sgmltag-element">entrytbl</tt></a>, <a href="tfoot.html"><tt class="sgmltag-element">tfoot</tt></a>, <a href="tgroup.html"><tt class="sgmltag-element">tgroup</tt></a>, <a href="thead.html"><tt class="sgmltag-element">thead</tt></a></span>.</p></div></div><div class="refsect1"><h2>Attributes</h2><div class="variablelist"><dl><dt><span class="term">align</span></dt><dd><p>
+<tt class="sgmltag-attribute">Align</tt> specifies the horizontal alignment
+of <tt class="sgmltag-element">Entry</tt>s (or <tt class="sgmltag-element">EntryTbl</tt>s) in the column. The
+default alignment is inherited from the enclosing <tt class="sgmltag-element">TGroup</tt>. 
+If <tt>Char</tt> is specified, see also 
+<tt class="sgmltag-attribute">Char</tt> and
+<tt class="sgmltag-attribute">CharOff</tt>.
+Individual <tt class="sgmltag-element">Entry</tt>s and
+<tt class="sgmltag-element">EntryTbl</tt>s can specify an alternate alignment.
+</p></dd><dt><span class="term">char</span></dt><dd><p>
+<tt class="sgmltag-attribute">Char</tt> specifies the alignment character when
+the <tt class="sgmltag-attribute">Align</tt> attribute is set to <tt>Char</tt>.
+</p></dd><dt><span class="term">charoff</span></dt><dd><p>
+<tt class="sgmltag-attribute">CharOff</tt> specifies the percentage of the
+column's total width that should appear to the left of the first
+occurance of the character identified in <tt class="sgmltag-attribute">Char</tt> when the <tt class="sgmltag-attribute">Align</tt>
+attribute is set to <tt>Char</tt>. This attribute is inherited from
+the enclosing <tt class="sgmltag-element">TGroup</tt>.
+</p></dd><dt><span class="term">colname</span></dt><dd><p>
+<tt class="sgmltag-attribute">ColName</tt> gives a symbolic name to a column.
+The symbolic name can then be used in subsequent <tt class="sgmltag-element">Entry</tt>s and
+<tt class="sgmltag-element">SpanSpec</tt>s to identify the column.
+</p></dd><dt><span class="term">colnum</span></dt><dd><p>
+<tt class="sgmltag-attribute">ColNum</tt> gives the number of the column defined
+by this <tt class="sgmltag-element">ColSpec</tt>. If not specified, this <tt class="sgmltag-element">ColSpec</tt>
+describes the next column to the right of the column defined by the previous
+<tt class="sgmltag-element">ColSpec</tt> or the first column (column 1) if this is the first
+<tt class="sgmltag-element">ColSpec</tt>.
+</p></dd><dt><span class="term">colsep</span></dt><dd><p>
+If <tt class="sgmltag-attribute">ColSep</tt> has the value 1 (true), then
+a rule will be drawn to the right of the column described by this
+<tt class="sgmltag-element">ColSpec</tt>. A value of 0 (false) suppresses the rule.
+The rule to the right of the last column in the table is controlled by the
+<tt class="sgmltag-attribute">Frame</tt> attribute of the enclosing 
+<tt class="sgmltag-element">Table</tt> or <tt class="sgmltag-element">InformalTable</tt> and the 
+<tt class="sgmltag-attribute">ColSep</tt> of the last column in the table
+is ignored. If unspecified, this attribute is inherited from 
+enclosing elements. Individual <tt class="sgmltag-element">Entry</tt>s or <tt class="sgmltag-element">EntryTbl</tt>s
+can override the <tt class="sgmltag-element">ColSpec</tt> setting of this attribute.
+</p></dd><dt><span class="term">colwidth</span></dt><dd><p>
+<tt class="sgmltag-attribute">ColWidth</tt> specifies the desired width of the
+relevant column. It can be either a fixed measure using one of the
+CALS units (36pt, 10pc, etc.) or a proportional measure. Proportional
+measures have the form &#8220;<span class="emphasis"><em>number</em></span><tt>*</tt>&#8221;, meaning
+this column should be <span class="emphasis"><em>number</em></span> times wider than a column with
+the measure &#8220;<tt>1*</tt>&#8221; (or just &#8220;<tt>*</tt>&#8221;). These two
+forms can be mixed, as in &#8220;<tt>3*+1pc</tt>&#8221;.
+</p></dd><dt><span class="term">rowsep</span></dt><dd><p>
+If <tt class="sgmltag-attribute">RowSep</tt> has the value 1 (true), then a
+rule will be drawn below the cells in the specified column. A value
+of 0 (false) suppresses the rule. The rule below the last row in the
+table is controlled by the <tt class="sgmltag-attribute">Frame</tt> attribute
+of the enclosing <tt class="sgmltag-element">Table</tt> or <tt class="sgmltag-element">InformalTable</tt> and
+the <tt class="sgmltag-attribute">RowSep</tt> of the last row is ignored. If
+unspecified, this attribute is inherited from enclosing elements.
+Individual <tt class="sgmltag-element">Entry</tt>s or <tt class="sgmltag-element">EntryTbl</tt>s
+can override the <tt class="sgmltag-element">ColSpec</tt> setting of this attribute.
+</p></dd></dl></div></div><div class="refsect1"><h2>See Also</h2><p><span class="simplelist"><a href="entry.html"><tt class="sgmltag-element">entry</tt></a>, <a href="entrytbl.html"><tt class="sgmltag-element">entrytbl</tt></a>, <a href="informaltable.html"><tt class="sgmltag-element">informaltable</tt></a>, <a href="row.html"><tt class="sgmltag-element">row</tt></a>, <a href="spanspec.html"><tt class="sgmltag-element">spanspec</tt></a>, <a href="table.html"><tt class="sgmltag-element">table</tt></a>, <a href="tbody.html"><tt class="sgmltag-element">tbody</tt></a>, <a href="tfoot.html"><tt class="sgmltag-element">tfoot</tt></a>, <a href="tgroup.html"><tt class="sgmltag-element">tgroup</tt></a>, <a href="thead.html"><tt class="sgmltag-element">thead</tt></a></span>.
+</p></div><div class="refsect1"><h2>Examples</h2><p>For examples, see
+<span class="simplelist"><a href="informaltable.html"><tt class="sgmltag-element">informaltable</tt></a>, <a href="table.html"><tt class="sgmltag-element">table</tt></a></span>.
+</p></div></div><div class="navfooter"><table width="100%" summary="Navigation table"><tr><td width="40%" align="left"><a href="citetitle.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a href="sdocbook.html">Home</a></td><td width="40%" align="right">&nbsp;<a href="command.html">Next</a></td></tr><tr><td width="40%" align="left">citetitle&nbsp;</td><td width="20%" align="center"><a href="ref-elements.html">Up</a></td><td width="40%" align="right">&nbsp;command</td></tr></table></div><div class="copyrightfooter"><p><a href="dbcpyright.html">Copyright</a> &copy; 1999, 2000, 2001, 2002 <a href="http://www.oreilly.com/">O'Reilly &amp; Associates, Inc.</a> All rights reserved.</p></div></body></html>

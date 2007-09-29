@@ -1,0 +1,28 @@
+
+Instalation process:
+
+-------------------------------------------------------------------------------
+
+	Windows:
+
+		1) Unzip the file captor.X.Y.Z.zip in an apropriate place.
+		
+		Instanlation is done.
+		To run see RUN.txt.
+		
+-------------------------------------------------------------------------------
+
+	Linux:
+
+		1) Execute the following commands:
+
+			$tar -xvvzf captor.X.Y.Z.tar.gz   
+			$cd captor.X.Y.Z                   
+
+			$chmod -R 755 config
+			$chmod -R 755 projects
+	
+		Instanlation is done.
+		To run see RUN.txt.
+
+------------------------------------------------------------------------------------

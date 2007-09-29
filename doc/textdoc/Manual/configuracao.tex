@@ -1,0 +1,578 @@
+\noindent A realização do processo de configuração tem o objetivo de fazer que a ferramenta seja capaz de aceitar uma especificação, realize diversas validações para assegurar que essa especificação está correta e gere artefatos de software.
+
+A ferramenta Captor pode ser configurada para um domínio por meio de um conjunto de arquivos. Na Figura 3 são apresentados os arquivos necessários para a configuração da ferramenta Captor. 
+
+\begin{figure} [!ht]
+ \centering
+  \bfseries
+  \includegraphics [width=0.55\textwidth] {res/configuring}
+  \caption {Arquivos necessários para configurar a ferramenta Captor}
+  \label{fig:configuring}
+\end{figure}
+
+O arquivo de configuração principal, explicado em detalhes na Sub-seção \ref{subsec:arqprincipal}, contém o meta-modelo da linguagem da especificação das aplicações e as regras de validação dessa especificação. Os \textit{templates} XSL, explicados em maior detalhes na Sub-seção \ref{subsec:templatesxsl}, são documentos de texto que contém marcações especiais que são substituídas pelos dados da especificação da aplicação durante o processo de geração de artefatos. O arquivo de mapeamento de transformação de \textit{templates}, explicado em detalhes na Sub-seção \ref{sec:mapping}, contém a informação de quais \textit{templates} devem ser transformados no processo de geração de artefatos.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Arquivo de configuração principal}\label{subsec:arqprincipal}
+
+Na Figura \ref{fig:screenshotCaptor} apresenta-se a interface gráfica da ferramenta Captor.
+
+\begin{figure} [!ht]
+ \centering
+  \bfseries
+  \includegraphics [width=0.9\textwidth] {res/screenshotCaptor}
+  \caption {Interface gráfica da ferramenta Captor}
+  \label{fig:screenshotCaptor}
+\end{figure}
+
+A ferramenta pode ser configurada para receber especificações que são armazenadas em formulários. Os formulários são organizados em forma de árvore e podem ser acessados no painel esquerdo da ferramenta. Cada formulário possuí um ou mais componentes gráficos que armazenam os dados da especificação. Esses componentes gráficos podem conter caixas de texto, campos de seleção, tabelas, entre outros e são disponibilizados no painel central-direito da ferramenta.
+
+\textit{\textbf{O arquivo de configuração principal contém o meta-modelo da especificação. Esse meta-modelo descreve quais são os formulários que a ferramenta precisa apresentar, quais componentes gráficos cada formulário contém e quais são as regras de validação que devem ser verificadas nos dados da especificação inseridos nos formulários pelo engenheiro de aplicação.}}
+
+A ferramenta disponibiliza diversos componentes gráficos para o engenheiro de domínio compor os formulários de maneira apropriada. Se o engenheiro de domínio precisar de um componente que não é parte da biblioteca de componentes de formulário padrão, ele pode utilizar o ``Manual de desenvolvimento de componentes de formulário'' para criar novos componentes de formulário personalizados. Para realizar a validação, a ferramenta disponibiliza dois mecanismos: o mecanismo de validação sintática e o mecanismo de validação estrutural de formulários. Os mecanismos de validação são apresentados nas Subseções \ref{val1} e \ref{val2} respectivamente.
+
+O primeiro passo na configuração da ferramenta para um domínio específico é a criação do arquivo de configuração principal. Esse arquivo deve ser armazenado no caminho de diretório: /install\_dir/domains/nome\_do\_dominio/nome\_do\_dominio.domain, onde /install\_dir representa o caminho de diretório da instalação da ferramenta e /nome\_do\_dominio é o nome do domínio da nova configuração.
+
+Na Listagem \ref{lst:configFileCaptor} é apresentado o conteúdo de um arquivo de configuração simplificado que contém o meta-modelo de uma especificação que utiliza dois formulários. O primeiro formulário contém uma caixa de texto e uma caixa de seleção e o segundo formulário contém uma tabela com quatro colunas.
+
+\lstset{language=xml}
+\begin{lstlisting}[caption=Arquivo de configuração da ferramenta Captor,label=lst:configFileCaptor]
+<?xml version=``1.0'' encoding=``UTF-8''?>
+
+<forms>
+
+  <name>SimpleExample</name>
+
+  <form isRoot=``true''>
+    <id>1.1</id>
+    <enabled>true</enabled>
+
+    <name>Form1</name>
+    <variant>Variante1</variant>
+
+    <nextForms>
+      <nextForm>
+        <id>2.*</id>
+        <multiplicity>1</multiplicity>
+      </nextForm>
+    </nextForms>
+
+    <formComponents>
+
+      <formComponent>
+        <fullname>
+          captor.windowsystem.formcomponent.textpanel.TextPanel
+        </fullname>
+
+        <parameters>
+
+          <parameter>
+            <name>id</name>
+            <value>textId</value>
+          </parameter>
+          <parameter>
+            <name>label</name>
+            <value>Caixa de texto</value>
+          </parameter>
+
+        </parameters>
+
+      </formComponent>
+
+      <formComponent>
+        <fullname>
+    captor.windowsystem.formcomponent.comboboxpanel.ComboBoxPanel
+        </fullname>
+
+          <parameters>
+  
+            <parameter>
+              <name>id</name>
+              <value>comboId</value>
+            </parameter>
+            <parameter>
+              <name>label</name>
+              <value>Caixa de selecao</value>
+            </parameter>
+          <parameter>
+              <name>elements</name>
+              <value>1:2:3:4:5</value>
+          </parameter>
+
+        </parameters>
+
+      </formComponent>
+
+    </formComponents>
+
+  </form>
+
+  <form>
+    <id>2.1</id>
+
+    <enabled>true</enabled>
+
+    <name>Form2</name>
+    <variant>Variante1</variant>
+
+    <formComponents>
+
+      <formComponent>
+        <fullname>
+          captor.windowsystem.formcomponent.tablepanel.TablePanel
+        </fullname>
+
+        <parameters>
+
+          <parameter>
+            <name>id</name>
+            <value>tableId</value>
+          </parameter>
+          <parameter>
+            <name>colname1</name>
+            <value>col1</value>
+          </parameter>
+          <parameter>
+            <name>colname2</name>
+            <value>col2</value>
+          </parameter>
+
+        </parameters>
+
+      </formComponent>
+
+    </formComponents>
+
+  </form>
+
+</forms>
+\end{lstlisting}
+
+O documento é formado por uma marcação ``forms'' que contém uma marcação ``name'' e uma ou mais marcações ``form''. A marcação ``name'' contém o nome do projeto. Cada marcação ``form'' representa um formulário e pode possuir as marcações ``id'', ``enabled'', ``name'',  ``variant'', ``help'', ``require'',  ``nextForms'' e ``formComponents'' que devem ser estruturadas nessa ordem respectivamente. As marcações ``require'' e ``nextForms'' são opcionais e as restantes são de uso obrigatório.
+
+O formulário definido na linha 7 possuí o atributo ``isRoot=true''. Apenas um formulário pode ter esse atributo com o valor ``true''. Esse atributo indica para a ferramenta que esse será o primeiro formulário da especificação. 
+
+Todos os formulários devem possuir um identificador único definido na marcação ``id'' (linhas 8 e 72). O identificar utilizado nos formulários deve estar no formato ``NUMERO.NUMERO''. Esse formato é utilizado pela ferramenta no gerenciamento de formulários durante o ciclo de vida do projeto.
+
+A marcação ``variant´´ define o nome da variante desse formulário. Os formulários variantes são apresentados na subseção \ref{subsec:variants}.
+
+A marcação ``help'' é utilizada para disponibilizar uma breve descrição de ajuda para o usuário engenheiro de aplicação.
+
+A marcação ``nextForms'' definida na linha 14 indica que o formulário corrente possuí um formulário filho identificado pelo id  ``2.*'' (o asterisco indica que o formulário filho pode conter os valores: 2.1, 2.2, 2.3 e assim sucessivamente). A marcação multiplicidade (linha 17) indica qual o número máximo de filhos que o formulário corrente pode possuir.
+
+A marcação ``formComponents'' (linha 21) indica quais componentes gráficos o formulário vai conter. Os componentes de formulário são definidos em uma ou mais marcações ``formComponent'' (linhas 23, 43 e 81) e são parâmetrizados para apresentar comportamento específico. Como exemplo, o componente de formulário definido na linha 21 é implementado pela classe: ``captor.windowsystem.formcomponent.textpanel.TextPanel'' e é parametrizado por dois valores (linhas 30 e 34). O parâmetro ``id'' representa um identificador único para esse componente e o parâmetro ``label'' indica qual será a etiqueta que será disponibilizada ao lado esquerdo do componente gráfico na interface do formulário.
+
+Na Figura \ref{fig:screenshotCaptor2} é apresentado a interface gráfica da ferramenta Captor configurada com o arquivo apresentado na Listagem \ref{lst:configFileCaptor}.
+
+\begin{figure} [!ht]
+ \centering
+  \bfseries
+  \includegraphics [width=0.9\textwidth] {res/screenshotCaptor2}
+  \caption {Interface gráfica da ferramenta configurada com os dados da Listagem  \ref{lst:configFileCaptor}}
+  \label{fig:screenshotCaptor2}
+\end{figure}
+
+Os formulários ``Form1'' e ``Form2'' podem ser acessados pela árvore de formulários contida no painel esquerdo da ferramenta e os dados dos formulários podem ser editados no painel central superior da ferramenta.
+
+Existem diversos componentes gráficos de formulários disponibilizados junto a ferramenta para compor formulários. Cada componente possuí um nome único e é desenvolvido para receber diversos parâmetros (opcionais e obrigatórios). A documentação desses componentes pode ser encontrada no manual de formulários de componentes.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection{Variantes} \label{subsec:variants}
+
+Um formulário pode ter uma variante, ou seja, uma outra versão desse formulário com pequenas modificações. Durante a edição da especificação, o engenheiro de aplicação, baseado nos requisitos de software pode selecionar qual variante ele necessita editar.
+
+A Listagem \ref{lst:configFileCaptorExtends} apresenta o trecho do arquivo de configuração principal que define uma variante para o formulário ``Form1'' apresentado na Listagem \ref{lst:configFileCaptor}.
+
+\lstset{language=xml}
+\begin{lstlisting}[caption=Definição de variantes,label=lst:configFileCaptorExtends]
+<form>
+  <id>1.2</id>
+
+  <enabled>true</enabled>
+
+  <name>Form1</name>
+  <variant>Variante2</variant>
+
+  <extends>1.1</extends>
+
+  <formComponents>
+
+    <formComponent>
+      <fullname>
+        captor.windowsystem.formcomponent.textpanel.TextPanel
+      </fullname>
+    </formComponent>
+
+  </formComponents>
+		
+</form>
+\end{lstlisting}
+
+O nome das variantes de um formulário deve ter o mesmo nome do formulário principal. Como exemplo, os formulários identificados por 1.1 e 1.2 possuem o nome ``Form1''. Recomenda-se que o identificador dos formulários e seus variantes devem ser iniciados pelo mesmo número, por exemplo, o primeiro variante do formulário com identificador 1.1 deve possuir identificador igual a 1.2 e assim sucessivamente.
+
+Na linha 9 da Listagem \ref{lst:configFileCaptorExtends}, a marcação ``extends'' indica que esse formulário vai estender o formulário 1.1. As marcações abaixo da linha 9 sobre-escrevem as marcações contidas no formulário com identificador igual a 1.1. As variantes são acessíveis em tempo de execução por meio do painel esquerdo da ferramenta.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection{Validação sintática}\label{val1}
+
+Os dados inseridos nos componentes dos formulários podem necessitar validações específcas de domínio. Alguns componentes de um formulário podem possuir preenchimento obrigatório e outros podem ser opcionais. Alguns componentes devem aceitar que o usuário insira determinados tipos de dados (inteiro, booleanos, expressões regulares) em seus \textit{widgets} gráficos e outros podem aceitar qualquer tipo de valor.
+
+O engenheiro de domínio deve parametrizar os componentes de formulário para que a ferramenta seja capaz de validar a especificação da aplicação de forma apropriada. Como exemplo, se o engenheiro quiser validar o componente ``captor.windowsystem.formcompo\-nent.textpanel.TextPanel'' da Listagem \ref{lst:configFileCaptor}, ele tem as alternativas apresentadas na Listagem \ref{lst:parameters}.
+
+\lstset{language=xml}
+\begin{lstlisting}[caption=Parâmetros de validação sintática do componente TextPanel,label=lst:parameters]
+<parameter>
+  <name>use</name>
+  <value>required</value>
+</parameter>
+
+<parameter>
+  <name>regexp</name>
+  <value>[0-9]+</value>
+</parameter>
+\end{lstlisting}
+
+O parâmatro ``use'' (linha 1) é utilizado para indicar se é necessário algum valor na caixa de texto. Se o valor desse parâmetro for igual a ``required'', então a ferramenta deve emitir um alerta nos casos em que o usuário não preencher esse campo.
+ 
+O parâmetro ``regexp'' (linha 6) indica que o valor inserido nesse campo de texto deve ter o mesmo valor da expressão regular contida na marcação ``value''. No exemplo da Listagem \ref{lst:parameters}, a expressão regular ``[0-9]+'' indica que o campo de texto deve possuir um ou mais números inteiros. Qualquer outra combinação de caracteres é decalrada inválida e a ferramenta deve emitir alertas de erros nos casos em que o usuário inserir valores incorretos.
+
+Os parâmetros de validação disponíveis nos diversos componentes de formulários são documentados no manual de componentes de formulário.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection{Validação estrutural dos formulários}\label{val2}
+
+Para obter uma especificação completa, o engenheiro pode definir que é necessário preencher um número mínimo de formulários. No exemplo da Listagem \ref{lst:configFileCaptor}, se o engenheiro de domínio definir que a especificação da aplicação necessita do preenchimento dos formulários ``Form1'' e ``Form2'', ele pode inserir a marcação apresentada na Listagem \ref{lst:require} dentro da especificação da formulário ``Form1'': 
+
+\lstset{language=xml}
+\begin{lstlisting}[caption=Validação da estrutura de formulários,label=lst:require]
+<require>
+  <or>
+    <formPath>child(2.*)</formPath>
+  </or>
+</require>
+\end{lstlisting}
+
+A marcação require define quais são as dependências entre os formulários  e deve ser inserida dentro da marcação ``form'', entre as marcações ``variant'' e ``nextForms'' do arquivo de configuração principal (seria na linha 13 da Listagem \ref{lst:configFileCaptor}).
+
+A marcação ``require'' pode ter uma ou mais marcações ``or''. Cada marcação ``or'' pode ter um ou mais marcações ``formPath''. A marcação ``formPath'' deve conter uma expressão que indica o caminho do formulário corrente até o formulário que deve estar presente para a validação estar completa. Todas as marcações ``or'' são avaliadas em tempo de execução e pelo menos uma marcação ``formPath'' deve ser avaliada como verdadeira para que o formulário seja declarado estruturalmente correto. Na tabela \ref{tab:require} são apresentados alguns exemplos de expressões que podem definir a hierarquia dos formulários.
+
+\begin{table}[ht]
+	\centering
+	\caption{Validação da estrutura de formulários}
+	\label{tab:require}
+		
+		\begin{tabular}{|p{200pt}|p{220pt}|}
+
+			\hline 
+			\hline 
+
+			\hline 
+			child(2.1)&  Este formulário deve possuir um formulário filho com id igual a 2.1 \\
+
+			\hline 
+			parent(1.*) & Este formulário deve possuir um formulário pai com id igual a 1.*\\
+
+			\hline 
+			child(2.*)->child(3.*)->child(4.*) & Este formulário deve possuir um formulário filho com id igual a 2.* que deve possuir o filho com id igual a 3.* que deve possuir o filho com id igual a 4.* \\
+
+			\hline 
+			child(2.*)-> child(3.*)->parent->(2.*) & Este formulário deve possuir um formulário filho com id igual a 2.* que deve possuir um filho com id igua a 3.* que deve possuir um pai com id igual a 2.* (o último passo foi propositalmente redundante) \\
+			
+			\hline 
+		\end{tabular}
+
+	\end{table}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection{Validação do arquivo de configuração principal}
+
+Após o término da edição do arquivo de configuração principal, o engenheiro de domínio pode validar o documento com a ferramenta ``Meta-model validator''. Essa ferramenta lê o arquivo de configuração principal e caso existam, relata erros e inconsistências. Se o arquivo for validado corretamente pela ferramenta de validação de meta-modelos, o gerador pode ser utilizado com a nova configuração. A ferramenta de validação de meta-modelos está disponível no menu Tools->Meta-Model Validator da janela principal do gerador Captor.
+
+Após a configuração do meta-modelo (formulários e validações), a ferramenta ja é capaz de receber a especificação da aplicação, validar essa especificação, salvar essa especificação em formato XML (esses arquivos são chamados de arquivos-fonte) e recuperar essa especificação dos arquivos XML e disponibiliza-las nos formulários (atividades de criar um projeto, editar o projeto, validar um projeto, fechar o projeto e abrir o projeto de novo).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection{Geração automática do arquivo de configuração principal}
+
+A ferramenta Captor foi configurada para receber a especificação necessária para criar o arquivo de configuração principal e gerar o arquivo de XML com essa especificação.
+
+O usuário deve abrir a ferramenta, selecionar o menu ``File->Application Project''. Na tela de seleção de domínios o usuário deve escolher ``New Captor Project''. Nas telas seguintes o usuário deve escolher um diretório para os arquivos fontes e um diretório para os arquivos de saída.
+
+Após o projeto ser criado, o usuário pode criar novas interações, novos formulários e novas variantes. Após a edição dos formulários o usuário pode clicar no botão de acesso rápido ``Build''. Ao término do processo de transformação de artefatos, a ferramenta invoca a ferramenta Ant para realizar a instalação automática dos novos artefatos.
+
+Após esse processo, o usuário pode testar a nova configuração, selecionando o menu ``File->Application project'' e na primeira tela do \textit{Wizard}, selecionar o domínio recém criado.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Arquivos de \textit{templates} XSL}\label{subsec:templatesxsl}
+
+Um \textit{template} XSL é uma folha de estilos que especifica como um documento de XML deve ser transformado em outro documento. O processo de transformação é apresentado na Figura \ref{fig:xslt}.
+
+\begin{figure} [!ht]
+ \centering
+  \bfseries
+  \includegraphics [width=0.7\textwidth] {res/xslt}
+  \caption {Transformação de \textit{templates} XSL}
+  \label{fig:xslt}
+\end{figure}
+
+O processador de \textit{templates}, baseado nas instruções dos \textit{templates}, pode gerar diversos tipos de arquivos de saída, dentre eles estão: arquivos XML, código-fonte, documentos de UML, arquivos de PDF, planilhas e casos de teste.
+
+A ferramenta Captor, armazena as informações inseridas na sua interface gráfica em arquivos no formato XML. Quando o usuário solicita a transformação da especificação em artefatos, a ferramenta recupera os arquivos de XML com o conteúdo da especificação (arquivos-fonte) e seleciona os \textit{templates} necessários para realizar a geração de artefatos (o processo de seleção de \textit{templates} é apresentado na seção \ref{sec:mapping}).
+
+A estrutura do XML gerado pela ferramenta Captor a partir dos dados da especificação possuí uma parte da sua estrutura fixa e uma parte variável. A parte fixa do XML gerado pela ferramenta configurada com a Listagem \ref{lst:configFileCaptor} é apresentado na Listagem \ref{lst:input}.
+
+\lstset{language=xml}
+\begin{lstlisting}[caption=Estrutura fixa da especificação armazenaa em XML,label=lst:input]
+<?xml version=``1.0'' encoding=``UTF-8''?>
+
+ <formsData>
+
+  <project>
+    <name>Nome do projeto</name>
+  </project>
+
+  <forms>
+
+    <form id=``1.1'' variant=``Default''>
+
+      <data>
+      	<!--
+      	Os dados armazenados pelos componentes do 
+      	formulário 1.1 são armazenados nesta linha
+      	-->
+      </data>
+
+      <form id=``2.1'' variant=``Default''>
+
+        <data>
+          <!--
+          Os dados armazenados pelos componentes do 
+          formulário 1.2 são armazenados nesta linha
+          -->
+        </data>
+
+      </form>
+      
+    </form>
+
+  </forms>
+
+</formsData>
+\end{lstlisting}
+
+A ferramenta Captor armazena a especificação inserida em sua interface gráfica em uma estrutura de XML que começa com a marcação raiz ``data''. Dentro dessa marcação existem duas marcações filhas: ``project'' e ``forms''. A marcação ``project'' (linha 5) contém o nome do projeto e a marcação ``forms'' (linha 9) contém os dados da árvore de formulários da especificação. A marcação ``forms'' contém uma marcação raíz ``form'' (linha 11). Essa marcação contém uma marcação filho ``data'' (linha 13) e zero ou mais marcações filhas ``forms'' (nesse caso, uma marcação na linha 20).
+
+A parte variável da estrutura de diretórios é armazenada nas marcações ``data'' filhas da marcação ``form'' (linhas 11 e 20). Dependendo do número e do tipo de componentes de formulário que são utilizados para definir um formulário, o conteúdo dessa marcação pode variar. Como apresentado na Listagem \ref{lst:configFileCaptor}, o formulário ``Form1'' foi configurado para apresentar uma caixa de texto e uma caixa de seleção (linha 21 e 43 da Listagem \ref{lst:configFileCaptor}). A estrutura de XML que esses dois componentes armazenam as informações é apresentado na Listagem \ref{lst:textcombo}.
+
+\lstset{language=xml}
+\begin{lstlisting}[caption=Estrutura variável do formulário 1.1 definido na Listagem  \ref{lst:configFileCaptor},label=lst:textcombo]
+<textatt name=``textId''>
+  Valor inserido na caixa de texto
+</textatt>
+<combo name=``comboId''>
+  Valor selecionado da caixa de seleção
+</combo>
+\end{lstlisting}
+
+Essa estrutura de XML gerada pelos componentes do Formulário ``1.1'' deve ser armazenada na Linha 13 da Listagem \ref{lst:input}. Os formulários armazenam os dados de seus componentes em tempo de execução. Alguns componentes permitem que a geração de XML seja parametrizada. No exemplo da Listagem \ref{lst:textcombo}, o componente TextPanel e o componente ComboPanel utilizam o parâmetro ``id'' (linhas 30 e 50 da Listagem \ref{lst:configFileCaptor} respectivamente) para indicar que a ferramenta deve gerar XML personalisado a partir da especificação. Esses parâmetros foram utilizados pelos componentes de formulário para definir o valor do atributo ``name'' (linhas 1 e 4 da Listagem \ref{lst:textcombo}).
+
+Para a obtenção da transformação da especificação em artefatos de software, o engenheiro de domínio que implementa a biblioteca de \textit{templates} deve ter o conhecimento da estrutura do XML gerado pela ferramenta (arquivos-fonte). Após esse conhecimento analisando os arquivos-fonte armazenados em /diretorio\_do\_projeto/input, o engenheiro de domínio pode iniciar o processo de desenvolvimento dos \textit{templates}. Os \textit{templates} devem ser armazenados em qualquer caminho de diretório abaixo do caminho:  /install\_dir/domains/nome\_do\_dominio /templates e devem ser estruturados de acordo com as regras de trasnformação da linguagem XSL.
+
+A linguagen de transformações XSL está fora do escopo desse manual. Instruções detalhadas da linguagem de transformação XSL podem ser encontradas no site: \url{http://www.w3c.org/xslt} e em diversos manuais e livros disponíveis livremente ou para compra na internet.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection{Desenvolvimento de \textit{templates} com Zonas de Segurança}
+
+Uma zona de segurança \cite{herrington} é uma região delimitada por comentários onde o desenvolvedor de aplicações pode inserir código personalisado sem perder as modificações com a re-geração dos artefatos. 
+
+As marcações das zonas de segurança devem ser escritas nos templates. Após a geração dos artefatos, o desenvolvedor pode inserir dados manuais entre as marcações da zona de segurança sem perder os dados com a re-geração dos artefatos. Na Listagem \ref{lst:safe2} é apresentado um exemplo de zona de segurança que pode ser adicionado a qualquer template processado pela ferramenta Captor.
+
+\lstset{language=java}
+\begin{lstlisting}[caption=Exemplo de criação de zonas de segurança nos arquivos de \textit{template},label=lst:safe2]
+// START-SAFE(someSafeZoneId)
+  <xsl:value-of select=``/data/safezone[@id= someSafeZoneId]''/>
+// END-SAFE
+\end{lstlisting}
+
+A cadeia de caracteres ``someSafeZoneId'' deve ser substítuída por um identificador de zonas de segurança único. Esse identificador é utilizado pela ferramenta para recuperar as informações dos arquivos de saída.
+
+Na Listagem \ref{lst:safe1} é apresentado um exemplo de zona de segurança produzida em um arquivo com código Java gerado pela ferramenta. As modificações manuais devem ser inseridas pelo engenheiro de aplicação abaixo da linha 3 e acima da linha 5.
+
+\lstset{language=java}
+\begin{lstlisting}[caption=Exemplo de zonas de segurança em arquivos Java,label=lst:safe1]
+public void someMethod() {
+
+// START-SAFE(someSafeZoneId)
+  System.out.println(``Hello safe-zone!'');
+// END-SAFE
+
+  return;
+}
+\end{lstlisting}
+
+A ferramenta Captor analisa o projeto que está sendo gerado e caso existam arquivos com zonas de segurança que devem ser sobre-escritos no novo processo de geração, o conteúdo das zonas de seguraça é extraído dos arquivos que ja foram gerados e é armazenado na árvore de XML junto com a especificação. Durante o processo de transformação dos \textit{templates}, esses dados são inseridos novamente nos arquivos de saída permitindo que o engenheiro de aplicação personalise o código gerado sem perder essas modificações com a re-geração dos artefatos.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Arquivo de mapeamento da transformação dos \textit{templates}}\label{sec:mapping}
+
+O arquivo de mapeamento de transformação de \textit{templates} é utilizado pela ferramenta para indicar quais \textit{templates} devem ser utilizados no processo de geração de artefatos. Esse arquivo deve ser armazenado no caminho de diretório /install\_dir/domains/nome\_do\_dominio/rules.xml, deve ser definido em XML e pode possuir diversas marcações para controlar o processo de geração de artefatos. O conjunto de todas as marcações possíveis da ferramenta Captor é chamado de MTL (do inglês \textit{Mapping trasnformation language})
+
+Na Listagem \ref{lst:mapping} é apresentado um exemplo simples da estrutura do arquivo de mapeamento para os formulários definidos na Listagem \ref{lst:configFileCaptor}.
+
+\lstset{language=xml}
+\begin{lstlisting}[caption=Arquivo de mapeamento de \textit{templates},label=lst:mapping]
+
+<composer name=``FIT''>
+
+  <statements>
+
+    <callTask id=``processForm1''/>
+    <callTask id=``processForm2''/>
+		
+  </statements>
+
+  <tasks>
+
+    <task id=``processForm1''>
+
+      <compose>
+        <template>grn.st</template>
+        <newFilename>\${/data/project/name}_GRN.st</newFilename>
+      </compose>
+
+    </task>
+
+    <task id=``processForm2''>
+
+      <compose>
+        <template>sql.sql</template>
+        <newFilename>sql.sql</newFilename>
+      </compose>
+
+    </task>
+
+  </tasks>
+
+</composer>
+\end{lstlisting}
+
+O arquivo de mapeamento de \textit{templates} possuí duas marcações abaixo da marcação raíz ``composer'': a marcação ``statements'' e a marcação ``tasks''. 
+
+A marcação ``tasks'' pode ter uma ou mais marcações ``task''. A marcação ``task'' é utilizada para definir a transformação de um arquivo de template em um arquivo de saída. Essa marcação deve possuír uma marcação ``compose''. Cada marcação ``compose'' é formada pelo nome do arquivo de \textit{template} utilizado na transformação (linhas 16 e 25) e pelo nome do arquivo de saída que esse \textit{template} transforma (linhas 17 e 26). O caminho de diretório dos arquivos de \textit{template}, devem ser indicados de forma relativa ao diretório de \textit{templates} do domínio (ex: /install\_dir/domains/nome\_do\_dominio/templates). O nome do arquivo que deve ser gerado (marcação ``newFileName'') pode conter expressões XPATH \cite{xslt} para gerar nomes de arquivos personalisados. Por exemplo, na linha 17 o nome do arquivo gerado será o nome contido na marcação /data/project/name do arquivo fonte concatenado com a cadeia de caracteres ``\_GRN.st''.
+
+A marcação ``statements'' pode conter três tipos de marcações: marcação ``callTask'', ``if'' ou ``for-each''. As marcação ``callTask'' indica para a ferramenta que uma determinada tarefa deve ser executada (chamadas para a marcação ``task'' nas linhas 13 e 22).
+
+As marcações ``if'' são utilizadas para realizar assertivas sobre o conteúdo do arquivo fonte que está sendo processado. Na Listagem \ref{lst:conditional} são apresentados três exemplos de clausulas condicionais.
+
+\lstset{language=xml}
+\begin{lstlisting}[caption=Cláusulas condicionais no arquivo de mapeamento de \textit{templates},label=lst:conditional]
+<statements>
+
+  <if test=``exist(/data/forms/form)''>
+    <callTask id=``processForm1''/>
+  </if>
+  <if test=``equal(/data/forms/form@id='1.1')''>
+    <callTask id=``processForm1''/>
+  </if>
+  <if test=``not-equal(/data/forms/form/='1.1')''>
+    <callTask id=``processForm2''/>
+  </if>
+
+</statements>
+\end{lstlisting}
+
+A primeira clausula da Listagem \ref{lst:conditional} (linha 3) só é executada se existir o caminho ``/data/forms/form'' no arquivo-fonte (XML gerado a partir da especificação da aplicação), ou seja, a clausula só é executada  se o formulário inicial foi preenchido pelo engenheiro de aplicação. A segunda clausula condicional (linha 6) só é executada se o atributo ``id'' da marcação ``/data/forms/form'' for igual a cadeia de caracteres ``1.1''. A terceira clausula condicional (linha 9) só é executada se o atributo ``id'' da marcação ``/data/forms/form'' for diferente da cadeia de caracteres ``1.1''.
+
+O teste realizado pela função ``exists'' recebe como argumento uma expressão XPath. O teste realizado pela função ``equal'' e ``not-equal'' recebe como parâmtros dois argumentos. Os argumentos podem ser uma expressão XPath ou uma cadeia de caracteres delimitada por aspas simples. Se a função da clausula if que está sendo processada for avaliada como verdadeira, os statemements dentro do if são executadas, caso contrário as tarefas são ignoradas.
+
+As marcações ``for-each'' são utilizadas para realizar interações durante o processo de geração de artefatos. Na Listagem \ref{lst:next} são apresentados exemplos dessas clausulas.
+
+\lstset{language=xml}
+\begin{lstlisting}[caption=Cláusulas ``for-each'' no arquivo de mapeamento de \textit{templates},label=lst:next]
+<statements>
+
+  <for-each select=``/data/forms/form/form''>
+    <callTask id=``processSomeForm''/>
+  </for-each>
+
+  <for-each select=``/data/forms/form/form''>
+    <if test=``equal(/data/current/form/@id,'2.1')''>
+      <callTask id=``processSomeForm''/>
+    </if>
+  </for-each>
+
+</statements>
+\end{lstlisting}
+
+A marcação na linha 3 da Listagem \ref{lst:next} indica que a ferramenta deve fazer um loop de transfomação em que a chamada callTask da linha 4 é executada o mesmo número de vezes que o número de formulários /data/forms/form/form do arquivo-fonte. Além da interação, essa clausula disponibiliza o nó corrente da árvore de XML do arquivo-fonte de maneira personalisada por meio do caminho ``/data/current/''. Por exemplo, em cada interação da linha 3 da Listagem \ref{lst:next}, a ferramenta realiza uma cópia do nó /data/forms/form/form no caminho /data/current/form. Essa abordagem é utilizada para que o engenheiro de domínio tenha a informação, dentro dos templates e dentro do arquivo de mapeamento, sobre qual nó está sendo processado.
+
+As marcações dentro da marcação ``statement'' devem obedecer uma ordem pré-determinada. Por exemplo, as marcações ``callTask'' devem ser definidas nas primeiras posições. Após as marcações ``callTask'' todas as marcações ``ifTask'' devem ser definidas. Após as marcações ``ifTask'' todas as marcações ``for-each'' devem ser definidas. Essa ordem é a mesma dentro das marcações ``ifTask'' ou ``for-each'', ou seja, dentro de uma marcação ``ifTask'' ou ``for-each'', os ``statements'' devem apresentar a mesma ordem (`´callTask'', ``ifTask'' e ``for-each'').
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Início rápido}
+
+Para o iniciar a configuração da ferramenta para um domínio específico, é necessário o planejamento prévio sobre qual vai ser a estrutura da especificação das aplicações nesse domínio. Após essa fase, execute as seguintes tarefas:
+
+\begin{enumerate}
+	\item Faça uma cópia do diretório: /install\_dir/domains/Blank para o diretório:\\ /install\_dir/domains/foo, onde ``foo'' é o nome do domínio escolhido. 
+	\item Renomeio o arquivo: /install\_dir/domains/foo/Blank\_.domain para:\\ /install\_dir/domains/foo/foo.domain.
+\end{enumerate}
+
+O arquivo /install\_dir/domains/foo/foo.domain representa o arquivo de configuração principal e possuí a definição de um formulário com apenas um componente de formulário do tipo caixa de texto.
+
+O arquivo /install\_dir/domains/foo/rules.xml é o arquivo de mapeamento de transformações e contém apenas uma regra que transforma o \textit{template}: /install\_dir/domains/foo\-/template/main.xsl em um arquivo de saída.
+
+Os arquivos /install\_dir/foo/pre-build.xml e /install\_dir/foo/pos-build.xml contém os esqueletos de um \textit{script} da ferramenta Ant que não realiza nenhuma ação. Esses arquivos podem ser utilizados dessa maneira enquanto não for necessário nem o pré e nem o pós processamento dos arquivos de saída.
+
+Para testar a aplicação, selecione ``File->Application Project''. Na tela inicial do \textit{wizard} selecione o domínio ``foo'' e siga as instruções. Após a criação do projeto, clique com o botão direito do mouse em cima do item ``Forms'' e selecione no menu o item ``New Interaction''. O primeiro e único formulário deve aparecer no painel central-direito da ferramenta.
+
+Nesse momento o usuário já pode adicionar texto na caixa de textos do primeiro formulário, salvar a aplicação e gerar um arquivo pressionando o botão ``Build''. 
+
+Os arquivos gerados pela ferramenta são: /diretorio\_do\_projeto/input/interaction\_0.fit e /diretorio\_de\_saida/interaction\_0/nome\_do\_projeto.nome\_do\_projeto.
+
+O arquivo /diretorio\_do\_projeto/input/interaction\_0.fit contém o arquivo de XML gerado pela ferramenta à partir dos dados da especificação (arquivo-fonte) e o arquivo /diretorio\_de\_saida/interaction\_0/nome\_do\_projeto.nome\_do\_projeto é o arquivo de saída gerado pela ferramenta.
+
+Para continuar o processo de configuração são necessários os seguintes passos:
+
+\begin{itemize}
+
+	\item Coloque em um editor de texto os seguintes arquivos:
+  \begin{enumerate}
+	  \item /install\_dir/domains/foo/foo.domain
+	  \item /install\_dir/domains/foo/rules.xml
+	  \item /install\_dir/domains/foo/pre-build.xml
+	  \item /install\_dir/domains/foo/pos-build.xml
+  \end{enumerate}
+
+	\item Alterar os dados do formulário raíz:
+	
+	\begin{itemize}
+		\item Alterar as definições do primeiro formulário.
+		\item Adicionar mais componentes no formulário raíz.
+		\item Adicionar mais formulários.
+		\item Adicionar as restrições de validação necessárias.
+	\end{itemize}
+	
+	\item Examinar a estrutura dos arquivos-fonte gerados pela ferramenta e realizar o desenvolvimento dos \textit{templates}.
+	\item Alterar o arquivo de mapeamento de \textit{templates}.
+	\item Testar a nova configuração.
+\end{itemize}
+
+Se o usuário desejar gerar automaticamente o arquivo de configuração principal, ele deve criar um novo projeto por meio do menu ``File->Application Project'' e na tela inicial do \textit{wizard} selecionar ``New Captor Project''. No nome do projeto, o usuário deve digitar ``foo'' (``foo'' é o nome do domínio escolhido).
+
+Após a criação do projeto o usuário pode criar e editar novos formulários e ao fim do processo clicar no botão ``Build''. O processo de geração sobre-escreve o arquivo de configuração principal /install\_dir/domains/foo/foo.domain pelo arquivo que foi gerado. Os arquivos de mapeamento e de pre e pos processamento não são alterados no processo automático.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

@@ -1,0 +1,88 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>section</title><link rel="stylesheet" href="defguide.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.51.1"><link rel="home" href="sdocbook.html" title="Simplified DocBook"><link rel="up" href="ref-elements.html" title="Simplified DocBook Element Reference"><link rel="previous" href="row.html" title="row"><link rel="next" href="sectioninfo.html" title="sectioninfo"></head><body><div class="navheader"><table border="0" cellpadding="0" cellspacing="0" width="100%" summary="Navigation table"><tr><td align="left">&nbsp;<a title="Simplified DocBook" href="sdocbook.html"><img src="figures/nav-home.png" alt="Home" border="0"></a>&nbsp;<a title="row" href="row.html"><img src="figures/nav-prev.png" alt="Prev" border="0"></a>&nbsp;<a title="Simplified DocBook Element Reference" href="ref-elements.html"><img src="figures/nav-up.png" alt="Up" border="0"></a>&nbsp;<a title="sectioninfo" href="sectioninfo.html"><img src="figures/nav-next.png" alt="Next" border="0"></a></td><td align="right"><i>DocBook: The Definitive Guide</i> Version 0.0.1 <span class="alpha-version">(<a href="co01.html"><em>Alpha</em></a>)</span> </td></tr></table></div><div class="refentry"><a name="section.element"></a><div class="titlepage"><div><h1 class="title">section</h1></div><div><p class="releaseinfo">$Revision: 1.1 $</p></div><div><p class="pubdate">$Date: 2005/07/03 00:15:36 $</p></div></div><div class="refnamediv"><p>section &#8212; A recursive section</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><h3><span class="bold"><b>Content Model</b></span></h3><pre class="synopsis">section ::=
+(<a href="sectioninfo.html"><tt class="sgmltag-element">sectioninfo</tt></a>?,
+ (<a href="title.html"><tt class="sgmltag-element">title</tt></a>,<a href="subtitle.html"><tt class="sgmltag-element">subtitle</tt></a>?,<a href="titleabbrev.html"><tt class="sgmltag-element">titleabbrev</tt></a>?),
+ (((<a href="itemizedlist.html"><tt class="sgmltag-element">itemizedlist</tt></a>|<a href="orderedlist.html"><tt class="sgmltag-element">orderedlist</tt></a>|<a href="variablelist.html"><tt class="sgmltag-element">variablelist</tt></a>|<a href="note.html"><tt class="sgmltag-element">note</tt></a>|<a href="literallayout.html"><tt class="sgmltag-element">literallayout</tt></a>|
+    <a href="programlisting.html"><tt class="sgmltag-element">programlisting</tt></a>|<a href="para.html"><tt class="sgmltag-element">para</tt></a>|<a href="blockquote.html"><tt class="sgmltag-element">blockquote</tt></a>|<a href="mediaobject.html"><tt class="sgmltag-element">mediaobject</tt></a>|<a href="informaltable.html"><tt class="sgmltag-element">informaltable</tt></a>|
+    <a href="example.html"><tt class="sgmltag-element">example</tt></a>|<a href="figure.html"><tt class="sgmltag-element">figure</tt></a>|<a href="table.html"><tt class="sgmltag-element">table</tt></a>|<a href="sidebar.html"><tt class="sgmltag-element">sidebar</tt></a>|<a href="abstract.html"><tt class="sgmltag-element">abstract</tt></a>|<a href="authorblurb.html"><tt class="sgmltag-element">authorblurb</tt></a>|<a href="epigraph.html"><tt class="sgmltag-element">epigraph</tt></a>)+,
+   <a href="section.html"><tt class="sgmltag-element">section</tt></a>*)|
+  <a href="section.html"><tt class="sgmltag-element">section</tt></a>+))</pre><h3><span class="bold"><b>Attributes</b></span></h3><p><span class="common.attributes">Common attributes</span></p><table border="1" width="100%" summary="Attributes"><tr><td><p><span class="bold"><b>Name</b></span></p></td><td><p><span class="bold"><b>Type</b></span></p></td><td><p><span class="bold"><b>Default</b></span></p></td></tr><tr><td align="left" valign="top">status</td><td align="left" valign="top">CDATA</td><td align="left" valign="top"><span class="emphasis"><em>None</em></span></td></tr><tr><td align="left" valign="top">label</td><td align="left" valign="top">CDATA</td><td align="left" valign="top"><span class="emphasis"><em>None</em></span></td></tr></table></div><div class="refsect1"><h2>Description</h2><p>
+<tt class="sgmltag-element">Section</tt> is one of the top-level sectioning elements in
+a component. There are three types of sectioning elements in
+DocBook:
+</p><div class="itemizedlist"><ul type="disc"><li><p>
+Explicitly numbered sections, <tt class="sgmltag-element">Sect1</tt>&#8230;<tt class="sgmltag-element">Sect5</tt>,
+which must be properly nested and can only be five levels deep.
+</p></li><li><p>
+Recursive <tt class="sgmltag-element">Section</tt>s, which are an alternative to the numbered
+sections and have unbounded depth.
+</p></li><li><p>
+<tt class="sgmltag-element">SimpleSect</tt>s, which are terminal.  <tt class="sgmltag-element">SimpleSect</tt>s can
+occur as the &#8220;leaf&#8221; sections in either recursive sections or any
+of the numbered sections, or directly in components.
+</p></li></ul></div><p>
+<tt class="sgmltag-element">Section</tt>s may be more convenient than numbered
+sections in some authoring environments because they can be
+moved around in the document hierarchy without renaming.
+</p><p>
+None of the sectioning elements is allowed to &#8220;float&#8221; in
+a component. You can place paragraphs and other block elements
+before a section, but you cannot place anything after it.
+</p><div class="refsect2"><h3>Processing expectations</h3><p>
+Formatted as a displayed block. Sometimes sections are numbered.
+</p><p>
+Use of deeply nested <tt class="sgmltag-element">Section</tt>s may cause problems
+in some processing systems.
+</p></div><div class="refsect2"><h3>Parents</h3><p>These elements contain section:
+<span class="simplelist"><a href="appendix.html"><tt class="sgmltag-element">appendix</tt></a>, <a href="article.html"><tt class="sgmltag-element">article</tt></a>, <a href="section.html"><tt class="sgmltag-element">section</tt></a></span>.</p></div><div class="refsect2"><h3>Children</h3><p>The following elements occur in section:
+<span class="simplelist"><a href="abstract.html"><tt class="sgmltag-element">abstract</tt></a>, <a href="authorblurb.html"><tt class="sgmltag-element">authorblurb</tt></a>, <a href="blockquote.html"><tt class="sgmltag-element">blockquote</tt></a>, <a href="epigraph.html"><tt class="sgmltag-element">epigraph</tt></a>, <a href="example.html"><tt class="sgmltag-element">example</tt></a>, <a href="figure.html"><tt class="sgmltag-element">figure</tt></a>, <a href="informaltable.html"><tt class="sgmltag-element">informaltable</tt></a>, <a href="itemizedlist.html"><tt class="sgmltag-element">itemizedlist</tt></a>, <a href="literallayout.html"><tt class="sgmltag-element">literallayout</tt></a>, <a href="mediaobject.html"><tt class="sgmltag-element">mediaobject</tt></a>, <a href="note.html"><tt class="sgmltag-element">note</tt></a>, <a href="orderedlist.html"><tt class="sgmltag-element">orderedlist</tt></a>, <a href="para.html"><tt class="sgmltag-element">para</tt></a>, <a href="programlisting.html"><tt class="sgmltag-element">programlisting</tt></a>, <a href="section.html"><tt class="sgmltag-element">section</tt></a>, <a href="sectioninfo.html"><tt class="sgmltag-element">sectioninfo</tt></a>, <a href="sidebar.html"><tt class="sgmltag-element">sidebar</tt></a>, <a href="subtitle.html"><tt class="sgmltag-element">subtitle</tt></a>, <a href="table.html"><tt class="sgmltag-element">table</tt></a>, <a href="title.html"><tt class="sgmltag-element">title</tt></a>, <a href="titleabbrev.html"><tt class="sgmltag-element">titleabbrev</tt></a>, <a href="variablelist.html"><tt class="sgmltag-element">variablelist</tt></a></span>.</p></div></div><div class="refsect1"><h2>Attributes</h2><div class="variablelist"><dl><dt><span class="term">label</span></dt><dd><p>
+<tt class="sgmltag-attribute">Label</tt> specifies an identifying string for presentation purposes.
+</p><p>
+Generally, an explicit <tt class="sgmltag-attribute">Label</tt> attribute is
+used only if the processing system is incapable of generating the label
+automatically. If present, the <tt class="sgmltag-attribute">Label</tt> 
+is normative; it will used even
+if the processing system is capable of automatic labelling.
+</p></dd><dt><span class="term">status</span></dt><dd><p>
+<tt class="sgmltag-attribute">Status</tt> identifies the editorial or publication 
+status of the <tt class="sgmltag-element">Section</tt>.
+</p><p>
+Publication status might be used to control formatting (for example,
+printing a &#8220;draft&#8221; watermark on drafts) or processing (perhaps
+a document with a status of &#8220;final&#8221; should not include any
+components that are not final).
+</p></dd></dl></div></div><div class="refsect1"><h2>See Also</h2><p><span class="simplelist"><tt class="sgmltag-element">???</tt>, <tt class="sgmltag-element">???</tt>, <tt class="sgmltag-element">???</tt>, <tt class="sgmltag-element">???</tt>, <tt class="sgmltag-element">???</tt>, <tt class="sgmltag-element">???</tt>, <tt class="sgmltag-element">???</tt></span>.
+</p></div><div class="refsect1"><h2>Examples</h2><div class="informalexample"><pre class="programlisting">&lt;!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+          "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd"&gt;
+&lt;chapter&gt;&lt;title&gt;Test Chapter&lt;/title&gt;
+&lt;para&gt;This chapter uses recursive sections.&lt;/para&gt;
+&lt;section&gt;
+&lt;sectioninfo&gt;
+&lt;abstract&gt;&lt;para&gt;A trivial example of recursive sections.&lt;/para&gt;
+&lt;/abstract&gt;
+&lt;/sectioninfo&gt;
+&lt;title&gt;Like a Sect1&lt;/title&gt;
+&lt;subtitle&gt;Or How I Learned to Let Go of Enumeration
+and Love to Recurse&lt;/subtitle&gt;
+&lt;para&gt;This section is like a Sect1.&lt;/para&gt;
+&lt;section&gt;&lt;title&gt;Like a Sect2&lt;/title&gt;
+&lt;para&gt;This section is like a Sect2.&lt;/para&gt;
+&lt;section&gt;&lt;title&gt;Like a Sect3&lt;/title&gt;
+&lt;para&gt;This section is like a Sect3.&lt;/para&gt;
+&lt;section&gt;&lt;title&gt;Like a Sect4&lt;/title&gt;
+&lt;para&gt;This section is like a Sect4.&lt;/para&gt;
+&lt;section&gt;&lt;title&gt;Like a Sect5&lt;/title&gt;
+&lt;para&gt;This section is like a Sect5.&lt;/para&gt;
+&lt;section&gt;&lt;title&gt;Would be like a Sect6&lt;/title&gt;
+&lt;para&gt;This section would be like a Sect6, if there was one.&lt;/para&gt;
+&lt;section&gt;&lt;title&gt;Would be like a Sect7&lt;/title&gt;
+&lt;para&gt;This section would be like a Sect7, if there was one.&lt;/para&gt;
+&lt;/section&gt;
+&lt;/section&gt;
+&lt;/section&gt;
+&lt;/section&gt;
+&lt;/section&gt;
+&lt;/section&gt;
+&lt;/section&gt;
+&lt;/chapter&gt;</pre></div></div></div><div class="navfooter"><table width="100%" summary="Navigation table"><tr><td width="40%" align="left"><a href="row.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a href="sdocbook.html">Home</a></td><td width="40%" align="right">&nbsp;<a href="sectioninfo.html">Next</a></td></tr><tr><td width="40%" align="left">row&nbsp;</td><td width="20%" align="center"><a href="ref-elements.html">Up</a></td><td width="40%" align="right">&nbsp;sectioninfo</td></tr></table></div><div class="copyrightfooter"><p><a href="dbcpyright.html">Copyright</a> &copy; 1999, 2000, 2001, 2002 <a href="http://www.oreilly.com/">O'Reilly &amp; Associates, Inc.</a> All rights reserved.</p></div></body></html>

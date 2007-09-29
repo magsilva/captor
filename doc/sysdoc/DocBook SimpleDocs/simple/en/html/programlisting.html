@@ -1,0 +1,70 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>programlisting</title><link rel="stylesheet" href="defguide.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.51.1"><link rel="home" href="sdocbook.html" title="Simplified DocBook"><link rel="up" href="ref-elements.html" title="Simplified DocBook Element Reference"><link rel="previous" href="phrase.html" title="phrase"><link rel="next" href="pubdate.html" title="pubdate"></head><body><div class="navheader"><table border="0" cellpadding="0" cellspacing="0" width="100%" summary="Navigation table"><tr><td align="left">&nbsp;<a title="Simplified DocBook" href="sdocbook.html"><img src="figures/nav-home.png" alt="Home" border="0"></a>&nbsp;<a title="phrase" href="phrase.html"><img src="figures/nav-prev.png" alt="Prev" border="0"></a>&nbsp;<a title="Simplified DocBook Element Reference" href="ref-elements.html"><img src="figures/nav-up.png" alt="Up" border="0"></a>&nbsp;<a title="pubdate" href="pubdate.html"><img src="figures/nav-next.png" alt="Next" border="0"></a></td><td align="right"><i>DocBook: The Definitive Guide</i> Version 0.0.1 <span class="alpha-version">(<a href="co01.html"><em>Alpha</em></a>)</span> </td></tr></table></div><div class="refentry"><a name="programlisting.element"></a><div class="titlepage"><div><h1 class="title">programlisting</h1></div><div><p class="releaseinfo">$Revision: 1.1 $</p></div><div><p class="pubdate">$Date: 2005/07/03 00:15:36 $</p></div></div><div class="refnamediv"><p>programlisting &#8212; A literal listing of all or part of a program</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><h3><span class="bold"><b>Mixed Content Model</b></span></h3><pre class="synopsis">programlisting ::=
+(#PCDATA|<a href="footnoteref.html"><tt class="sgmltag-element">footnoteref</tt></a>|<a href="xref.html"><tt class="sgmltag-element">xref</tt></a>|<a href="abbrev.html"><tt class="sgmltag-element">abbrev</tt></a>|<a href="acronym.html"><tt class="sgmltag-element">acronym</tt></a>|<a href="citetitle.html"><tt class="sgmltag-element">citetitle</tt></a>|<a href="emphasis.html"><tt class="sgmltag-element">emphasis</tt></a>|
+ <a href="footnote.html"><tt class="sgmltag-element">footnote</tt></a>|<a href="phrase.html"><tt class="sgmltag-element">phrase</tt></a>|<a href="quote.html"><tt class="sgmltag-element">quote</tt></a>|<a href="trademark.html"><tt class="sgmltag-element">trademark</tt></a>|<a href="link.html"><tt class="sgmltag-element">link</tt></a>|<a href="ulink.html"><tt class="sgmltag-element">ulink</tt></a>|<a href="command.html"><tt class="sgmltag-element">command</tt></a>|
+ <a href="computeroutput.html"><tt class="sgmltag-element">computeroutput</tt></a>|<a href="email.html"><tt class="sgmltag-element">email</tt></a>|<a href="filename.html"><tt class="sgmltag-element">filename</tt></a>|<a href="literal.html"><tt class="sgmltag-element">literal</tt></a>|<a href="option.html"><tt class="sgmltag-element">option</tt></a>|<a href="replaceable.html"><tt class="sgmltag-element">replaceable</tt></a>|
+ <a href="systemitem.html"><tt class="sgmltag-element">systemitem</tt></a>|<a href="userinput.html"><tt class="sgmltag-element">userinput</tt></a>|<a href="inlinemediaobject.html"><tt class="sgmltag-element">inlinemediaobject</tt></a>|<a href="lineannotation.html"><tt class="sgmltag-element">lineannotation</tt></a>)*</pre><h3><span class="bold"><b>Attributes</b></span></h3><p><span class="common.attributes">Common attributes</span></p><table border="1" width="100%" summary="Attributes"><tr><td><p><span class="bold"><b>Name</b></span></p></td><td><p><span class="bold"><b>Type</b></span></p></td><td><p><span class="bold"><b>Default</b></span></p></td></tr><tr><td align="left" valign="top">format</td><td align="left" valign="top"><p><span class="emphasis"><em>Enumerated notation:</em></span>
+</p><table class="simplelist" border="0" summary="Simple list"><tr><td>linespecific</td></tr></table></td><td align="left" valign="top">"linespecific"</td></tr><tr><td align="left" valign="top">linenumbering</td><td align="left" valign="top"><p><span class="emphasis"><em>Enumeration:</em></span>
+</p><table class="simplelist" border="0" summary="Simple list"><tr><td>numbered</td></tr><tr><td>unnumbered</td></tr></table></td><td align="left" valign="top"><span class="emphasis"><em>None</em></span></td></tr><tr><td align="left" valign="top">width</td><td align="left" valign="top">CDATA</td><td align="left" valign="top"><span class="emphasis"><em>None</em></span></td></tr></table></div><div class="refsect1"><h2>Description</h2><p>
+A <tt class="sgmltag-element">ProgramListing</tt> is a verbatim environment for program source or
+source fragment listings.  <tt class="sgmltag-element">ProgramListing</tt>s are often placed
+in <tt class="sgmltag-element">Example</tt>s or <tt class="sgmltag-element">Figure</tt>s so that they can be
+cross-referenced from the text.
+</p><div class="refsect2"><h3>Processing Expectations</h3><p>
+Formatted as a displayed block. This element is displayed &#8220;verbatim&#8221;;
+whitespace and linebreaks within this element are significant. <tt class="sgmltag-element">ProgramListing</tt>s are usually
+displayed in a fixed width font.
+</p><p>
+Other markup within a <tt class="sgmltag-element">ProgramListing</tt> is recognized.
+Contrast
+this with systems like LaTeX, in which verbatim environments disable
+markup recognition.  If you want to disable markup recognition, you
+must use a <i>CDATA section</i>:
+
+<pre class="programlisting">
+
+&lt;programlisting&gt;
+&lt;![CDATA[
+This is a programlisting so white       space and line
+breaks are significant.  But it is also a CDATA
+section so &lt;emphasis&gt;tags&lt;/emphasis&gt; and &amp;entities;
+are not recognized.  The only markup that is recognized
+is the end-of-section marker, which is two
+"]"'s in a row followed by a &gt;.
+
+]]&gt;
+
+&lt;/programlisting&gt;
+
+</pre>
+</p><p>
+Two markup tags have
+special significance in <tt class="sgmltag-element">ProgramListing</tt>s: <tt class="sgmltag-element">CO</tt>
+and <tt class="sgmltag-element">LineAnnotation</tt>.
+A <tt class="sgmltag-element">CO</tt> identifies the location of a <tt class="sgmltag-element">Callout</tt>.
+A <tt class="sgmltag-element">LineAnnotation</tt> is a comment, added by the 
+<span class="emphasis"><em>documentor</em></span>&#8212;not the programmer.
+</p></div><div class="refsect2"><h3>Processing expectations</h3><p>
+This element is displayed &#8220;verbatim&#8221;;
+whitespace and linebreaks within this element are significant.
+</p></div><div class="refsect2"><h3>Future Changes</h3><p>The <tt>xml:space</tt> attribute is automatically
+provided in the XML DTD.
+</p></div><div class="refsect2"><h3>Parents</h3><p>These elements contain programlisting:
+<span class="simplelist"><a href="appendix.html"><tt class="sgmltag-element">appendix</tt></a>, <a href="article.html"><tt class="sgmltag-element">article</tt></a>, <a href="bibliodiv.html"><tt class="sgmltag-element">bibliodiv</tt></a>, <a href="bibliography.html"><tt class="sgmltag-element">bibliography</tt></a>, <a href="blockquote.html"><tt class="sgmltag-element">blockquote</tt></a>, <a href="caption.html"><tt class="sgmltag-element">caption</tt></a>, <a href="entry.html"><tt class="sgmltag-element">entry</tt></a>, <a href="example.html"><tt class="sgmltag-element">example</tt></a>, <a href="figure.html"><tt class="sgmltag-element">figure</tt></a>, <a href="footnote.html"><tt class="sgmltag-element">footnote</tt></a>, <a href="legalnotice.html"><tt class="sgmltag-element">legalnotice</tt></a>, <a href="listitem.html"><tt class="sgmltag-element">listitem</tt></a>, <a href="note.html"><tt class="sgmltag-element">note</tt></a>, <a href="revdescription.html"><tt class="sgmltag-element">revdescription</tt></a>, <a href="section.html"><tt class="sgmltag-element">section</tt></a>, <a href="sidebar.html"><tt class="sgmltag-element">sidebar</tt></a>, <a href="textobject.html"><tt class="sgmltag-element">textobject</tt></a></span>.</p></div><div class="refsect2"><h3>Children</h3><p>The following elements occur in programlisting:
+<span class="simplelist"><a href="abbrev.html"><tt class="sgmltag-element">abbrev</tt></a>, <a href="acronym.html"><tt class="sgmltag-element">acronym</tt></a>, <a href="citetitle.html"><tt class="sgmltag-element">citetitle</tt></a>, <a href="command.html"><tt class="sgmltag-element">command</tt></a>, <a href="computeroutput.html"><tt class="sgmltag-element">computeroutput</tt></a>, <a href="email.html"><tt class="sgmltag-element">email</tt></a>, <a href="emphasis.html"><tt class="sgmltag-element">emphasis</tt></a>, <a href="filename.html"><tt class="sgmltag-element">filename</tt></a>, <a href="footnote.html"><tt class="sgmltag-element">footnote</tt></a>, <a href="footnoteref.html"><tt class="sgmltag-element">footnoteref</tt></a>, <a href="inlinemediaobject.html"><tt class="sgmltag-element">inlinemediaobject</tt></a>, <a href="lineannotation.html"><tt class="sgmltag-element">lineannotation</tt></a>, <a href="link.html"><tt class="sgmltag-element">link</tt></a>, <a href="literal.html"><tt class="sgmltag-element">literal</tt></a>, <a href="option.html"><tt class="sgmltag-element">option</tt></a>, <a href="phrase.html"><tt class="sgmltag-element">phrase</tt></a>, <a href="quote.html"><tt class="sgmltag-element">quote</tt></a>, <a href="replaceable.html"><tt class="sgmltag-element">replaceable</tt></a>, <a href="systemitem.html"><tt class="sgmltag-element">systemitem</tt></a>, <a href="trademark.html"><tt class="sgmltag-element">trademark</tt></a>, <a href="ulink.html"><tt class="sgmltag-element">ulink</tt></a>, <a href="userinput.html"><tt class="sgmltag-element">userinput</tt></a>, <a href="xref.html"><tt class="sgmltag-element">xref</tt></a></span>.</p></div></div><div class="refsect1"><h2>Attributes</h2><div class="variablelist"><dl><dt><span class="term">format</span></dt><dd><p>
+The <tt class="sgmltag-attribute">Format</tt> attribute applies the 
+<tt>linespecific</tt> notation to all <tt class="sgmltag-element">ProgramListing</tt>s.
+All white space and line breaks must be preserved.
+</p></dd><dt><span class="term">linenumbering</span></dt><dd><p><img src="figures/rev_4.0.png" alt="[4.0]">Line numbering indicates whether or not the lines
+of a <tt class="sgmltag-element">ProgramListing</tt> are to be automatically numbered. The details
+of numbering (every line or only selected lines, on the left or right, etc.)
+are left up to the processing application. Be aware that not all processors
+are capable of numbering lines.</p></dd><dt><span class="term">width</span></dt><dd><p>
+<tt class="sgmltag-attribute">Width</tt> specifies the width (in characters)
+of the longest line in this <tt class="sgmltag-element">ProgramListing</tt> (formatters may use
+this value to determine scaling or rotation).
+</p></dd></dl></div></div><div class="refsect1"><h2>See Also</h2><p><span class="simplelist"><a href="computeroutput.html"><tt class="sgmltag-element">computeroutput</tt></a>, <a href="lineannotation.html"><tt class="sgmltag-element">lineannotation</tt></a>, <a href="literallayout.html"><tt class="sgmltag-element">literallayout</tt></a>, <a href="userinput.html"><tt class="sgmltag-element">userinput</tt></a></span>.
+</p></div><div class="refsect1"><h2>Examples</h2><p>For examples, see
+<span class="simplelist"><a href="example.html"><tt class="sgmltag-element">example</tt></a></span>.
+</p></div></div><div class="navfooter"><table width="100%" summary="Navigation table"><tr><td width="40%" align="left"><a href="phrase.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a href="sdocbook.html">Home</a></td><td width="40%" align="right">&nbsp;<a href="pubdate.html">Next</a></td></tr><tr><td width="40%" align="left">phrase&nbsp;</td><td width="20%" align="center"><a href="ref-elements.html">Up</a></td><td width="40%" align="right">&nbsp;pubdate</td></tr></table></div><div class="copyrightfooter"><p><a href="dbcpyright.html">Copyright</a> &copy; 1999, 2000, 2001, 2002 <a href="http://www.oreilly.com/">O'Reilly &amp; Associates, Inc.</a> All rights reserved.</p></div></body></html>

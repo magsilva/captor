@@ -1,0 +1,30 @@
+<?xml version="1.0" standalone="yes"?>
+
+<project name="FIT" default="jar" basedir="../../">
+
+	<!--______________________________________________________________________-->
+
+	<property name="src" location="src"/>
+	<property name="bin" location="bin"/>
+
+	<!--SET THE CLASSPATH-->
+	<path id="classpath">
+		<fileset dir="lib">
+			<include name="**/*.jar"/>
+		</fileset>
+		<fileset dir="dev/libdev">
+			<include name="**/*.jar"/>
+			<include name="junit3.8.1/**/*.jar"/>
+		</fileset>
+		<fileset dir="dev/libdev/saxon6_5_3">
+			<include name="**/*.jar"/>
+		</fileset>
+	</path>
+	
+	<target name="jar" description="generate the distribution">
+		<jar jarfile="lib/help.jar" basedir="res/help/output"/>
+	</target>
+	
+</project>	
+	
+	

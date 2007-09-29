@@ -1,0 +1,80 @@
+
+Configuração de ambiente:
+
+1) Para compilar o projeto é necessário instalar o JDK 1.5.0_04 ou superior e o
+ant 1.6.5.
+
+	Esses programas podem ser baixados nas seguintes URL's: 
+	
+		- http://java/sun.com
+		- http://ant.apache.org
+
+2) As variáveis de ambiente $JAVA_HOME e $ANT_HOME devem apontar para o 
+diretório de instalação dos respectivos pacotes.
+
+3) Deve ser adicionado os caminhos de diretórios $ANT_HOME/bin e
+$JAVA_HOME/bin na variável de ambiente $PATH.
+
+			(*) Para ajuda na configuração de variáveis de ambiente nos diversos 
+			sistemas operacionais consulte o arquivo ENVIRONMENT_VARIABLES.txt.
+	
+-------------------------------------------------------------------------------
+
+Processo de compilação do código fonte:
+
+1) Copie o pacote do projeto para um local adequado e sem espaços no caminho de
+   diretórios.
+	
+	Por exemplo: 
+	
+		c:\captor ou /home/foo/captor
+	
+	(esse local será referenciado pela palavra install_dir)
+	
+2) Abra um prompt de comando (Windows) ou shell (Linux) e digite os seguintes 
+comandos:
+
+	$cd install_dir/dev/scripts 
+	$ant (limpa, cria diretórios, compila e empacota o projeto)
+
+Notas: 
+
+- O comando "ant" deve produzir uma saída parecida com essa:
+
+	....
+	....
+	....
+	BUILD SUCCESSFUL
+	
+Se você viu esse resultado na tela, o projeto foi compilado com sucesso.
+
+
+-------------------------------------------------------------------------------
+
+Processo de compilação do Java Help:
+
+Edite as variáveis dos seguintes arquivos:
+
+	- install_dir\dev\scripts\compila-java-help-1.bat
+	- install_dir\dev\scripts\compila-java-help-2.bat
+
+Execute os seguintes comandos:
+
+	$cd install_dir	
+	$compila-java-help-1.bat
+	$compila-java-help-2.bat  (às vezes é necessário executar esse comando duas vezes)
+	$ant -buildfile buildHelp.xml
+
+
+-------------------------------------------------------------------------------
+
+Processo de empacotamento das releases:
+
+Execute os seguintes comandos:
+
+	$cd install_dir	
+	$ant -buildfile buildRelease.xml
+	$ant -buildfile buildDevRelease.xml
+
+
+-------------------------------------------------------------------------------

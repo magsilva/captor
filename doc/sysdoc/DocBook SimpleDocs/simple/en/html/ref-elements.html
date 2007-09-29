@@ -1,0 +1,379 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>Simplified DocBook Element Reference</title><link rel="stylesheet" href="defguide.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.51.1"><link rel="home" href="sdocbook.html" title="Simplified DocBook"><link rel="up" href="part2.html" title="Part I. Reference"><link rel="previous" href="part2.html" title="Part I. Reference"><link rel="next" href="abbrev.html" title="abbrev"></head><body><div class="navheader"><table border="0" cellpadding="0" cellspacing="0" width="100%" summary="Navigation table"><tr><td align="left">&nbsp;<a title="Simplified DocBook" href="sdocbook.html"><img src="figures/nav-home.png" alt="Home" border="0"></a>&nbsp;<a title="Part I. Reference" href="part2.html"><img src="figures/nav-prev.png" alt="Prev" border="0"></a>&nbsp;<a title="Part I. Reference" href="part2.html"><img src="figures/nav-up.png" alt="Up" border="0"></a>&nbsp;<a title="abbrev" href="abbrev.html"><img src="figures/nav-next.png" alt="Next" border="0"></a></td><td align="right"><i>DocBook: The Definitive Guide</i> Version 0.0.1 <span class="alpha-version">(<a href="co01.html"><em>Alpha</em></a>)</span> </td></tr></table></div><div class="reference"><a name="ref-element"></a><div class="titlepage"><div><h1 class="title"><a name="ref-element"></a>Simplified DocBook Element Reference</h1></div><hr></div><div class="partintro"><div></div><p>
+<a class="indexterm" name="elementsref"></a>This reference describes every element in the DocBook
+DTD.</p><div class="sect1"><div class="titlepage"><div><h2 class="title" style="clear: both"><a name="d0e123"></a>Organization of Reference Pages</h2></div></div><p>The description of each element in this reference is divided into the
+following sections:</p><div class="variablelist"><dl><dt><span class="term">Synopsis</span></dt><dd><p>
+<a class="indexterm" name="d0e135"></a>
+<a class="indexterm" name="d0e143"></a>
+<a class="indexterm" name="d0e149"></a>
+
+Provides a quick synopsis of the element. The content of the synopsis
+table varies according to the nature of the element described, but may include
+any or all of the following sections:</p><div class="variablelist"><dl><dt><span class="term">Content Model or Declared Content</span></dt><dd><p>Describes the content model of the element in SGML/XML DTD terms. See <a href="ref-elements.html#s2-cmintro" title="Understanding Content Models">the section called &#8220;Understanding Content Models&#8221;</a>.&#8221;</p></dd><dt><span class="term">Inclusions</span></dt><dd><p>
+<a class="indexterm" name="d0e179"></a>
+
+Lists &#8220;inclusions.&#8221;  Inclusions are an SGML feature.
+Included elements can appear anywhere inside the element
+that includes them, even in places that aren't ordinarily
+valid.  For example, <tt class="sgmltag-element">Chapter</tt> includes <tt class="sgmltag-element">IndexTerm</tt>.
+This means that within a <tt class="sgmltag-element">Chapter</tt>, <tt class="sgmltag-element">IndexTerm</tt> can
+appear inside <tt class="sgmltag-element">Emphasis</tt>, for instance, even though the
+content model of <tt class="sgmltag-element">Emphasis</tt> does not explicitly allow
+<tt class="sgmltag-element">IndexTerm</tt>s.
+</p></dd><dt><span class="term">Exclusions</span></dt><dd><p>
+<a class="indexterm" name="d0e218"></a>
+<a class="indexterm" name="d0e224"></a>
+<a class="indexterm" name="d0e230"></a>
+Lists &#8220;exclusions.&#8221; Exclusions are an SGML feature.
+Excluded elements cannot appear anywhere inside the element that
+excludes them, even in places that are ordinarily valid.  For
+example, <tt class="sgmltag-element">Footnote</tt> excludes <tt class="sgmltag-element">Footnote</tt>. This
+means that a <tt class="sgmltag-element">Footnote</tt> cannot appear inside a
+<tt class="sgmltag-element">Para</tt> inside a <tt class="sgmltag-element">Footnote</tt>, even though
+<tt class="sgmltag-element">Footnote</tt> appears in the content model of <tt class="sgmltag-element">Para</tt>.
+</p><a class="indexterm" name="d0e263"></a><p>Lists elements that are excluded from appearing at any level below
+the element described.</p></dd><dt><span class="term">Attributes</span></dt><dd><p>
+<a class="indexterm" name="d0e278"></a>
+
+Provides a synopsis of the attributes on the element. For brevity, common
+attributes are described only once, <a href="ref-elements.html#common.attributes" title="Common Attributes">in this
+introduction</a>.</p></dd><dt><span class="term">Tag Minimization</span></dt><dd><p>
+<a class="indexterm" name="d0e293"></a>
+<a class="indexterm" name="d0e299"></a>
+<a class="indexterm" name="d0e305"></a>
+<a class="indexterm" name="d0e311"></a>
+<a class="indexterm" name="d0e317"></a>
+
+Indicates if start- or end-tags may be omitted.  Tag omission is
+dependent on both the DTD and your SGML declaration.  If a tag is described
+as ommissable here, it is ommissible if your declaration allows tag 
+omission.  The standard DocBook declaration does not.
+</p></dd><dt><span class="term">Parameter Entities</span></dt><dd><p>
+<a class="indexterm" name="d0e337"></a>
+
+Lists the parameter entities in which the element described appears.
+Parameter entities are important when you are
+customizing the DTD.</p></dd></dl></div></dd><dt><span class="term">Description</span></dt><dd><p>
+<a class="indexterm" name="d0e352"></a>
+<a class="indexterm" name="d0e358"></a>
+
+Describes the semantics of the element in detail.</p><div class="variablelist"><dl><dt><span class="term">Processing expectations</span></dt><dd><p>
+<a class="indexterm" name="d0e369"></a>
+<a class="indexterm" name="d0e375"></a>
+Summarizes specific formatting expectations of the element. Many
+processing expectations are influenced by attribute values. Be sure to
+consult the
+description of element attributes as well.
+</p></dd><dt><span class="term">Future changes</span></dt><dd><p>
+<a class="indexterm" name="d0e389"></a>
+<a class="indexterm" name="d0e395"></a>
+<a class="indexterm" name="d0e399"></a>
+
+Identifies changes that are scheduled for future versions of the
+DTD. These changes are highlighted because they involve some 
+backward-incompatability that may make currently valid DocBook documents
+no longer valid under the new version.
+</p></dd></dl></div></dd><dt><span class="term">Attributes</span></dt><dd><p>
+<a class="indexterm" name="d0e416"></a>
+
+Describes the semantics of each attribute in detail.</p></dd><dt><span class="term">See Also</span></dt><dd><p>Lists similar or related elements.
+<a class="indexterm" name="d0e428"></a>
+</p></dd><dt><span class="term">Examples</span></dt><dd><p>
+<a class="indexterm" name="d0e440"></a>
+Provides examples of proper usage for the
+element. Generally, the smallest example required to reasonably
+demonstrate the element is used. In many cases, a formatted
+version of the example is also shown.
+</p><p>Formatted examples are indicated using a vertical bar.</p></dd></dl></div><div class="sect2"><div class="titlepage"><div><h3 class="title"><a name="s2-cmintro"></a>Understanding Content Models</h3></div></div><p>
+<a class="indexterm" name="d0e453"></a>
+
+Each element synopsis begins with a concise description of the
+elements it can contain.  This description is in DTD
+&#8220;content model&#8221; syntax, with all parameter entities
+expanded.
+</p><p>
+Content models are the way that DTDs describe the name, number,
+and order of other elements that may be used inside an element.
+The primary feature of content model syntax is that it is concise,
+but this conciseness comes at the cost of legibility until you
+are familiar with the syntax.
+</p><p>
+<a class="indexterm" name="d0e469"></a>
+<a class="indexterm" name="d0e475"></a>
+<a class="indexterm" name="d0e481"></a>
+<a class="indexterm" name="d0e487"></a>
+<a class="indexterm" name="d0e491"></a>
+
+There are six components to content model syntax: <i>element
+names</i>, <i>keywords</i>,
+<i>repetitions</i>, <i>sequences</i>,
+<i>alternatives</i>, and
+<i>groups</i>.
+</p><div class="variablelist"><dl><dt><span class="term">Element names</span></dt><dd><p>
+<a class="indexterm" name="d0e522"></a>
+
+An element name in a content model indicates that an element of that
+type may (or must) occur at that position.
+</p><p>
+<a class="indexterm" name="d0e530"></a>
+A content model of <tt>Para</tt> indicates
+that the element must contain a single paragraph.
+</p></dd><dt><span class="term">Keywords</span></dt><dd><p>
+<a class="indexterm" name="d0e543"></a>
+<a class="indexterm" name="d0e547"></a>
+There are two keywords that occur in the content models of DocBook
+elements: <tt>EMPTY</tt>, and <tt>#PCDATA</tt>.
+</p><p>A content model that consists of the single keyword <tt>EMPTY</tt>
+identifes an element as an empty element.  Empty elements are not allowed
+to have any content.  In order for the word &#8220;EMPTY&#8221; to have
+this special meaning, it must be the first and only word in the content
+model.  The word &#8220;EMPTY&#8221; at any other place is treated as
+an element name.
+</p><p>
+<a class="indexterm" name="d0e568"></a>
+<a class="indexterm" name="d0e572"></a>
+<a class="indexterm" name="d0e578"></a>
+The <tt>#PCDATA</tt> keyword indicates that text may
+occur at that position.  The text may consist of entity references and
+any characters that are legal in the document character set.  For XML
+documents, the document character set is always Unicode. In SGML the
+declaration can identify character sets and ranges that are allowed.
+DocBook SGML documents use the ISO Latin 1 character set.
+</p></dd><dt><span class="term">Repetitions</span></dt><dd><p>
+<a class="indexterm" name="d0e607"></a>
+
+An unadorned element name indicates that an element must occur exactly
+once at that position. A content model can also specify that an element
+may occur zero or more times, one or more times, or exactly zero or one
+time.  This is accomplished by following the element name with one of
+the following characters: <tt>*</tt> for zero or more times,
+<tt>+</tt> for one or more times, or <tt>?</tt> for exactly
+zero or one times.
+</p><p>
+A content model of <tt>Para+</tt> indicates
+that the element must contain at least one paragraph and may contain
+many.
+</p></dd><dt><span class="term">Sequences</span></dt><dd><p>
+<a class="indexterm" name="d0e631"></a>
+If element names in a content model are separated by commas,
+then they must occur in sequence.
+</p><p>
+A content model of <tt>Title, Para</tt> indicates
+that the element must contain a single title followed by a single paragraph.
+</p></dd><dt><span class="term">Alternatives</span></dt><dd><p>
+<a class="indexterm" name="d0e648"></a>
+If element names in a content model are separated by vertical bars (|),
+then they are alternatives.  These are sometimes called &#8220;or
+groups&#8221; because they require the selection of one or another element.
+</p><p>
+A content model of <tt>Phrase | Para</tt> indicates
+that the element must contain either a single phrase or a single paragraph.
+</p><p>
+
+<a class="indexterm" name="d0e659"></a>
+<a class="indexterm" name="d0e663"></a>
+
+In SGML, there is another connector: the ampersand (&amp;). The
+ampersand is a kind of combination of alternative and sequence,
+which means that all of the elements must occur, but they can occur
+in any order.  DocBook does not have any content models that use
+the ampersand connector.  XML does not allow it.
+</p></dd><dt><span class="term">Groups</span></dt><dd><p>
+<a class="indexterm" name="d0e681"></a>
+
+Finally, parentheses may be used around part of a content model.  A group
+formed this way can have repetition indicators and may occur as part of
+a sequence.
+</p><p>
+A content model of <tt>(Literal | Replaceable)+</tt>
+indicates that either <tt class="sgmltag-element">Literal</tt> or <tt class="sgmltag-element">Replaceable</tt>
+must occur and they can be repeated (and mixed) any number of times.
+</p></dd></dl></div><div class="sect3"><div class="titlepage"><div><h4 class="title"><a name="d0e698"></a>Content models and validity</h4></div></div><p>
+<a class="indexterm" name="d0e703"></a>
+<a class="indexterm" name="d0e709"></a>
+
+A parser uses the content models to determine if a given document is valid.
+In order for a document to be valid, the content of every element in the
+document must &#8220;match&#8221; the content model for that element.
+</p><p>
+In practical terms, match means that it must be possible to expand the
+content model until it exactly matches the sequence of elements in the
+document.
+</p><p>
+For example, consider the content model of the <tt class="sgmltag-element">Epigraph</tt> element:
+<tt>Attribution?, (FormalPara | Para | SimPara)+</tt>.
+This indicates that the following document fragment is valid:
+<a class="indexterm" name="d0e728"></a>
+
+<pre class="screen">
+
+&lt;epigraph&gt;
+&lt;para&gt;Some text&lt;/para&gt;
+&lt;/epigraph&gt;
+
+</pre>
+</p><p>
+It is valid because the following expansion of the content model exactly
+matches the actual content: choose zero occurances of
+<tt class="sgmltag-element">Attribution</tt>, choose the alternative <tt class="sgmltag-element">Para</tt> from
+the group, and choose to let the &#8220;+&#8221; match once.
+</p><p>
+By the same token, this example is not valid because there is no 
+expansion of the content model that can match it:
+<pre class="screen">
+
+&lt;epigraph&gt;
+&lt;para&gt;Some text&lt;/para&gt;
+&lt;attribution&gt;John Doe&lt;/attribution&gt;
+&lt;/epigraph&gt;
+
+</pre>
+</p><p>
+<a class="indexterm" name="d0e752"></a>
+
+There is one additional restriction on the matching ability of the
+parser: it is not allowed to &#8220;look ahead.&#8221;  This means that
+there are many useful content models that are ambiguous.
+</p></div><div class="sect3"><div class="titlepage"><div><h4 class="title"><a name="d0e759"></a>Ambiguity</h4></div></div><p>
+Ambiguity is not allowed. The parser must always be able to choose 
+exactly what to match based upon the next input token. 
+Consider the
+following content model:
+<tt>Meta*, Title?, Meta*</tt>.
+</p><p>
+The intent is clear: to allow some meta-information and a single,
+optional <tt class="sgmltag-element">Title</tt>.  But this content model is ambiguous
+for the following reason: if the document content begins with a
+<tt class="sgmltag-element">Meta</tt> element, it is impossible to tell if it matches
+the <tt class="sgmltag-element">Meta</tt> before the <tt class="sgmltag-element">Title</tt> or after
+without looking ahead.
+</p><p>
+Ambiguous content models are detected by the parser when it reads the
+DTD. It is not sufficient that your document simply be unambiguous;
+it must not be possible to construct any ambiguous document.
+</p></div><div class="sect3"><div class="titlepage"><div><h4 class="title"><a name="d0e786"></a>#PCDATA and repetition</h4></div></div><p>
+<a class="indexterm" name="d0e791"></a>
+<a class="indexterm" name="d0e797"></a>
+
+The <tt>#PCDATA</tt> keyword can always match the empty string.  This
+makes it impossible to force an element that may contain
+characters not to be empty. In other words, the following content
+model <span class="emphasis"><em>does not</em></span> guarantee that the element is not
+empty: <tt>(#PCDATA)+</tt>.
+</p><p>
+<a class="indexterm" name="d0e814"></a>
+
+In XML, the <tt>#PCDATA</tt> keyword is only allowed in optional, repeatable
+&#8220;or groups&#8221;, and it must be the first member of the
+group.
+</p></div></div></div><div class="sect1"><div class="titlepage"><div><h2 class="title" style="clear: both"><a name="common.attributes"></a>Common Attributes</h2></div></div><p>
+<a class="indexterm" name="d0e834"></a>
+<a class="indexterm" name="d0e840"></a>
+
+The following attributes occur on all elements. They are summarized
+here once for brevity and to make the additional attributes that occur on
+many elements stand out.</p><div class="informaltable"><table width="100%" border="1"><colgroup><col width="33%"><col width="33%"><col width="33%"></colgroup><thead><tr><th><p>Name</p></th><th>Type</th><th>Default</th></tr></thead><tbody><tr><td><tt class="sgmltag-attribute">ID</tt></td><td>ID</td><td><p><span class="emphasis"><em>None/Required</em></span><sup>[<a name="d0e870" href="#ftn.d0e870">a</a>]</sup></p></td></tr><tr><td><tt class="sgmltag-attribute">Lang</tt></td><td>CDATA</td><td><span class="emphasis"><em>None</em></span></td></tr><tr><td><tt class="sgmltag-attribute">Role</tt></td><td>CDATA</td><td><span class="emphasis"><em>None</em></span></td></tr><tr><td><tt class="sgmltag-attribute">RevisionFlag</tt></td><td><table class="simplelist" border="0" summary="Simple list"><tr><td><span class="emphasis"><em>Enumerated:</em></span></td></tr><tr><td>Changed</td></tr><tr><td>Added</td></tr><tr><td>Deleted</td></tr><tr><td>Off</td></tr></table></td><td><span class="emphasis"><em>None</em></span></td></tr></tbody><tbody class="footnotes"><tr><td colspan="3"><div class="footnote"><p><sup>[<a name="ftn.d0e870" href="#d0e870">a</a>] </sup>On a
+few elements, the <tt class="sgmltag-attribute">ID</tt> is required,
+but on most it is not.</p></div></td></tr></tbody></table></div><div class="variablelist"><dl><dt><span class="term"><tt class="sgmltag-attribute">ID</tt></span></dt><dd><p>
+<a class="indexterm" name="d0e922"></a>
+
+<tt class="sgmltag-attribute">ID</tt> is an identifying string
+for the element.  It must be unique at least within the document and
+must begin with a letter.</p></dd><dt><span class="term"><tt class="sgmltag-attribute">Lang</tt></span></dt><dd><p>
+<a class="indexterm" name="d0e936"></a>
+<a class="indexterm" name="d0e940"></a>
+<a class="indexterm" name="d0e944"></a>
+<a class="indexterm" name="d0e950"></a>
+<a class="indexterm" name="d0e956"></a>
+
+<tt class="sgmltag-attribute">Lang</tt> should be a language
+code drawn from ISO 639 (perhaps extended with a
+country code drawn from ISO 3166, as
+<tt>en-US</tt>).  Use it when you need to signal your
+application to change hyphenation and other display
+characteristics.</p></dd><dt><span class="term"><tt class="sgmltag-attribute">Role</tt></span></dt><dd><p>
+<a class="indexterm" name="d0e981"></a>
+<a class="indexterm" name="d0e985"></a>
+<a class="indexterm" name="d0e991"></a>
+
+<tt class="sgmltag-attribute">Role</tt> contains a string used
+to classify or subclassify an element.</p><p>While Role is a common attribute in the sense that it occurs on
+almost all elements, it is not part of either of the common attributes
+parameter entities (<tt class="sgmltag-paramentity">%common.attrib;</tt> or <tt class="sgmltag-paramentity">%idreq.common.attrib;</tt>).  It is
+parameterized differently because it is useful to be able to subclass
+<tt class="sgmltag-attribute">Role</tt> independently on different
+elements.</p></dd><dt><span class="term"><tt class="sgmltag-attribute">RevisionFlag</tt></span></dt><dd><p>
+<a class="indexterm" name="d0e1018"></a>
+<a class="indexterm" name="d0e1022"></a>
+
+<tt class="sgmltag-attribute">RevisionFlag</tt> indicates the
+revision status of element; the default is that the element hasn't
+been revised.  <tt class="sgmltag-attribute">RevisionFlag</tt> is
+intended only for simple revision management: to track the entire
+history of a document use a proper revision control system.  Use
+<tt class="sgmltag-attribute">RevisionFlag</tt> for indicating
+changes from one version to the next, no more.</p></dd></dl></div></div><div class="sect1"><div class="titlepage"><div><h2 class="title" style="clear: both"><a name="d0e1037"></a>Attribute Types</h2></div></div><p>
+<a class="indexterm" name="d0e1042"></a>
+<a class="indexterm" name="d0e1046"></a>
+
+SGML offers a small selection of attribute types. (XML
+offers a subset of these.) For convenience, a brief description of
+each of these types is provided here:</p><div class="variablelist"><dl><dt><a name="AT.CDATA"></a><span class="term"><tt class="sgmltag-attribute">CDATA</tt></span></dt><dd><p>
+<a class="indexterm" name="d0e1066"></a>
+<a class="indexterm" name="d0e1072"></a>
+<a class="indexterm" name="d0e1076"></a>
+
+A string of characters.</p></dd><dt><a name="AT.NUMBER"></a><span class="term"><tt class="sgmltag-attribute">NUMBER</tt></span></dt><dd><p>
+<a class="indexterm" name="d0e1087"></a>
+<a class="indexterm" name="d0e1091"></a>
+<a class="indexterm" name="d0e1095"></a>
+
+A number.  Numbers must begin with a hyphen or digit and can include
+the decimal point.</p></dd><dt><a name="AT.NMTOKEN"></a><span class="term"><tt class="sgmltag-attribute">NMTOKEN</tt></span></dt><dd><p>
+<a class="indexterm" name="d0e1106"></a>
+<a class="indexterm" name="d0e1110"></a>
+<a class="indexterm" name="d0e1116"></a>
+<a class="indexterm" name="d0e1122"></a>
+
+
+A sequence of name characters (letters, digits, hyphens, and
+periods).  This differs from a <tt class="sgmltag-attribute">CDATA</tt> attribute because it cannot
+contain spaces, punctuation, or other non-name characters.</p></dd><dt><a name="AT.NMTOKENS"></a><span class="term"><tt class="sgmltag-attribute">NMTOKENS</tt></span></dt><dd><p>A sequence of one or more space-delimited <tt class="sgmltag-attribute">NMTOKEN</tt> values.</p></dd><dt><a name="AT.NUTOKEN"></a><span class="term"><tt class="sgmltag-attribute">NUTOKEN</tt></span></dt><dd><p>
+<a class="indexterm" name="d0e1148"></a>
+<a class="indexterm" name="d0e1152"></a>
+<a class="indexterm" name="d0e1158"></a>
+
+A sequence of number characters (digits, hyphens, and periods).
+This differs from a <tt class="sgmltag-attribute">NUMBER</tt>
+field because it is not required to begin with a digit or a
+hyphen.</p></dd><dt><a name="AT.ENTITY"></a><span class="term"><tt class="sgmltag-attribute">ENTITY</tt></span></dt><dd><p>
+<a class="indexterm" name="d0e1172"></a>
+
+An entity name.  The value of an <tt class="sgmltag-attribute">ENTITY</tt> attribute must be the name of
+a declared entity.</p></dd><dt><a name="AT.NAME"></a><span class="term"><tt class="sgmltag-attribute">NAME</tt></span></dt><dd><p>
+<a class="indexterm" name="d0e1186"></a>
+<a class="indexterm" name="d0e1190"></a>
+<a class="indexterm" name="d0e1196"></a>
+<a class="indexterm" name="d0e1200"></a>
+
+A name.  A name must begin with a letter and can consist of
+letters, digits, hyphens, and periods.</p></dd><dt><a name="AT.NAMES"></a><span class="term"><tt class="sgmltag-attribute">NAMES</tt></span></dt><dd><p>A sequence of one or more space-delimited <tt class="sgmltag-attribute">NAME</tt> values.</p></dd><dt><a name="AT.ID"></a><span class="term"><tt class="sgmltag-attribute">ID</tt></span></dt><dd><p>
+<a class="indexterm" name="d0e1221"></a>
+<a class="indexterm" name="d0e1225"></a>
+
+An ID.  IDs are names that
+must be globally unique within the document.  The <tt class="sgmltag-attribute">ID</tt> attribute declares the
+ID.</p></dd><dt><a name="AT.IDREF"></a><span class="term"><tt class="sgmltag-attribute">IDREF</tt></span></dt><dd><p>
+<a class="indexterm" name="d0e1250"></a>
+
+An single ID.  IDs are
+names that must be globally unique within the document. The value of
+an <tt class="sgmltag-attribute">IDREF</tt> attribute must be
+the name of an <tt class="sgmltag-attribute">ID</tt> attribute
+defined in the document.</p></dd><dt><a name="AT.IDREFS"></a><span class="term"><tt class="sgmltag-attribute">IDREFS</tt></span></dt><dd><p>
+<a class="indexterm" name="d0e1273"></a>
+
+A sequence of one or more space-delimited <tt class="sgmltag-attribute">ID</tt> values.
+<a class="indexterm" name="d0e1280"></a>
+</p></dd></dl></div></div></div></div><div class="navfooter"><table width="100%" summary="Navigation table"><tr><td width="40%" align="left"><a href="part2.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a href="sdocbook.html">Home</a></td><td width="40%" align="right">&nbsp;<a href="abbrev.html">Next</a></td></tr><tr><td width="40%" align="left">Part I. Reference&nbsp;</td><td width="20%" align="center"><a href="part2.html">Up</a></td><td width="40%" align="right">&nbsp;abbrev</td></tr></table></div><div class="copyrightfooter"><p><a href="dbcpyright.html">Copyright</a> &copy; 1999, 2000, 2001, 2002 <a href="http://www.oreilly.com/">O'Reilly &amp; Associates, Inc.</a> All rights reserved.</p></div></body></html>

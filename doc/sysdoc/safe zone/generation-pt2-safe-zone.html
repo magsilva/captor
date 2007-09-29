@@ -1,0 +1,804 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>java.net: Extensible Code Generation with Java, Part 2</title>
+	
+	<meta name="description" content="Jack Herrington further develops code generation tools with support for safe zones, allowing handwritten and generated code to coexist.">
+	<meta name="keywords" content="java.net,code generation,safe zones,Jack Herrington,XSLT,Saxon,Programming, Web Services and XML,Jack Herrington,">
+	<meta name="date" content="May. 31, 2004"><!--  CSS stylesheet  -->
+
+
+<link rel="stylesheet" href="generation-pt2-safe-zone_files/simple.css" type="text/css"><!-- stopindex --><!--  Common body tag  --></head>
+
+
+
+<body leftmargin="0" topmargin="0" rightmargin="0" bgcolor="#ffffff" marginheight="0" marginwidth="0">
+<a name="top"></a>
+
+<!--  Masthead  -->
+<div>
+<table style="background: transparent url(/images/header_new_bg.gif) repeat scroll 0%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial;" border="0" cellpadding="0" cellspacing="0" height="25" width="100%">
+<tbody><tr>
+<td rowspan="2" width="100%"><a href="http://www.java.net/"><img src="generation-pt2-safe-zone_files/header_jnet.gif" alt="The Source for Java Technology Collaboration" border="0" height="53" width="520"></a></td>
+ <td style="vertical-align: middle;" nowrap="nowrap">
+ <div id="login">
+ 
+  <form name="loginform" id="loginform" action="https://www.dev.java.net/servlets/TLogin" method="post">
+  <input name="redir" value="http://today.java.net/pub/a/today/2004/05/31/generation-pt2.html" type="hidden">
+  <div>
+  <strong>User:</strong>
+   <input name="loginID" id="loginID" value="" size="7" maxlength="32" type="text">
+   <strong>Password:</strong>
+
+   <input name="password" id="password" value="" size="7" maxlength="32" type="password">
+   <input name="Login" class="buttonred" id="Button" value="Login" type="submit"> </div>
+  <div class="small" align="right"><strong> <a href="https://www.dev.java.net/servlets/Join">Register</a>  | <a href="https://www.dev.java.net/servlets/TLogin">Login help</a>   &nbsp;&nbsp;&nbsp;</strong></div> 
+</form>
+ 
+</div>
+</td> 
+</tr>
+</tbody></table>
+<div class="space"></div>
+
+<!--  Tabs  -->
+
+
+<noindex>
+</noindex><div class="tabs" id="toptabs">
+<table border="0" cellpadding="4" cellspacing="0">
+<tbody>
+<tr>
+<td><a href="https://www.dev.java.net/servlets/StartPage">My       pages</a> </td>
+<td><a href="http://community.java.net/projects/">Projects</a></td>
+<td><a href="http://community.java.net/">Communities</a>   </td>
+<th><a href="http://www.java.net/">java.net</a></th>
+</tr></tbody></table></div>
+
+
+
+
+<table id="main" border="0" cellpadding="2" cellspacing="2" width="100%">
+  <tbody>
+  <tr valign="top">
+    <td id="leftcol" rowspan="2" width="150">
+	<img src="generation-pt2-safe-zone_files/a.gif" height="1" width="150"><br>
+<div id="navcolumn">
+<!--   COMMUNITY LINKS   -->
+<noindex>
+</noindex><div class="toolgroup" id="communitylinks">
+<div class="label"><strong>Get Involved</strong></div>
+<div class="body">
+<div><a href="https://java-net.dev.java.net/">java-net Project</a></div>
+<div><a href="http://www.java.net/request_project.csp">Request a Project</a></div>
+<div><a href="http://community.java.net/help_wanted/">Project&nbsp;Help&nbsp;Wanted&nbsp;Ads</a></div>
+<div><a href="http://community.java.net/projects/publicize.csp">Publicize your Project</a></div>
+<!-- <div><a href="#">Success Stories</a></div>  -->
+<div><a href="http://today.java.net/cs/user/create/bl">Submit Content</a></div>
+</div>
+</div>
+
+<div class="toolgroup" id="communitylinks">
+<div class="label"><strong>Get Informed</strong></div>
+<div class="body">
+<div><a href="http://www.java.net/about.csp">About java.net</a></div>
+<div><a href="http://today.java.net/pub/q/articles">Articles</a></div>
+<div><a href="http://weblogs.java.net/">Weblogs</a></div>
+<div><a href="http://today.java.net/today/news/">News</a></div>
+<div><a href="http://www.java.net/events">Events</a></div>
+<div><a href="http://today.java.net/today/alsotoday.csp">Also in Java Today</a></div>
+<div><a href="http://safari.java.net/">java.net Online Books</a></div>
+<div><a href="http://today.java.net/today/archive/">java.net Archives</a></div>
+</div>
+</div>
+
+<div class="toolgroup" id="communitylinks">
+<div class="label"><strong>Get Connected</strong></div>
+<div class="body">
+<div><a href="http://forums.java.net/">java.net Forums</a></div>
+<div><a href="http://wiki.java.net/">Wiki</a> and <a href="http://wiki.java.net/bin/view/Javapedia/WebHome">Javapedia</a></div>
+<div><a href="http://wiki.java.net/bin/view/People/WebHome">People</a> and <a href="http://partners.java.net/">Partners</a> <em><font color="#ff0000">New!</font></em></div>
+<div><a href="http://community.java.net/jugs/listing.csp">Java User Groups</a></div>
+<div><!--  <a href="https://java-net.dev.java.net/servlets/ProjectMailingListList">Newsletters</a> and  --><a href="http://today.java.net/pub/q/rsschannels">RSS Feeds</a></div>
+</div>
+</div>
+
+<div class="toolgroup" id="communitylinks">
+<div class="label"><b>Search</b></div>
+<div class="body">
+<form action="http://onesearch.sun.com/search/developers/index.jsp">
+<input name="col" value="javanet" type="hidden">
+<div><input name="qt" class="medium" size="14" onfocus="if( this.value==this.defaultValue ) this.value='';" value="" type="text">
+<input class="buttonred" value=" » " border="0" type="submit"></div>
+</form>
+</div>
+</div>
+
+
+</div>
+<br>
+</td>
+<td colspan="2" height="3"><img src="generation-pt2-safe-zone_files/a.gif" height="3" width="1"><br></td>
+</tr>
+<tr> 
+<td width="10"><img src="generation-pt2-safe-zone_files/a.gif" height="1" width="10"></td>
+<td valign="top" width="100%">
+
+<!--  begin discuss-print-email-blog options  -->
+<noindex>
+</noindex><table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td class="smaller" valign="top">&nbsp;</td>
+<td width="10">&nbsp;</td>
+<td align="right" valign="bottom"><div class="sitelinks" style="padding: 0px;">
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody><tr>
+<!--  email option  -->
+<td align="right" valign="bottom"><img src="generation-pt2-safe-zone_files/ic_email.gif" alt=" " border="0" height="12" hspace="4" vspace="1" width="14"></td>
+<td class="smaller" nowrap="nowrap" valign="bottom"><a href="mailto:?subject=Extensible%20Code%20Generation%20with%20Java,%20Part%202&amp;body=http://today.java.net/pub/a/today/2004/05/31/generation-pt2.html">E-mail</a></td>
+
+<!--  print option  -->
+<td>&nbsp;&nbsp;</td>
+<td align="right" valign="bottom"><img src="generation-pt2-safe-zone_files/ic_print.gif" alt=" " border="0" height="12" hspace="4" width="14"></td>
+<td class="smaller" nowrap="nowrap" valign="bottom"><a href="http://today.java.net/lpt/a/91">Print</a></td>
+
+<!--  discuss  -->
+<td>&nbsp;&nbsp;</td>
+
+<td align="right" valign="bottom"><img src="generation-pt2-safe-zone_files/ic_discuss.gif" alt=" " border="0" height="12" hspace="4" width="13"></td>
+<td class="smaller" nowrap="nowrap" valign="bottom"><a href="http://today.java.net/pub/a/today/2004/05/31/generation-pt2.html?page=last#thread">Discuss</a></td>
+
+
+<!--  blog  -->
+<td>&nbsp;&nbsp;</td>
+<td align="right" valign="bottom"><img src="generation-pt2-safe-zone_files/ic_blog.gif" alt=" " border="0" height="12" hspace="4" width="14"></td>
+<td class="smaller" nowrap="nowrap" valign="bottom"><a href="http://today.java.net/cs/user/print/a/91?x-t=blog_link.view&amp;x-layout=blank" onclick="window.open('/cs/user/print/a/91?x-t=blog_link.view&x-layout=blank','Blog','toolbar=no,width=600,height=400,status=no,location=no,scrollbars=yes,resizable=yes,menubar=yes');return false">Blog</a></td> 
+</tr>
+</tbody></table></div>
+</td></tr>
+</tbody></table>
+
+<!--  end discuss-print-email-blog options  -->
+
+<div style="clear: both;"></div>
+<div class="contentdivider"><table class="grey4" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr><td><img src="generation-pt2-safe-zone_files/a.gif" alt=" " border="0" height="4" width="1"></td></tr></tbody></table></div>
+
+<!--  content here  -->
+<!-- CS_PAGE_BREAK -->
+<h2>
+<img src="generation-pt2-safe-zone_files/111-codegen.gif" alt="Extensible Code Generation with Java, Part 2" align="left" border="0" height="91" hspace="10" vspace="0" width="111">
+Extensible Code Generation with Java, Part 2</h2>
+by <a href="http://today.java.net/pub/au/184">Jack Herrington</a><br>
+05/31/2004<br clear="all"><br>
+<!--  sidebar begins  -->
+<!--  don't move sidebars  -->
+<!--  sidebar ends  -->
+
+<!--  sidebar begins  -->
+<!--  TOC  -->
+<table align="right" border="0" cellpadding="0" cellspacing="0">
+<tbody><tr><td bgcolor="#000000"><img src="generation-pt2-safe-zone_files/a.gif" height="1" width="10"></td></tr>
+<tr><td>
+<table align="right" border="0" cellpadding="6" cellspacing="0">
+<tbody><tr><td><img src="generation-pt2-safe-zone_files/a.gif" height="1" width="10"><br>
+<b>Contents</b></td></tr>
+<tr><td><a href="#Using_Safezones">Using Safe Zones</a></td></tr>
+<tr><td><a href="#One_More_Alternative">One More Alternative</a></td></tr>
+<tr><td><a href="#The_Downsides">The Downsides</a></td></tr>
+<tr><td><a href="#Conclusions">Conclusion</a></td></tr>
+<tr><td><a href="#Resources">Resources</a></td></tr>
+</tbody></table>
+</td></tr>
+<tr><td bgcolor="#000000"><img src="generation-pt2-safe-zone_files/a.gif" height="1" width="10"></td></tr>
+</tbody></table>
+<!--  sidebar ends  -->
+
+<p>In <a href="http://today.java.net/pub/a/today/2004/05/12/generation1.html">part 1</a>
+of this series, we looked at the idea of generated code, which is code
+written not by hand but by another application. The appeal of generated
+code is that it can eliminate drudgery (and mistakes) in some kinds of
+coding. A primary problem with this approach is getting the
+generator-created code to integrate with existing code bases.</p>
+
+<p>We introduced a workflow in which an XML document was used to
+describe desired classes, whose source was then generated with XSLT,
+via the Saxon XSLT processor. One downside of this approach is the need
+for subclassing some parts of the generated code to add the
+functionality that can't be generated for us. An alternative is to use
+"safe zones".</p>
+
+<h2 id="Using_Safezones">Using Safe Zones</h2>
+
+<p>A safe zone is a comment-delimited section of code where you can add any custom code you require. Here is an example from <code>getTotalAmount</code> in the example from part 1:</p>
+
+<pre><code>public double getTotalAmount( boolean calculateVAT ) {
+
+// START-SAFE(Order-getTotalAmount)
+    <strong>System.out.println("Hello");</strong>
+// END-SAFE
+    return 0.0;
+}</code></pre>
+
+<p>You can make any changes you like to the interior of the highlighted
+section and they will be preserved between code generation cycles. Of
+course, you can have as many safe zones as you like, but you should use
+them judiciously to demonstrate where you would like to see the code
+extended, and not just anywhere.</p>
+
+<p>Implementing safe zones is a little tricky because we have to scan
+the original output files and store the safe-zone contents. Then we
+need to feed the stored safe-zone contents back into the template so
+they can be reintegrated into the new output. </p>
+
+<p>So, how do we do that? Certainly XSLT can't take on that task alone.
+The approach I will use in this article is to wrap the Saxon XSLT
+engine in a Java application. This application will read the input XML,
+then look through the original output files for safe zones. The
+application then merges the safe-zone material back into the original
+model as XML tags. It then invokes a modified version of the XSLT
+template that we used in the original example. The flow is illustrated
+in Figure 1.</p>
+
+<p><img src="generation-pt2-safe-zone_files/figure3.gif" alt="Figure 1" height="361" width="518"><br>
+<i>Figure 1. Flow for preserving safe zones in generated code</i></p>
+
+<p>You could argue that mixing the safe-zone code into the model is
+blasphemy, and in the case of XSLT you can have it read from more than
+one data source. Using two files is something to think about, but it's
+nice to know that a single file version works as well.</p>
+
+<p>Let's start with the Java code for the code generator. We start with the ridiculously long preamble:</p>
+
+<pre><code>import javax.xml.transform.Source;
+import javax.xml.transform.Result;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.stream.StreamSource;
+import javax.xml.transform.stream.StreamResult;
+import javax.xml.transform.dom.DOMSource;
+
+import javax.xml.parsers.DocumentBuilder; 
+import javax.xml.parsers.DocumentBuilderFactory; 
+import javax.xml.parsers.FactoryConfigurationError; 
+import javax.xml.parsers.ParserConfigurationException; 
+import org.xml.sax.SAXException; 
+import org.xml.sax.SAXParseException; 
+
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.NodeList;
+import org.w3c.dom.DOMException;
+
+import java.util.Hashtable;
+import java.util.Enumeration;
+
+import java.io.File;
+import java.io.FileReader;
+import java.io.BufferedReader;
+
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;</code></pre>
+
+<p>Wow. That's a lot of stuff, but it's all necessary for the example. The first thing is to read in the input XML file.</p>
+
+<pre><code>public class SafeGen
+{
+    private String _inputFile;
+    private String _templateFile;
+    private Document _document;
+
+    public SafeGen( String inputFile, String templateFile )
+    {
+        _inputFile = inputFile;
+        _templateFile = templateFile;
+    }
+
+    private void readInputFile() throws Exception
+    {
+        DocumentBuilderFactory factory =
+            DocumentBuilderFactory.newInstance();
+        DocumentBuilder builder =
+            factory.newDocumentBuilder();
+        _document = <strong>builder.parse( new File( _inputFile ) );</strong>
+    }</code></pre>
+
+<p>The parse section is where we read in the input XML and store it in a member variable in DOM form.</p>
+
+<p>Next, we scan the original output files for the safe zones:</p>
+
+<pre><code>    private void scanForSafeZones() throws Exception
+    {
+        // Creates a temporary has of safe zones where
+        // the key is the ID of the zone and the value
+        // is the code within the safe zone
+        Hashtable safeZones = new Hashtable();
+
+        // The start and end patterns
+        Pattern <strong>startPattern =
+            Pattern.compile( "\\/\\/ START-SAFE\\((.*?)\\)" );</strong>
+        Pattern <strong>endPattern =
+            Pattern.compile( "\\/\\/ END-SAFE" );</strong>
+
+        // Goes through the XML looking for classes
+        Element root = _document.getDocumentElement();
+        NodeList nodes = root.getElementsByTagName( "Class" );
+        for( int index = 0; index &lt; nodes.getLength(); index++ )
+        {
+            Element elem =
+                (Element)nodes.item( index );
+            String className =
+                elem.getAttributeNode( "name" ).getNodeValue();
+
+            // Open up the file for the class name
+            File file = new File( "output/" +
+                            className + ".java" );
+            BufferedReader reader =
+                new BufferedReader( new FileReader( file ) );
+
+            // Set up the state machine variables
+            boolean inSafeZone = false;
+            String zoneName = "";
+            StringBuffer safeBuffer = new StringBuffer();
+
+            // Go through the Java code a line at
+            // a time looking for safe zones
+            String line;
+            while( ( line = reader.readLine() ) != null )
+            {
+                if ( inSafeZone )
+                {
+                    if (endPattern.matcher( line ).matches())
+                    {
+                        <strong>safeZones.put( zoneName,
+                            safeBuffer.toString() );</strong>
+                        inSafeZone = false;
+                        safeBuffer.setLength( 0 );
+                    }
+                    else
+                    {
+                        safeBuffer.append( line + "\n" );
+                    }
+                }
+                else
+                {
+                    Matcher match =
+                        startPattern.matcher( line );
+                    if ( match.matches() )
+                    {
+                        inSafeZone = true;
+                        zoneName = match.group( 1 );
+                    }
+                }
+            }
+
+            reader.close();
+        }
+
+        // For each zone we find add a node
+        // in the input DOM
+        for (Enumeration sz = safeZones.keys() ;
+             sz.hasMoreElements() ;
+             )
+        {
+            String zoneName =
+                ( String )sz.nextElement( );
+            String zoneValue =
+                ( String )safeZones.get( zoneName );
+
+            <strong>Element elem =
+                _document.createElement( "safezone" );
+            elem.setAttribute( "id", zoneName );
+            elem.appendChild (
+                _document.createCDATASection( zoneValue ) );</strong>
+
+            root.appendChild( elem );
+        }
+    }</code></pre>
+
+<p>The important parts are where we create and use the start and end
+regular expressions. We use these to find the start comment and to pick
+out the safe-zone ID. The heart of the reader is a state machine. It
+starts off outside the safe zone, then switches state inside the safe
+zone, and back out when the safe-zone ends. Each time we reach the end
+of a safe zone we push the zone into a hash table of zones using the
+zone ID as a key.</p>
+
+<p>When the entire file is read we augment the input XML DOM with some
+extra tags that contain CData sections for the safe-zone code.</p>
+
+<p>That was really the majority of the work. The next step is to run Saxon with the template file:</p>
+
+<pre><code>    private void runTransform() throws Exception
+    {
+        Source xmlSource = new DOMSource( _document );
+        TransformerFactory transFact =
+            TransformerFactory.newInstance( );
+        Transformer trans =
+            transFact.newTransformer( new StreamSource(
+                            new File( _templateFile ) ) );
+        <strong>trans.transform( xmlSource,
+                         new StreamResult( System.out ) );</strong>
+    }</code></pre>
+
+<p>This code uses the TransformFactory; you could get any XSLT engine. For the example, however, I used Saxon 6.5.3.</p>
+
+<p>The rest of the code just runs the methods in the proper order:</p>
+
+<pre><code>    public void run()
+    {
+        try
+        {
+            readInputFile();
+            scanForSafeZones();
+            runTransform();
+        }
+        catch( Exception e )
+        {
+            System.out.println( e );
+        }
+    }
+
+    static public void main( String args[])
+    {
+        SafeGen gen = new SafeGen( "input.xml",
+                                   "main.xsl" );
+        gen.run();
+    }
+}</code></pre>
+
+<p>To finish off the generator with the safe zones we need to make some
+minor modifications to the XSLT template from the previous example. To
+start with, we need to build <code>Order.java</code> instead of <code>OrderBase.java</code>. So this line:</p>
+
+<pre><code>&lt;xsl:variable name="filename" select="concat('output/',@name,'Base.java')" /&gt;</code></pre>
+
+<p>becomes:</p>
+
+<pre><code>&lt;xsl:variable name="filename" select="concat('output/',@name,'.java')" /&gt;</code></pre>
+
+<p>More importantly, this section:</p>
+
+<pre><code>&lt;xsl:for-each select="$class/Operation"&gt;
+  public &lt;xsl:value-of select="concat( @returnType, ' ', @name)" /&gt;( <img src="generation-pt2-safe-zone_files/wordwrap.gif" style="vertical-align: text-bottom;" alt="Code Wrap" height="13" width="14">
+&lt;xsl:call-template name="operation-params"&gt;&lt;xsl:with-param name="operation" <img src="generation-pt2-safe-zone_files/wordwrap.gif" style="vertical-align: text-bottom;" alt="Code Wrap" height="13" width="14">
+select="." /&gt;&lt;/xsl:call-template&gt; ) {
+&lt;xsl:variable name="zoneid" select="concat( $class/@name, '-', @name)" /&gt;
+&lt;xsl:if test="@returnType='double'"&gt;return 0.0;&lt;/xsl:if&gt;
+  }
+&lt;/xsl:for-each&gt;</code></pre>
+
+<p>becomes:</p>
+
+<pre><code>&lt;xsl:for-each select="$class/Operation"&gt;
+  public &lt;xsl:value-of select="concat( @returnType, ' ', @name)" /&gt;( <img src="generation-pt2-safe-zone_files/wordwrap.gif" style="vertical-align: text-bottom;" alt="Code Wrap" height="13" width="14">
+&lt;xsl:call-template name="operation-params"&gt;&lt;xsl:with-param name="operation" <img src="generation-pt2-safe-zone_files/wordwrap.gif" style="vertical-align: text-bottom;" alt="Code Wrap" height="13" width="14">
+select="." /&gt;&lt;/xsl:call-template&gt; ) {
+&lt;xsl:variable name="zoneid" select="concat( $class/@name, '-', @name)" /&gt;
+<strong>// START-SAFE(&lt;xsl:value-of select="$zoneid" /&gt;)
+&lt;xsl:value-of select="$safezones/safezone[@id=$zoneid]" /&gt;// END-SAFE</strong>
+    &lt;xsl:if test="@returnType='double'"&gt;return 0.0;&lt;/xsl:if&gt;
+  }
+&lt;/xsl:for-each&gt;</code></pre>
+
+<p>The really tricky part here is to make sure that you can run the
+template multiple times without adding any extra returns or spaces.
+This means that the template must be absolutely symmetric. This version
+is because the <code>// END-SAFE</code> text is on the same line as the <code>xsl:value</code> tag.</p>
+
+<p>There are a few extras that aren't accounted for by the example:</p>
+<ul>
+<li>The output files should be backed up before they are overwritten.</li>
+<li>If you have any safe-zone regions that were not used in the output those should be reported to the user.</li>
+<li>The generator should not write the file if the contents haven't changed. This will save you expensive re-compiles.</li>
+<li>There need to be sections of comments at the top and the bottom of
+the output that say that the file was generated, that it should not be
+modified, and how it could be regenerated.</li>
+</ul>
+
+<h2 id="One_More_Alternative">One More Alternative</h2>
+
+<p>There is another alternative for code generation combined with custom code in the same file.</p>
+
+<p>You can invert the safe-zone model by having sections of the code
+where the generator is able to add in code. These sections are
+delimited by comments that the generator looks for in the input file.
+Here is an example of what it might look like in the context of our
+example:</p>
+
+<pre><code>public class Order
+{
+   <strong>// START-GENERATED
+   // &lt;Attribute name="number" type="integer"/&gt;
+   // &lt;Attribute name="date" type="date"/&gt;</strong>
+   private int number;
+   public int getnumber() {return this.number;}
+   public void setnumber(int number) {this.number=number;}
+
+   private Date date;
+   public Date getdate() {return this.date;}
+   public void setdate(Date date) {this.date=date;}
+   <strong>// END-GENERATED</strong>
+
+   private Customer customer;
+   public Customer getCustomer() {return this.customer;}
+   public void  setCustomer(Customer customer ) {this.customer=customer;}
+
+   public double getTotalAmount( boolean calculateVAT ) { return 0.0; }
+}</code></pre>
+
+<p>The generator would look for the code block bracketed by the <code>START-GENERATED</code> and <code>END-GENERATED</code> sections and update that with new code as required.</p>
+
+<p>Microsoft uses this technique in its developer tools that aid in
+using the Microsoft Foundation Classes. In particular, they manage
+blocks of event routing code within special commented sections.</p>
+
+<h2 id="The_Downsides">The Downsides</h2>
+
+<p>Let's step back a little bit here at the end. Starting with some
+downsides and stuff to look out for, and then finishing up with more
+advantages of generation.</p>
+
+<p>Code generation is controversial. The primary concern is that code
+generation is a design smell... meaning that if you have to write so
+much code for a platform, then the platform itself is probably bad.
+Surprisingly, I agree in full with this argument. I think a platform
+that requires an excessive amount of coding is a design problem.
+Unfortunately, we are often stuck with platforms that are, at best, not
+optimal, like J2EE. Code generation, in that case, is not the design
+smell, but the solution to the design smell that you are stuck with.</p>
+
+<p>There are other arguments against code generation, far too many to
+put in this article. But there are lots of positives, as we have seen.</p>
+
+<h2 id="Conclusions">Conclusion</h2>
+
+<p>I started this article by saying that code generation was important
+and it was something that you need to understand. Why is that? It's not
+just because today's frameworks are code-intensive. It's also because
+the code that generators build is far more consistent in form and
+quality than hand code.</p>
+
+<p>Using code generation also raises the level of abstraction. As you
+can see in this example, the business model, and some of the logic, is
+actually in an XML model and not in the code. That means you can port
+your business model to other languages and technologies much more
+easily than you could port source code.</p>
+
+<p>Using the two techniques I have presented here can give you a
+smoother approach to generating sections of your code than you would
+have had if it were an all-or-nothing proposition. </p>
+
+<h2 id="Resources">Resources</h2>
+
+<ul>
+<li><a href="http://today.java.net/today/2004/05/31/generation-pt2.tgz">Source code for this article</a>.</li>
+<li><a href="http://www.codegeneration.net/">Code Generation Network</a>: An online resource for all things code generation.</li>
+<li><a href="http://www.codegeneration.net/cgia/">Code Generation in Action</a>:
+A book written by the author of this article on code generation that
+presents several models of generators and a wide variety of code
+generation targets.</li>
+<li><a href="http://saxon.sourceforge.net/">Saxon</a>: The Saxon XSLT processor page.</li>
+<li><a href="http://jakarta.apache.org/velocity/">Velocity</a>: An alternative template engine from Apache's Jakarta project.</li>
+<li><a href="http://www.amazon.com/exec/obidos/tg/detail/-/0764543814/104-2617163-2148715">XSLT: Programmer's Reference</a>: Michael Kay's book on XSLT.</li>
+</ul>
+
+<p><em><a href="http://today.java.net/pub/au/184">Jack Herrington</a> is a software engineer with over twenty years of experience on numerous platforms and languages.</em></p>
+
+<div class="pad3x0">
+<table bgcolor="#000000" border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td><img src="generation-pt2-safe-zone_files/a.gif" alt=" " border="0" height="1" width="1"></td></tr></tbody></table></div>
+
+
+
+
+<!--  end content  -->
+<img src="generation-pt2-safe-zone_files/trans.gif" alt=" " height="1" width="490"><br>
+
+
+<h2>Related Articles</h2>
+<p><a href="http://today.java.net/pub/a/today/2004/05/12/generation1.html">Extensible Code Generation with Java, Part 1</a><br>
+Jack Herrington argues that machine-generated code not only solves
+problems of drudgery, but it can even be preferable to potentially
+buggy ,hand-written code. In Part 1 of his series on code generation,
+he shows how XSLT can be used to generate Java source from XML
+descriptor files.</p>
+
+
+
+<p>View all <a href="http://today.java.net/pub/q/articles">java.net Articles</a>.</p>
+
+
+<a name="thread"></a>
+
+<div class="feedback">
+<div class="rbox">
+<div class="rboxtop"><div></div></div>
+<div class="rbcontent">
+<b>Are you ready to let Java write your Java for you?</b><br>
+<div class="clear"></div>
+<div class="tb_left"><a href="http://today.java.net/cs/user/create/cs_msg?x-lr=cs_disc/1414&amp;x-lr2=a/91&amp;page="><img src="generation-pt2-safe-zone_files/button_post.gif" alt="Post Comment" border="0" height="20" vspace="4" width="118"></a>
+</div>
+<!--  rbcontent & rbox closed in cs_disc/thread_header.view  -->
+<div class="tb_right">
+
+<a href="http://today.java.net/pub/a/today/2004/05/31/generation-pt2.html?page=last&amp;x-maxdepth=0#thread"><img src="generation-pt2-safe-zone_files/button_main_threads.gif" alt="Full Threads" title="Display main threads only" border="0" hspace="6" vspace="4"></a>
+<a href="http://today.java.net/pub/a/today/2004/05/31/generation-pt2.html?page=last&amp;x-order=date#thread"><img src="generation-pt2-safe-zone_files/button_old.gif" alt="Oldest First" title="Sort oldest posts first" border="0" vspace="4"></a>
+
+</div>
+<div class="clear"></div>
+<!--  closing divs from a/print.view, et al  -->
+
+</div>
+<div class="rboxbot"><div></div></div>
+</div>
+
+
+
+<p>Showing messages 1 through 6 of 6.
+
+</p>
+<ul>
+
+<li>
+<a name="7359"></a>
+<b>safe zones with un-safe comments??</b><br>
+2005-01-13 03:21:54&nbsp;honeyjar
+
+
+
+[<a href="http://today.java.net/cs/user/create/cs_msg?x-lr=cs_msg/7359&amp;x-lr2=a/91" title="Reply to this message">Reply</a> | <a href="http://today.java.net/cs/user/view/cs_msg/7359">View</a>] 
+
+<br>
+<br>
+<p>Using comments for anything else that comments becomes rapidly unusable if not supported by the language.
+</p><p>It's well known that this works well only in highly controlled  and well-coordinated environments,.
+</p><p>Also about safe-zones syntax: Did anyone out there try a more
+automated approach where the generator auto-discovers handmade
+differences and preserves them (without having to delimit safe-zones)?</p><p></p><p></p></li>
+
+</ul>
+<ul>
+
+<li>
+<a name="7356"></a>
+<b>safe zones don't work</b><br>
+2005-01-12 01:04:45&nbsp;jwenting
+
+
+
+[<a href="http://today.java.net/cs/user/create/cs_msg?x-lr=cs_msg/7356&amp;x-lr2=a/91" title="Reply to this message">Reply</a> | <a href="http://today.java.net/cs/user/view/cs_msg/7356">View</a>] 
+
+<br>
+<br>
+It's been tried. Netbeans had it, Visual Age had it.<br>
+It's extremely limiting, you cannot add anything substantial to your
+classes without it being removed in the next code generation cycle.<br>
+<br>
+Code generation should be limited only to those things that require no human modification at any time for any reason.<br>
+This might be very simple DTOs and maybe even very simple DAOs.<br>
+In a user interface maybe launchers for actions triggered by user interface elements might under certain conditions qualify.<br>
+<br>
+But that's about it.</li>
+
+</ul>
+<ul>
+
+<li>
+<a name="7355"></a>
+<b>It's called velocity</b><br>
+2005-01-11 07:38:12&nbsp;smartinumcp
+
+
+
+[<a href="http://today.java.net/cs/user/create/cs_msg?x-lr=cs_msg/7355&amp;x-lr2=a/91" title="Reply to this message">Reply</a> | <a href="http://today.java.net/cs/user/view/cs_msg/7355">View</a>] 
+
+<br>
+<br>
+Read it, use it, forget this.</li>
+
+</ul>
+<ul>
+
+<li>
+<a name="4987"></a>
+<b>Use code generators to create interfaces</b><br>
+2004-06-12 21:55:27&nbsp;atrajano
+
+
+
+[<a href="http://today.java.net/cs/user/create/cs_msg?x-lr=cs_msg/4987&amp;x-lr2=a/91" title="Reply to this message">Reply</a> | <a href="http://today.java.net/cs/user/view/cs_msg/4987">View</a>] 
+
+<br>
+<br>
+I think if instead of using safe zones, have the code generator create interfaces which we specify our code implements.<br>
+<br>
+The code generator can then create abstract classes that our code will
+extend instead. Actually even the interface can be taken off, but its
+still a good idea to code with the idea of interfaces instead of
+concrete classes in general.</li>
+
+</ul>
+<ul>
+
+<li>
+<a name="4804"></a>
+<b>Unsafe methods</b><br>
+2004-06-02 19:41:08&nbsp;ragsvasan
+
+
+
+[<a href="http://today.java.net/cs/user/create/cs_msg?x-lr=cs_msg/4804&amp;x-lr2=a/91" title="Reply to this message">Reply</a> | <a href="http://today.java.net/cs/user/view/cs_msg/4804">View</a>] 
+
+<br>
+<br>
+Why does this article only talk about one way of doing things and does
+not give equal weights to other known working methods? Instead of using
+SAFE zone tags and hoping the commented section will stay same over the
+period, using a supplemental file that guides the code generator to use
+Helper classes. These 2 articles barely scratch the surface of code
+generation.</li>
+
+<ul>
+
+<li>
+<a name="4805"></a>
+<b>Unsafe methods</b><br>
+2004-06-02 19:48:50&nbsp;jherr
+
+
+
+[<a href="http://today.java.net/cs/user/create/cs_msg?x-lr=cs_msg/4805&amp;x-lr2=a/91" title="Reply to this message">Reply</a> | <a href="http://today.java.net/cs/user/view/cs_msg/4805">View</a>] 
+
+<br>
+<br>
+To give equal weight to the four other major methods of code generation
+that I am aware of would require about 16,000 more words. What I was
+trying to do in this article is concentrate on one type of code
+generation by giving an in-depth example. I certainly agree that there
+are more methods and I (and many others) have covered them in other
+articles.<br>
+<br>
+I do think the article provides a unique perspective on using a
+templating language (XSLT) which is often used as a strictly output
+only mechanism as part of a circular code generation workflow.</li>
+
+</ul>
+</ul>
+
+
+</div>
+
+
+</td></tr></tbody></table>
+
+<!--  BEGIN VNV5 FOOTER   -->
+<!--  BEGIN VNV5 FOOTER   -->
+<table border="0" cellpadding="0" cellspacing="10" width="100%">
+<tbody><tr>
+<td>
+&nbsp;<a href="http://today.java.net/pub/q/java_net_rss"><img src="generation-pt2-safe-zone_files/xml.gif" alt="XML" align="middle" border="0" height="14" width="36"></a>&nbsp;<b>java.net RSS</b><br>
+<div class="grayline"></div>
+<table class="vatop" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td><img src="generation-pt2-safe-zone_files/a.gif" alt=" " border="0" height="1" width="190"><br>
+<a href="http://www.sun.com/"><img src="generation-pt2-safe-zone_files/logo_sun_small.gif" alt=" " border="0" height="29" vspace="5" width="61"></a></td>
+<td valign="top" width="60%">
+<div class="footer">
+<a href="https://java-net.dev.java.net/feedback.html">Feedback</a> &nbsp;|&nbsp;<a href="http://java.net/faq.csp">FAQ</a> &nbsp;|&nbsp;<a href="http://java.net/presscenter/">Press</a>&nbsp;|&nbsp;<a href="http://java.net/terms.csp">Terms of Participation</a><br>
+<a href="http://www.sun.com/share/text/termsofuse.html">Terms of Use</a> &nbsp;|&nbsp;
+<a href="http://www.sun.com/privacy/">Privacy</a> &nbsp;|&nbsp;
+<a href="http://www.sun.com/suntrademarks/">Trademarks</a>&nbsp;|&nbsp;<a href="https://java-net.dev.java.net/sitemap.html">Site Map</a>
+<br><span class="sp5">&nbsp;</span><br>
+Your use of this web site or any of its content or software indicates your agreement to be bound by these <a href="http://java.net/terms.csp">Terms of Participation</a>.<br>
+<span class="sp5">&nbsp;</span><br>
+Copyright © 1995-2004 Sun Microsystems, Inc.
+</div></td>
+<td align="right" valign="top" width="40%"><div class="footer">
+<a href="http://www.oreilly.com/"><img src="generation-pt2-safe-zone_files/montague_logo_oreilly.gif" alt="Oreilly Logo" border="0" height="19" width="74"></a><a href="http://www.collab.net/"><img src="generation-pt2-safe-zone_files/montague_logo_collabnet.gif" alt="Collabnet Logo" border="0" height="19" width="85"></a><br>
+Powered by Sun Microsystems, Inc.,<br> O'Reilly and CollabNet
+</div></td></tr>
+<!--  <tr><td colspan="3" valign="top" class="grey3"><img src="/im/a.gif" width="1" height="2" border="0" alt=" " /></td></tr>  -->
+</tbody></table>
+<div class="grayline"></div>
+</td></tr>
+</tbody></table>
+<!--  END VNV5 FOOTER  -->
+</div></body></html>

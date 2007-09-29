@@ -1,0 +1,32 @@
+\begin{thebibliography}{4}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{\texttt{#1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+\input babelbst.tex
+\newcommand{\Capitalize}[1]{\uppercase{#1}}
+\newcommand{\capitalize}[1]{\expandafter\Capitalize#1}
+
+\bibitem[{Czarnecki e Eisenercker(2002)}]{czarnecki}
+\relax{Czarnecki, K.; Eisenercker, U.~W.}\ \ \  \emph{Generative programming}.\
+  \ \ Addison-Wesley, 2002.
+
+\bibitem[{Davidson \bbletal{}(2005)Davidson, Atherton, Bailliez e Benson}]{ant}
+\relax{Davidson, J.~D.; Atherton, B.; Bailliez, S.; Benson, M.}\ \ \  {The
+  Apache Ant Project. Available at: http://ant.apache.org}.\ \ \ 2005.
+\newline Disponível em \url{http://ant.apache.org/contributors.html} (Acessado
+  em 26/09/2005)
+
+\bibitem[{{Jack Herrington}(2005)}]{herrington}
+\relax{{Jack Herrington}}\ \ \  Extensible code generation with java, part 2.\
+  \ \ 2005.
+\newline Disponível em
+  \url{http://today.java.net/pub/a/today/2004/05/31/generation-pt2.html}
+  (Acessado em 19/10/2005)
+
+\bibitem[{{XSL}(2005)}]{xslt}
+\relax{{XSL}}\ \ \  The extensible stylesheet language family (xsl).\ \ \ 2005.
+\newline Disponível em \url{http://www.w3.org/Style/XSL/} (Acessado em
+  19/10/2005)
+
+\end{thebibliography}

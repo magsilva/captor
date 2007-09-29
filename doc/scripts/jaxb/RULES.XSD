@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+<xsd:element name="composer" type="composerType"/>
+
+<xsd:complexType name="composerType">
+
+  <xsd:sequence>
+	  <xsd:element name="main" type="mainType" minOccurs="1" maxOccurs="1"/>
+	  <xsd:element name="tasks" type="tasksType" minOccurs="1" maxOccurs="1"/>
+  </xsd:sequence>
+
+  <xsd:attribute name="name" type="xsd:string"/>
+</xsd:complexType>
+
+<!--________________________________________________________________________-->
+
+<xsd:complexType name="mainType">
+  <xsd:sequence>
+  	<xsd:element name="callTask" type="callTaskType" minOccurs="0" maxOccurs="unbounded"/>
+  	<xsd:element name="if" type="ifType" minOccurs="0" maxOccurs="unbounded"/>
+  	<xsd:element name="for-each" type="for-EachType" minOccurs="0" maxOccurs="unbounded"/>
+  </xsd:sequence>
+</xsd:complexType>
+
+<xsd:complexType name="for-EachType">
+  
+  <xsd:sequence>
+  	<xsd:element name="callTask" type="callTaskType" minOccurs="0" maxOccurs="unbounded"/>
+  	<xsd:element name="if" type="ifType" minOccurs="0" maxOccurs="unbounded"/>
+  	<xsd:element name="for-each" type="for-EachType" minOccurs="0" maxOccurs="unbounded"/>
+  </xsd:sequence>
+  
+  <xsd:attribute name="select" type="xsd:string"/>
+</xsd:complexType>
+
+<xsd:complexType name="ifType">
+  
+  <xsd:sequence>
+  	<xsd:element name="callTask" type="callTaskType" minOccurs="0" maxOccurs="unbounded"/>
+  	<xsd:element name="if" type="ifType" minOccurs="0" maxOccurs="unbounded"/>
+  	<xsd:element name="for-Each" type="for-EachType" minOccurs="0" maxOccurs="unbounded"/>
+  </xsd:sequence>
+  
+  <xsd:attribute name="test" type="xsd:string"/>
+</xsd:complexType>
+
+<xsd:complexType name="callTaskType">
+
+  <xsd:attribute name="id" type="xsd:string"/>
+
+</xsd:complexType>
+
+<!--________________________________________________________________________-->
+
+<xsd:complexType name="tasksType">
+
+  <xsd:sequence>
+	 	<xsd:element name="task" type="taskType" minOccurs="1" maxOccurs="unbounded"/>
+  </xsd:sequence>
+
+</xsd:complexType>
+
+<xsd:complexType name="taskType">
+
+  <xsd:sequence>
+	 	<xsd:element name="compose" type="composeType" minOccurs="1" maxOccurs="1"/>
+  </xsd:sequence>
+
+  <xsd:attribute name="id" type="xsd:string"/>
+
+</xsd:complexType>
+
+<xsd:complexType name="composeType">
+
+  <xsd:sequence>
+    <xsd:element name="template" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+	 	<xsd:element name="newFilename" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+  </xsd:sequence>
+
+</xsd:complexType>
+
+<!--________________________________________________________________________-->
+
+</xsd:schema>

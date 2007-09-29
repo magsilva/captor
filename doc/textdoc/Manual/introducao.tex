@@ -1,0 +1,60 @@
+\noindent Os geradores de aplicação são ferramentas projetadas para receber uma especificação de software, validar essa especificação e gerar artefatos, tais como: código-fonte, casos de teste, diagramas UML e outros tipos de documentos \cite{czarnecki}. O processo de uso de geradores de aplicação é apresentado na Figura \ref{fig:using}.
+
+\begin{figure} [!ht]
+ \centering
+  \bfseries
+  \includegraphics [width=0.9\textwidth] {res/using}
+  \caption {Utilização de geradores de aplicação}
+  \label{fig:using}
+\end{figure}
+
+\subsection{A ferramenta Captor}
+
+A ferramenta Captor é um gerador de aplicação configurável, ou seja, ela pode ser configurada para receber especificações de diferentes domínios e gerar artefatos de software para diversas aplicações nesse domínio.
+
+Na Figura \ref{fig:usingCaptor} ilustra-se o processo de configuração e utilização da ferramenta Captor para as instâncias I1 e I2. A Instância I1 pode receber especificações para o domínio T e pode produzir artefatos para as aplicações T1, T2 e Tn. A Instância I2 pode receber especificações para o domínio P e pode produzir artefatos para as aplicações P1, P2 e Pn.
+
+\begin{figure} [!ht]
+ \centering
+  \bfseries
+  \includegraphics [width=0.40\textwidth] {res/usingCaptor}
+  \caption {Processo de utilização da ferramenta Captor}
+  \label{fig:usingCaptor}
+\end{figure}
+
+Conforme ilustrado na Figura \ref{fig:usingCaptor}, a ferramenta Captor precisa ser configurada antes de ser utilizada para gerar artefatos em um domínio específico. O usuário que interage com a ferramenta durante a etapa de configuração é chamado engenheiro de domínio e o usuário que interage com a ferramenta durante a etapa de utilização é chamado engenheiro de aplicação.
+
+\subsection{Terminologia utilizada}
+
+Na Tabela \ref{tab:glossarioutilizacao} é apresentada a terminologia utilizada neste manual.
+
+\begin{table}[ht]
+	\centering
+	\caption{Terminologia}
+	\label{tab:glossarioutilizacao}
+		
+		\begin{tabular}{|p{130pt}|p{275pt}|p{0pt}|}
+
+			\hline 
+			\hline 
+
+			\hline 
+			\textbf{Termo} & \textbf{Descrição} \\
+
+			\hline 
+			Gerador de aplicação & Uma ferramenta que utiliza uma especificação, valida essa especificação e produz artefatos de software.  \\
+			
+			\hline 
+			Arquivos fonte & Arquivos que são utilizados por um gerador para armazenar a especificação de uma aplicação. \\
+
+			\hline 
+			Arquivos de saída & Arquivos gerados por um gerador de aplicação.  \\
+			
+
+			\hline 
+			Arquivos de desenvolvimento & Arquivos que o engenheiro de aplicação utiliza para construir aplicações de software. Esses arquivos podem ser gerados por uma ferramenta ou podem ser editados manualmente.\\
+			
+			\hline 
+	\end{tabular}
+
+\end{table}

@@ -1,0 +1,33 @@
+
+Environment variable setting configuration manual
+
+-------------------------------------------------------------------------------
+
+Windows XP:
+
+
+	- Click with rigth-button on "My Computer" desktop icon.
+	- Click in the "Advanced" tab.
+	- Click in "Environment variables" button.	
+	- Click in "New" button.
+	- Put the name and the value of the new variable.
+	- Click "OK" button.
+	- Restart all opened DOS prompt.
+
+-------------------------------------------------------------------------------
+
+Linux:
+
+	- In the "bash" execute the following command:
+
+	$export variable_name='variable_value'
+
+-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
+
+For details and other operating systems instructions see:
+
+- http://www.dynamic-apps.com/tutorials/classpath.jsp#setting
+- http://www.cs.ucf.edu/courses/cgs3269/summer05/Installation_Instructions.pdf
+- http://www.cs.hmc.edu/qref/changevar.html
+- http://drjava.sourceforge.net/devdocs/x80.html

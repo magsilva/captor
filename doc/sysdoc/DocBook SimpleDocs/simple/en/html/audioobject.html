@@ -1,0 +1,28 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>audioobject</title><link rel="stylesheet" href="defguide.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.51.1"><link rel="home" href="sdocbook.html" title="Simplified DocBook"><link rel="up" href="ref-elements.html" title="Simplified DocBook Element Reference"><link rel="previous" href="audiodata.html" title="audiodata"><link rel="next" href="author.html" title="author"></head><body><div class="navheader"><table border="0" cellpadding="0" cellspacing="0" width="100%" summary="Navigation table"><tr><td align="left">&nbsp;<a title="Simplified DocBook" href="sdocbook.html"><img src="figures/nav-home.png" alt="Home" border="0"></a>&nbsp;<a title="audiodata" href="audiodata.html"><img src="figures/nav-prev.png" alt="Prev" border="0"></a>&nbsp;<a title="Simplified DocBook Element Reference" href="ref-elements.html"><img src="figures/nav-up.png" alt="Up" border="0"></a>&nbsp;<a title="author" href="author.html"><img src="figures/nav-next.png" alt="Next" border="0"></a></td><td align="right"><i>DocBook: The Definitive Guide</i> Version 0.0.1 <span class="alpha-version">(<a href="co01.html"><em>Alpha</em></a>)</span> </td></tr></table></div><div class="refentry"><a name="audioobject.element"></a><div class="titlepage"><div><h1 class="title">audioobject</h1></div><div><p class="releaseinfo">$Revision: 1.1 $</p></div><div><p class="pubdate">$Date: 2005/07/03 00:15:37 $</p></div></div><div class="refnamediv"><p>audioobject &#8212; A wrapper for audio data and its associated meta-information</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><h3><span class="bold"><b>Content Model</b></span></h3><pre class="synopsis">audioobject ::=
+(<a href="objectinfo.html"><tt class="sgmltag-element">objectinfo</tt></a>?,<a href="audiodata.html"><tt class="sgmltag-element">audiodata</tt></a>)</pre><h3><span class="bold"><b>Attributes</b></span></h3><p><span class="common.attributes">Common attributes</span></p></div><div class="refsect1"><h2>Description</h2><p>
+<tt class="sgmltag-element">AudioObject</tt> is a wrapper for <tt class="sgmltag-element">AudioData</tt>.
+</p><div class="refsect2"><a name="dbreproc.audioobject"></a><h3>Processing expectations</h3><p>
+Its content is rendered aurally or not at all.  It might not be
+rendered, depending on its placement within a
+<tt class="sgmltag-element">MediaObject</tt> or <tt class="sgmltag-element">InlineMediaObject</tt> and the
+constraints on the publishing system.  For a more detailed
+description of the semantics involved, see
+<tt class="sgmltag-element">MediaObject</tt>.
+</p></div><div class="refsect2"><h3>Parents</h3><p>These elements contain audioobject:
+<span class="simplelist"><a href="inlinemediaobject.html"><tt class="sgmltag-element">inlinemediaobject</tt></a>, <a href="mediaobject.html"><tt class="sgmltag-element">mediaobject</tt></a></span>.</p></div><div class="refsect2"><h3>Children</h3><p>The following elements occur in audioobject:
+<span class="simplelist"><a href="audiodata.html"><tt class="sgmltag-element">audiodata</tt></a>, <a href="objectinfo.html"><tt class="sgmltag-element">objectinfo</tt></a></span>.</p></div></div><div class="refsect1"><h2>See Also</h2><p><span class="simplelist"><a href="caption.html"><tt class="sgmltag-element">caption</tt></a>, <a href="imageobject.html"><tt class="sgmltag-element">imageobject</tt></a>, <a href="inlinemediaobject.html"><tt class="sgmltag-element">inlinemediaobject</tt></a>, <a href="mediaobject.html"><tt class="sgmltag-element">mediaobject</tt></a>, <a href="textobject.html"><tt class="sgmltag-element">textobject</tt></a>, <a href="videoobject.html"><tt class="sgmltag-element">videoobject</tt></a></span>.
+</p></div><div class="refsect1"><h2>Examples</h2><div class="informalexample"><pre class="programlisting">&lt;!DOCTYPE mediaobject PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+          "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd"&gt;
+&lt;mediaobject&gt;
+&lt;audioobject&gt;
+  &lt;objectinfo&gt;
+    &lt;title&gt;Phaser sound effect&lt;/title&gt;
+  &lt;/objectinfo&gt;
+  &lt;audiodata fileref="phaser.wav"/&gt;
+&lt;/audioobject&gt;
+&lt;textobject&gt;
+&lt;phrase&gt;A &lt;trademark&gt;Star Trek&lt;/trademark&gt; phaser sound effect&lt;/phrase&gt;
+&lt;/textobject&gt;
+&lt;/mediaobject&gt;</pre></div><div class="example-output"><div class="mediaobject"></div></div></div></div><div class="navfooter"><table width="100%" summary="Navigation table"><tr><td width="40%" align="left"><a href="audiodata.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a href="sdocbook.html">Home</a></td><td width="40%" align="right">&nbsp;<a href="author.html">Next</a></td></tr><tr><td width="40%" align="left">audiodata&nbsp;</td><td width="20%" align="center"><a href="ref-elements.html">Up</a></td><td width="40%" align="right">&nbsp;author</td></tr></table></div><div class="copyrightfooter"><p><a href="dbcpyright.html">Copyright</a> &copy; 1999, 2000, 2001, 2002 <a href="http://www.oreilly.com/">O'Reilly &amp; Associates, Inc.</a> All rights reserved.</p></div></body></html>

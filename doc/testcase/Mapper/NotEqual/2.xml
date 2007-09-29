@@ -1,0 +1,83 @@
+<composer name="FIT">
+
+	<!--______________________________________________________________________-->
+
+	<statements>
+
+		<if test="not-equal(('var','var')">
+			<callTask id="one"/>
+		</if>
+	
+	</statements>
+
+	<!--______________________________________________________________________-->
+
+	<tasks>
+
+		<task id="one">
+		
+				<compose>
+					<template>grn.st</template>
+					<newFilename>grn2.st</newFilename>
+				</compose>
+				
+		</task>
+		
+		<!--______________________________________________________________________-->
+	
+		<task id="two">
+		
+			<compose>
+				<template>sql.sql</template>
+				<newFilename>${/pldata/project/name}/${/pldata/project/name}_sql.sql</newFilename>
+			</compose>
+		
+		</task>
+
+		<task id="three">
+		
+			<compose>
+				<template>sql.sql</template>
+				<newFilename>lavaiquevai.sql</newFilename>
+			</compose>
+		
+		</task>
+		
+		<!--______________________________________________________________________-->
+	
+		<task id="four">
+		
+				<compose>
+					<template>grn.st</template>
+					<newFilename>grn2.st</newFilename>
+				</compose>
+				
+		</task>
+		
+		<!--______________________________________________________________________-->
+	
+		<task id="five">
+		
+				<compose>
+					<template>grn.st</template>
+					<newFilename>grn2.st</newFilename>
+				</compose>
+				
+		</task>
+		
+		<!--______________________________________________________________________-->
+	
+		<task id="six">
+		
+				<compose>
+					<template>grn.st</template>
+					<newFilename>grn2.st</newFilename>
+				</compose>
+				
+		</task>
+	
+	</tasks>
+	
+	<!--______________________________________________________________________-->
+
+</composer>

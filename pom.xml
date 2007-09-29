@@ -1,0 +1,244 @@
+<project
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"
+>
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>captor</groupId>
+	<artifactId>captor</artifactId>
+	<packaging>jar</packaging>
+
+	<name>Captor</name>
+	<url>http://www.labes.icmc.usp.br/~captor</url>
+	<version>1.0</version>
+	<inceptionYear>2004</inceptionYear>
+
+	<licenses>
+		<license>
+			<name>The Apache Software License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+			<comments/>
+		</license>
+	</licenses>
+
+	<organization>
+		<name>Software Engineering Laboratory</name>
+		<url>http://www.labes.icmc.usp.br</url>
+	</organization>
+
+	<repositories>
+		<repository>
+			<id>central</id>
+			<name>Maven Repository Switchboard</name>
+			<layout>default</layout>
+			<url>http://repo1.maven.org/maven2</url>
+			<!--
+			<url>http://mirrors.ibiblio.org/pub/mirrors/maven2</url>
+			-->
+			<releases>
+				<enabled>true</enabled>
+				<updatePolicy>always</updatePolicy>
+				<checksumPolicy>warn</checksumPolicy>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+				<!--
+				<updatePolicy>always</updatePolicy>
+				-->
+				<updatePolicy>interval:60</updatePolicy>
+				<checksumPolicy>warn</checksumPolicy>
+			</snapshots>
+		</repository>
+
+		<repository>
+			<id>codehaus-repository</id>
+			<name>Codehaus Repository</name>
+			<url>http://repository.codehaus.org</url>
+		</repository>
+
+		<repository>
+			<id>codehaus-legacy-repository</id>
+			<name>Codehaus Legacy Repository</name>
+			<url>http://dist.codehaus.org</url>
+			<layout>legacy</layout>
+		</repository>
+
+		<repository>
+			<id>Tomcat</id>
+			<name>Tomcat's Staging Repository</name>
+			<layout>default</layout>
+			<url>http://tomcat.apache.org/dev/dist/m2-repository/org/apache/tomcat/</url>
+			<releases>
+				<enabled>true</enabled>
+				<updatePolicy>always</updatePolicy>
+				<checksumPolicy>warn</checksumPolicy>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+				<!--
+				<updatePolicy>always</updatePolicy>
+				-->
+				<updatePolicy>interval:60</updatePolicy>
+				<checksumPolicy>warn</checksumPolicy>
+			</snapshots>
+		</repository>
+
+		<!-- http://wiki.apache.org/myfaces/Using_MyFaces_in_a_Project_built_with_Maven -->
+		<repository>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+			<id>myfaces.staging</id>
+			<name>MyFaces Staging Repository</name>
+			<url>http://myfaces.zones.apache.org/dist/maven-repository</url>
+		</repository>
+
+	</repositories>
+
+	<pluginRepositories>
+		<pluginRepository>
+			<id>central</id>
+			<name>Maven Plugin Repository</name>
+			<url>http://repo1.maven.org/maven2</url>
+			<layout>default</layout>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+			<releases>
+				<updatePolicy>never</updatePolicy>
+			</releases>
+		</pluginRepository>
+	</pluginRepositories>
+
+
+	<dependencies>
+		<dependency>
+			<groupId>xml-apis</groupId>
+			<artifactId>xml-apis</artifactId>
+			<version>2.0.2</version>
+			<scope>runtime</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.14</version>
+			<scope>runtime</scope>
+		</dependency>
+
+		<!-- jUnit -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.3.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.ant</groupId>
+			<artifactId>ant-junit</artifactId>
+			<version>1.7.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>xerces</groupId>
+			<artifactId>xercesImpl</artifactId>
+			<version>2.8.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>Jabuti</groupId>
+			<artifactId>Jabuti</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+			<version>2.3</version>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.help</groupId>
+			<artifactId>javahelp</artifactId>
+			<version>2.0.02</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<finalName>${artifactId}-${version}</finalName>
+
+		<directory>target</directory>
+		<outputDirectory>target/classes</outputDirectory>
+		<testOutputDirectory>target/test-classes</testOutputDirectory>
+
+		<sourceDirectory>src</sourceDirectory>
+		<!--
+		<scriptSourceDirectory>src/</scriptSourceDirectory>
+		-->
+		<testSourceDirectory>tests</testSourceDirectory>
+
+		<!--
+		<resources>
+			<resource>
+				<directory>web</directory>
+			</resource>
+		</resources>
+		<testResources>
+			<testResource>
+				<directory>web</directory>
+			</testResource>
+		</testResources>
+		-->
+
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<fork>true</fork>
+					<meminitial>128m</meminitial>
+					<maxmem>512m</maxmem>
+					<source>1.5</source>
+					<target>1.5</target>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+					<archive>
+						<addMavenDescriptor>false</addMavenDescriptor>
+						<manifest>
+							<mainClass>captor.Captor</mainClass>
+							<addClasspath>true</addClasspath>
+						</manifest>
+					</archive>
+					<!--
+					<webResources>
+						<resource>
+							<directory>web</directory>
+						</resource>
+
+						<resource>
+							<directory>src</directory>
+							<targetPath>WEB-INF/classes</targetPath>
+							<excludes>
+								<exclude>**/*.java</exclude>
+							</excludes>
+						</resource>
+					</webResources>
+					-->
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<reporting>
+		<outputDirectory>site</outputDirectory>
+	</reporting>
+</project>

@@ -1,0 +1,51 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>variablelist</title><link rel="stylesheet" href="defguide.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.51.1"><link rel="home" href="sdocbook.html" title="Simplified DocBook"><link rel="up" href="ref-elements.html" title="Simplified DocBook Element Reference"><link rel="previous" href="userinput.html" title="userinput"><link rel="next" href="varlistentry.html" title="varlistentry"></head><body><div class="navheader"><table border="0" cellpadding="0" cellspacing="0" width="100%" summary="Navigation table"><tr><td align="left">&nbsp;<a title="Simplified DocBook" href="sdocbook.html"><img src="figures/nav-home.png" alt="Home" border="0"></a>&nbsp;<a title="userinput" href="userinput.html"><img src="figures/nav-prev.png" alt="Prev" border="0"></a>&nbsp;<a title="Simplified DocBook Element Reference" href="ref-elements.html"><img src="figures/nav-up.png" alt="Up" border="0"></a>&nbsp;<a title="varlistentry" href="varlistentry.html"><img src="figures/nav-next.png" alt="Next" border="0"></a></td><td align="right"><i>DocBook: The Definitive Guide</i> Version 0.0.1 <span class="alpha-version">(<a href="co01.html"><em>Alpha</em></a>)</span> </td></tr></table></div><div class="refentry"><a name="variablelist.element"></a><div class="titlepage"><div><h1 class="title">variablelist</h1></div><div><p class="releaseinfo">$Revision: 1.1 $</p></div><div><p class="pubdate">$Date: 2005/07/03 00:15:40 $</p></div></div><div class="refnamediv"><p>variablelist &#8212; A list in which each entry is composed of a set of one or more terms and an associated description</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><h3><span class="bold"><b>Content Model</b></span></h3><pre class="synopsis">variablelist ::=
+((<a href="title.html"><tt class="sgmltag-element">title</tt></a>,<a href="titleabbrev.html"><tt class="sgmltag-element">titleabbrev</tt></a>?)?,
+ <a href="varlistentry.html"><tt class="sgmltag-element">varlistentry</tt></a>+)</pre><h3><span class="bold"><b>Attributes</b></span></h3><p><span class="common.attributes">Common attributes</span></p><table border="1" width="100%" summary="Attributes"><tr><td><p><span class="bold"><b>Name</b></span></p></td><td><p><span class="bold"><b>Type</b></span></p></td><td><p><span class="bold"><b>Default</b></span></p></td></tr><tr><td align="left" valign="top">termlength</td><td align="left" valign="top">CDATA</td><td align="left" valign="top"><span class="emphasis"><em>None</em></span></td></tr></table></div><div class="refsect1"><h2>Description</h2><p>
+A <tt class="sgmltag-element">VariableList</tt> is a list consisting of <tt class="sgmltag-element">Term</tt>s and
+their definitions or descriptions.
+</p><div class="refsect2"><h3>Processing expectations</h3><p>
+Formatted as a displayed block.
+</p><p>
+There are many ways to deal with the problems presented in
+formatting a variable list with long <tt class="sgmltag-element">Term</tt>s. DocBook
+does not mandate any particular presentation. The 
+<tt class="sgmltag-attribute">TermLength</tt> attribute may influence
+the presentation of <tt class="sgmltag-element">Term</tt>s.
+</p></div><div class="refsect2"><h3>Future Changes</h3><p>Introductory material may appear before the first list item.
+</p></div><div class="refsect2"><h3>Parents</h3><p>These elements contain variablelist:
+<span class="simplelist"><a href="appendix.html"><tt class="sgmltag-element">appendix</tt></a>, <a href="article.html"><tt class="sgmltag-element">article</tt></a>, <a href="bibliodiv.html"><tt class="sgmltag-element">bibliodiv</tt></a>, <a href="bibliography.html"><tt class="sgmltag-element">bibliography</tt></a>, <a href="blockquote.html"><tt class="sgmltag-element">blockquote</tt></a>, <a href="caption.html"><tt class="sgmltag-element">caption</tt></a>, <a href="entry.html"><tt class="sgmltag-element">entry</tt></a>, <a href="example.html"><tt class="sgmltag-element">example</tt></a>, <a href="footnote.html"><tt class="sgmltag-element">footnote</tt></a>, <a href="legalnotice.html"><tt class="sgmltag-element">legalnotice</tt></a>, <a href="listitem.html"><tt class="sgmltag-element">listitem</tt></a>, <a href="note.html"><tt class="sgmltag-element">note</tt></a>, <a href="revdescription.html"><tt class="sgmltag-element">revdescription</tt></a>, <a href="section.html"><tt class="sgmltag-element">section</tt></a>, <a href="sidebar.html"><tt class="sgmltag-element">sidebar</tt></a>, <a href="textobject.html"><tt class="sgmltag-element">textobject</tt></a></span>.</p></div><div class="refsect2"><h3>Children</h3><p>The following elements occur in variablelist:
+<span class="simplelist"><a href="title.html"><tt class="sgmltag-element">title</tt></a>, <a href="titleabbrev.html"><tt class="sgmltag-element">titleabbrev</tt></a>, <a href="varlistentry.html"><tt class="sgmltag-element">varlistentry</tt></a></span>.</p></div></div><div class="refsect1"><h2>Attributes</h2><div class="variablelist"><dl><dt><span class="term">termlength</span></dt><dd><p>
+<tt class="sgmltag-attribute">TermLength</tt> indicates a length beyond
+which the presentation engine may consider the <tt class="sgmltag-element">Term</tt>(s) too
+long and select an alternate presentation of the <tt class="sgmltag-element">Term</tt>(s)
+and/or, the associated <tt class="sgmltag-element">ListItem</tt>.
+</p></dd></dl></div></div><div class="refsect1"><h2>See Also</h2><p><span class="simplelist"><a href="itemizedlist.html"><tt class="sgmltag-element">itemizedlist</tt></a>, <a href="listitem.html"><tt class="sgmltag-element">listitem</tt></a>, <a href="orderedlist.html"><tt class="sgmltag-element">orderedlist</tt></a></span>.
+</p></div><div class="refsect1"><h2>Examples</h2><div class="informalexample"><pre class="programlisting">&lt;!DOCTYPE variablelist PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+          "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd"&gt;
+&lt;variablelist&gt;&lt;title&gt;Font Filename Extensions&lt;/title&gt;
+&lt;varlistentry&gt;&lt;term&gt;&lt;filename&gt;TTF&lt;/filename&gt;&lt;/term&gt;
+&lt;listitem&gt;
+&lt;para&gt;
+TrueType fonts.
+&lt;/para&gt;
+&lt;/listitem&gt;
+&lt;/varlistentry&gt;
+&lt;varlistentry&gt;&lt;term&gt;&lt;filename&gt;PFA&lt;/filename&gt;&lt;/term&gt;
+              &lt;term&gt;&lt;filename&gt;PFB&lt;/filename&gt;&lt;/term&gt;
+&lt;listitem&gt;
+&lt;para&gt;
+PostScript fonts.  &lt;filename&gt;PFA&lt;/filename&gt; files are common on 
+&lt;acronym&gt;UNIX&lt;/acronym&gt; systems, &lt;filename&gt;PFB&lt;/filename&gt; files
+are more common on Windows systems.
+&lt;/para&gt;
+&lt;/listitem&gt;
+&lt;/varlistentry&gt;
+&lt;/variablelist&gt;</pre></div><div class="example-output"><div class="variablelist"><p class="title"><b>Font Filename Extensions</b></p><dl><dt><span class="term"><tt>TTF</tt></span></dt><dd><p>
+TrueType fonts.
+</p></dd><dt><span class="term"><tt>PFA</tt>, </span><span class="term"><tt>PFB</tt></span></dt><dd><p>
+PostScript fonts.  <tt>PFA</tt> files are common on 
+UNIX systems, <tt>PFB</tt> files
+are more common on Windows systems.
+</p></dd></dl></div></div></div></div><div class="navfooter"><table width="100%" summary="Navigation table"><tr><td width="40%" align="left"><a href="userinput.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a href="sdocbook.html">Home</a></td><td width="40%" align="right">&nbsp;<a href="varlistentry.html">Next</a></td></tr><tr><td width="40%" align="left">userinput&nbsp;</td><td width="20%" align="center"><a href="ref-elements.html">Up</a></td><td width="40%" align="right">&nbsp;varlistentry</td></tr></table></div><div class="copyrightfooter"><p><a href="dbcpyright.html">Copyright</a> &copy; 1999, 2000, 2001, 2002 <a href="http://www.oreilly.com/">O'Reilly &amp; Associates, Inc.</a> All rights reserved.</p></div></body></html>

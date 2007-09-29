@@ -1,0 +1,44 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>authorgroup</title><link rel="stylesheet" href="defguide.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.51.1"><link rel="home" href="sdocbook.html" title="Simplified DocBook"><link rel="up" href="ref-elements.html" title="Simplified DocBook Element Reference"><link rel="previous" href="authorblurb.html" title="authorblurb"><link rel="next" href="authorinitials.html" title="authorinitials"></head><body><div class="navheader"><table border="0" cellpadding="0" cellspacing="0" width="100%" summary="Navigation table"><tr><td align="left">&nbsp;<a title="Simplified DocBook" href="sdocbook.html"><img src="figures/nav-home.png" alt="Home" border="0"></a>&nbsp;<a title="authorblurb" href="authorblurb.html"><img src="figures/nav-prev.png" alt="Prev" border="0"></a>&nbsp;<a title="Simplified DocBook Element Reference" href="ref-elements.html"><img src="figures/nav-up.png" alt="Up" border="0"></a>&nbsp;<a title="authorinitials" href="authorinitials.html"><img src="figures/nav-next.png" alt="Next" border="0"></a></td><td align="right"><i>DocBook: The Definitive Guide</i> Version 0.0.1 <span class="alpha-version">(<a href="co01.html"><em>Alpha</em></a>)</span> </td></tr></table></div><div class="refentry"><a name="authorgroup.element"></a><div class="titlepage"><div><h1 class="title">authorgroup</h1></div><div><p class="releaseinfo">$Revision: 1.1 $</p></div><div><p class="pubdate">$Date: 2005/07/03 00:15:38 $</p></div></div><div class="refnamediv"><p>authorgroup &#8212; Wrapper for author information when a document has multiple authors or collabarators</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><h3><span class="bold"><b>Content Model</b></span></h3><pre class="synopsis">authorgroup ::=
+((<a href="author.html"><tt class="sgmltag-element">author</tt></a>|<a href="editor.html"><tt class="sgmltag-element">editor</tt></a>|<a href="corpauthor.html"><tt class="sgmltag-element">corpauthor</tt></a>|<a href="othercredit.html"><tt class="sgmltag-element">othercredit</tt></a>)+)</pre><h3><span class="bold"><b>Attributes</b></span></h3><p><span class="common.attributes">Common attributes</span></p></div><div class="refsect1"><h2>Description</h2><p>
+The <tt class="sgmltag-element">AuthorGroup</tt> element is a wrapper around multiple
+authors or other collaborators.
+</p><div class="refsect2"><h3>Processing expectations</h3><p>
+May be formatted inline or as a displayed block, depending on context. Sometimes given very special treatment, especially on
+title pages or other displayed areas. Sometimes suppressed.
+</p></div><div class="refsect2"><h3>Parents</h3><p>These elements contain authorgroup:
+<span class="simplelist"><a href="articleinfo.html"><tt class="sgmltag-element">articleinfo</tt></a>, <a href="bibliomixed.html"><tt class="sgmltag-element">bibliomixed</tt></a>, <a href="bibliomset.html"><tt class="sgmltag-element">bibliomset</tt></a>, <a href="objectinfo.html"><tt class="sgmltag-element">objectinfo</tt></a>, <a href="sectioninfo.html"><tt class="sgmltag-element">sectioninfo</tt></a></span>.</p></div><div class="refsect2"><h3>Children</h3><p>The following elements occur in authorgroup:
+<span class="simplelist"><a href="author.html"><tt class="sgmltag-element">author</tt></a>, <a href="corpauthor.html"><tt class="sgmltag-element">corpauthor</tt></a>, <a href="editor.html"><tt class="sgmltag-element">editor</tt></a>, <a href="othercredit.html"><tt class="sgmltag-element">othercredit</tt></a></span>.</p></div></div><div class="refsect1"><h2>See Also</h2><p><span class="simplelist"><a href="author.html"><tt class="sgmltag-element">author</tt></a>, <a href="authorblurb.html"><tt class="sgmltag-element">authorblurb</tt></a>, <a href="corpauthor.html"><tt class="sgmltag-element">corpauthor</tt></a>, <a href="editor.html"><tt class="sgmltag-element">editor</tt></a>, <a href="othercredit.html"><tt class="sgmltag-element">othercredit</tt></a></span>.
+</p></div><div class="refsect1"><h2>Examples</h2><p>
+The example below demonstrates <tt class="sgmltag-element">AuthorGroup</tt> and many
+of the elements of <tt class="sgmltag-element">Author</tt>.
+</p><div class="informalexample"><pre class="programlisting">&lt;!DOCTYPE authorgroup PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+          "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd"&gt;
+&lt;authorgroup&gt;
+  &lt;author&gt;
+    &lt;honorific&gt;Dr.&lt;/honorific&gt;
+    &lt;firstname&gt;Lois&lt;/firstname&gt;
+    &lt;surname&gt;Common-Demoninator&lt;/surname&gt;
+    &lt;affiliation&gt;
+      &lt;shortaffil&gt;Director, M. Behn School of Coop. Eng.&lt;/shortaffil&gt;
+      &lt;jobtitle&gt;Director of Cooperative Efforts&lt;/jobtitle&gt;
+      &lt;orgname&gt;The Marguerite Behn International School of
+               Cooperative Engineering&lt;/orgname&gt;
+    &lt;/affiliation&gt;
+  &lt;/author&gt;
+
+  &lt;editor&gt;
+    &lt;firstname&gt;Peter&lt;/firstname&gt;
+    &lt;surname&gt;Parker&lt;/surname&gt;
+    &lt;lineage&gt;Sr.&lt;/lineage&gt;
+    &lt;othername&gt;Spiderman&lt;/othername&gt;
+    &lt;authorblurb&gt;
+      &lt;para&gt;
+      Peter's a super hero in his spare time.
+      &lt;/para&gt;
+    &lt;/authorblurb&gt;
+  &lt;/editor&gt;
+&lt;/authorgroup&gt;</pre></div><p>For additional examples, see also
+<span class="simplelist"><a href="bibliography.html"><tt class="sgmltag-element">bibliography</tt></a></span>.
+</p></div></div><div class="navfooter"><table width="100%" summary="Navigation table"><tr><td width="40%" align="left"><a href="authorblurb.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a href="sdocbook.html">Home</a></td><td width="40%" align="right">&nbsp;<a href="authorinitials.html">Next</a></td></tr><tr><td width="40%" align="left">authorblurb&nbsp;</td><td width="20%" align="center"><a href="ref-elements.html">Up</a></td><td width="40%" align="right">&nbsp;authorinitials</td></tr></table></div><div class="copyrightfooter"><p><a href="dbcpyright.html">Copyright</a> &copy; 1999, 2000, 2001, 2002 <a href="http://www.oreilly.com/">O'Reilly &amp; Associates, Inc.</a> All rights reserved.</p></div></body></html>

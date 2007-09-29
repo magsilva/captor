@@ -1,0 +1,27 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>keywordset</title><link rel="stylesheet" href="defguide.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.51.1"><link rel="home" href="sdocbook.html" title="Simplified DocBook"><link rel="up" href="ref-elements.html" title="Simplified DocBook Element Reference"><link rel="previous" href="keyword.html" title="keyword"><link rel="next" href="legalnotice.html" title="legalnotice"></head><body><div class="navheader"><table border="0" cellpadding="0" cellspacing="0" width="100%" summary="Navigation table"><tr><td align="left">&nbsp;<a title="Simplified DocBook" href="sdocbook.html"><img src="figures/nav-home.png" alt="Home" border="0"></a>&nbsp;<a title="keyword" href="keyword.html"><img src="figures/nav-prev.png" alt="Prev" border="0"></a>&nbsp;<a title="Simplified DocBook Element Reference" href="ref-elements.html"><img src="figures/nav-up.png" alt="Up" border="0"></a>&nbsp;<a title="legalnotice" href="legalnotice.html"><img src="figures/nav-next.png" alt="Next" border="0"></a></td><td align="right"><i>DocBook: The Definitive Guide</i> Version 0.0.1 <span class="alpha-version">(<a href="co01.html"><em>Alpha</em></a>)</span> </td></tr></table></div><div class="refentry"><a name="keywordset.element"></a><div class="titlepage"><div><h1 class="title">keywordset</h1></div><div><p class="releaseinfo">$Revision: 1.1 $</p></div><div><p class="pubdate">$Date: 2005/07/03 00:15:42 $</p></div></div><div class="refnamediv"><p>keywordset &#8212; A set of keywords describing the content of a document</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><h3><span class="bold"><b>Content Model</b></span></h3><pre class="synopsis">keywordset ::=
+(<a href="keyword.html"><tt class="sgmltag-element">keyword</tt></a>+)</pre><h3><span class="bold"><b>Attributes</b></span></h3><p><span class="common.attributes">Common attributes</span></p></div><div class="refsect1"><h2>Description</h2><p>
+A set of keywords, provided by the author, editor, publisher, and so on, can
+be stored in the document meta-information in a <tt class="sgmltag-element">KeywordSet</tt>.
+</p><p>
+Keywords can form an important part of an automated indexing or searching
+strategy for a collection of documents.
+</p><div class="refsect2"><h3>Processing expectations</h3><p>
+May be formatted inline or as a displayed block, depending on context.  Keywords are rarely displayed to a reader. Usually, they
+are reserved for searching and retrieval purposes.
+</p><p>
+Unlike <tt class="sgmltag-element">SubjectTerm</tt>s, which should be drawn from a
+controlled vocabulary, keywords may be chosen freely.
+</p><p>
+Although more than one <tt class="sgmltag-element">KeywordSet</tt> may appear in the
+meta-information for a document, neither a relationship nor a specific
+facility for constructing a relationship is defined by DocBook.
+</p><p>
+Additionally, no relationship is defined between the
+<tt class="sgmltag-element">KeywordSet</tt>s of a document component and the
+<tt class="sgmltag-element">KeywordSet</tt>s of its parents or children.
+</p></div><div class="refsect2"><h3>Parents</h3><p>These elements contain keywordset:
+<span class="simplelist"><a href="articleinfo.html"><tt class="sgmltag-element">articleinfo</tt></a>, <a href="objectinfo.html"><tt class="sgmltag-element">objectinfo</tt></a>, <a href="sectioninfo.html"><tt class="sgmltag-element">sectioninfo</tt></a></span>.</p></div><div class="refsect2"><h3>Children</h3><p>The following elements occur in keywordset:
+<span class="simplelist"><a href="keyword.html"><tt class="sgmltag-element">keyword</tt></a></span>.</p></div></div><div class="refsect1"><h2>See Also</h2><p><span class="simplelist"><a href="keyword.html"><tt class="sgmltag-element">keyword</tt></a>, <a href="subject.html"><tt class="sgmltag-element">subject</tt></a>, <a href="subjectset.html"><tt class="sgmltag-element">subjectset</tt></a>, <a href="subjectterm.html"><tt class="sgmltag-element">subjectterm</tt></a></span>.
+</p></div></div><div class="navfooter"><table width="100%" summary="Navigation table"><tr><td width="40%" align="left"><a href="keyword.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a href="sdocbook.html">Home</a></td><td width="40%" align="right">&nbsp;<a href="legalnotice.html">Next</a></td></tr><tr><td width="40%" align="left">keyword&nbsp;</td><td width="20%" align="center"><a href="ref-elements.html">Up</a></td><td width="40%" align="right">&nbsp;legalnotice</td></tr></table></div><div class="copyrightfooter"><p><a href="dbcpyright.html">Copyright</a> &copy; 1999, 2000, 2001, 2002 <a href="http://www.oreilly.com/">O'Reilly &amp; Associates, Inc.</a> All rights reserved.</p></div></body></html>

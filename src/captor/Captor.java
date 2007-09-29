@@ -3,6 +3,7 @@ package captor;
 import java.io.BufferedOutputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.IOException;
 
 import javax.swing.UIManager;
 
@@ -12,7 +13,8 @@ import captor.lib.util.FITPrintStream;
 import captor.modelsystem.Model;
 import captor.windowsystem.MainWindow;
 import captor.windowsystem.util.IconUtil;
-import java.lang.Math;
+
+
 /**
  * 
  * This class initialize a new application.
@@ -36,24 +38,40 @@ public class Captor {
     public static void main(String[] args)  {
         
         //getting installPath
-        String installPath = new File(".").getAbsolutePath();
-        int size = installPath.length();
-        if ( installPath.substring(size -1, size).equals(".") )
-            installPath = installPath.substring(0, size - 1);
+        String installPathname = null;
+        File installPath = null;
         
-        //checking installPath
-        installPath = installPath.replaceAll("\"", "");
-        File file = new File(installPath);
-        if ( ! file.exists() )  {
-            System.out.println("Error:");
-            System.out.println("The directory " + installPath + " doesn't exist.");
-            System.exit(0);
+        if (installPath == null) {
+	        installPathname = System.getenv("CAPTOR_HOME");
+	        if (installPathname != null) {
+		        installPath = new File(installPathname);
+		        if (! installPath.exists() || ! installPath.isDirectory()) {
+		        	installPathname = null;
+		        	installPath = null;
+		        }
+	        }
         }
         
-        if ( ! file.isDirectory() )  {
+        if (installPath == null) {
+	        installPathname = System.getProperty("user.dir") + File.separator + "..";
+	        if (installPathname != null) {
+	        	installPath = new File(installPathname);
+	        	if (! installPath.exists() || ! installPath.isDirectory()) {
+	        		installPathname = null;
+	        		installPath = null;
+	        	}
+	        }
+        }
+        
+        if (installPath == null)  {
             System.out.println("Error:");
             System.out.println("The parameter " + installPath + " isn't a valid directory.");
             System.exit(0);
+        } else {
+        	try {
+				installPathname = installPath.getCanonicalPath() + File.separator;
+			} catch (IOException e) {
+			}
         }
         
         //---------------------------------------------------------------------
@@ -76,8 +94,8 @@ public class Captor {
         //Model creation. 
         //This is an important object that almost everybody will use it.
         Model model = new Model();
-        model.load(installPath);
-        IconUtil.setJarFileName(installPath + "lib\\res.jar");
+        model.load(installPathname);
+        IconUtil.setJarFileName(installPathname + "lib" + File.separator + "res.jar");
         
         //---------------------------------------------------------------------
         
@@ -100,7 +118,7 @@ public class Captor {
     
     //---------------------------------------------------------------------
     
-    //Este método redireciona a saída System.err para a um elemento da GUI
+    //Este mï¿½todo redireciona a saï¿½da System.err para a um elemento da GUI
     private static void startLog(Model model)  {
       BufferedOutputStream bos = new BufferedOutputStream(new ByteArrayOutputStream());
       new FITPrintStream(model, bos, true);

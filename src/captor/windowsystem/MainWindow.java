@@ -45,7 +45,7 @@ public class MainWindow extends CaptorFrame implements Observer  {
     //contador de janelas. qdo ele for igual a zero (system.exit())
     private int verticalBarPosition = 50;
     
-    //a primeira janela deve começar com esse construtor
+    //a primeira janela deve comeï¿½ar com esse construtor
     public MainWindow(Model model)  {
         super(model);
         model.getGui().setCaptorWindow(this);
@@ -81,7 +81,7 @@ public class MainWindow extends CaptorFrame implements Observer  {
 //        addWindowListener(this);
 //        addWindowStateListener(this);
         
-        //criando o cabeçalho com a barra de ferramentas
+        //criando o cabeï¿½alho com a barra de ferramentas
         this.getContentPane().add(windowMaker.createHeader(), BorderLayout.PAGE_START);
         
         //criando o corpo principal, a barra de controle e a barra de views
@@ -217,21 +217,29 @@ public class MainWindow extends CaptorFrame implements Observer  {
     private void checkPermissions(String installPath)  {
         
         File path = new File(installPath);
-        boolean flag = false;
+        boolean flag = true;
         
         File config = new File(path, "config");
-        if ( !config.canWrite() )  {
-            checkPermissionError(config);
-            flag = true;
+        if (! config.exists()) {
+        	flag &= config.mkdirs();
+        } else {
+        	flag &= config.canWrite();
+        }
+        if (! flag) {
+        	checkPermissionError(config);
         }
         
         File projects = new File(path, "projects");
-        if ( !projects.canWrite() )  {
+        if (! projects.exists()) {
+        	flag &= projects.mkdirs();
+        } else {
+        	flag &= projects.canWrite();
+        }
+        if (! flag) {
             checkPermissionError(projects);
-            flag = true;
         }
         
-        if ( flag )  {
+        if (! flag)  {
             System.exit(0);
         }
     }

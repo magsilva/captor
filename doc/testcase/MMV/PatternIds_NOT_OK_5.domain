@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!--Testando o ID *.*.-->
+
+<forms>
+	<!--CONTEM DOIS PATTERNS IDS IGUAIS-->
+	
+	<name>GRN</name>
+
+	<form isRoot="true">
+		<id>*.*</id>
+		<name>IDENTIFICAR O RECURSO</name>
+ 		<variant>Default</variant>
+
+		<formComponents>
+			<formComponent>
+				<fullname>captor.windowsystem.formcomponent.classpanel.GRENClassPanel</fullname>
+				<parameters>
+					<parameter>
+						<name>class</name>
+						<value>Recurso</value>
+					</parameter>
+				</parameters>
+			</formComponent>
+		</formComponents>
+			
+	</form>
+
+</forms>

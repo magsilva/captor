@@ -1,0 +1,77 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>article</title><link rel="stylesheet" href="defguide.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.51.1"><link rel="home" href="sdocbook.html" title="Simplified DocBook"><link rel="up" href="ref-elements.html" title="Simplified DocBook Element Reference"><link rel="previous" href="appendix.html" title="appendix"><link rel="next" href="articleinfo.html" title="articleinfo"></head><body><div class="navheader"><table border="0" cellpadding="0" cellspacing="0" width="100%" summary="Navigation table"><tr><td align="left">&nbsp;<a title="Simplified DocBook" href="sdocbook.html"><img src="figures/nav-home.png" alt="Home" border="0"></a>&nbsp;<a title="appendix" href="appendix.html"><img src="figures/nav-prev.png" alt="Prev" border="0"></a>&nbsp;<a title="Simplified DocBook Element Reference" href="ref-elements.html"><img src="figures/nav-up.png" alt="Up" border="0"></a>&nbsp;<a title="articleinfo" href="articleinfo.html"><img src="figures/nav-next.png" alt="Next" border="0"></a></td><td align="right"><i>DocBook: The Definitive Guide</i> Version 0.0.1 <span class="alpha-version">(<a href="co01.html"><em>Alpha</em></a>)</span> </td></tr></table></div><div class="refentry"><a name="article.element"></a><div class="titlepage"><div><h1 class="title">article</h1></div><div><p class="releaseinfo">$Revision: 1.1 $</p></div><div><p class="pubdate">$Date: 2005/07/03 00:15:38 $</p></div></div><div class="refnamediv"><p>article &#8212; An article</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><h3><span class="bold"><b>Content Model</b></span></h3><pre class="synopsis">article ::=
+((<a href="title.html"><tt class="sgmltag-element">title</tt></a>,<a href="subtitle.html"><tt class="sgmltag-element">subtitle</tt></a>?,<a href="titleabbrev.html"><tt class="sgmltag-element">titleabbrev</tt></a>?)?,
+ <a href="articleinfo.html"><tt class="sgmltag-element">articleinfo</tt></a>?,
+ (((<a href="itemizedlist.html"><tt class="sgmltag-element">itemizedlist</tt></a>|<a href="orderedlist.html"><tt class="sgmltag-element">orderedlist</tt></a>|<a href="variablelist.html"><tt class="sgmltag-element">variablelist</tt></a>|<a href="note.html"><tt class="sgmltag-element">note</tt></a>|<a href="literallayout.html"><tt class="sgmltag-element">literallayout</tt></a>|
+    <a href="programlisting.html"><tt class="sgmltag-element">programlisting</tt></a>|<a href="para.html"><tt class="sgmltag-element">para</tt></a>|<a href="blockquote.html"><tt class="sgmltag-element">blockquote</tt></a>|<a href="mediaobject.html"><tt class="sgmltag-element">mediaobject</tt></a>|<a href="informaltable.html"><tt class="sgmltag-element">informaltable</tt></a>|
+    <a href="example.html"><tt class="sgmltag-element">example</tt></a>|<a href="figure.html"><tt class="sgmltag-element">figure</tt></a>|<a href="table.html"><tt class="sgmltag-element">table</tt></a>|<a href="sidebar.html"><tt class="sgmltag-element">sidebar</tt></a>|<a href="abstract.html"><tt class="sgmltag-element">abstract</tt></a>|<a href="authorblurb.html"><tt class="sgmltag-element">authorblurb</tt></a>|<a href="epigraph.html"><tt class="sgmltag-element">epigraph</tt></a>)+,
+   <a href="section.html"><tt class="sgmltag-element">section</tt></a>*)|
+  <a href="section.html"><tt class="sgmltag-element">section</tt></a>+),
+ ((<a href="appendix.html"><tt class="sgmltag-element">appendix</tt></a>)|
+  <a href="bibliography.html"><tt class="sgmltag-element">bibliography</tt></a>)*)</pre><h3><span class="bold"><b>Attributes</b></span></h3><p><span class="common.attributes">Common attributes</span></p><table border="1" width="100%" summary="Attributes"><tr><td><p><span class="bold"><b>Name</b></span></p></td><td><p><span class="bold"><b>Type</b></span></p></td><td><p><span class="bold"><b>Default</b></span></p></td></tr><tr><td align="left" valign="top">status</td><td align="left" valign="top">CDATA</td><td align="left" valign="top"><span class="emphasis"><em>None</em></span></td></tr><tr><td align="left" valign="top">parentbook</td><td align="left" valign="top">IDREF</td><td align="left" valign="top"><span class="emphasis"><em>None</em></span></td></tr><tr><td align="left" valign="top">class</td><td align="left" valign="top"><p><span class="emphasis"><em>Enumeration:</em></span>
+</p><table class="simplelist" border="0" summary="Simple list"><tr><td>faq</td></tr><tr><td>journalarticle</td></tr><tr><td>productsheet</td></tr><tr><td>specification</td></tr><tr><td>techreport</td></tr><tr><td>whitepaper</td></tr></table></td><td align="left" valign="top"><span class="emphasis"><em>None</em></span></td></tr></table></div><div class="refsect1"><h2>Description</h2><p>
+The <tt class="sgmltag-element">Article</tt> element is a general-purpose container for
+articles.  The content model is both quite complex and rather loose in
+order to accommodate the wide range of possible <tt class="sgmltag-element">Article</tt> structures.  Although
+changes to the <tt class="sgmltag-element">Article</tt> element have been discussed on several
+occasions, no better model has been presented.
+</p><p>
+An <tt class="sgmltag-element">Article</tt> is composed of a header and a body.  The body
+may include a table of contents and multiple lists of tables, figures,
+and so on, before the main text of the article and may include a number of
+common end-matter components at the end.
+</p><div class="refsect2"><h3>Processing expectations</h3><p>
+Formatted as a displayed block.  Frequently causes a forced page break in print media.
+May be numbered separately and presented in the table of contents.
+</p></div><div class="refsect2"><h3>Future Changes</h3><p>
+<a class="indexterm" name="d0e2640"></a>
+The <tt class="sgmltag-element">ToC</tt> element in the content model may be
+replaced by <tt class="sgmltag-element">TocChap</tt>. This change may be delayed if the
+DocBook technical committee decides to review the whole 
+<tt class="sgmltag-element">ToC</tt>/<tt class="sgmltag-element">LoT</tt> apparatus.
+</p></div><div class="refsect2"><h3>Children</h3><p>The following elements occur in article:
+<span class="simplelist"><a href="abstract.html"><tt class="sgmltag-element">abstract</tt></a>, <a href="appendix.html"><tt class="sgmltag-element">appendix</tt></a>, <a href="articleinfo.html"><tt class="sgmltag-element">articleinfo</tt></a>, <a href="authorblurb.html"><tt class="sgmltag-element">authorblurb</tt></a>, <a href="bibliography.html"><tt class="sgmltag-element">bibliography</tt></a>, <a href="blockquote.html"><tt class="sgmltag-element">blockquote</tt></a>, <a href="epigraph.html"><tt class="sgmltag-element">epigraph</tt></a>, <a href="example.html"><tt class="sgmltag-element">example</tt></a>, <a href="figure.html"><tt class="sgmltag-element">figure</tt></a>, <a href="informaltable.html"><tt class="sgmltag-element">informaltable</tt></a>, <a href="itemizedlist.html"><tt class="sgmltag-element">itemizedlist</tt></a>, <a href="literallayout.html"><tt class="sgmltag-element">literallayout</tt></a>, <a href="mediaobject.html"><tt class="sgmltag-element">mediaobject</tt></a>, <a href="note.html"><tt class="sgmltag-element">note</tt></a>, <a href="orderedlist.html"><tt class="sgmltag-element">orderedlist</tt></a>, <a href="para.html"><tt class="sgmltag-element">para</tt></a>, <a href="programlisting.html"><tt class="sgmltag-element">programlisting</tt></a>, <a href="section.html"><tt class="sgmltag-element">section</tt></a>, <a href="sidebar.html"><tt class="sgmltag-element">sidebar</tt></a>, <a href="subtitle.html"><tt class="sgmltag-element">subtitle</tt></a>, <a href="table.html"><tt class="sgmltag-element">table</tt></a>, <a href="title.html"><tt class="sgmltag-element">title</tt></a>, <a href="titleabbrev.html"><tt class="sgmltag-element">titleabbrev</tt></a>, <a href="variablelist.html"><tt class="sgmltag-element">variablelist</tt></a></span>.</p></div></div><div class="refsect1"><h2>Attributes</h2><div class="variablelist"><dl><dt><span class="term">class</span></dt><dd><p>
+<tt class="sgmltag-attribute">Class</tt> identifies the type of article.
+</p></dd><dt><span class="term">parentbook</span></dt><dd><p>
+<tt class="sgmltag-attribute">ParentBook</tt> holds the ID of an enclosing
+<tt class="sgmltag-element">Book</tt>, if applicable.
+</p></dd><dt><span class="term">status</span></dt><dd><p>
+<tt class="sgmltag-attribute">Status</tt> identifies the editorial or publication 
+status of the <tt class="sgmltag-element">Article</tt>.
+</p><p>
+Publication status might be used to control formatting (for example,
+printing a &#8220;draft&#8221; watermark on drafts) or processing (perhaps
+a document with a status of &#8220;final&#8221; should not include any
+components that are not final).
+</p></dd></dl></div></div><div class="refsect1"><h2>See Also</h2><p><span class="simplelist"><a href="appendix.html"><tt class="sgmltag-element">appendix</tt></a></span>.
+</p></div><div class="refsect1"><h2>Examples</h2><div class="informalexample"><pre class="programlisting">&lt;!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+          "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd"&gt;
+&lt;article&gt;
+&lt;articleinfo&gt;
+  &lt;author&gt;&lt;firstname&gt;Norman&lt;/firstname&gt;&lt;surname&gt;Walsh&lt;/surname&gt;&lt;/author&gt;
+  &lt;authorinitials&gt;ndw&lt;/authorinitials&gt;
+  &lt;artpagenums&gt;339-343&lt;/artpagenums&gt;
+  &lt;volumenum&gt;15&lt;/volumenum&gt;
+  &lt;issuenum&gt;3&lt;/issuenum&gt;
+  &lt;publisher&gt;&lt;publishername&gt;The TeX User's Group&lt;/publishername&gt;&lt;/publisher&gt;
+  &lt;pubdate&gt;1994&lt;/pubdate&gt;
+  &lt;title&gt;A World Wide Web Interface to CTAN&lt;/title&gt;
+  &lt;titleabbrev&gt;CTAN-Web&lt;/titleabbrev&gt;
+  &lt;revhistory&gt;
+     &lt;revision&gt;
+        &lt;revnumber&gt;1.0&lt;/revnumber&gt;
+        &lt;date&gt;28 Mar 1994&lt;/date&gt;
+        &lt;revremark&gt;Submitted.&lt;/revremark&gt;
+     &lt;/revision&gt;
+     &lt;revision&gt;
+        &lt;revnumber&gt;0.5&lt;/revnumber&gt;
+        &lt;date&gt;15 Feb 1994&lt;/date&gt;
+        &lt;revremark&gt;First draft for review.&lt;/revremark&gt;
+     &lt;/revision&gt;
+  &lt;/revhistory&gt;
+&lt;/articleinfo&gt;
+&lt;para&gt;
+The body of the article &amp;hellip;
+&lt;/para&gt;
+&lt;/article&gt;</pre></div></div></div><div class="navfooter"><table width="100%" summary="Navigation table"><tr><td width="40%" align="left"><a href="appendix.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a href="sdocbook.html">Home</a></td><td width="40%" align="right">&nbsp;<a href="articleinfo.html">Next</a></td></tr><tr><td width="40%" align="left">appendix&nbsp;</td><td width="20%" align="center"><a href="ref-elements.html">Up</a></td><td width="40%" align="right">&nbsp;articleinfo</td></tr></table></div><div class="copyrightfooter"><p><a href="dbcpyright.html">Copyright</a> &copy; 1999, 2000, 2001, 2002 <a href="http://www.oreilly.com/">O'Reilly &amp; Associates, Inc.</a> All rights reserved.</p></div></body></html>

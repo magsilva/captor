@@ -1,0 +1,44 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>filename</title><link rel="stylesheet" href="defguide.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.51.1"><link rel="home" href="sdocbook.html" title="Simplified DocBook"><link rel="up" href="ref-elements.html" title="Simplified DocBook Element Reference"><link rel="previous" href="figure.html" title="figure"><link rel="next" href="firstname.html" title="firstname"></head><body><div class="navheader"><table border="0" cellpadding="0" cellspacing="0" width="100%" summary="Navigation table"><tr><td align="left">&nbsp;<a title="Simplified DocBook" href="sdocbook.html"><img src="figures/nav-home.png" alt="Home" border="0"></a>&nbsp;<a title="figure" href="figure.html"><img src="figures/nav-prev.png" alt="Prev" border="0"></a>&nbsp;<a title="Simplified DocBook Element Reference" href="ref-elements.html"><img src="figures/nav-up.png" alt="Up" border="0"></a>&nbsp;<a title="firstname" href="firstname.html"><img src="figures/nav-next.png" alt="Next" border="0"></a></td><td align="right"><i>DocBook: The Definitive Guide</i> Version 0.0.1 <span class="alpha-version">(<a href="co01.html"><em>Alpha</em></a>)</span> </td></tr></table></div><div class="refentry"><a name="filename.element"></a><div class="titlepage"><div><h1 class="title">filename</h1></div><div><p class="releaseinfo">$Revision: 1.1 $</p></div><div><p class="pubdate">$Date: 2005/07/03 00:15:36 $</p></div></div><div class="refnamediv"><p>filename &#8212; The name of a file</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><h3><span class="bold"><b>Mixed Content Model</b></span></h3><pre class="synopsis">filename ::=
+(#PCDATA|<a href="replaceable.html"><tt class="sgmltag-element">replaceable</tt></a>|<a href="inlinemediaobject.html"><tt class="sgmltag-element">inlinemediaobject</tt></a>)*</pre><h3><span class="bold"><b>Attributes</b></span></h3><p><span class="common.attributes">Common attributes</span></p><table border="1" width="100%" summary="Attributes"><tr><td><p><span class="bold"><b>Name</b></span></p></td><td><p><span class="bold"><b>Type</b></span></p></td><td><p><span class="bold"><b>Default</b></span></p></td></tr><tr><td align="left" valign="top">path</td><td align="left" valign="top">CDATA</td><td align="left" valign="top"><span class="emphasis"><em>None</em></span></td></tr><tr><td align="left" valign="top">moreinfo</td><td align="left" valign="top"><p><span class="emphasis"><em>Enumeration:</em></span>
+</p><table class="simplelist" border="0" summary="Simple list"><tr><td>none</td></tr><tr><td>refentry</td></tr></table></td><td align="left" valign="top">"none"</td></tr><tr><td align="left" valign="top">class</td><td align="left" valign="top"><p><span class="emphasis"><em>Enumeration:</em></span>
+</p><table class="simplelist" border="0" summary="Simple list"><tr><td>devicefile</td></tr><tr><td>directory</td></tr><tr><td>headerfile</td></tr><tr><td>libraryfile</td></tr><tr><td>symlink</td></tr></table></td><td align="left" valign="top"><span class="emphasis"><em>None</em></span></td></tr></table></div><div class="refsect1"><h2>Description</h2><p>
+A <tt class="sgmltag-element">Filename</tt> is the name of a file on a local or network disk.
+It may be a simple name or may include a path
+or other elements specific to the operating system.
+</p><div class="refsect2"><h3>Processing expectations</h3><p>
+Formatted inline. The <tt class="sgmltag-attribute">MoreInfo</tt> attribute
+can help generate a link or query to retrieve additional information.
+</p></div><div class="refsect2"><h3>Future Changes</h3><p>
+<a class="indexterm" name="d0e12028"></a>
+The content model of <tt class="sgmltag-element">Filename</tt> will be constrained to
+<tt>(#PCDATA | Replaceable | InlineGraphic)</tt> in DocBook V4.0.
+</p></div><div class="refsect2"><h3>Future Changes</h3><p>Filename extensions can be explicitly identified with the
+<tt>extension</tt> class value.</p></div><div class="refsect2"><h3>Parents</h3><p>These elements contain filename:
+<span class="simplelist"><a href="attribution.html"><tt class="sgmltag-element">attribution</tt></a>, <a href="bibliomisc.html"><tt class="sgmltag-element">bibliomisc</tt></a>, <a href="citetitle.html"><tt class="sgmltag-element">citetitle</tt></a>, <a href="command.html"><tt class="sgmltag-element">command</tt></a>, <a href="computeroutput.html"><tt class="sgmltag-element">computeroutput</tt></a>, <a href="emphasis.html"><tt class="sgmltag-element">emphasis</tt></a>, <a href="entry.html"><tt class="sgmltag-element">entry</tt></a>, <a href="lineannotation.html"><tt class="sgmltag-element">lineannotation</tt></a>, <a href="link.html"><tt class="sgmltag-element">link</tt></a>, <a href="literal.html"><tt class="sgmltag-element">literal</tt></a>, <a href="literallayout.html"><tt class="sgmltag-element">literallayout</tt></a>, <a href="para.html"><tt class="sgmltag-element">para</tt></a>, <a href="phrase.html"><tt class="sgmltag-element">phrase</tt></a>, <a href="programlisting.html"><tt class="sgmltag-element">programlisting</tt></a>, <a href="quote.html"><tt class="sgmltag-element">quote</tt></a>, <a href="subtitle.html"><tt class="sgmltag-element">subtitle</tt></a>, <a href="term.html"><tt class="sgmltag-element">term</tt></a>, <a href="title.html"><tt class="sgmltag-element">title</tt></a>, <a href="titleabbrev.html"><tt class="sgmltag-element">titleabbrev</tt></a>, <a href="trademark.html"><tt class="sgmltag-element">trademark</tt></a>, <a href="ulink.html"><tt class="sgmltag-element">ulink</tt></a>, <a href="userinput.html"><tt class="sgmltag-element">userinput</tt></a></span>.</p></div><div class="refsect2"><h3>Children</h3><p>The following elements occur in filename:
+<span class="simplelist"><a href="inlinemediaobject.html"><tt class="sgmltag-element">inlinemediaobject</tt></a>, <a href="replaceable.html"><tt class="sgmltag-element">replaceable</tt></a></span>.</p></div></div><div class="refsect1"><h2>Attributes</h2><div class="variablelist"><dl><dt><span class="term">class</span></dt><dd><p>
+<tt class="sgmltag-attribute">Class</tt> allows the author to identify particular
+kinds of files.
+</p></dd><dt><span class="term">moreinfo</span></dt><dd><p>
+If <tt class="sgmltag-attribute">MoreInfo</tt> is set to <tt>RefEntry</tt>,
+it implies that a <tt class="sgmltag-element">RefEntry</tt> exists which further describes the
+<tt class="sgmltag-element">Filename</tt>.
+</p></dd><dt><span class="term">path</span></dt><dd><p>
+<tt class="sgmltag-attribute">Path</tt> contains the <span class="emphasis"><em>search</em></span> path,
+possibly in a system or application specific form, on which the file
+can be found.
+</p></dd></dl></div></div><div class="refsect1"><h2>See Also</h2><p><span class="simplelist"><a href="computeroutput.html"><tt class="sgmltag-element">computeroutput</tt></a>, <a href="systemitem.html"><tt class="sgmltag-element">systemitem</tt></a>, <a href="userinput.html"><tt class="sgmltag-element">userinput</tt></a></span>.
+</p></div><div class="refsect1"><h2>Examples</h2><div class="informalexample"><pre class="programlisting">&lt;!DOCTYPE para PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+          "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd"&gt;
+&lt;para&gt;
+The symbolic constants for error numbers are defined in
+&lt;filename class='headerfile'&gt;errno.h&lt;/filename&gt; in
+&lt;filename class='directory'&gt;/usr/include/sys&lt;/filename&gt;.
+&lt;/para&gt;</pre></div><div class="example-output"><p>
+The symbolic constants for error numbers are defined in
+<tt>errno.h</tt> in
+<tt>/usr/include/sys</tt>.
+</p></div><p>For additional examples, see also
+<span class="simplelist"><a href="literal.html"><tt class="sgmltag-element">literal</tt></a>, <a href="variablelist.html"><tt class="sgmltag-element">variablelist</tt></a></span>.
+</p></div></div><div class="navfooter"><table width="100%" summary="Navigation table"><tr><td width="40%" align="left"><a href="figure.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a href="sdocbook.html">Home</a></td><td width="40%" align="right">&nbsp;<a href="firstname.html">Next</a></td></tr><tr><td width="40%" align="left">figure&nbsp;</td><td width="20%" align="center"><a href="ref-elements.html">Up</a></td><td width="40%" align="right">&nbsp;firstname</td></tr></table></div><div class="copyrightfooter"><p><a href="dbcpyright.html">Copyright</a> &copy; 1999, 2000, 2001, 2002 <a href="http://www.oreilly.com/">O'Reilly &amp; Associates, Inc.</a> All rights reserved.</p></div></body></html>

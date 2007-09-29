@@ -1,0 +1,70 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>inlinemediaobject</title><link rel="stylesheet" href="defguide.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.51.1"><link rel="home" href="sdocbook.html" title="Simplified DocBook"><link rel="up" href="ref-elements.html" title="Simplified DocBook Element Reference"><link rel="previous" href="informaltable.html" title="informaltable"><link rel="next" href="issuenum.html" title="issuenum"></head><body><div class="navheader"><table border="0" cellpadding="0" cellspacing="0" width="100%" summary="Navigation table"><tr><td align="left">&nbsp;<a title="Simplified DocBook" href="sdocbook.html"><img src="figures/nav-home.png" alt="Home" border="0"></a>&nbsp;<a title="informaltable" href="informaltable.html"><img src="figures/nav-prev.png" alt="Prev" border="0"></a>&nbsp;<a title="Simplified DocBook Element Reference" href="ref-elements.html"><img src="figures/nav-up.png" alt="Up" border="0"></a>&nbsp;<a title="issuenum" href="issuenum.html"><img src="figures/nav-next.png" alt="Next" border="0"></a></td><td align="right"><i>DocBook: The Definitive Guide</i> Version 0.0.1 <span class="alpha-version">(<a href="co01.html"><em>Alpha</em></a>)</span> </td></tr></table></div><div class="refentry"><a name="inlinemediaobject.element"></a><div class="titlepage"><div><h1 class="title">inlinemediaobject</h1></div><div><p class="releaseinfo">$Revision: 1.1 $</p></div><div><p class="pubdate">$Date: 2005/07/03 00:15:36 $</p></div></div><div class="refnamediv"><p>inlinemediaobject &#8212; An inline media object (video, audio, image, and so on)</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><h3><span class="bold"><b>Content Model</b></span></h3><pre class="synopsis">inlinemediaobject ::=
+(<a href="objectinfo.html"><tt class="sgmltag-element">objectinfo</tt></a>?,
+ (<a href="videoobject.html"><tt class="sgmltag-element">videoobject</tt></a>|<a href="audioobject.html"><tt class="sgmltag-element">audioobject</tt></a>|<a href="imageobject.html"><tt class="sgmltag-element">imageobject</tt></a>),
+ (<a href="videoobject.html"><tt class="sgmltag-element">videoobject</tt></a>|<a href="audioobject.html"><tt class="sgmltag-element">audioobject</tt></a>|<a href="imageobject.html"><tt class="sgmltag-element">imageobject</tt></a>|<a href="textobject.html"><tt class="sgmltag-element">textobject</tt></a>)*)</pre><h3><span class="bold"><b>Attributes</b></span></h3><p><span class="common.attributes">Common attributes</span></p></div><div class="refsect1"><h2>Description</h2><p>
+<tt class="sgmltag-element">InlineMediaObject</tt> contains a set of alternative
+&#8220;graphical objects.&#8221; In DocBook V3.1, three types of
+external graphical objects are defined: <tt class="sgmltag-element">VideoObject</tt>s,
+<tt class="sgmltag-element">AudioObject</tt>s, and <tt class="sgmltag-element">ImageObject</tt>s. Additional
+textual descriptions may be provided with <tt class="sgmltag-element">TextObject</tt>s.
+</p><div class="refsect2"><a name="dbreproc.inlinemediaobject"></a><h3>Processing expectations</h3><p>
+Formatted inline.
+</p><p>
+The primary purpose of the <tt class="sgmltag-element">InlineMediaObject</tt> is to provide
+a wrapper around a set of alternative presentations of the same
+information.
+</p><p>
+If possible, the processing system should use the content of the
+first object within the <tt class="sgmltag-element">InlineMediaObject</tt>.  If the first
+object cannot be used, the remaining objects should be
+considered in the order that they occur.  A processor should use
+the first object that it can, although it is free to choose any
+of the remaining objects if the primary one cannot be used.
+</p><p>
+Under no circumstances should more than one object in an
+<tt class="sgmltag-element">InlineMediaObject</tt> be used or presented at the same time.
+</p><p>
+For example, an <tt class="sgmltag-element">InlineMediaObject</tt> might contain a high
+resolution image, a low resolution image, and
+a text description. For print publishing, the high resolution image is used;
+for online systems, either the high or low resolution image is used,
+possibly including the text description as an online alternative.
+In a text-only environment, the text description is used.
+</p></div><div class="refsect2"><h3>Future Changes</h3><p>
+<a class="indexterm" name="d0e14902"></a>
+In DocBook V5.0, <tt class="sgmltag-element">InlineMediaObject</tt> will replace
+<tt class="sgmltag-element">InlineGraphic</tt>.
+</p></div><div class="refsect2"><h3>Parents</h3><p>These elements contain inlinemediaobject:
+<span class="simplelist"><a href="abbrev.html"><tt class="sgmltag-element">abbrev</tt></a>, <a href="acronym.html"><tt class="sgmltag-element">acronym</tt></a>, <a href="attribution.html"><tt class="sgmltag-element">attribution</tt></a>, <a href="authorinitials.html"><tt class="sgmltag-element">authorinitials</tt></a>, <a href="bibliomisc.html"><tt class="sgmltag-element">bibliomisc</tt></a>, <a href="citetitle.html"><tt class="sgmltag-element">citetitle</tt></a>, <a href="command.html"><tt class="sgmltag-element">command</tt></a>, <a href="computeroutput.html"><tt class="sgmltag-element">computeroutput</tt></a>, <a href="corpauthor.html"><tt class="sgmltag-element">corpauthor</tt></a>, <a href="date.html"><tt class="sgmltag-element">date</tt></a>, <a href="edition.html"><tt class="sgmltag-element">edition</tt></a>, <a href="email.html"><tt class="sgmltag-element">email</tt></a>, <a href="emphasis.html"><tt class="sgmltag-element">emphasis</tt></a>, <a href="entry.html"><tt class="sgmltag-element">entry</tt></a>, <a href="filename.html"><tt class="sgmltag-element">filename</tt></a>, <a href="firstname.html"><tt class="sgmltag-element">firstname</tt></a>, <a href="holder.html"><tt class="sgmltag-element">holder</tt></a>, <a href="honorific.html"><tt class="sgmltag-element">honorific</tt></a>, <a href="issuenum.html"><tt class="sgmltag-element">issuenum</tt></a>, <a href="jobtitle.html"><tt class="sgmltag-element">jobtitle</tt></a>, <a href="lineage.html"><tt class="sgmltag-element">lineage</tt></a>, <a href="lineannotation.html"><tt class="sgmltag-element">lineannotation</tt></a>, <a href="link.html"><tt class="sgmltag-element">link</tt></a>, <a href="literal.html"><tt class="sgmltag-element">literal</tt></a>, <a href="literallayout.html"><tt class="sgmltag-element">literallayout</tt></a>, <a href="option.html"><tt class="sgmltag-element">option</tt></a>, <a href="orgname.html"><tt class="sgmltag-element">orgname</tt></a>, <a href="othername.html"><tt class="sgmltag-element">othername</tt></a>, <a href="para.html"><tt class="sgmltag-element">para</tt></a>, <a href="phrase.html"><tt class="sgmltag-element">phrase</tt></a>, <a href="programlisting.html"><tt class="sgmltag-element">programlisting</tt></a>, <a href="pubdate.html"><tt class="sgmltag-element">pubdate</tt></a>, <a href="publishername.html"><tt class="sgmltag-element">publishername</tt></a>, <a href="quote.html"><tt class="sgmltag-element">quote</tt></a>, <a href="releaseinfo.html"><tt class="sgmltag-element">releaseinfo</tt></a>, <a href="replaceable.html"><tt class="sgmltag-element">replaceable</tt></a>, <a href="revnumber.html"><tt class="sgmltag-element">revnumber</tt></a>, <a href="revremark.html"><tt class="sgmltag-element">revremark</tt></a>, <a href="subtitle.html"><tt class="sgmltag-element">subtitle</tt></a>, <a href="surname.html"><tt class="sgmltag-element">surname</tt></a>, <a href="systemitem.html"><tt class="sgmltag-element">systemitem</tt></a>, <a href="term.html"><tt class="sgmltag-element">term</tt></a>, <a href="title.html"><tt class="sgmltag-element">title</tt></a>, <a href="titleabbrev.html"><tt class="sgmltag-element">titleabbrev</tt></a>, <a href="trademark.html"><tt class="sgmltag-element">trademark</tt></a>, <a href="ulink.html"><tt class="sgmltag-element">ulink</tt></a>, <a href="userinput.html"><tt class="sgmltag-element">userinput</tt></a>, <a href="volumenum.html"><tt class="sgmltag-element">volumenum</tt></a>, <a href="year.html"><tt class="sgmltag-element">year</tt></a></span>.</p></div><div class="refsect2"><h3>Children</h3><p>The following elements occur in inlinemediaobject:
+<span class="simplelist"><a href="audioobject.html"><tt class="sgmltag-element">audioobject</tt></a>, <a href="imageobject.html"><tt class="sgmltag-element">imageobject</tt></a>, <a href="objectinfo.html"><tt class="sgmltag-element">objectinfo</tt></a>, <a href="textobject.html"><tt class="sgmltag-element">textobject</tt></a>, <a href="videoobject.html"><tt class="sgmltag-element">videoobject</tt></a></span>.</p></div></div><div class="refsect1"><h2>See Also</h2><p><span class="simplelist"><a href="audioobject.html"><tt class="sgmltag-element">audioobject</tt></a>, <a href="caption.html"><tt class="sgmltag-element">caption</tt></a>, <a href="imageobject.html"><tt class="sgmltag-element">imageobject</tt></a>, <a href="mediaobject.html"><tt class="sgmltag-element">mediaobject</tt></a>, <a href="textobject.html"><tt class="sgmltag-element">textobject</tt></a>, <a href="videoobject.html"><tt class="sgmltag-element">videoobject</tt></a></span>.
+</p></div><div class="refsect1"><h2>Examples</h2><p>
+In the following example, the <tt class="sgmltag-element">InlineEquation</tt> uses
+<tt class="sgmltag-element">InlineMediaObject</tt> to provide to alternate renderings
+for the equation. One is a graphic, the other is a text representation.
+</p><p>
+For display purposes, both in print and in the online presentation,
+the graphic is selected. If you were generating content for some
+other medium, a text only browser or a cell phone, for example, only
+the text representation might be selected.
+</p><div class="informalexample"><pre class="programlisting">&lt;!DOCTYPE para PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+          "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd"&gt;
+&lt;para&gt;
+Einstein's most famous equation,
+&lt;inlineequation&gt;
+&lt;inlinemediaobject&gt;
+&lt;imageobject&gt;
+&lt;imagedata fileref="figures/emc2.png"/&gt;
+&lt;/imageobject&gt;
+&lt;textobject&gt;
+&lt;phrase&gt;E=mc&lt;superscript&gt;2&lt;/superscript&gt;&lt;/phrase&gt;
+&lt;/textobject&gt;
+&lt;/inlinemediaobject&gt;
+&lt;/inlineequation&gt;, expresses the relationship between matter
+and energy.
+&lt;/para&gt;</pre></div><div class="example-output"><p>
+Einstein's most famous equation,
+<span class="inlinemediaobject"><img src="figures/emc2.png" alt="E=mc2"></span>, expresses the relationship between matter
+and energy.
+</p></div></div></div><div class="navfooter"><table width="100%" summary="Navigation table"><tr><td width="40%" align="left"><a href="informaltable.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a href="sdocbook.html">Home</a></td><td width="40%" align="right">&nbsp;<a href="issuenum.html">Next</a></td></tr><tr><td width="40%" align="left">informaltable&nbsp;</td><td width="20%" align="center"><a href="ref-elements.html">Up</a></td><td width="40%" align="right">&nbsp;issuenum</td></tr></table></div><div class="copyrightfooter"><p><a href="dbcpyright.html">Copyright</a> &copy; 1999, 2000, 2001, 2002 <a href="http://www.oreilly.com/">O'Reilly &amp; Associates, Inc.</a> All rights reserved.</p></div></body></html>

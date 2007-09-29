@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+
+<!DOCTYPE toc
+  PUBLIC "-//Sun Microsystems Inc.//DTD JavaHelp TOC Version 1.0//EN" "http://java.sun.com/products/javahelp/toc_1_0.dtd">
+<toc version="1.0">
+   <tocitem target="d0e1" text="Ferramenta Captor">
+      <tocitem target="d0e5" text="Introdução"/>
+      <tocitem target="d0e29" text="Sobre a ferramenta">
+         <tocitem target="d0e32" text="Componentes da ferramenta Captor"/>
+         <tocitem target="d0e37" text="Painel de navegação"/>
+         <tocitem target="d0e42" text="Painel de edição de formulários"/>
+         <tocitem target="d0e47" text="Barra de visualização de mensagens"/>
+      </tocitem>
+   </tocitem>
+</toc>

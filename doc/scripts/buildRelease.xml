@@ -1,0 +1,130 @@
+<?xml version="1.0" standalone="yes"?>
+
+<project name="Captor" default="buildRelease" basedir="../../">
+
+	<!--_________________EDIT THIS VALUES TO RUN______________________________-->
+	<!--______________________________________________________________________-->
+
+	<property name="tempDir" value="C:\Temp"/>
+	<property name="outputDir" value="C:\Temp"/>
+	<property name="version" value="1.0"/>
+
+
+	<!--_________________DO NOT EDIT THE VALUES ABOVE_________________________-->
+	<!--______________________________________________________________________-->
+	<!--______________________________________________________________________-->
+
+	<property name="tempCaptorDir" value="${tempDir}/captor/"/>
+	<property name="tempCaptorVersionDir" value="${tempDir}/captor/captor-${version}"/>
+	<property name="outputZipFile" value="${outputDir}/captor-${version}.zip"/>
+	<property name="outputTarGzFile" value="${outputDir}/captor-${version}.tar.gz"/>
+	<property name="outputTarBzip2File" value="${outputDir}/captor-${version}.tar.bz2"/>
+
+	<!--______________________________________________________________________-->
+	
+	<property name="src" value="src"/>
+	<property name="bin" value="bin"/>
+
+	<!--SET THE CLASSPATH-->
+	<path id="classpath">
+		<fileset dir="lib">
+			<include name="**/*.jar"/>
+		</fileset>
+		<fileset dir="dev/libdev">
+			<include name="junit3.8.1/**/*.jar"/>
+		</fileset>
+	</path>
+	
+	<!--______________________________________________________________________-->
+
+	<target name="buildRelease" depends="jar" description="Build Release">
+		
+		<mkdir dir="${tempCaptorVersionDir}"/>
+		<mkdir dir="${tempCaptorVersionDir}/projects"/>
+
+	  <copy todir="${tempCaptorVersionDir}">
+    	<fileset dir="." excludes="dev/ src/ bin/ log/ res/ projects/ doc/api/ .classpath .project res/OpenWindows.txt config/hidden_config.properties">
+    	</fileset>
+  	</copy>
+  	
+		<zip destfile="${outputZipFile}" basedir="${tempCaptorDir}"/>
+		<tar compression="gzip" longfile="gnu" destfile="${outputTarGzFile}" basedir="${tempCaptorDir}">
+	  	<tarfileset dir="${tempCaptorDir}" mode="755" username="kicho" group="users"/>
+		</tar>
+		
+		<!--
+		<tar compression="bzip2" longfile="gnu" destfile="${outputTarBzip2File}" basedir="${tempCaptorDir}">
+	  	<tarfileset dir="${tempCaptorDir}" mode="755" username="kicho" group="users"/>
+		</tar>
+		<delete dir="${tempCaptorDir}"/>
+		-->
+		
+	</target>
+	
+	<!--______________________________________________________________________-->
+	
+	<target name="compile" depends="clean" description="compile the source " >
+		<!-- Compile the java code from ${src} into ${bin} -->
+		<mkdir dir="${bin}"/>
+		<javac srcdir="${src}" destdir="${bin}" classpathref="classpath" compiler="javac1.5" excludes="${src}/testcase/mapper/**,${src}/testcase/metamodelvalidator/**,${src}/testcase/**"/>
+		
+		<copy todir="bin/captor/domainsystem">
+			<fileset dir="src/captor/domainsystem">
+				<include name="**/*.properties" />
+				<include name="**/bgm.ser" />
+			</fileset>
+		</copy>
+
+		<copy todir="bin/captor/projectsystem/build/mapper">
+			<fileset dir="src/captor/projectsystem/build/mapper">
+				<include name="**/*.properties" />
+				<include name="**/bgm.ser" />
+			</fileset>
+		</copy>
+		
+	</target>
+	
+	<!--______________________________________________________________________-->
+	
+	<!--<target name="jar" depends="compile" description="generate the distribution">-->
+	<target name="jar" depends="compile" description="generate the distribution">
+		<delete dir="${bin}/testcase"/>
+		<jar jarfile="captor.jar" basedir="bin">
+			<manifest>
+				<attribute name="Main-Class" value="captor.Captor"/>
+				<attribute name="Class-Path" value="lib/ant.jar lib/ant-launcher.jar lib/commons-io-1.0.jar lib/jaxb-api.jar lib/jaxb-impl.jar lib/jaxb-libs.jar lib/jaxb-xjc.jar lib/jh.jar lib/jhall.jar lib/jhbasic.jar lib/jsearch.jar lib/namespace.jar lib/relaxngDatatype.jar lib/xsdlib.jar lib/help.jar lib/xalan.jar"/>
+			</manifest>
+		</jar>		
+		<jar jarfile="lib/help.jar" basedir="res/help/output"/>
+		
+		<copy todir="res/tmp/res/icons">
+			<fileset dir="res/icons">
+				<include name="**/*.*" />
+			</fileset>
+		</copy>
+		<jar jarfile="lib/res.jar" basedir="res/tmp"/>
+		<delete dir="res/tmp"/>
+
+	</target>
+
+	<!--______________________________________________________________________-->
+
+	<target name="clean" description="Clean Up" >
+		<delete dir="${tempCaptorDir}"/>
+		<delete file="${outputZipFile}"/>
+		<delete file="${outputTarGzFile}"/>
+		<delete file="${outputTarBzip2File}"/>
+
+		<delete dir="${bin}"/>
+		<delete file="captor.jar"/>
+		<delete file="lib/help.jar"/>
+		<delete file="lib/res.jar"/>
+		<delete dir="res/tmp"/>
+		
+	</target>
+	
+	<!--______________________________________________________________________-->
+
+</project>	
+	
+	

@@ -1,0 +1,26 @@
+\begin{thebibliography}{4}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{\texttt{#1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+\input babelbst.tex
+\newcommand{\Capitalize}[1]{\uppercase{#1}}
+\newcommand{\capitalize}[1]{\expandafter\Capitalize#1}
+
+\bibitem[{{Hibernate}(2005)}]{hibernate}
+\relax{{Hibernate}}\ \ \  Hibernate framework.\ \ \ 2005.
+\newline Disponível em \url{http://www.hibernate.org} (Acessado em 19/10/2005)
+
+\bibitem[{{MySQL}(2005)}]{mysql}
+\relax{{MySQL}}\ \ \  The mysql database.\ \ \ 2005.
+\newline Disponível em \url{http://www.mysql.org} (Acessado em 19/10/2005)
+
+\bibitem[{{OJB}(2005)}]{ojb}
+\relax{{OJB}}\ \ \  Object-relaction bridge.\ \ \ 2005.
+\newline Disponível em \url{http://db.apache.org/ojb/} (Acessado em 19/10/2005)
+
+\bibitem[{Weiss e Lai(1999)}]{weiss}
+\relax{Weiss, D.~M.; Lai, C. T.~R.}\ \ \  \emph{Software product-line
+  engineering}.\ \ \ Addison-Wesley, 1999.
+
+\end{thebibliography}

@@ -1,0 +1,99 @@
+<?xml version="1.0" standalone="yes"?>
+
+<project name="Captor" default="jar" basedir="../../">
+
+	<!--______________________________________________________________________-->
+
+	<property name="src" location="src"/>
+	<property name="bin" location="bin"/>
+
+	<!--SET THE CLASSPATH-->
+	<path id="classpath">
+		<fileset dir="lib">
+			<include name="**/*.jar"/>
+		</fileset>
+		<fileset dir="dev/libdev">
+			<include name="**/*.jar"/>
+			<include name="junit3.8.1/**/*.jar"/>
+		</fileset>
+		<fileset dir="dev/libdev/saxon6_5_3">
+			<include name="**/*.jar"/>
+		</fileset>
+	</path>
+
+	<!--______________________________________________________________________-->
+
+	<target name="clean" description="clean up" >
+		<!-- Delete the ${bin} directory trees -->
+		
+		<delete dir="${bin}"/>
+		<delete file="captor.jar"/>
+		<delete file="lib/help.jar"/>
+		<delete file="lib/res.jar"/>
+		<delete dir="res/tmp"/>
+	</target>
+	
+	<!--______________________________________________________________________-->
+
+	<target name="init" depends="clean">
+		<!-- Create the time stamp -->
+		<tstamp/>
+		<!-- Create the bin directory structure used by compile -->
+		<mkdir dir="${bin}"/>
+	</target>
+	
+	<!--______________________________________________________________________-->
+	
+	<target name="compile" depends="init" description="compile the source " >
+		<!-- Compile the java code from ${src} into ${bin} -->
+		<javac srcdir="${src}" destdir="${bin}" classpathref="classpath" compiler="javac1.5"/>
+		
+		<copy todir="bin/captor/domainsystem">
+			<fileset dir="src/captor/domainsystem">
+				<include name="**/*.properties" />
+				<include name="**/bgm.ser" />
+			</fileset>
+		</copy>
+
+		<copy todir="bin/captor/projectsystem/build/mapper">
+			<fileset dir="src/captor/projectsystem/build/mapper">
+				<include name="**/*.properties" />
+				<include name="**/bgm.ser" />
+			</fileset>
+		</copy>
+
+	</target>
+	
+	<!--______________________________________________________________________-->
+	
+	<!--<target name="jar" depends="compile" description="generate the distribution">-->
+	<target name="jar" depends="compile" description="generate the distribution">
+
+		<delete dir="${bin}/testcase"/>
+		<jar jarfile="captor.jar" basedir="bin">
+			<manifest>
+				<attribute name="Main-Class" value="captor.Captor"/>
+				<attribute name="Class-Path" value="lib/ant.jar lib/ant-launcher.jar lib/commons-io-1.0.jar lib/jaxb-api.jar lib/jaxb-impl.jar lib/jaxb-libs.jar lib/jaxb-xjc.jar lib/jh.jar lib/jhall.jar lib/jhbasic.jar lib/jsearch.jar lib/namespace.jar lib/relaxngDatatype.jar lib/xsdlib.jar lib/help.jar lib/xalan.jar"/>
+			</manifest>
+		</jar>		
+		<jar jarfile="lib/help.jar" basedir="res/help/output"/>
+
+		<copy todir="res/tmp/res/icons">
+			<fileset dir="res/icons">
+				<include name="**/*.*" />
+			</fileset>
+		</copy>
+		<jar jarfile="lib/res.jar" basedir="res/tmp"/>
+		<delete dir="res/tmp"/>
+
+	</target>
+	
+	<!--______________________________________________________________________-->
+	
+	<target name="run" description="run application" >
+		<java jar="captor.jar" fork="true" classpathref="classpath"/>
+	</target>
+	
+</project>	
+	
+	

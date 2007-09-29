@@ -1,0 +1,51 @@
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>figure</title><link rel="stylesheet" href="defguide.css" type="text/css"><meta name="generator" content="DocBook XSL Stylesheets V1.51.1"><link rel="home" href="sdocbook.html" title="Simplified DocBook"><link rel="up" href="ref-elements.html" title="Simplified DocBook Element Reference"><link rel="previous" href="example.html" title="example"><link rel="next" href="filename.html" title="filename"></head><body><div class="navheader"><table border="0" cellpadding="0" cellspacing="0" width="100%" summary="Navigation table"><tr><td align="left">&nbsp;<a title="Simplified DocBook" href="sdocbook.html"><img src="figures/nav-home.png" alt="Home" border="0"></a>&nbsp;<a title="example" href="example.html"><img src="figures/nav-prev.png" alt="Prev" border="0"></a>&nbsp;<a title="Simplified DocBook Element Reference" href="ref-elements.html"><img src="figures/nav-up.png" alt="Up" border="0"></a>&nbsp;<a title="filename" href="filename.html"><img src="figures/nav-next.png" alt="Next" border="0"></a></td><td align="right"><i>DocBook: The Definitive Guide</i> Version 0.0.1 <span class="alpha-version">(<a href="co01.html"><em>Alpha</em></a>)</span> </td></tr></table></div><div class="refentry"><a name="figure.element"></a><div class="titlepage"><div><h1 class="title">figure</h1></div><div><p class="releaseinfo">$Revision: 1.1 $</p></div><div><p class="pubdate">$Date: 2005/07/03 00:15:38 $</p></div></div><div class="refnamediv"><p>figure &#8212; A formal figure, generally an illustration, with a title</p></div><div class="refsynopsisdiv"><h2>Synopsis</h2><h3><span class="bold"><b>Content Model</b></span></h3><pre class="synopsis">figure ::=
+((<a href="title.html"><tt class="sgmltag-element">title</tt></a>,<a href="titleabbrev.html"><tt class="sgmltag-element">titleabbrev</tt></a>?),
+ (<a href="literallayout.html"><tt class="sgmltag-element">literallayout</tt></a>|<a href="programlisting.html"><tt class="sgmltag-element">programlisting</tt></a>|<a href="blockquote.html"><tt class="sgmltag-element">blockquote</tt></a>|<a href="mediaobject.html"><tt class="sgmltag-element">mediaobject</tt></a>|
+  <a href="informaltable.html"><tt class="sgmltag-element">informaltable</tt></a>|<a href="link.html"><tt class="sgmltag-element">link</tt></a>|<a href="ulink.html"><tt class="sgmltag-element">ulink</tt></a>)+)</pre><h3><span class="bold"><b>Attributes</b></span></h3><p><span class="common.attributes">Common attributes</span></p><table border="1" width="100%" summary="Attributes"><tr><td><p><span class="bold"><b>Name</b></span></p></td><td><p><span class="bold"><b>Type</b></span></p></td><td><p><span class="bold"><b>Default</b></span></p></td></tr><tr><td align="left" valign="top">float</td><td align="left" valign="top">CDATA</td><td align="left" valign="top">"0"</td></tr><tr><td align="left" valign="top">pgwide</td><td align="left" valign="top">CDATA</td><td align="left" valign="top"><span class="emphasis"><em>None</em></span></td></tr><tr><td align="left" valign="top">label</td><td align="left" valign="top">CDATA</td><td align="left" valign="top"><span class="emphasis"><em>None</em></span></td></tr></table></div><div class="refsect1"><h2>Description</h2><p>
+<tt class="sgmltag-element">Figure</tt> is a formal example with a title. Figures often
+contain <tt class="sgmltag-element">Graphic</tt>s, or other large, display elements.
+Frequently they are given IDs and referenced from the text with
+<tt class="sgmltag-element">XRef</tt> or <tt class="sgmltag-element">Link</tt>.
+</p><div class="refsect2"><h3>Processing expectations</h3><p>
+Formatted as a displayed block. 
+</p><p>
+<tt class="sgmltag-element">Figure</tt>s may contain multiple display elements.  DocBook
+does not specify how these elements are to be presented with respect
+to one another.
+</p><p>
+DocBook does not
+specify the location of the figure within the final displayed
+flow of text; it may float or remain where it is located.
+</p><p>
+A list of figures may be generated at the beginning of a
+document.
+</p></div><div class="refsect2"><h3>Parents</h3><p>These elements contain figure:
+<span class="simplelist"><a href="appendix.html"><tt class="sgmltag-element">appendix</tt></a>, <a href="article.html"><tt class="sgmltag-element">article</tt></a>, <a href="bibliodiv.html"><tt class="sgmltag-element">bibliodiv</tt></a>, <a href="bibliography.html"><tt class="sgmltag-element">bibliography</tt></a>, <a href="blockquote.html"><tt class="sgmltag-element">blockquote</tt></a>, <a href="listitem.html"><tt class="sgmltag-element">listitem</tt></a>, <a href="note.html"><tt class="sgmltag-element">note</tt></a>, <a href="revdescription.html"><tt class="sgmltag-element">revdescription</tt></a>, <a href="section.html"><tt class="sgmltag-element">section</tt></a>, <a href="sidebar.html"><tt class="sgmltag-element">sidebar</tt></a></span>.</p></div><div class="refsect2"><h3>Children</h3><p>The following elements occur in figure:
+<span class="simplelist"><a href="blockquote.html"><tt class="sgmltag-element">blockquote</tt></a>, <a href="informaltable.html"><tt class="sgmltag-element">informaltable</tt></a>, <a href="link.html"><tt class="sgmltag-element">link</tt></a>, <a href="literallayout.html"><tt class="sgmltag-element">literallayout</tt></a>, <a href="mediaobject.html"><tt class="sgmltag-element">mediaobject</tt></a>, <a href="programlisting.html"><tt class="sgmltag-element">programlisting</tt></a>, <a href="title.html"><tt class="sgmltag-element">title</tt></a>, <a href="titleabbrev.html"><tt class="sgmltag-element">titleabbrev</tt></a>, <a href="ulink.html"><tt class="sgmltag-element">ulink</tt></a></span>.</p></div></div><div class="refsect1"><h2>Attributes</h2><div class="variablelist"><dl><dt><span class="term">float</span></dt><dd><p>
+If <tt class="sgmltag-attribute">Float</tt> has the value 1 (true), then the
+processing system is free to move the figure to a convenient location.
+(Where convenient location may be described in the style sheet or may
+be application dependent.) A value of 0 (false) indicates that the
+figure should be placed precisely where it occurs in the flow.
+</p></dd><dt><span class="term">label</span></dt><dd><p>
+<tt class="sgmltag-attribute">Label</tt> specifies an identifying string for presentation purposes.
+</p><p>
+Generally, an explicit <tt class="sgmltag-attribute">Label</tt> attribute is
+used only if the processing system is incapable of generating the label
+automatically. If present, the <tt class="sgmltag-attribute">Label</tt> 
+is normative; it will used even
+if the processing system is capable of automatic labelling.
+</p></dd><dt><span class="term">pgwide</span></dt><dd><p>
+If <tt class="sgmltag-attribute">Pgwide</tt> has the value 0 (false), then the
+<tt class="sgmltag-element">Figure</tt> is rendered in the current text flow (with flow
+column width). A value of 1 (true) specifies that the figure should be
+rendered across the full text page.
+</p></dd></dl></div></div><div class="refsect1"><h2>See Also</h2><p><span class="simplelist"><a href="example.html"><tt class="sgmltag-element">example</tt></a>, <a href="informaltable.html"><tt class="sgmltag-element">informaltable</tt></a>, <a href="table.html"><tt class="sgmltag-element">table</tt></a></span>.
+</p></div><div class="refsect1"><h2>Examples</h2><div class="informalexample"><pre class="programlisting">&lt;!DOCTYPE figure PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+          "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd"&gt;
+&lt;figure&gt;&lt;title&gt;The Pythagorean Theorum Illustrated&lt;/title&gt;
+&lt;graphic fileref="figures/pythag.png"/&gt;
+&lt;/figure&gt;
+</pre></div><div class="example-output"><div class="figure"><a name="d0e11866"></a><p class="title"><b>Figure 1. The Pythagorean Theorum Illustrated</b></p><p><img src="figures/pythag.png"></p></div></div></div></div><div class="navfooter"><table width="100%" summary="Navigation table"><tr><td width="40%" align="left"><a href="example.html">Prev</a>&nbsp;</td><td width="20%" align="center"><a href="sdocbook.html">Home</a></td><td width="40%" align="right">&nbsp;<a href="filename.html">Next</a></td></tr><tr><td width="40%" align="left">example&nbsp;</td><td width="20%" align="center"><a href="ref-elements.html">Up</a></td><td width="40%" align="right">&nbsp;filename</td></tr></table></div><div class="copyrightfooter"><p><a href="dbcpyright.html">Copyright</a> &copy; 1999, 2000, 2001, 2002 <a href="http://www.oreilly.com/">O'Reilly &amp; Associates, Inc.</a> All rights reserved.</p></div></body></html>

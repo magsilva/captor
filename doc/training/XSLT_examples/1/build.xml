@@ -1,0 +1,20 @@
+<?xml version="1.0" standalone="yes"?>
+
+<project name="XSLT" default="exec" basedir=".">
+
+	<target name="exec">
+	
+		<!--Run the application-->
+  	<java classname="org.apache.xalan.xslt.Process" fork="yes">
+  	
+         <arg line="-IN source.xml -XSL template.xsl -OUT out.txt"/>
+         
+         <classpath>
+           <pathelement location="../../../../lib/xalan.jar"/>
+         </classpath>
+         
+  	</java>
+       
+ 	</target>
+	
+</project>

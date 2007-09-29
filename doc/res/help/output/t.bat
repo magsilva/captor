@@ -1,0 +1,1 @@
+cd C:\Dev\fit_dev_0.2\dev\scripts
