@@ -1,3 +1,19 @@
+/*
+Copyright (C) 2005 Edison Kicho Shimabukuro Junior <edison.kicho@gmail.com>
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+	http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
+
 package captor.windowsystem.project.newproject.cards;
 
 import java.awt.Dimension;
@@ -5,6 +21,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.io.File;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -54,7 +71,7 @@ public class CreateProject extends FITCard implements ActionListener, KeyListene
     
     private void setDefaultSystemPath()
     {
-        rootFolderString = model.getConfig().getSystemConfig().getInstallPath() + System.getProperty("file.separator") + "projects" + System.getProperty("file.separator");
+        rootFolderString = model.getConfig().getSystemConfig().getInstallPath() + "projects" + File.separator;
         rootFolderTF.setText(rootFolderString);
         outputFolderTF.setText(rootFolderString);
     }
@@ -96,7 +113,6 @@ public class CreateProject extends FITCard implements ActionListener, KeyListene
         return header;
     }
     
-    //-------------------------------------------------------------------------
     
     private JPanel createLocation()  {
         int labelMin = 90;
@@ -203,23 +219,23 @@ public class CreateProject extends FITCard implements ActionListener, KeyListene
             ChooseDirectory cd = new ChooseDirectory(frame, model);
             String ret = cd.open();
             if ( ret != null )  {
-                rootFolderString = ret + System.getProperty("file.separator") + projectNameTF.getText();
+                rootFolderString = ret + projectNameTF.getText() + File.separator;
+            	String outputFolderString = ret + projectNameTF.getText() + File.separator;
                 rootFolderTF.setText(rootFolderString);
+                outputFolderTF.setText(outputFolderString);
             }
         }
         else if ( e.getActionCommand().equals("browseOutputPath") )  {
             ChooseDirectory cd = new ChooseDirectory(frame, model);
             String ret = cd.open();
             if ( ret != null )  {
-            	outputFolterString = ret + System.getProperty("file.separator") + projectNameTF.getText();
-                outputFolderTF.setText(ret);
+            	String outputFolderString = ret + projectNameTF.getText() + File.separator;
+                outputFolderTF.setText(outputFolderString);
             }
         }
         
     }
-    
-    //-------------------------------------------------------------------------
-    
+     
     public boolean validateFields()  {
         
         String ret = StringUtil.validateProjectName(projectNameTF.getText());
@@ -251,8 +267,8 @@ public class CreateProject extends FITCard implements ActionListener, KeyListene
         
         project.setName(projectNameTF.getText());
         project.setPath(rootFolderTF.getText());
-        project.setInputFolder(rootFolderTF.getText() + System.getProperty("file.separator") + "input" + System.getProperty("file.separator"));
-        project.setOutputFolder(outputFolderTF.getText() + System.getProperty("file.separator") + "output" + System.getProperty("file.separator"));
+        project.setInputFolder(rootFolderTF.getText() + "input" + File.separator);
+        project.setOutputFolder(outputFolderTF.getText() + "output" + File.separator);
         
         if ( check.isSelected() )  {
             project.setOverwriteResources(true);
@@ -264,28 +280,23 @@ public class CreateProject extends FITCard implements ActionListener, KeyListene
         return true;
     }
     
-    //-------------------------------------------------------------------------
-    
     public void start()  {
         projectNameTF.requestFocusInWindow();
     }
     
-    //-------------------------------------------------------------------------
-    
-    public void keyTyped(KeyEvent e) {}
+    public void keyTyped(KeyEvent e) {
+    }
     
     public void keyPressed(KeyEvent e)  {
-        //o enter foi pressionado
+        // The 'Return' key was pressed
         if ( e.getKeyCode() == 10 )  {
             body.next();
         }
     }
     
     public void keyReleased(KeyEvent e) {
-        String path =  rootFolderString + System.getProperty("file.separator") + projectNameTF.getText() + System.getProperty("file.separator");
-        path = path.replace("\\\\", "\\");
+        String path =  rootFolderString + projectNameTF.getText() + File.separator;
         rootFolderTF.setText(path);
+        outputFolderTF.setText(path);
     }
-    
-    //-------------------------------------------------------------------------
 }

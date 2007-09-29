@@ -1,3 +1,19 @@
+/*
+Copyright (C) 2005 Edison Kicho Shimabukuro Junior <edison.kicho@gmail.com>
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+	http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
+
 package captor.lib.util.system;
 
 import java.io.File;
@@ -185,20 +201,20 @@ public class SystemConfig extends Observable {
     
     public void load(boolean production)  {
         
-        String separator = System.getProperty("file.separator");
+        String separator = File.separator;
 
-        projectPath = installPath.concat(separator + "projects" + separator);
+        projectPath = installPath.concat("projects" + separator);
         
-        configPath = installPath.concat(separator + "config" + separator);
-        projectDefaultConfigPath = installPath.concat(separator + "config" + separator + "project_config.properties.default");
-        hiddenConfigPropertiesDefaultPath = installPath.concat(separator + "config" + separator + "hidden_config.properties.default");
-        hiddenConfigPropertiesPath = installPath.concat(separator + "config" + separator + "hidden_config.properties");
-        fitPropertiesPath = installPath.concat(separator + "config" + separator + "fit.properties");
-        fitPropertiesDefaultPath = installPath.concat(separator + "config" + separator + "fit.properties.default");
-        domainPath = installPath.concat(separator + "domains");
-        projectDefaultConfigPath = installPath.concat(separator + "config" + separator + "project_default_config.properties.default");
-        if ( production )  {
-            String path = installPath.concat(separator + "config" + separator + "generator.properties.default");
+        configPath = installPath.concat("config" + separator);
+        projectDefaultConfigPath = installPath.concat("config" + separator + "project_config.properties.default");
+        hiddenConfigPropertiesDefaultPath = installPath.concat("config" + separator + "hidden_config.properties.default");
+        hiddenConfigPropertiesPath = installPath.concat("config" + separator + "hidden_config.properties");
+        fitPropertiesPath = installPath.concat("config" + separator + "fit.properties");
+        fitPropertiesDefaultPath = installPath.concat("config" + separator + "fit.properties.default");
+        domainPath = installPath.concat("domains");
+        projectDefaultConfigPath = installPath.concat("config" + separator + "project_default_config.properties.default");
+        if (production) {
+            String path = installPath.concat("config" + separator + "generator.properties.default");
             
             Properties defaultProps;
             try  {
@@ -208,11 +224,11 @@ public class SystemConfig extends Observable {
                 in.close();        
                 
                 applicationProps = new Properties(defaultProps);
-                path = installPath.concat(separator + "config" + separator + "generator.properties");
+                path = installPath.concat("config" + separator + "generator.properties");
                 
                 File file = new File(path);
-                //o arquivo não existe. pod deixar usando o defalut.
-                if ( !file.exists() )  {
+                //o arquivo nï¿½o existe. pod deixar usando o defalut.
+                if (! file.exists())  {
                     xmlVersion = defaultProps.getProperty("xmlVersion");
                     xmlEncoding = defaultProps.getProperty("xmlEncoding");
                     return;
@@ -221,9 +237,8 @@ public class SystemConfig extends Observable {
                 in = new FileInputStream(path);
                 applicationProps.load(in);
                 in.close();
-            }
-            catch(Exception e)  {
-                System.out.println("Captor Exception: Cannot open properties files. Check if the files installPath/config/properties.files exist.\n" + e);
+            } catch (Exception e)  {
+                System.out.println("Captor Exception: Cannot open properties files. Check if the files installPath/config/properties exist.\n" + e);
                 return;
             }
             
