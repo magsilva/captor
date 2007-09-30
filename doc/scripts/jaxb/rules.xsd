@@ -1,5 +1,24 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<xsd:schema
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1"
+>
+
+<xsd:annotation>
+	<xsd:appinfo>
+		<jaxb:bindings>
+			<jaxb:globalBindings generateValueClass="false" />
+		</jaxb:bindings>
+	</xsd:appinfo>
+</xsd:annotation>
+
+<xsd:annotation>
+	<xsd:appinfo>
+		<jaxb:schemaBindings>
+			<jaxb:package name="captor.projectsystem.build.mapper" />
+		</jaxb:schemaBindings>
+	</xsd:appinfo>
+</xsd:annotation>
 
 <xsd:element name="composer" type="composerType"/>
 
