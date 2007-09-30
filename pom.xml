@@ -97,6 +97,12 @@
 			<url>http://myfaces.zones.apache.org/dist/maven-repository</url>
 		</repository>
 
+		<repository>
+			<id>java.net</id>
+			<name>java.net Maven Repository</name>
+			<url>https://maven-repository.dev.java.net/nonav/repository</url>
+			<layout>legacy</layout>
+		</repository>
 	</repositories>
 
 	<pluginRepositories>
@@ -117,48 +123,21 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>xml-apis</groupId>
-			<artifactId>xml-apis</artifactId>
-			<version>2.0.2</version>
-			<scope>runtime</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>log4j</groupId>
-			<artifactId>log4j</artifactId>
-			<version>1.2.14</version>
-			<scope>runtime</scope>
-		</dependency>
-
-		<!-- jUnit -->
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.3.1</version>
-		</dependency>
-
-		<dependency>
 			<groupId>org.apache.ant</groupId>
-			<artifactId>ant-junit</artifactId>
+			<artifactId>ant</artifactId>
 			<version>1.7.0</version>
 		</dependency>
 
 		<dependency>
-			<groupId>xerces</groupId>
-			<artifactId>xercesImpl</artifactId>
-			<version>2.8.1</version>
+			<groupId>org.apache.ant</groupId>
+			<artifactId>ant-launcher</artifactId>
+			<version>1.7.0</version>
 		</dependency>
 
 		<dependency>
-			<groupId>Jabuti</groupId>
-			<artifactId>Jabuti</artifactId>
-			<version>1.0.0</version>
-		</dependency>
-
-		<dependency>
-			<groupId>commons-lang</groupId>
-			<artifactId>commons-lang</artifactId>
-			<version>2.3</version>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>1.3.2</version>
 		</dependency>
 
 		<dependency>
@@ -177,6 +156,12 @@
 			<groupId>javax.xml</groupId>
 			<artifactId>jaxb-api</artifactId>
 			<version>2.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>xalan</groupId>
+			<artifactId>xalan</artifactId>
+			<version>2.7.0</version>
 		</dependency>
 
 	</dependencies>
@@ -231,23 +216,40 @@
 							<addClasspath>true</addClasspath>
 						</manifest>
 					</archive>
-					<!--
-					<webResources>
-						<resource>
-							<directory>web</directory>
-						</resource>
-
-						<resource>
-							<directory>src</directory>
-							<targetPath>WEB-INF/classes</targetPath>
-							<excludes>
-								<exclude>**/*.java</exclude>
-							</excludes>
-						</resource>
-					</webResources>
-					-->
 				</configuration>
 			</plugin>
+
+			<!-- https://jaxb.dev.java.net/jaxb-maven2-plugin/ -->
+			<!--
+			<plugin>
+				<groupId>com.sun.tools.xjc.maven2</groupId>
+				<artifactId>maven-jaxb-plugin</artifactId>
+				<executions>
+					<execution>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<schemaDirectory>${basedir}/doc/scripts/jaxb</schemaDirectory>
+					<generatePackage>org.example.package</generatePackage>
+					<includeSchemas>
+						<includeSchema>**/*.xsd</includeSchema>
+						<includeSchema>**/*.dtd</includeSchema>
+					</includeSchemas>
+					<excludeSchemas>
+						<excludeSchema>test*.xsd</excludeSchema>
+					</excludeSchemas>
+					<includeBindings>
+						<includeBinding>*.xjb</includeBinding>
+					</includeBindings>
+					<readOnly>true</readOnly>  
+					<strict>true</strict>
+					<verbose>true</verbose>    
+				</configuration>
+			</plugin>
+			-->
 		</plugins>
 	</build>
 
