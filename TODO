@@ -1,0 +1,7 @@
+When creating instances of the generated classes, JAXB 1.0 required that you
+do so through ObjectFactory, like new ObjectFactory().createAbc(). With 2.0,
+you can simply do new Abc(). This no longer throws JAXBException, either.
+
+Jaxb-runtime:
+jaxb-api.jar, jaxb-impl.jar, jsr173_1.0_api.jar, activation.jar
+
