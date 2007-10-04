@@ -7,7 +7,7 @@
 <xsd:annotation>
 	<xsd:appinfo>
 		<jaxb:bindings>
-			<jaxb:globalBindings generateValueClass="false" />
+			<jaxb:globalBindings generateValueClass="true" />
 		</jaxb:bindings>
 	</xsd:appinfo>
 </xsd:annotation>
