@@ -1,3 +1,20 @@
+/*
+Copyright (C) 2005 Edison Kicho Shimabukuro Junior <edison.kicho@gmail.com>
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+	http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
+
+
 package captor.domainsystem;
 
 import java.io.File;
@@ -9,6 +26,7 @@ import java.util.Vector;
 
 import javax.swing.JOptionPane;
 import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBElement;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.UnmarshalException;
 import javax.xml.bind.Unmarshaller;
@@ -22,7 +40,6 @@ import captor.modelsystem.Model;
 
 
 /**
- * 
  * This class provides access to data in the main configuratin file.
  * 
  * <p>
@@ -30,10 +47,9 @@ import captor.modelsystem.Model;
  * and has common methods for clients that manipulate in some way the 
  * domain information. i.e ProjectSystem classes and WindowSystem classes.
  * </p>
- *
- * @author Kicho
  */
-public class DomainSystem implements IDomainSystem  {
+public class DomainSystem
+{
 
     private Model model;
     
@@ -76,7 +92,7 @@ public class DomainSystem implements IDomainSystem  {
 
     public Vector getVariantByForm(String name)  {
         Vector v = new Vector();
-        Forms p = model.getProject().getForms();
+        FormsType p = model.getProject().getFormsType();
         
         if ( p == null )  {
             String errorMsg = "<font color=\"#FF0000\"><b>Cannot load forms from meta model.</b></font><br>";
@@ -98,7 +114,7 @@ public class DomainSystem implements IDomainSystem  {
 
     public FormType getFirstForm()  {
 
-        Forms p = model.getProject().getForms();
+        FormsType p = model.getProject().getFormsType();
         
         if ( p == null )  {
             JOptionPane.showMessageDialog(model.getGui().getCaptorWindow(), MyIntl.MSG1);
@@ -119,7 +135,7 @@ public class DomainSystem implements IDomainSystem  {
 
     public FormType getFormById(String id)  {
 
-        Forms p = model.getProject().getForms();
+        FormsType p = model.getProject().getFormsType();
         if ( p == null )  {
             model.getGui().getGuiView().setErrorView("<font color=\"#FF0000\"><b>Cannot load forms from meta model.</b></font><br>");
             throw new RuntimeException("Cannot load forms from meta model.");
@@ -179,7 +195,7 @@ public class DomainSystem implements IDomainSystem  {
 
     //-------------------------------------------------------------------------
 
-    public String extendsMechanism(Forms p)  {
+    public String extendsMechanism(FormsType p)  {
         
         if ( p == null )  {
             return "Cannot load forms from meta model (extendsMechanism failed).<br>";
@@ -247,28 +263,25 @@ public class DomainSystem implements IDomainSystem  {
         try  {
             jc = JAXBContext.newInstance("captor.domainsystem");
             u = jc.createUnmarshaller();
-            
-            u.setValidating(true);
             u.setEventHandler(vec);
-        }
-        catch(Exception e)  {
+        } catch(Exception e) {
             model.getGui().getGuiView().setErrorView("Cannot load captor.domainsystem XML instance: " + StringUtil.formatOutput(e.toString()) + "<br>");		
             throw new RuntimeException("Cannot load captor.domainsystem XML instance: " + e);
         }
         
         try {
             FileInputStream is = new FileInputStream(path);
-            Forms f = (Forms)u.unmarshal(is);
-            model.getProject().setForms(f);
+            JAXBElement<FormsType> element = (JAXBElement<FormsType>) u.unmarshal(is);
+            FormsType f = element.getValue();
+            model.getProject().setFormsType(f);
         } catch (FileNotFoundException e2)  {
             model.getGui().getGuiView().setErrorView("<font color=\"#FF0000\"><b>Cannot find file: </b></font>" + path + "<br>");
             throw new RuntimeException("Cannot find file: " + path);
-        }catch ( UnmarshalException e4 )  {
+        } catch (UnmarshalException e4) {
             model.getGui().getGuiView().setErrorView("<font color=\"#FF0000\"><b>Cannot parse the domain file: </b></font>" + path + "<br>");
             model.getGui().getGuiView().setErrorView("<br><b>Domain file invalid format: </b>" + StringUtil.formatOutput(e4.getMessage()) + "<br><br>");
             throw new RuntimeException("UnmarshalException: " + e4.getMessage());
-            
-	    } catch ( JAXBException e3 )  {
+	    } catch (JAXBException e3) {
             model.getGui().getGuiView().setErrorView("<font color=\"#FF0000\">Cannot parse the domain file.: </font>" + path + "<br><br>");
             model.getGui().getGuiView().setErrorView("Metal-model invalid format: " + StringUtil.formatOutput(e3.getMessage()) + "<br><br>");
             throw new RuntimeException("Cannot find file: " + path);
@@ -278,7 +291,7 @@ public class DomainSystem implements IDomainSystem  {
             throw new RuntimeException("Cannot validade domain meta-model file: " + path);
 	    } 
         
-        if( vec.hasEvents() ) {
+        if (vec.hasEvents()) {
             String space = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
             ValidationEvent []ve = vec.getEvents();
             model.getGui().getGuiView().setErrorView("<font color=\"#FF0000\"><b>Metal-model invalid format:</b></font><br><br>");
@@ -311,13 +324,10 @@ public class DomainSystem implements IDomainSystem  {
             }
         }
         
-        String errorMsg = extendsMechanism(model.getProject().getForms());
+        String errorMsg = extendsMechanism(model.getProject().getFormsType());
         
-        if ( errorMsg != null )
+        if ( errorMsg != null ) {
             model.getGui().getGuiView().setErrorView(errorMsg);
-        
+        }
     }
-
-    //-------------------------------------------------------------------------
-
 }

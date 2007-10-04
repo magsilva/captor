@@ -54,15 +54,15 @@ public class SemanticValidator {
     
     public void validate()  {
         
-        patternsIdsPart.check(model.getProject().getForms());
+        patternsIdsPart.check(model.getProject().getFormsType());
         if ( !vr.isSuccess() )
             return;
         
-        pLNamePart.check(model.getProject().getForms());
+        pLNamePart.check(model.getProject().getFormsType());
         if ( !vr.isSuccess() )
             return;
         
-        isRootPart.check(model.getProject().getForms());
+        isRootPart.check(model.getProject().getFormsType());
         if ( !vr.isSuccess() )
             return;
         
@@ -83,10 +83,10 @@ public class SemanticValidator {
             return;
         }
         
-        //pra cada padrão chamar a validação
-        List patternList = model.getProject().getForms().getForm();
+        //pra cada padrï¿½o chamar a validaï¿½ï¿½o
+        List patternList = model.getProject().getFormsType().getForm();
 
-        //isso nao vai acontecer nunca por causa do XMLSchema (mas eu vou deixar só pra ter certeza)
+        //isso nao vai acontecer nunca por causa do XMLSchema (mas eu vou deixar sï¿½ pra ter certeza)
         if ( patternList == null )  {
             vr.ident();
             vr.appendBuffer("There are no forms in the meta-model.");
@@ -100,7 +100,7 @@ public class SemanticValidator {
                 return;
             
             pt = (FormType) it1.next();
-            validate2(pt, model.getProject().getForms());
+            validate2(pt, model.getProject().getFormsType());
         }
         
         vr.newLine();

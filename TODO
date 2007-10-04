@@ -1,3 +1,13 @@
+- Arrumar o uso de caracteres designadores de caminho de diretório (//).
+- Permitir a mudança do installPath em tempo de execução (ou algo parecido,
+tal como o Eclipse e seu workspace).
+- Permitir a mudança do idioma em tempo de execução.
+- Improve the command line parsing.
+- Use commons-logging for Logging.
+- Remove the class FITPrintStream.
+- Remove all the System.out.println statements.
+- Convert all strings at MyIntlPortuguese to UTF-8.
+
 When creating instances of the generated classes, JAXB 1.0 required that you
 do so through ObjectFactory, like new ObjectFactory().createAbc(). With 2.0,
 you can simply do new Abc(). This no longer throws JAXBException, either.

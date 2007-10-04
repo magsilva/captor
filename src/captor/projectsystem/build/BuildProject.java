@@ -90,7 +90,7 @@ public class BuildProject {
             e.printStackTrace();
         }
         
-        //faz verificações nos dados do projeto
+        //faz verificaï¿½ï¿½es nos dados do projeto
         if ( model.getProject() == null )  {
             JOptionPane.showMessageDialog(model.getGui().getBuildWindow(), MyIntl.MSG3);
             return true;
@@ -112,14 +112,14 @@ public class BuildProject {
             return false;
         }
         
-        //caminho para o diretório de dominio i.e. install_path/domains/domain_name
+        //caminho para o diretï¿½rio de dominio i.e. install_path/domains/domain_name
         String domainPath = model.getConfig().getSystemConfig().getInstallPath();
         domainPath = domainPath.concat(separator);
         domainPath = domainPath.concat("domains");
         domainPath = domainPath.concat(separator);
         domainPath = domainPath.concat(model.getProject().getDomain());
         
-        //Fazer diversas verificações no sistema de arquivos dos templates
+        //Fazer diversas verificaï¿½ï¿½es no sistema de arquivos dos templates
         templatePath = domainPath.concat(separator);
         templatePath = templatePath.concat("templates");
         
@@ -141,7 +141,7 @@ public class BuildProject {
         
         //---------------------------------------------------------------------
         
-        //Fazer diversas verificações no sistema de arquivos nos diretorio de output
+        //Fazer diversas verificaï¿½ï¿½es no sistema de arquivos nos diretorio de output
         String outputPath = model.getProject().getOutputFolder();
         File outputDir = new File(outputPath);
         
@@ -259,14 +259,14 @@ public class BuildProject {
         }
         
         //ifTask execution
-        for(Iterator it1 = iftasksList.iterator(); it1.hasNext(); ) {
+        for (Iterator it1 = iftasksList.iterator(); it1.hasNext(); ) {
             IfType ift = (IfType) it1.next();
-                boolean res = false;
-                res = ifTask(ift, interaction);
-                if ( ! res )  {
-                    task.setError(true);
-                    return false;
-                }
+            boolean res = false;
+            res = ifTask(ift, interaction);
+            if (! res)  {
+            	task.setError(true);
+            	return false;
+            }
         }
         
         //for-EachTask execution
@@ -340,8 +340,8 @@ public class BuildProject {
 
     //-------------------------------------------------------------------------
 
-    private boolean ifTask(IfType ift, int interaction)  {
-
+    private boolean ifTask(IfType ift, int interaction)
+    {
         ExpressionInterpreter ei = new ExpressionInterpreter(ift.getTest());
         
         Function function = null;
@@ -353,13 +353,10 @@ public class BuildProject {
 		}
         
         boolean res = ExecFunction.exec(function, document, model);
-        if ( res )  {
-
-            //execução dos statements callTask
+        if (res) {
             List calltasksList = ift.getCallTask();
             List iftasksList = ift.getIf();
             List foreachtasksList = ift.getForEach(); 
-            
             return parseStatements(calltasksList, iftasksList, foreachtasksList, interaction);
         }
         

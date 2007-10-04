@@ -20,7 +20,7 @@ import javax.swing.tree.TreePath;
 
 import captor.domainsystem.DomainSystem;
 import captor.domainsystem.FormType;
-import captor.domainsystem.Forms;
+import captor.domainsystem.FormsType;
 import captor.domainsystem.NextFormType;
 import captor.domainsystem.NextFormsType;
 import captor.lib.def.Constant;
@@ -174,7 +174,7 @@ public class FormNavigatorListener implements ActionListener  {
         DefaultMutableTreeNode lastSelectedComponent = (DefaultMutableTreeNode) model.getGui().getTree().getLastSelectedPathComponent();
         DefaultMutableTreeNode parent = (DefaultMutableTreeNode) lastSelectedComponent.getParent();
         
-        Forms p = model.getProject().getForms();
+        FormsType p = model.getProject().getFormsType();
         FormType pt = d.getFormById(id);
         
         if ( pt == null )  {
@@ -189,7 +189,7 @@ public class FormNavigatorListener implements ActionListener  {
         newPP.setCard(null);
         newPP.setFormType(pt);
         
-        //inserindo o elemento na árvore
+        //inserindo o elemento na ï¿½rvore
         int index = lastSelectedComponent.getChildCount();
         DefaultMutableTreeNode newFormNode = new DefaultMutableTreeNode(newPP);
         lastSelectedComponent.insert(newFormNode, index);
@@ -202,14 +202,14 @@ public class FormNavigatorListener implements ActionListener  {
         insertDependens = 0;
         insertDependents(newFormNode, newPP);
         
-        //esticando a árvore no elemento inserido
+        //esticando a ï¿½rvore no elemento inserido
         DefaultMutableTreeNode root = (DefaultMutableTreeNode) model.getGui().getTree().getModel().getRoot();
         ((DefaultTreeModel) model.getGui().getTree().getModel()).reload(root);
         
         TreePath tp = new TreePath(newFormNode.getPath());
         model.getGui().getTree().setSelectionPath(tp);
         
-        //carrega o formulario do padrão default no body
+        //carrega o formulario do padrï¿½o default no body
         model.getGui().getGuiControl().setLoadPattern(true);
         
         //expanding the tree
@@ -259,7 +259,7 @@ public class FormNavigatorListener implements ActionListener  {
                     
                     newPP.setFormType(pt);
                     
-                    //inserindo o elemento na árvore
+                    //inserindo o elemento na ï¿½rvore
                     int index = formNode.getChildCount();
                     DefaultMutableTreeNode newFormNode = new DefaultMutableTreeNode(newPP);
                     newPP.setTreeNode(newFormNode);
@@ -362,7 +362,7 @@ public class FormNavigatorListener implements ActionListener  {
     //if the user want to insert a form after the lastSelectedForm we have to check
     //if the meta-model multiplicity defined in meta-model permits
     private boolean validateMultiplicity(String id)  {
-        Forms p = model.getProject().getForms();
+        FormsType p = model.getProject().getFormsType();
         if ( p == null )  {
             model.getGui().getGuiView().setErrorView("Cannot load forms from meta model.");
             throw new RuntimeException("Cannot load forms from meta model.");

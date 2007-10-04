@@ -60,7 +60,7 @@ public class CloseProject {
 
     private void closeProject2()  {
         model.getProject().setStatus(Project.CLOSED);
-        model.getProject().setForms(null);
+        model.getProject().setFormsType(null);
         model.setProject(null);
         DefaultMutableTreeNode root = (DefaultMutableTreeNode)model.getGui().getTree().getModel().getRoot();
         root.removeAllChildren();

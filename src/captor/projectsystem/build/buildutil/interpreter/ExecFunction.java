@@ -21,22 +21,19 @@ import captor.projectsystem.build.buildutil.interpreter.ast.Parameters;
  */
 public class ExecFunction {
 
-    public static boolean exec(Function function, Document document, Model model)  {
-        
-        if ( function == null )
+    public static boolean exec(Function function, Document document, Model model)
+    {
+    	if (function == null) {
             return false;
+    	}
         
         Parameters parameters = function.getParameters();
         
-        if ( function.getName().equals("exists") )  {
-            boolean ret = false;
-            ret = execExists(function, parameters.getParameters(), document, model);
-            return ret;
-        }
-        else if ( function.getName().equals("equal") )  {
+        if (function.getName().equals("exists")) {
+            return execExists(function, parameters.getParameters(), document, model);
+        } else if (function.getName().equals("equal")) {
             return execEqual(function, parameters.getParameters(), document, model);
-        }
-        if ( function.getName().equals("not-equal") )  {
+        } else if (function.getName().equals("not-equal")) {
             return execNotEqual(function, parameters.getParameters(), document, model);
         }
         
@@ -73,20 +70,23 @@ public class ExecFunction {
     
     //-------------------------------------------------------------------------
 
-    private static boolean execEqual(Function function, Vector parameters, Document document, Model model)  {
-        if ( parameters.size() != 2 )
+    private static boolean execEqual(Function function, Vector parameters, Document document, Model model)
+    {
+    	if (parameters.size() != 2) {
             return false;
+    	}
         
         String parameter1 = (String) parameters.get(0);
         String parameter2 = (String) parameters.get(1);
 
         parameter1 = getParameterValue(parameter1, document, model);
-        if ( parameter1 == null )  {
+        if (parameter1 == null)  {
             model.getGui().getGuiView().setConsoleView(MyIntl.VE_EXEC_FUNCTION_4);
             return false;
         }
+        
         parameter2 = getParameterValue(parameter2, document, model);
-        if ( parameter2 == null )  {
+        if (parameter2 == null)  {
             model.getGui().getGuiView().setConsoleView(MyIntl.VE_EXEC_FUNCTION_4);
             return false;
         }

@@ -156,6 +156,7 @@ public class GUIHiddenConfig extends Observable  {
             catch(Exception e)  {
 	            String errorMsg = "Captor Exception: Cannot open properties files.<br>Check if the files " + path + "exists.<br>";
                 model.getGui().getGuiView().setErrorView(errorMsg);
+                System.out.println(errorMsg);
                 return;
             }
             

@@ -62,22 +62,18 @@ public class BuildUtil {
         }
         
         Vector xmlSources = new Vector();
-        File files[] = xmlDir.listFiles();
-        for ( int i = 0; i < files.length; i++ )  {
-            if ( FileUtil.getExtension(files[i].getName()).toUpperCase().equals("FIT") )
-                xmlSources.add(files[i]);
-            else if ( files[i].isDirectory() )
-                continue;
+        for (File f : xmlDir.listFiles())  {
+            if (f.isFile() && FileUtil.getExtension(f.getName()).toUpperCase().equals("FIT")) {
+                xmlSources.add(f);
+            }
         }
-        
         return xmlSources;
     }
     
-    //-------------------------------------------------------------------------
-    
-    public static File createFile(Model model, File outputDir, String filename)  {
-        String replacement = new String(System.getProperty("file.separator"));
-        if ( replacement.equals("\\"))
+    public static File createFile(Model model, File outputDir, String filename)
+    {
+    	String replacement = File.separator;
+        if (replacement.equals("\\"))
             replacement = "\\\\";
         
         
@@ -85,8 +81,7 @@ public class BuildUtil {
         //this is not a absolute path
         if ( ! (filename.substring(0,1).equals("/") || filename.substring(0,3).equals("c:\\")) )  {
             fullFileName = outputDir.getAbsolutePath() + System.getProperty("file.separator") + filename;
-        }
-        else {
+        } else {
             fullFileName = filename;
         }
         

@@ -1,12 +1,25 @@
 /*
- *
- */
+Copyright (C) 2005 Edison Kicho Shimabukuro Junior <edison.kicho@gmail.com>
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+	http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
+
 package captor.lib.intl;
 
-public class MyIntlEnglish {
-
-    public static void load() {
-
+public class MyIntlEnglish
+{
+    public static void load()
+    {
         MyIntl.LANG = "en";
         
         //Menus
@@ -347,8 +360,5 @@ public class MyIntlEnglish {
         MyIntl.MSG113 = "The form require at least one form element.\n    Add a form component in the form indicated above.";
         MyIntl.MSG114 = "Please, select a forrm element in the combo box before add a new parameter.";
         MyIntl.MSG115 = "Cannot find next form element.";
-        
-        //-------------------------------------------------------------------------
     }
-
 }

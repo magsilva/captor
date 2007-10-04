@@ -3,6 +3,7 @@
  */
 package captor.modelsystem;
 
+import java.io.File;
 import java.util.Observable;
 
 import javax.swing.JFrame;
@@ -109,11 +110,11 @@ public class GUI extends Observable {
     
     public void loadGuiDomain()  {
         String path = model.getConfig().getSystemConfig().getInstallPath();
-        path = path.concat(System.getProperty("file.separator"));
+        path = path.concat(File.separator);
         path = path.concat("domains");
-        path = path.concat(System.getProperty("file.separator"));
+        path = path.concat(File.separator);
         path = path.concat(model.getProject().getDomain());
-        path = path.concat(System.getProperty("file.separator"));
+        path = path.concat(File.separator);
         path = path.concat(model.getProject().getDomain());
         path = path.concat(".domain");
         
@@ -121,7 +122,7 @@ public class GUI extends Observable {
         try {
             d.loadGuiDomain(path);
         } catch (RuntimeException e) {
-            model.getGui().getGuiView().setErrorView("<b><font color=\"#FF0000\">Cannot load domain.</font></b><br>");
+        	model.getGui().getGuiView().setErrorView("<b><font color=\"#FF0000\">Cannot load domain.</font></b><br>");
         }
 
         setChanged();

@@ -5,6 +5,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
 import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBElement;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
 import javax.xml.bind.ValidationEvent;
@@ -12,7 +13,7 @@ import javax.xml.bind.ValidationEventLocator;
 import javax.xml.bind.util.ValidationEventCollector;
 
 import captor.domainsystem.DomainSystem;
-import captor.domainsystem.Forms;
+import captor.domainsystem.FormsType;
 import captor.domainsystem.metamodelvalidator.semanticValidator.SemanticValidator;
 import captor.modelsystem.Model;
 import captor.modelsystem.Project;
@@ -25,7 +26,7 @@ public class MetaModelValidator {
 
     private Model model;
     private File file;
-    private Forms forms;
+    private FormsType forms;
     private ValidationResults vr;
 
     public MetaModelValidator(String installPath)  {
@@ -59,7 +60,7 @@ public class MetaModelValidator {
         if ( model.getProject() == null )
             model.setProject(new Project(model));
         
-        model.getProject().setForms(forms);
+        model.getProject().setFormsType(forms);
         vr.ident();
         vr.appendBuffer("- Tree successfully loaded.");
         vr.dident();
@@ -106,8 +107,6 @@ public class MetaModelValidator {
         try  {
             jc = JAXBContext.newInstance("captor.domainsystem");
             u = jc.createUnmarshaller();
-            
-            u.setValidating(true);
             u.setEventHandler(vec);
         }
         catch(Exception e)  {
@@ -119,7 +118,8 @@ public class MetaModelValidator {
         String path = file.getAbsolutePath();
         
         try {
-            forms =  (Forms)u.unmarshal(new FileInputStream(path));
+            JAXBElement<FormsType> element = (JAXBElement<FormsType>) u.unmarshal(new FileInputStream(path));
+            forms = element.getValue();
         } catch (RuntimeException e1) {
             vr.appendBuffer("Cannot validade domain meta-model file: " + path);
             vr.setSuccess(false);

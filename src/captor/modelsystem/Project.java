@@ -6,7 +6,7 @@ import java.io.FileOutputStream;
 import java.util.Observable;
 import java.util.Properties;
 
-import captor.domainsystem.Forms;
+import captor.domainsystem.FormsType;
 import captor.lib.def.Constant;
 import captor.lib.formtree.FormTree;
 import captor.lib.util.StringUtil;
@@ -36,7 +36,7 @@ public class Project extends Observable  {
     //internal use
     private Properties applicationProps;
     private Model model;
-    private Forms forms;
+    private FormsType forms;
     
     private boolean overwriteResources;
     
@@ -51,13 +51,13 @@ public class Project extends Observable  {
     /**
      * @return Returns the domain.
      */
-    public Forms getForms() {
+    public FormsType getFormsType() {
         return forms;
     }
     /**
      * @param patterns The patterns to set.
      */
-    public void setForms(Forms forms) {
+    public void setFormsType(FormsType forms) {
         this.forms = forms;
         setChanged();
         notifyObservers(this);
@@ -279,12 +279,4 @@ public class Project extends Observable  {
         pt.create();
         return pt;
     }
-    
-    //-------------------------------------------------------------------------
-    
-//    private String overwriteResourcesDefault()  {
-//        return new Boolean(model.getConfig().getProjectDefaultConfig().getOverwriteResources()).toString();
-//    }
-//    
-//    //-------------------------------------------------------------------------
 }

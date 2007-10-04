@@ -19,7 +19,7 @@ import captor.modelsystem.Model;
 
 
 /**
- * @author Kicho
+ * //Este m�todo redireciona a sa�da System.err para a um elemento da GUI
  *
  */
 public class FITPrintStream extends PrintStream  {

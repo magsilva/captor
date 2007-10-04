@@ -1,12 +1,25 @@
 /*
- *
- */
+Copyright (C) 2005 Edison Kicho Shimabukuro Junior <edison.kicho@gmail.com>
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+	http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
+
 package captor.lib.intl;
 
-public class MyIntlPortuguese {
-
-    public static void load()  {
-
+public class MyIntlPortuguese
+{
+    public static void load()
+    {
         MyIntl.LANG = "pt";
 
         //Menus
@@ -31,11 +44,11 @@ public class MyIntlPortuguese {
         MyIntl.SUBMENU_BAR_METAMODEL_VALIDATOR = "Validador de meta-modelo"; 
         MyIntl.SUBMENU_BAR_NEW_WINDOW = "Nova janela"; 
         MyIntl.SUBMENU_BAR_SHOW_VIEW = "Mostrar view"; 
-        MyIntl.SUBMENU_BAR_PREFERENCES = "Preferências"; 
+        MyIntl.SUBMENU_BAR_PREFERENCES = "PreferÃªncias"; 
         MyIntl.SUBMENU_BAR_CONSOLE = "Console"; 
         MyIntl.SUBMENU_BAR_WARNING = "Aviso"; 
         MyIntl.SUBMENU_BAR_ERROR = "Erro"; 
-        MyIntl.SUBMENU_BAR_CONTENTS = "Conteúdo"; 
+        MyIntl.SUBMENU_BAR_CONTENTS = "ConteÃºdo"; 
         MyIntl.SUBMENU_BAR_ABOUT = "Sobre"; 
     
         //Header
@@ -43,13 +56,13 @@ public class MyIntlPortuguese {
         MyIntl.HEADER_BUILD = "Gerar";
         
         //Navigator bar
-        MyIntl.NAVIGATOR_LABEL = " Navegador de formulários";
-        MyIntl.NAVIGATOR_ROOT_NAME = "Formulários";
+        MyIntl.NAVIGATOR_LABEL = " Navegador de formulÃ¡rios";
+        MyIntl.NAVIGATOR_ROOT_NAME = "FormulÃ¡rios";
     
         //Navigator popup window menus
-        MyIntl.NAVIGATOR_POPUP_NEWINTERACTION = "Nova interação";
+        MyIntl.NAVIGATOR_POPUP_NEWINTERACTION = "Nova interaÃ§Ã£o";
         MyIntl.NAVIGATOR_POPUP_LOAD = "Carregar";
-        MyIntl.NAVIGATOR_POPUP_INSERT_AFTER = "Inserir após";
+        MyIntl.NAVIGATOR_POPUP_INSERT_AFTER = "Inserir apÃ³s";
         MyIntl.NAVIGATOR_POPUP_EDIT = "Editar";
         MyIntl.NAVIGATOR_POPUP_MOVE = "Mover";
         MyIntl.NAVIGATOR_POPUP_HELP = "Ajuda";
@@ -66,17 +79,17 @@ public class MyIntlPortuguese {
         MyIntl.VIEW_PANE_WARNING = "Aviso";
         
         //New project
-        MyIntl.NEW_PROJECT_WINDOW_SELECT_WIZARD = "Selecione o Domínio";
+        MyIntl.NEW_PROJECT_WINDOW_SELECT_WIZARD = "Selecione o Domï¿½nio";
         MyIntl.NEW_PROJECT_WINDOW_CREATE_NEW_PROJECT = "Criar um novo projeto";
         MyIntl.NEW_PROJECT_WINDOW_WIZARDS = "Wizards";
-        MyIntl.NEW_PROJECT_WINDOW_DOMAINS = "Dominíos";
+        MyIntl.NEW_PROJECT_WINDOW_DOMAINS = "Dominï¿½os";
         MyIntl.NEW_PROJECT_WINDOW_CREATE_CAPTOR_PROJECT = "Criar um projeto Captor";
-        MyIntl.NEW_PROJECT_WINDOW_CREATE_CAPTOR_PROJECT_WORKSPACE = "Criar um projeto na área de trabalho ou em um locar externo";
+        MyIntl.NEW_PROJECT_WINDOW_CREATE_CAPTOR_PROJECT_WORKSPACE = "Criar um projeto na ï¿½rea de trabalho ou em um locar externo";
         MyIntl.NEW_PROJECT_WINDOW_PROJECT_NAME = "Nome do projeto";
-        MyIntl.NEW_PROJECT_WINDOW_LOCATION = "Diretório";
+        MyIntl.NEW_PROJECT_WINDOW_LOCATION = "Diretï¿½rio";
         MyIntl.NEW_PROJECT_WINDOW_PROJECT_LAYOUT = "Projeto";
         MyIntl.NEW_PROJECT_WINDOW_DIR = "   Directorio: ";
-        MyIntl.NEW_PROJECT_WINDOW_OUTPUT_DIR = "Diretório de saída";
+        MyIntl.NEW_PROJECT_WINDOW_OUTPUT_DIR = "Diretï¿½rio de saï¿½da";
         MyIntl.NEW_PROJECT_WINDOW_OVERWRITE = "Sobre-escrever os arquivo sem avisar";
         MyIntl.NEW_PROJECT_WINDOW_BROWSE = "Procurar...";
         MyIntl.NEW_PROJECT_WINDOW_PROJECT_DETAILS = "Detalhes do projeto";
@@ -84,13 +97,13 @@ public class MyIntlPortuguese {
         MyIntl.PROJECT_NEW = "Novo Projeto";
     
         MyIntl.NEW_PROJECT_WINDOW_PNAME = "Nome do projeto: ";
-        MyIntl.NEW_PROJECT_WINDOW_PDOMAIN = "Domínio do projeto: ";
+        MyIntl.NEW_PROJECT_WINDOW_PDOMAIN = "Domï¿½nio do projeto: ";
         MyIntl.NEW_PROJECT_WINDOW_PPATH = "Caminho do projeto: ";
-        MyIntl.NEW_PROJECT_WINDOW_PINPUT_FOLDER = "Diretório de entrada: ";
-        MyIntl.NEW_PROJECT_WINDOW_POUTPUT_FOLDER = "Diretório de saída: ";
+        MyIntl.NEW_PROJECT_WINDOW_PINPUT_FOLDER = "Diretï¿½rio de entrada: ";
+        MyIntl.NEW_PROJECT_WINDOW_POUTPUT_FOLDER = "Diretï¿½rio de saï¿½da: ";
         
         MyIntl.NEW_PROJECT_WINDOW_BACK = "Anterior";
-        MyIntl.NEW_PROJECT_WINDOW_NEXT = "Próximo";
+        MyIntl.NEW_PROJECT_WINDOW_NEXT = "Prï¿½ximo";
         MyIntl.NEW_PROJECT_WINDOW_FINISH = "Finalizar";
         MyIntl.NEW_PROJECT_WINDOW_CANCEL = "Cancelar";
     
@@ -100,21 +113,21 @@ public class MyIntlPortuguese {
     
         MyIntl.PROJECT_SAVEAS_TITLE = "Salvar Projeto Como...";
         MyIntl.PROJECT_SAVEAS_NEW_PROJECT_HOME = "Novo nome do projeto: ";
-        MyIntl.PROJECT_SAVEAS_LOCALIZACAO = "Localização";
-        MyIntl.PROJECT_SAVEAS_PLAYOUT = "Esboço do projeto";
+        MyIntl.PROJECT_SAVEAS_LOCALIZACAO = "Localizaï¿½ï¿½o";
+        MyIntl.PROJECT_SAVEAS_PLAYOUT = "Esboï¿½o do projeto";
         MyIntl.PROJECT_SAVEAS_BROWSE = "Procurar...";
-        MyIntl.PROJECT_SAVEAS_BASE_DIR = "    Diretório base: ";
-        MyIntl.PROJECT_SAVEAS_OUTPUT_DIR = "Diretório de saída:";
+        MyIntl.PROJECT_SAVEAS_BASE_DIR = "    Diretï¿½rio base: ";
+        MyIntl.PROJECT_SAVEAS_OUTPUT_DIR = "Diretï¿½rio de saï¿½da:";
     
-        MyIntl.PROJECT_BUILD_PROGRESS = "Progresso da geração";
+        MyIntl.PROJECT_BUILD_PROGRESS = "Progresso da geraï¿½ï¿½o";
         MyIntl.PROJECT_BUILD_PWAIT = "Por favor espere...";
         MyIntl.PROJECT_BUILD_CANCEL = "Cancelar";
         
-        MyIntl.PREFERENCES_TITLE = "Opções";
+        MyIntl.PREFERENCES_TITLE = "Opï¿½ï¿½es";
         MyIntl.PREFERENCES_CANCEL = "Cancelar";
         MyIntl.PREFERENCES_GENERAL = "Geral";
-        MyIntl.PREFERENCES_INSTALL_PATH = "Instalação:  ";
-        MyIntl.PREFERENCES_LOOK_AND_FEEL = "Aparência:  ";
+        MyIntl.PREFERENCES_INSTALL_PATH = "Instalaï¿½ï¿½o:  ";
+        MyIntl.PREFERENCES_LOOK_AND_FEEL = "Aparï¿½ncia:  ";
     
         //Meta-model validator
         MyIntl.METAMODEL_VALIDATOR_CLOSE = "Fechar";
@@ -128,71 +141,71 @@ public class MyIntlPortuguese {
         MyIntl.VE_XMLGENERATOR_1 = "<b><font size=\"4\">Salvando projeto: $1</font></b><br><br>";
         MyIntl.VE_XMLGENERATOR_2 = "<font color=\"#FF9966\"><b>Iniciando...</b></font><br><br>";
         MyIntl.VE_XMLGENERATOR_3 = "Erro.<br>Tentativa de gerar o XML de um elemento nulo.<br>";
-        MyIntl.VE_XMLGENERATOR_4 = "<font color=\"#FF0000\"><b>Error de validação de formulário.</b></font><br><br>";
+        MyIntl.VE_XMLGENERATOR_4 = "<font color=\"#FF0000\"><b>Error de validaï¿½ï¿½o de formulï¿½rio.</b></font><br><br>";
         MyIntl.VE_XMLGENERATOR_5 = "<b>Caminho do erro: </b><a href=\"$1\">$1</a><br><br>";
         MyIntl.VE_XMLGENERATOR_6 = "<b>Mensagem de erro: </b><br><br>";
         MyIntl.VE_XMLGENERATOR_7 = "<font color=\"#0000FF\">$1</font><br>";
-        MyIntl.VE_XMLGENERATOR_8 = "<font color=\"#808080\"><b>Gerando XML da interação: </b></font>$1<br>";
-        MyIntl.VE_XMLGENERATOR_9 = "<br><font color=\"#009933\"><b>Geração de XML completa!</b></font><br>";
-        MyIntl.VE_XMLGENERATOR_10 = "<font color=\"#808080\"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gerando XML do formulário: </b></font>$1<br>";
+        MyIntl.VE_XMLGENERATOR_8 = "<font color=\"#808080\"><b>Gerando XML da interaï¿½ï¿½o: </b></font>$1<br>";
+        MyIntl.VE_XMLGENERATOR_9 = "<br><font color=\"#009933\"><b>Geraï¿½ï¿½o de XML completa!</b></font><br>";
+        MyIntl.VE_XMLGENERATOR_10 = "<font color=\"#808080\"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gerando XML do formulï¿½rio: </b></font>$1<br>";
         
-        MyIntl.VE_BUILDPROJECT_1 = "<b><font color=\"#FF9966\">Geração iniciada...</font></b><br><br>";
-        MyIntl.VE_BUILDPROJECT_2 = "<br><font color=\"#009933\"><b>Geração terminada!</b></font><br><br>";
-        MyIntl.VE_BUILDPROJECT_3 = "<br><font color=\"#009933\"><b>Geração cancelada.</b></font><br><br>";
-        MyIntl.VE_BUILDPROJECT_4 = "<font color=\"#FF9999\">Não foi possível carregar o arquivo-fonte</font> '$1 <font color=\"#FF9999\">em uma árvore DOM.'</font>.<br>Pulando a interação: '$2'<br>";
-        MyIntl.VE_BUILDPROJECT_5 = "<br><b>Mensagem do mecanismos de mapeamento de transformação de templates:</b><br><font color=\"#FF0000\"><b>Não foi possíevl executar a instrução callTask:</b></font> '&lt;callTask id=\"$1\"/&gt;'<br>";
-        MyIntl.VE_BUILDPROJECT_6 = "<font color=\"#FF0000\"><b>Erro da instrução For-Each:</b></font> <br><br><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Statement: </b>   &lt;for-each select=\"$1\"&gt;<br><br>Não foi possível selecionar o xpath.<br><br><b>Mensagem de erro:</b> $1 formato inválido.<br>";
-        MyIntl.VE_BUILDPROJECT_7 = "<b><font color=\"#FF9900\">Aviso da instrução For-Each:</font></b> <br><br>&nbsp;&nbsp;<b>Instrução:</b> &lt;for-each select=\"$1\"&gt; no arquivo: $2<br><br>&nbsp;&nbsp;&nbsp;&nbsp;<b>Mensagem:</b> O seletor do Xpath não retornou nenhum nó.<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Action:</b> Instrução ignorada.";
-        MyIntl.VE_BUILDPROJECT_8 = "# Foram encontrados avisos na geração de templates.<br>Olhe a view de avisos para maiores detalhes.<br>";
-        MyIntl.VE_BUILDPROJECT_9 = "<font color=\"#FF9900\"><b>Erro da instrução If: </b></font> <br><br>&nbsp;&nbsp;<b>Instrução:</b> &lt;if test=\"$1\"&gt;<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Mensagem:</b>Foi foi possível executar o teste desta instrução.<br><br>$2<br><br>Verifique a sintaxe no arquivo de mapeamento de transformação de template: $3 e tente denovo.<br>";
-        MyIntl.VE_BUILDPROJECT_10 = "Não foi possível executar a task: '$1'.<br>";
-        MyIntl.VE_BUILDPROJECT_11 = "Não foi possível achar a task id = '$1'.<br>";
-        MyIntl.VE_BUILDPROJECT_12 = "Não foi possível achar o template: '$1'.<br>Corrija este erro colocando um caminho válido na marcação 'template' da tarefa com id = '$2'.<br>Você pode achar exemplos na documentação.<br>";
-        MyIntl.VE_BUILDPROJECT_13 = "<br>Não foi possível executar a task com id = '$1'.<br>  Error de XPath: $2<br><br>     Solução: <br><br>         Corrija este erro colocando uma expressão válida na marcação 'newFilename'.<br><br>         Você pode achar exemplos na documentação.<br>";
-        MyIntl.VE_BUILDPROJECT_14 = "Não é possível criar o diretório de saída: '$1'.<br>";
-        MyIntl.VE_BUILDPROJECT_15 = "Não é possível criar ou sobre-escrever o arquivo: '$1'. Ignorando arquivo...<br>";
-        MyIntl.VE_BUILDPROJECT_16 = "Não é possível salvar o arquivo: '$1'. Ignorando...<br>";
-        MyIntl.VE_BUILDPROJECT_17 = "Não é possível salvar o arquivo-fonte '$1'.<br><br>$2";
+        MyIntl.VE_BUILDPROJECT_1 = "<b><font color=\"#FF9966\">Geraï¿½ï¿½o iniciada...</font></b><br><br>";
+        MyIntl.VE_BUILDPROJECT_2 = "<br><font color=\"#009933\"><b>Geraï¿½ï¿½o terminada!</b></font><br><br>";
+        MyIntl.VE_BUILDPROJECT_3 = "<br><font color=\"#009933\"><b>Geraï¿½ï¿½o cancelada.</b></font><br><br>";
+        MyIntl.VE_BUILDPROJECT_4 = "<font color=\"#FF9999\">Nï¿½o foi possï¿½vel carregar o arquivo-fonte</font> '$1 <font color=\"#FF9999\">em uma ï¿½rvore DOM.'</font>.<br>Pulando a interaï¿½ï¿½o: '$2'<br>";
+        MyIntl.VE_BUILDPROJECT_5 = "<br><b>Mensagem do mecanismos de mapeamento de transformaï¿½ï¿½o de templates:</b><br><font color=\"#FF0000\"><b>Nï¿½o foi possï¿½evl executar a instruï¿½ï¿½o callTask:</b></font> '&lt;callTask id=\"$1\"/&gt;'<br>";
+        MyIntl.VE_BUILDPROJECT_6 = "<font color=\"#FF0000\"><b>Erro da instruï¿½ï¿½o For-Each:</b></font> <br><br><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Statement: </b>   &lt;for-each select=\"$1\"&gt;<br><br>Nï¿½o foi possï¿½vel selecionar o xpath.<br><br><b>Mensagem de erro:</b> $1 formato invï¿½lido.<br>";
+        MyIntl.VE_BUILDPROJECT_7 = "<b><font color=\"#FF9900\">Aviso da instruï¿½ï¿½o For-Each:</font></b> <br><br>&nbsp;&nbsp;<b>Instruï¿½ï¿½o:</b> &lt;for-each select=\"$1\"&gt; no arquivo: $2<br><br>&nbsp;&nbsp;&nbsp;&nbsp;<b>Mensagem:</b> O seletor do Xpath nï¿½o retornou nenhum nï¿½.<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Action:</b> Instruï¿½ï¿½o ignorada.";
+        MyIntl.VE_BUILDPROJECT_8 = "# Foram encontrados avisos na geraï¿½ï¿½o de templates.<br>Olhe a view de avisos para maiores detalhes.<br>";
+        MyIntl.VE_BUILDPROJECT_9 = "<font color=\"#FF9900\"><b>Erro da instruï¿½ï¿½o If: </b></font> <br><br>&nbsp;&nbsp;<b>Instruï¿½ï¿½o:</b> &lt;if test=\"$1\"&gt;<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Mensagem:</b>Foi foi possï¿½vel executar o teste desta instruï¿½ï¿½o.<br><br>$2<br><br>Verifique a sintaxe no arquivo de mapeamento de transformaï¿½ï¿½o de template: $3 e tente denovo.<br>";
+        MyIntl.VE_BUILDPROJECT_10 = "Nï¿½o foi possï¿½vel executar a task: '$1'.<br>";
+        MyIntl.VE_BUILDPROJECT_11 = "Nï¿½o foi possï¿½vel achar a task id = '$1'.<br>";
+        MyIntl.VE_BUILDPROJECT_12 = "Nï¿½o foi possï¿½vel achar o template: '$1'.<br>Corrija este erro colocando um caminho vï¿½lido na marcaï¿½ï¿½o 'template' da tarefa com id = '$2'.<br>Vocï¿½ pode achar exemplos na documentaï¿½ï¿½o.<br>";
+        MyIntl.VE_BUILDPROJECT_13 = "<br>Nï¿½o foi possï¿½vel executar a task com id = '$1'.<br>  Error de XPath: $2<br><br>     Soluï¿½ï¿½o: <br><br>         Corrija este erro colocando uma expressï¿½o vï¿½lida na marcaï¿½ï¿½o 'newFilename'.<br><br>         Vocï¿½ pode achar exemplos na documentaï¿½ï¿½o.<br>";
+        MyIntl.VE_BUILDPROJECT_14 = "Nï¿½o ï¿½ possï¿½vel criar o diretï¿½rio de saï¿½da: '$1'.<br>";
+        MyIntl.VE_BUILDPROJECT_15 = "Nï¿½o ï¿½ possï¿½vel criar ou sobre-escrever o arquivo: '$1'. Ignorando arquivo...<br>";
+        MyIntl.VE_BUILDPROJECT_16 = "Nï¿½o ï¿½ possï¿½vel salvar o arquivo: '$1'. Ignorando...<br>";
+        MyIntl.VE_BUILDPROJECT_17 = "Nï¿½o ï¿½ possï¿½vel salvar o arquivo-fonte '$1'.<br><br>$2";
         
         MyIntl. VE_ANTRUNNER_1 = "<b><font color=\"#FF9966\">Ant iniciado...</font></b><br>";
         MyIntl. VE_ANTRUNNER_2 = "<b>Arquivo do Ant:</b> $1<br>";
-        MyIntl. VE_ANTRUNNER_3 = "<br><b><font color=\"#FF0000\">Resultado da execução do Ant: erro.</font></b><br><br>$1";
-        MyIntl. VE_ANTRUNNER_4 = "<br><font color=\"#009933\"><b>Resultado da execução do Ant: successo.</b></font><br><br>";
-        MyIntl. VE_ANTRUNNER_5 = "<br><b><font color=\"#FF0000\">Resultado da execução do Ant: erro.</font></b><br>Mensagem do Ant: Não foi possível executar o alvo (\"target\") padrão (\"default\").<br>";
-        MyIntl. VE_ANTRUNNER_6 = "<font color=\"#FF0000\"><b>Não foi possível pré-processar o arquivo do Ant:</b></font>$1<br><br>";
-        MyIntl. VE_ANTRUNNER_7 = "<font color=\"#FF0000\"><b>Não foi possível pré-processar o arquivo do Ant: </b></font>$1<br>";
-        MyIntl. VE_ANTRUNNER_8 = "<font color=\"#FF0000\"><b>Permissão de escrita negada.</b></font><br>";
+        MyIntl. VE_ANTRUNNER_3 = "<br><b><font color=\"#FF0000\">Resultado da execuï¿½ï¿½o do Ant: erro.</font></b><br><br>$1";
+        MyIntl. VE_ANTRUNNER_4 = "<br><font color=\"#009933\"><b>Resultado da execuï¿½ï¿½o do Ant: successo.</b></font><br><br>";
+        MyIntl. VE_ANTRUNNER_5 = "<br><b><font color=\"#FF0000\">Resultado da execuï¿½ï¿½o do Ant: erro.</font></b><br>Mensagem do Ant: Nï¿½o foi possï¿½vel executar o alvo (\"target\") padrï¿½o (\"default\").<br>";
+        MyIntl. VE_ANTRUNNER_6 = "<font color=\"#FF0000\"><b>Nï¿½o foi possï¿½vel prï¿½-processar o arquivo do Ant:</b></font>$1<br><br>";
+        MyIntl. VE_ANTRUNNER_7 = "<font color=\"#FF0000\"><b>Nï¿½o foi possï¿½vel prï¿½-processar o arquivo do Ant: </b></font>$1<br>";
+        MyIntl. VE_ANTRUNNER_8 = "<font color=\"#FF0000\"><b>Permissï¿½o de escrita negada.</b></font><br>";
 
         MyIntl.VE_BUILDUTIL_1 = "<b>Gerando arquivo:</b> ";
-        MyIntl.VE_BUILDUTIL_2 = "<b>Arquivo:</b> '$1' não existente.<br>$2";
-        MyIntl.VE_BUILDUTIL_3 = "Exceção: ";
-        MyIntl.VE_BUILDUTIL_4 = "<b>Descrição do erro:</b><br><br>";
+        MyIntl.VE_BUILDUTIL_2 = "<b>Arquivo:</b> '$1' nï¿½o existente.<br>$2";
+        MyIntl.VE_BUILDUTIL_3 = "Exceï¿½ï¿½o: ";
+        MyIntl.VE_BUILDUTIL_4 = "<b>Descriï¿½ï¿½o do erro:</b><br><br>";
         MyIntl.VE_BUILDUTIL_5 = "<br><b>Nome do erro:</b> ";
-        MyIntl.VE_BUILDUTIL_6 = "<b>Descrição da exceção:</b><br><br>";
-        MyIntl.VE_BUILDUTIL_7 = "<br><b>Aviso:</b> não é possível criar o arquivo: $1";
-        MyIntl.VE_BUILDUTIL_8 = "<font color=\"#FF0000\"><b>Não é possível transformar o item:</b></font><br><br>&nbsp;  <b>Arquivo-fonte :</b> $1.<br>&nbsp;  <b>Arquivo alvo:</b> $2.<br><b>Arquivo de template :</b> $3.<br><br>";
-        MyIntl.VE_BUILDUTIL_9 = "Não foi possível rodar a safe-zone do arquivo-fonte: '$1' e do novo arquivo: '$2'<br><br>$3<br>";
+        MyIntl.VE_BUILDUTIL_6 = "<b>Descriï¿½ï¿½o da exceï¿½ï¿½o:</b><br><br>";
+        MyIntl.VE_BUILDUTIL_7 = "<br><b>Aviso:</b> nï¿½o ï¿½ possï¿½vel criar o arquivo: $1";
+        MyIntl.VE_BUILDUTIL_8 = "<font color=\"#FF0000\"><b>Nï¿½o ï¿½ possï¿½vel transformar o item:</b></font><br><br>&nbsp;  <b>Arquivo-fonte :</b> $1.<br>&nbsp;  <b>Arquivo alvo:</b> $2.<br><b>Arquivo de template :</b> $3.<br><br>";
+        MyIntl.VE_BUILDUTIL_9 = "Nï¿½o foi possï¿½vel rodar a safe-zone do arquivo-fonte: '$1' e do novo arquivo: '$2'<br><br>$3<br>";
 
         MyIntl.VE_FITBODY_CARD_1 = "Variante";
-        MyIntl.VE_FITBODY_CARD_2 = "Formulário";
+        MyIntl.VE_FITBODY_CARD_2 = "Formulï¿½rio";
         
-        MyIntl.VE_EXEC_FUNCTION_1 = "Instrução 'If', O atributo de teste está chamando a função: $1<br>";
-        MyIntl.VE_EXEC_FUNCTION_2 = "# Existem avisos na geração do template. Olhe a view de avisos para maiores detalhes.<br>";
-        MyIntl.VE_EXEC_FUNCTION_3 = "Não foi possível recuperar a expressão XPath da string: $1.<br><br>$2";
-        MyIntl.VE_EXEC_FUNCTION_4 = "# Existem avisos na geração do template. Olhe a view de avisos para maiores detalhes.<br>";
-        MyIntl.VE_EXEC_FUNCTION_5 = "Aviso da instrução 'If'.<br>Não foi possível recuperar a expressão XPath da string: \"$1\".<br><br><font color=\"#FF0000\"><b>Erro:</b></font><br><br>  $2.<br><br>Verifique a sintaxe desse XPath no arquivo de mapeamento de transformação de template.";
+        MyIntl.VE_EXEC_FUNCTION_1 = "Instruï¿½ï¿½o 'If', O atributo de teste estï¿½ chamando a funï¿½ï¿½o: $1<br>";
+        MyIntl.VE_EXEC_FUNCTION_2 = "# Existem avisos na geraï¿½ï¿½o do template. Olhe a view de avisos para maiores detalhes.<br>";
+        MyIntl.VE_EXEC_FUNCTION_3 = "Nï¿½o foi possï¿½vel recuperar a expressï¿½o XPath da string: $1.<br><br>$2";
+        MyIntl.VE_EXEC_FUNCTION_4 = "# Existem avisos na geraï¿½ï¿½o do template. Olhe a view de avisos para maiores detalhes.<br>";
+        MyIntl.VE_EXEC_FUNCTION_5 = "Aviso da instruï¿½ï¿½o 'If'.<br>Nï¿½o foi possï¿½vel recuperar a expressï¿½o XPath da string: \"$1\".<br><br><font color=\"#FF0000\"><b>Erro:</b></font><br><br>  $2.<br><br>Verifique a sintaxe desse XPath no arquivo de mapeamento de transformaï¿½ï¿½o de template.";
 
-        MyIntl.VE_TAILOREXPATH_UTIL_1 = "Não foi possível avaliar a expressão XPATH: '$1'.<br>";
+        MyIntl.VE_TAILOREXPATH_UTIL_1 = "Nï¿½o foi possï¿½vel avaliar a expressï¿½o XPATH: '$1'.<br>";
 
-        MyIntl.VE_CLEAN_PROJECT_1 = "<br><b>O diretório: $1 foi apagado recursivamente.</b>";
-        MyIntl.VE_SECOND_LAYER_VALIDATOR_1 = "<a href=\"$1\">$1</a><b><font color=\"#FF0000\">Erro de validação estrutural.</font></b><br><br><b>Caminho do erro: </b>$2<br><br><b>Mensagem do erro: </b><br><br>Este formulário requer pelo menos $3 formulários filhos com nome igual a: <b>$5</b><br>A configuração corrente possuir apenas $4 formulários filho(s) com esse nome.<br><br><br>Insira os formulários requeridos para conseguir uma especificação válida.<br>";
+        MyIntl.VE_CLEAN_PROJECT_1 = "<br><b>O diretï¿½rio: $1 foi apagado recursivamente.</b>";
+        MyIntl.VE_SECOND_LAYER_VALIDATOR_1 = "<a href=\"$1\">$1</a><b><font color=\"#FF0000\">Erro de validaï¿½ï¿½o estrutural.</font></b><br><br><b>Caminho do erro: </b>$2<br><br><b>Mensagem do erro: </b><br><br>Este formulï¿½rio requer pelo menos $3 formulï¿½rios filhos com nome igual a: <b>$5</b><br>A configuraï¿½ï¿½o corrente possuir apenas $4 formulï¿½rios filho(s) com esse nome.<br><br><br>Insira os formulï¿½rios requeridos para conseguir uma especificaï¿½ï¿½o vï¿½lida.<br>";
         
-        MyIntl.VE_VALIDATE_PROJECT_1 = "<font color=\"#FF0000\"><b>Erro de validação de formulário.</b></font><br><br>";
+        MyIntl.VE_VALIDATE_PROJECT_1 = "<font color=\"#FF0000\"><b>Erro de validaï¿½ï¿½o de formulï¿½rio.</b></font><br><br>";
         MyIntl.VE_VALIDATE_PROJECT_2 = "<b>Caminho do erro: </b><a href=\"$1\">$1</a><br><br>";
         MyIntl.VE_VALIDATE_PROJECT_3 = "<b>Mensagem de erro: </b><br><br>";
         MyIntl.VE_VALIDATE_PROJECT_4 = "<font color=\"#0000FF\">$1</font><br>";
 
-        MyIntl.VE_GENERAL_1 = "<br><b>Use a ferramenta de validação de meta-modelos para maiores detalhes.</b><br><br>";
+        MyIntl.VE_GENERAL_1 = "<br><b>Use a ferramenta de validaï¿½ï¿½o de meta-modelos para maiores detalhes.</b><br><br>";
 
         //-------------------------------------------------------------------------
 
@@ -202,153 +215,153 @@ public class MyIntlPortuguese {
         MyIntl.NCP_LABEL_UP = "Acima";
         MyIntl.NCP_LABEL_DOWN = "Abaixo";
         MyIntl.NCP_LABEL_HELP = "Ajuda";
-        MyIntl.NCP_LABEL_FE = "Elementos de formulário: ";
-        MyIntl.NCP_LABEL_FECHOOSER = "Selecione o elemento de formulário";
+        MyIntl.NCP_LABEL_FE = "Elementos de formulï¿½rio: ";
+        MyIntl.NCP_LABEL_FECHOOSER = "Selecione o elemento de formulï¿½rio";
         MyIntl.NCP_LABEL_NAME = "nome";
         MyIntl.NCP_LABEL_VALUE = "valor";
-        MyIntl.NCP_LABEL_PARAMETERS = "Parâmetros: ";
+        MyIntl.NCP_LABEL_PARAMETERS = "Parï¿½metros: ";
         MyIntl.NCP_LABEL_ELEMENT = "Elemento:";
         MyIntl.NCP_LABEL_TEST = "Teste";
         MyIntl.NCP_LABEL_OK = "Ok";
         MyIntl.NCP_LABEL_CANCEL = "Cancelar";
-        MyIntl.NCP_LABEL_FE2 = "Elemento de formulário";
+        MyIntl.NCP_LABEL_FE2 = "Elemento de formulï¿½rio";
         MyIntl.NCP_LABEL_NAME2 = "Nome: ";
         MyIntl.NCP_LABEL_VALUE2 = "Valor: ";
-        MyIntl.NCP_LABEL_PAR_DESC = "Descrição dos parâmetros";
-        MyIntl.NCP_LABEL_SHOW_PAR1 = "<p><b>Este elemento possui esses parâmetros:</b></p><br>";
+        MyIntl.NCP_LABEL_PAR_DESC = "Descriï¿½ï¿½o dos parï¿½metros";
+        MyIntl.NCP_LABEL_SHOW_PAR1 = "<p><b>Este elemento possui esses parï¿½metros:</b></p><br>";
         
-        MyIntl.NCP_LABEL_SHOW_PAR2 = "<b>Nome do parâmetro:</b> ";
-        MyIntl.NCP_LABEL_SHOW_PAR3 = "<b>&nbsp;&nbsp;Tipo do parâmetro:</b> ";
-        MyIntl.NCP_LABEL_SHOW_PAR4 = "<b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Valor padrão:</b> ";
-        MyIntl.NCP_LABEL_SHOW_PAR5 = "<b>Expressão regular:</b> ";
+        MyIntl.NCP_LABEL_SHOW_PAR2 = "<b>Nome do parï¿½metro:</b> ";
+        MyIntl.NCP_LABEL_SHOW_PAR3 = "<b>&nbsp;&nbsp;Tipo do parï¿½metro:</b> ";
+        MyIntl.NCP_LABEL_SHOW_PAR4 = "<b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Valor padrï¿½o:</b> ";
+        MyIntl.NCP_LABEL_SHOW_PAR5 = "<b>Expressï¿½o regular:</b> ";
         MyIntl.NCP_LABEL_SHOW_PAR6 = "<b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Requerido:</b> ";
-        MyIntl.NCP_LABEL_SHOW_PAR7 = "<b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Descrição curta:</b> ";
+        MyIntl.NCP_LABEL_SHOW_PAR7 = "<b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Descriï¿½ï¿½o curta:</b> ";
         
-        MyIntl.NCP_LABEL_MIN_CHILDS = "Mínimo de filhos: ";
-        MyIntl.NCP_LABEL_MAX_CHILDS = "Máximo de filhos: ";
-        MyIntl.NCP_LABEL_NEXTFORMS = "Próximos formulários: ";
-        MyIntl.NCP_LABEL_NF_ERROR1 = "Este elemento requer o parâmetro 'id'.\n";
+        MyIntl.NCP_LABEL_MIN_CHILDS = "Mï¿½nimo de filhos: ";
+        MyIntl.NCP_LABEL_MAX_CHILDS = "Mï¿½ximo de filhos: ";
+        MyIntl.NCP_LABEL_NEXTFORMS = "Prï¿½ximos formulï¿½rios: ";
+        MyIntl.NCP_LABEL_NF_ERROR1 = "Este elemento requer o parï¿½metro 'id'.\n";
 
-        MyIntl.NCP_LABEL_PL1 = "Lista de parâmetros: ";
+        MyIntl.NCP_LABEL_PL1 = "Lista de parï¿½metros: ";
 
         //-------------------------------------------------------------------------
 
-        MyIntl.MSG1 = "Por favor, crie ou abra um projeto antes de usar o painel de navegação.";
-        MyIntl.MSG2 = "Um erro ocorreu na geração do template.\nOlha a view de erro para maiores detalhes.\n\n";
-        MyIntl.MSG3 = "Não há nenhum projeto aberto.";
-        MyIntl.MSG4 = "O projeto não está salvo.\nSalve o projeto primeiro.";
-        MyIntl.MSG5 = "O arquivo $1 não foi achado.";
-        MyIntl.MSG6 = "Não é possível gerar o projeto.\n\nO diretório de template: '$1' não existe.";
-        MyIntl.MSG7 = "Não é possível gerar o projeto.\nO diretório de template: '$1' não é um diretório.";
-        MyIntl.MSG8 = "Não é possível gerar o projeto.\n\nO diretório de saída: '$1' não existe.";
-        MyIntl.MSG9 = "Não é possível gerar o projeto.\n\nO diretório de saída: '$1' não é um diretório.";
-        MyIntl.MSG10 = "Não é possível gerar o projeto.\n\nNão é possível escrever no diretório: '$1'.\nPermissão negada.";
-        MyIntl.MSG11 = "Não é possível gerar o projeto.\n\nFormato inválido do arquivo de saída: '$1'.";
-        MyIntl.MSG12 = "Não é possível gerar o projeto.\n\nO arquivo de mapeamento: '$1' não pode ser recuperado.";
-        MyIntl.MSG13 = "Foram achados erros na geração dos templates!\nOlhe a view de erros para maiores detalhes.";
-        MyIntl.MSG14 = "Não é possível gerar o projeto.\n\nO caminho: '$1' não existe.";
-        MyIntl.MSG15 = "Não é possível gerar o projeto.\n\nO caminho: '$1' não é um diretório.";
-        MyIntl.MSG16 = "Não foi possível carregar o arquivo de mapeamento: ";
-        MyIntl.MSG17 = "Erro na geração.\nOlhe a view de erros para maiores detalhes.";
-        MyIntl.MSG18 = "Não foi possível carregar o arquivo-fonte.\n";
-        MyIntl.MSG19 = "Não existe nenhum projeto aberto para ser limpo.";
-        MyIntl.MSG20 = "Não foi possível limpar o projeto.\nO diretório de saída: $1 não existe.";
-        MyIntl.MSG21 = "Não foi possível limpar o projeto.\nO diretório de saída: $1 não é um diretório.";
-        MyIntl.MSG22 = "Não foi possível limpar o projeto.\n\nO diretório de saída: $1 não pode ser apagado.";
+        MyIntl.MSG1 = "Por favor, crie ou abra um projeto antes de usar o painel de navegaï¿½ï¿½o.";
+        MyIntl.MSG2 = "Um erro ocorreu na geraï¿½ï¿½o do template.\nOlha a view de erro para maiores detalhes.\n\n";
+        MyIntl.MSG3 = "Nï¿½o hï¿½ nenhum projeto aberto.";
+        MyIntl.MSG4 = "O projeto nï¿½o estï¿½ salvo.\nSalve o projeto primeiro.";
+        MyIntl.MSG5 = "O arquivo $1 nï¿½o foi achado.";
+        MyIntl.MSG6 = "Nï¿½o ï¿½ possï¿½vel gerar o projeto.\n\nO diretï¿½rio de template: '$1' nï¿½o existe.";
+        MyIntl.MSG7 = "Nï¿½o ï¿½ possï¿½vel gerar o projeto.\nO diretï¿½rio de template: '$1' nï¿½o ï¿½ um diretï¿½rio.";
+        MyIntl.MSG8 = "Nï¿½o ï¿½ possï¿½vel gerar o projeto.\n\nO diretï¿½rio de saï¿½da: '$1' nï¿½o existe.";
+        MyIntl.MSG9 = "Nï¿½o ï¿½ possï¿½vel gerar o projeto.\n\nO diretï¿½rio de saï¿½da: '$1' nï¿½o ï¿½ um diretï¿½rio.";
+        MyIntl.MSG10 = "Nï¿½o ï¿½ possï¿½vel gerar o projeto.\n\nNï¿½o ï¿½ possï¿½vel escrever no diretï¿½rio: '$1'.\nPermissï¿½o negada.";
+        MyIntl.MSG11 = "Nï¿½o ï¿½ possï¿½vel gerar o projeto.\n\nFormato invï¿½lido do arquivo de saï¿½da: '$1'.";
+        MyIntl.MSG12 = "Nï¿½o ï¿½ possï¿½vel gerar o projeto.\n\nO arquivo de mapeamento: '$1' nï¿½o pode ser recuperado.";
+        MyIntl.MSG13 = "Foram achados erros na geraï¿½ï¿½o dos templates!\nOlhe a view de erros para maiores detalhes.";
+        MyIntl.MSG14 = "Nï¿½o ï¿½ possï¿½vel gerar o projeto.\n\nO caminho: '$1' nï¿½o existe.";
+        MyIntl.MSG15 = "Nï¿½o ï¿½ possï¿½vel gerar o projeto.\n\nO caminho: '$1' nï¿½o ï¿½ um diretï¿½rio.";
+        MyIntl.MSG16 = "Nï¿½o foi possï¿½vel carregar o arquivo de mapeamento: ";
+        MyIntl.MSG17 = "Erro na geraï¿½ï¿½o.\nOlhe a view de erros para maiores detalhes.";
+        MyIntl.MSG18 = "Nï¿½o foi possï¿½vel carregar o arquivo-fonte.\n";
+        MyIntl.MSG19 = "Nï¿½o existe nenhum projeto aberto para ser limpo.";
+        MyIntl.MSG20 = "Nï¿½o foi possï¿½vel limpar o projeto.\nO diretï¿½rio de saï¿½da: $1 nï¿½o existe.";
+        MyIntl.MSG21 = "Nï¿½o foi possï¿½vel limpar o projeto.\nO diretï¿½rio de saï¿½da: $1 nï¿½o ï¿½ um diretï¿½rio.";
+        MyIntl.MSG22 = "Nï¿½o foi possï¿½vel limpar o projeto.\n\nO diretï¿½rio de saï¿½da: $1 nï¿½o pode ser apagado.";
         MyIntl.MSG23 = "Arquivos removidos.\nOlhe a view de console para maiores detalhes.";
-        MyIntl.MSG24 = "Não há arquivos do projeto para serem removidos.";
-        MyIntl.MSG25 = "Não há nenhum projeto aberto pelo gerenciador de projeto.";
-        MyIntl.MSG26 = "Não há nenhum projeto aberto pelo gerenciador de projeto.";
-        MyIntl.MSG27 = "O projeto corrente não está salvo.\nDevemos salvar o projeto antes de fecha-lo?";
+        MyIntl.MSG24 = "Nï¿½o hï¿½ arquivos do projeto para serem removidos.";
+        MyIntl.MSG25 = "Nï¿½o hï¿½ nenhum projeto aberto pelo gerenciador de projeto.";
+        MyIntl.MSG26 = "Nï¿½o hï¿½ nenhum projeto aberto pelo gerenciador de projeto.";
+        MyIntl.MSG27 = "O projeto corrente nï¿½o estï¿½ salvo.\nDevemos salvar o projeto antes de fecha-lo?";
         MyIntl.MSG28 = "Fechar projeto.";
         MyIntl.MSG29 = "Projecto $1 fechado.";
-        MyIntl.MSG30 = "Arquivo do projeto não encontrado.";
-        MyIntl.MSG31 = "Não foi possível carregar o projeto.\nOlhe a view de erros para maiores detalhes.";
-        MyIntl.MSG32 = "Não há nenhum projeto aberto para gerar.";
-        MyIntl.MSG33 = "O projeto não está salvo.\nPara gerar o projeto é necessário salvas-lo primeiro.\nVocê quer salvar o projeto?";
+        MyIntl.MSG30 = "Arquivo do projeto nï¿½o encontrado.";
+        MyIntl.MSG31 = "Nï¿½o foi possï¿½vel carregar o projeto.\nOlhe a view de erros para maiores detalhes.";
+        MyIntl.MSG32 = "Nï¿½o hï¿½ nenhum projeto aberto para gerar.";
+        MyIntl.MSG33 = "O projeto nï¿½o estï¿½ salvo.\nPara gerar o projeto ï¿½ necessï¿½rio salvas-lo primeiro.\nVocï¿½ quer salvar o projeto?";
         MyIntl.MSG34 = "Gerar projeto.";
-        MyIntl.MSG35 = "Validação executada com sucesso";
-        MyIntl.MSG36 = "Não há nenhum projeto aberto pelo gerenciador de projetos.";
-        MyIntl.MSG37 = "Nâo há nenhum projeto aberto para salvar.";
-        MyIntl.MSG38 = "O projeto ja está salvo.";
-        MyIntl.MSG39 = "Erro de validação.\nOlhe a view de erros para maiores detalhes.";
-        MyIntl.MSG40 = "Não foi possível salvar o projeto.\nO arquivo: $1 não existe.";
-        MyIntl.MSG41 = "Não foi possível salvar o projeto.\nExceção de entrada e saída durante a limpeza do arquivo de saída.\n$1";
-        MyIntl.MSG42 = "Não foi possível salvar o projeto.\nMensagem: \n\n    $1";
-        MyIntl.MSG43 = "Não há nenhum projeto aberto para salvar como.";
-        MyIntl.MSG44 = "O diretório $1 ja existe.\nEssa ferramenta não vai sobre-escrever o conteúdo desse diretório que contém os arquivos do projeto.\nPor favor escolha outro diretório ou primeiro remova o diretório $1 para outro lugar.";
-        MyIntl.MSG45 = "O projeto corrente não está salvo. Você deseja salvar o projeto antes?";
+        MyIntl.MSG35 = "Validaï¿½ï¿½o executada com sucesso";
+        MyIntl.MSG36 = "Nï¿½o hï¿½ nenhum projeto aberto pelo gerenciador de projetos.";
+        MyIntl.MSG37 = "Nï¿½o hï¿½ nenhum projeto aberto para salvar.";
+        MyIntl.MSG38 = "O projeto ja estï¿½ salvo.";
+        MyIntl.MSG39 = "Erro de validaï¿½ï¿½o.\nOlhe a view de erros para maiores detalhes.";
+        MyIntl.MSG40 = "Nï¿½o foi possï¿½vel salvar o projeto.\nO arquivo: $1 nï¿½o existe.";
+        MyIntl.MSG41 = "Nï¿½o foi possï¿½vel salvar o projeto.\nExceï¿½ï¿½o de entrada e saï¿½da durante a limpeza do arquivo de saï¿½da.\n$1";
+        MyIntl.MSG42 = "Nï¿½o foi possï¿½vel salvar o projeto.\nMensagem: \n\n    $1";
+        MyIntl.MSG43 = "Nï¿½o hï¿½ nenhum projeto aberto para salvar como.";
+        MyIntl.MSG44 = "O diretï¿½rio $1 ja existe.\nEssa ferramenta nï¿½o vai sobre-escrever o conteï¿½do desse diretï¿½rio que contï¿½m os arquivos do projeto.\nPor favor escolha outro diretï¿½rio ou primeiro remova o diretï¿½rio $1 para outro lugar.";
+        MyIntl.MSG45 = "O projeto corrente nï¿½o estï¿½ salvo. Vocï¿½ deseja salvar o projeto antes?";
         MyIntl.MSG46 = "Salvar Como";
-        MyIntl.MSG47 = "Ação cancelada.";
-        MyIntl.MSG48 = "Erro.\nNão foi possível criar o diretório: $1";
-        MyIntl.MSG49 = "Erro.\nNão foi possível abrir: $1";
-        MyIntl.MSG50 = "Erro.\nNão foi possível copiar o diretório $1 para o diretório $2.";
-        MyIntl.MSG51 = "Erro.\nNão foi possível criar: $1";
-        MyIntl.MSG52 = "Erro.\nNão foi possível criar o diretório: $1";
-        MyIntl.MSG53 = "Projeto criado.\nVocê quer abrir o novo projeto?";
-        MyIntl.MSG54 = "Não há nenhum projeto aberto para validar.";
-        MyIntl.MSG55 = "Erro de validação.\nOlhe a view de erros para maiores detalhes.";
-        MyIntl.MSG56 = "Erro de validação.\nOlhe a view de erros para maiores detalhes.";
+        MyIntl.MSG47 = "Aï¿½ï¿½o cancelada.";
+        MyIntl.MSG48 = "Erro.\nNï¿½o foi possï¿½vel criar o diretï¿½rio: $1";
+        MyIntl.MSG49 = "Erro.\nNï¿½o foi possï¿½vel abrir: $1";
+        MyIntl.MSG50 = "Erro.\nNï¿½o foi possï¿½vel copiar o diretï¿½rio $1 para o diretï¿½rio $2.";
+        MyIntl.MSG51 = "Erro.\nNï¿½o foi possï¿½vel criar: $1";
+        MyIntl.MSG52 = "Erro.\nNï¿½o foi possï¿½vel criar o diretï¿½rio: $1";
+        MyIntl.MSG53 = "Projeto criado.\nVocï¿½ quer abrir o novo projeto?";
+        MyIntl.MSG54 = "Nï¿½o hï¿½ nenhum projeto aberto para validar.";
+        MyIntl.MSG55 = "Erro de validaï¿½ï¿½o.\nOlhe a view de erros para maiores detalhes.";
+        MyIntl.MSG56 = "Erro de validaï¿½ï¿½o.\nOlhe a view de erros para maiores detalhes.";
         MyIntl.MSG57 = "Projeto salvo.";
-        MyIntl.MSG58 = "Não é possível instanciar a classe: $1";
-        MyIntl.MSG59 = "         Erro - Existem parâmetros obrigatórios faltando.\nCorreção - Coloque os parâmetros obrigatórios na lista.\n\n           Tip -  Olhe a documentação individual de cada elementos para maiores detalhes.\n";
-        MyIntl.MSG60 = "Erro.\nO campo 'id' não contém nenhum valor.";
-        MyIntl.MSG61 = "O campo id não está no formato da expressão regular: $1.";
-        MyIntl.MSG62 = "O valor do campo 'min childs' deve ser um número.";
-        MyIntl.MSG63 = "O valor do campo 'min childs' deve ser um número.";
+        MyIntl.MSG58 = "Nï¿½o ï¿½ possï¿½vel instanciar a classe: $1";
+        MyIntl.MSG59 = "         Erro - Existem parï¿½metros obrigatï¿½rios faltando.\nCorreï¿½ï¿½o - Coloque os parï¿½metros obrigatï¿½rios na lista.\n\n           Tip -  Olhe a documentaï¿½ï¿½o individual de cada elementos para maiores detalhes.\n";
+        MyIntl.MSG60 = "Erro.\nO campo 'id' nï¿½o contï¿½m nenhum valor.";
+        MyIntl.MSG61 = "O campo id nï¿½o estï¿½ no formato da expressï¿½o regular: $1.";
+        MyIntl.MSG62 = "O valor do campo 'min childs' deve ser um nï¿½mero.";
+        MyIntl.MSG63 = "O valor do campo 'min childs' deve ser um nï¿½mero.";
         MyIntl.MSG64 = "o valor do campo 'max childs' deve ser um valor maior do que '1' ou a string 'N'.";
-        MyIntl.MSG65 = "o valor do campo 'max childs' value deve ser um número ou a string 'N'.";
-        MyIntl.MSG66 = "O painel de id não pode ficar em branco.";
+        MyIntl.MSG65 = "o valor do campo 'max childs' value deve ser um nï¿½mero ou a string 'N'.";
+        MyIntl.MSG66 = "O painel de id nï¿½o pode ficar em branco.";
         MyIntl.MSG67 = "A lista do require precisa de pelo menos 1 item.";
         MyIntl.MSG68 = "Esse caminho ja existe na lista de caminhos.";
-        MyIntl.MSG69 = "A coluna $1 está em branco.";
-        MyIntl.MSG70 = "HelpSet não encontrado.";
+        MyIntl.MSG69 = "A coluna $1 estï¿½ em branco.";
+        MyIntl.MSG70 = "HelpSet nï¿½o encontrado.";
         MyIntl.MSG71 = "Erro";
-        MyIntl.MSG72 = "Não foi possível criar o HelpSet para o $1.";
-        MyIntl.MSG73 = "Não foi possível criar uma URL para o $1.";
-        MyIntl.MSG74 = "Não é possível apagar o formulário raíz: $1.";
-        MyIntl.MSG75 = "Você tem certeza que quer apagar o formulário: \"$1\"?";
-        MyIntl.MSG76 = "Apagar formulário.";
-        MyIntl.MSG77 = "Esse nó pode ter apenas $1 $2 filhos.";
-        MyIntl.MSG78 = "Não há ajuda disponível para este formulário.";
-        MyIntl.MSG79 = "Não é possível apagar este formulário.\nO formulário pai ($1) requer pelo menos $2 \"$3\" filhos.";
-        MyIntl.MSG80 = "Não há nenhum projeto aberto para salvar como.";
-        MyIntl.MSG81 = "Criação do projeto cancelada.";
-        MyIntl.MSG82 = "Não foi possível achar o formulário: ";
-        MyIntl.MSG83 = "A aplicação não pode trabalhar apropriadamente porque você não tem permissão de escrita no diretório : $1.\nCorrija este problema e tente novamente.";
-        MyIntl.MSG84 = "Validação do meta-modelo ok.";
+        MyIntl.MSG72 = "Nï¿½o foi possï¿½vel criar o HelpSet para o $1.";
+        MyIntl.MSG73 = "Nï¿½o foi possï¿½vel criar uma URL para o $1.";
+        MyIntl.MSG74 = "Nï¿½o ï¿½ possï¿½vel apagar o formulï¿½rio raï¿½z: $1.";
+        MyIntl.MSG75 = "Vocï¿½ tem certeza que quer apagar o formulï¿½rio: \"$1\"?";
+        MyIntl.MSG76 = "Apagar formulï¿½rio.";
+        MyIntl.MSG77 = "Esse nï¿½ pode ter apenas $1 $2 filhos.";
+        MyIntl.MSG78 = "Nï¿½o hï¿½ ajuda disponï¿½vel para este formulï¿½rio.";
+        MyIntl.MSG79 = "Nï¿½o ï¿½ possï¿½vel apagar este formulï¿½rio.\nO formulï¿½rio pai ($1) requer pelo menos $2 \"$3\" filhos.";
+        MyIntl.MSG80 = "Nï¿½o hï¿½ nenhum projeto aberto para salvar como.";
+        MyIntl.MSG81 = "Criaï¿½ï¿½o do projeto cancelada.";
+        MyIntl.MSG82 = "Nï¿½o foi possï¿½vel achar o formulï¿½rio: ";
+        MyIntl.MSG83 = "A aplicaï¿½ï¿½o nï¿½o pode trabalhar apropriadamente porque vocï¿½ nï¿½o tem permissï¿½o de escrita no diretï¿½rio : $1.\nCorrija este problema e tente novamente.";
+        MyIntl.MSG84 = "Validaï¿½ï¿½o do meta-modelo ok.";
         MyIntl.MSG85 = "Foi achado um erro no meta-modelo. Olhe a janela do MMV para maiores detalhes.";
-        MyIntl.MSG86 = "O nome do projeto contém um caracter inválido.";
-        MyIntl.MSG87 = "Nome do projeto inválido.\nA primeirA letra deve ser maiúscula.";
-        MyIntl.MSG88 = "Nome do projeto inválido.\nEla não está no formato da expressão regular: $1";
-        MyIntl.MSG89 = "Por favor, selecione um domínio antes de pressionar 'Next'.";
-        MyIntl.MSG90 = "Geração completa!";
-        MyIntl.MSG91 = "Geração cancelada.";
+        MyIntl.MSG86 = "O nome do projeto contï¿½m um caracter invï¿½lido.";
+        MyIntl.MSG87 = "Nome do projeto invï¿½lido.\nA primeirA letra deve ser maiï¿½scula.";
+        MyIntl.MSG88 = "Nome do projeto invï¿½lido.\nEla nï¿½o estï¿½ no formato da expressï¿½o regular: $1";
+        MyIntl.MSG89 = "Por favor, selecione um domï¿½nio antes de pressionar 'Next'.";
+        MyIntl.MSG90 = "Geraï¿½ï¿½o completa!";
+        MyIntl.MSG91 = "Geraï¿½ï¿½o cancelada.";
         
         //NCPMessages
-        MyIntl.MSG92 = "Você tem certeza que quer remover este item?";
-        MyIntl.MSG93 = "Remover elemento de formulário";
-        MyIntl.MSG94 = "Você solicitou uma mudança na lista de elementos.\nVocê gostaria de remover todos os parâmetros da lista de parâmetros e carregar os parâmetros obrigatórios do novo elemento na lista de parâmetros?";
+        MyIntl.MSG92 = "Vocï¿½ tem certeza que quer remover este item?";
+        MyIntl.MSG93 = "Remover elemento de formulï¿½rio";
+        MyIntl.MSG94 = "Vocï¿½ solicitou uma mudanï¿½a na lista de elementos.\nVocï¿½ gostaria de remover todos os parï¿½metros da lista de parï¿½metros e carregar os parï¿½metros obrigatï¿½rios do novo elemento na lista de parï¿½metros?";
         MyIntl.MSG95 = "Mudar elemento";
         MyIntl.MSG96 = "Selecione uma linha primeiro.";
-        MyIntl.MSG97 = "Selecione um elemento na caixa de seleção para ser testado.";
-        MyIntl.MSG98 = "Por favor, selecione um elemento de formulário na caixa de seleção antes de pressionar o botão 'Ok'";
-        MyIntl.MSG99 = "A lista de parâmetros contém alguns parâmetros que não são utilizados pelo elemento de formulário selecionado.\nEsse parâmetros serão ignorados pela ferramenta em tempo de execução.\n\nOs parâmetros que não serão utilizados são:\n\n";
-        MyIntl.MSG100 = "\n\nVocê quer continuar?";
-        MyIntl.MSG101 = "Parâmetros não utilizados detectados";
-        MyIntl.MSG102 = "Não é possível remover o parâmetro.\nO parâmetro que você está tentando remover é tem uso obrigatório no elemento de formulário selecionado.";
-        MyIntl.MSG103 = "O nome não pode estar em branco.";
-        MyIntl.MSG104 = "O valor não pode estar em branco.";
-        MyIntl.MSG105 = "Não é possível criar a instância do elemento.\n\n";
-        MyIntl.MSG106 = "Não é possível criar a instância do elemento: $1.\n\n$2";
+        MyIntl.MSG97 = "Selecione um elemento na caixa de seleï¿½ï¿½o para ser testado.";
+        MyIntl.MSG98 = "Por favor, selecione um elemento de formulï¿½rio na caixa de seleï¿½ï¿½o antes de pressionar o botï¿½o 'Ok'";
+        MyIntl.MSG99 = "A lista de parï¿½metros contï¿½m alguns parï¿½metros que nï¿½o sï¿½o utilizados pelo elemento de formulï¿½rio selecionado.\nEsse parï¿½metros serï¿½o ignorados pela ferramenta em tempo de execuï¿½ï¿½o.\n\nOs parï¿½metros que nï¿½o serï¿½o utilizados sï¿½o:\n\n";
+        MyIntl.MSG100 = "\n\nVocï¿½ quer continuar?";
+        MyIntl.MSG101 = "Parï¿½metros nï¿½o utilizados detectados";
+        MyIntl.MSG102 = "Nï¿½o ï¿½ possï¿½vel remover o parï¿½metro.\nO parï¿½metro que vocï¿½ estï¿½ tentando remover ï¿½ tem uso obrigatï¿½rio no elemento de formulï¿½rio selecionado.";
+        MyIntl.MSG103 = "O nome nï¿½o pode estar em branco.";
+        MyIntl.MSG104 = "O valor nï¿½o pode estar em branco.";
+        MyIntl.MSG105 = "Nï¿½o ï¿½ possï¿½vel criar a instï¿½ncia do elemento.\n\n";
+        MyIntl.MSG106 = "Nï¿½o ï¿½ possï¿½vel criar a instï¿½ncia do elemento: $1.\n\n$2";
         MyIntl.MSG107 = "O valor do campo 'Max Childs' deve ser maior ou igual ao valor do campo 'Min Childs'.";
-        MyIntl.MSG108 = "Você selecionou uma auto-relação de elemento (o próximo formulário desse elemento aponta para ele mesmo).\nVocê não pode selecionar um valor para o campo 'min childs' diferente de '0'.";
-        MyIntl.MSG109 = "A lista dos próximos formulários ja contém o nó selecionado ('New Form').";
-        MyIntl.MSG110 = "Você tem certeza que quer remover esse item?";
-        MyIntl.MSG111 = "Remover o próximo formulário";
-        MyIntl.MSG112 = "Você deve selecionar um nó \"New Form\" na árvore de formulários.";
-        MyIntl.MSG114 = "Por favor, selecione um elemento de formulário na caixa de seleção antes de adicionar um parâmetro.";
-        MyIntl.MSG115 = "Não foi possível achar o próximo elemento.";
+        MyIntl.MSG108 = "Vocï¿½ selecionou uma auto-relaï¿½ï¿½o de elemento (o prï¿½ximo formulï¿½rio desse elemento aponta para ele mesmo).\nVocï¿½ nï¿½o pode selecionar um valor para o campo 'min childs' diferente de '0'.";
+        MyIntl.MSG109 = "A lista dos prï¿½ximos formulï¿½rios ja contï¿½m o nï¿½ selecionado ('New Form').";
+        MyIntl.MSG110 = "Vocï¿½ tem certeza que quer remover esse item?";
+        MyIntl.MSG111 = "Remover o prï¿½ximo formulï¿½rio";
+        MyIntl.MSG112 = "Vocï¿½ deve selecionar um nï¿½ \"New Form\" na ï¿½rvore de formulï¿½rios.";
+        MyIntl.MSG114 = "Por favor, selecione um elemento de formulï¿½rio na caixa de seleï¿½ï¿½o antes de adicionar um parï¿½metro.";
+        MyIntl.MSG115 = "Nï¿½o foi possï¿½vel achar o prï¿½ximo elemento.";
 
         //-------------------------------------------------------------------------
     

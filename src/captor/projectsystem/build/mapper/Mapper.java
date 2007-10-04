@@ -4,12 +4,14 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
 import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBElement;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
 import javax.xml.bind.ValidationEvent;
 import javax.xml.bind.ValidationEventLocator;
 import javax.xml.bind.util.ValidationEventCollector;
 
+import captor.domainsystem.FormsType;
 import captor.lib.util.StringUtil;
 import captor.modelsystem.Model;
 
@@ -37,13 +39,11 @@ public class Mapper {
         Unmarshaller u = null;
         JAXBContext jc = null;
         ValidationEventCollector vec = new ValidationEventCollector();
-        Composer composer = null;
+        ComposerType composer = null;
         
         try  {
             jc = JAXBContext.newInstance("captor.projectsystem.build.mapper");
             u = jc.createUnmarshaller();
-            
-            u.setValidating(true);
             u.setEventHandler(vec);
         }
         catch(Exception e)  {
@@ -53,7 +53,8 @@ public class Mapper {
         }
         
         try {
-            composer = ((Composer)u.unmarshal(new FileInputStream(filename)));
+            JAXBElement<ComposerType> element = (JAXBElement<ComposerType>) u.unmarshal(new FileInputStream(filename));
+            composer = element.getValue();
         } catch (RuntimeException e1) {
             String msgError = "Cannot validade mapper meta-model file: " + filename + "<br>";
             model.getGui().getGuiView().setErrorView(msgError);
