@@ -72,17 +72,12 @@ public class BuildUtil {
     
     public static File createFile(Model model, File outputDir, String filename)
     {
-    	String replacement = File.separator;
-        if (replacement.equals("\\"))
-            replacement = "\\\\";
-        
-        
         String fullFileName = "";
         //this is not a absolute path
-        if ( ! (filename.substring(0,1).equals("/") || filename.substring(0,3).equals("c:\\")) )  {
-            fullFileName = outputDir.getAbsolutePath() + System.getProperty("file.separator") + filename;
+        if (FileUtil.isAbsoluteFilename(filename)) {
+        	fullFileName = filename;
         } else {
-            fullFileName = filename;
+        	fullFileName = outputDir.getAbsolutePath() + System.getProperty("file.separator") + filename;
         }
         
 
@@ -245,10 +240,7 @@ public class BuildUtil {
         // The start and end patterns
         Pattern startPattern = Pattern.compile( "\\p{ASCII}+START-SAFE\\((.*?)\\)" );
         Pattern endPattern = Pattern.compile( "\\p{ASCII}+END-SAFE" );
-        
-//        Pattern startPattern = Pattern.compile( "\\/\\/ START-SAFE\\((.*?)\\)" );
-//        Pattern endPattern = Pattern.compile( "\\/\\/ END-SAFE" );
-        
+             
         BufferedReader outputFileReader = new BufferedReader( new FileReader( outputFile ) );
         
         // Set up the state machine variables

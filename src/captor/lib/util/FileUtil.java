@@ -13,7 +13,19 @@ import org.apache.commons.io.FileUtils;
  *
  */
 public class FileUtil {
-    
+
+	public static boolean isAbsoluteFilename(String filename)
+	{
+		if (filename.substring(0,1).equals(File.separator)) {
+			return true;
+		}
+		if (filename.substring(0,3).equals("c:" + File.separator)) {
+			return true;
+		}
+		
+		return false;
+	}
+	
     //-------------------------------------------------------------------------
 
     public static String getExtension(String filename) {

@@ -11,7 +11,6 @@ import javax.xml.bind.ValidationEvent;
 import javax.xml.bind.ValidationEventLocator;
 import javax.xml.bind.util.ValidationEventCollector;
 
-import captor.domainsystem.FormsType;
 import captor.lib.util.StringUtil;
 import captor.modelsystem.Model;
 
@@ -71,7 +70,6 @@ public class Mapper {
             ValidationEvent []ve = vec.getEvents();
             model.getGui().getGuiView().setErrorView("<font color=\"#FF0000\"><b>Mapper file invalid format:</b></font><br><br>");
             model.getGui().getGuiView().setErrorView("");
-            String spath = filename.replace("\\\\", "\\");
             for ( int i = 0; i < ve.length; i++ )  {
                 int severityNumber = ve[i].getSeverity();
                 String severity = "";
@@ -83,7 +81,7 @@ public class Mapper {
                     severity = "WARNING";
                 String space = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
                 ValidationEventLocator locator = ve[i].getLocator(); 
-                model.getGui().getGuiView().setErrorView(space + "(" + i + ")&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>File:</b> " + spath + "<br>");
+                model.getGui().getGuiView().setErrorView(space + "(" + i + ")&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>File:</b> " + filename + "<br>");
                 model.getGui().getGuiView().setErrorView(space + "(" + i + ")&nbsp;<b>Description:</b> " + StringUtil.formatOutput(ve[i].getMessage()) + "<br>");
                 model.getGui().getGuiView().setErrorView(space + "(" + i + ")&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Severity:</b> " + severity + "<br>");
                 model.getGui().getGuiView().setErrorView("<br>");

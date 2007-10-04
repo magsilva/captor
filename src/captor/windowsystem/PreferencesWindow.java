@@ -23,7 +23,7 @@ import captor.windowsystem.preferences.LookFeelType;
 
 
 /**@author Kicho
- * Janela que permite que o usuário configure as preferências de ferramenta
+ * Janela que permite que o usuï¿½rio configure as preferï¿½ncias de ferramenta
  */
 public class PreferencesWindow extends CaptorFrame  {
     
@@ -120,8 +120,6 @@ public class PreferencesWindow extends CaptorFrame  {
         
         lookAndFeelComboBox.addActionListener(this);
         String aux = model.getConfig().getSystemConfig().getInstallPath();
-        
-        aux = aux.replace("\\\\", "\\");
         installPathText.setText(aux);
         
         jPanelBodyBar.setBorder(BorderFactory.createEtchedBorder());

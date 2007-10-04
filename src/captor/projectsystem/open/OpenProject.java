@@ -22,10 +22,10 @@ public class OpenProject  {
         this.model = model;
         File file = null;
         
-        //escolher um path padrão
+        //escolher um path padrï¿½o
         String path = model.getConfig().getGuiHiddenConfig().getLastOpenProjectDirectory();
         if ( path != null )  {
-	        path = path.substring(0, (path.lastIndexOf("\\") + 1));
+	        path = path.substring(0, (path.lastIndexOf(File.separator) + 1));
             file = new File(path);
         }
         
@@ -75,7 +75,7 @@ public class OpenProject  {
         //carregando o meta-modelo
         model.getGui().loadGuiDomain();
         
-        //carregando a árvore de padrões
+        //carregando a ï¿½rvore de padrï¿½es
         ProjectSystem pm = new ProjectSystem(model);
         if ( !loadTree() )  {
             model.setProject(null);
@@ -85,7 +85,7 @@ public class OpenProject  {
         //mostrando a janela de propriedades do projeto
         pm.showProperties();
         
-        //armazenando no histórico dos arquivos abertos 
+        //armazenando no histï¿½rico dos arquivos abertos 
         model.getConfig().getGuiHiddenConfig().setLastOpenProjectDirectory(file.getAbsolutePath());
         model.getProject().setStatus(Project.SAVED);
    }
@@ -93,7 +93,7 @@ public class OpenProject  {
    //-------------------------------------------------------------------------
 
    public boolean loadTree()  {
-       //para cada arquivo de interação
+       //para cada arquivo de interaï¿½ï¿½o
        File inputDir = new File(model.getProject().getInputFolder());
        
        if ( !inputDir.exists() || !inputDir.isDirectory() )  {

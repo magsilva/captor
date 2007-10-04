@@ -134,10 +134,9 @@ public class MetaModelValidator {
         }
         
         StringBuffer buffer = new StringBuffer();
-        if( vec.hasEvents() ) {
-            ValidationEvent []ve = vec.getEvents();
+        if (vec.hasEvents()) {
+            ValidationEvent[] ve = vec.getEvents();
             buffer = buffer.append("\n\nMetal-model syntax validation error:\n\n");
-            String spath = path.replace("\\\\", "\\");
             for ( int i = 0; i < ve.length; i++ )  {
                 int severityNumber = ve[i].getSeverity();
                 String severity = "";
@@ -149,7 +148,7 @@ public class MetaModelValidator {
                     severity = "WARNING";
                 
                 ValidationEventLocator locator = ve[i].getLocator(); 
-                buffer = buffer.append("       (" + i + ")        File: " + spath + "\n");
+                buffer = buffer.append("       (" + i + ")        File: " + path + "\n");
                 buffer = buffer.append("       (" + i + ") Description: " + ve[i].getMessage() + "\n");
                 buffer = buffer.append("       (" + i + ")    Severity: " + severity + "\n");
                 buffer = buffer.append("\n");

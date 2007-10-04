@@ -65,7 +65,6 @@ public class AntRunner {
     public void call(String buildFileName) throws Exception {
         try
         {
-            String separator = System.getProperty("file.separator");
             String path;
             String bf;
             
@@ -74,26 +73,20 @@ public class AntRunner {
             File file = new File(path, buildFileName);
             if ( !file.exists() )  {
                 path = model.getConfig().getSystemConfig().getInstallPath();
-                path = path.concat(separator);
+                path = path.concat(File.separator);
                 path = path.concat("domains");
-                path = path.concat(separator);
+                path = path.concat(File.separator);
                 path = path.concat(model.getProject().getDomain());
             }
             
-            bf = path.concat(separator);
+            bf = path.concat(File.separator);
             bf = bf.concat(buildFileName);
             file = new File(path, buildFileName);
             if ( !file.exists() )  {
                 return;
             }
             
-            
             model.getGui().getGuiView().setConsoleView(MyIntl.VE_ANTRUNNER_1);
-
-            //pre-processamento do arquivo build.xml
-            //colocar uma variavel (project_path) com o valor do path do projeto
-            bf = bf.replaceAll("\\\\", "/");
-            bf = bf.replaceAll("//", "/");
             model.getGui().getGuiView().setConsoleView(StringUtil.formatMessage(MyIntl.VE_ANTRUNNER_2, bf));
             updateProjectPath(file);
             

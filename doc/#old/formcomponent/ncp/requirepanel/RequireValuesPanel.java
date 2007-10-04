@@ -318,15 +318,15 @@ public class RequireValuesPanel extends CaptorFrame implements ActionListener, K
 
     //-------------------------------------------------------------------------
     
-    public void load(Node xmlNode)  {
+    public void load(Node xmlNode)
+    {
         NodeList nodeList = xmlNode.getChildNodes();
-        for ( int i = 0; i < nodeList.getLength(); i++ )  {
+        for (int i = 0; i < nodeList.getLength(); i++) {
             Node requireNode = nodeList.item(i);
             
-            if ( requireNode.getNodeName().toUpperCase().equals("ID") )  {
+            if (requireNode.getNodeName().toUpperCase().equals("ID"))  {
                 idTF.setText(requireNode.getFirstChild().getNodeValue());
-            }
-            else if ( requireNode.getNodeName().toUpperCase().equals("FORMPATH") )  {
+            } else if (requireNode.getNodeName().toUpperCase().equals("FORMPATH")) {
                 String path = requireNode.getFirstChild().getNodeValue();
                 path = path.replaceAll("\\.\\*", "");
                 listModel.addElement(path);

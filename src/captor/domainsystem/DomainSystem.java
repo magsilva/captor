@@ -295,7 +295,6 @@ public class DomainSystem
             String space = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
             ValidationEvent []ve = vec.getEvents();
             model.getGui().getGuiView().setErrorView("<font color=\"#FF0000\"><b>Metal-model invalid format:</b></font><br><br>");
-            String spath = path.replace("\\\\", "\\");
             for ( int i = 0; i < ve.length; i++ )  {
                 int severityNumber = ve[i].getSeverity();
                 String severity = "";
@@ -310,7 +309,7 @@ public class DomainSystem
                     model.getGui().getGuiView().setErrorView("<center><b>-----------------------------------------------------------------</b></center><br>");
                 
                 ValidationEventLocator locator = ve[i].getLocator(); 
-                model.getGui().getGuiView().setErrorView(space + "(" + i + ")&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>File:</b> " + spath + "<br>");
+                model.getGui().getGuiView().setErrorView(space + "(" + i + ")&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>File:</b> " + path + "<br>");
 
                 String msg = StringUtil.formatOutput(ve[i].getMessage());
                 model.getGui().getGuiView().setErrorView(space + "(" + i + ")&nbsp;<b>Description:</b> " + msg + "<br>");

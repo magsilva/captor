@@ -1,3 +1,7 @@
+.getInstallPath() -> sempre sem o último /
+
+- Utilizar expressão regular ao invés de d.split("\\.") para identificar e
+obter os números dos identificadores dos formulários.
 - Arrumar o uso de caracteres designadores de caminho de diretório (//).
 - Permitir a mudança do installPath em tempo de execução (ou algo parecido,
 tal como o Eclipse e seu workspace).

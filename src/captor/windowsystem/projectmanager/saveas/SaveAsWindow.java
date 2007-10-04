@@ -8,6 +8,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.WindowEvent;
+import java.io.File;
 
 import javax.swing.BorderFactory;
 import javax.swing.Box;
@@ -79,12 +80,10 @@ public class SaveAsWindow extends CaptorFrame implements KeyListener, ActionList
     //-------------------------------------------------------------------------    
 
     private void setDefaultSystemPath()  {
-        String path = model.getConfig().getSystemConfig().getInstallPath() + System.getProperty("file.separator") + "projects" + System.getProperty("file.separator");
-        path = path.replace("\\\\", "\\");
+        String path = model.getConfig().getSystemConfig().getInstallPath() + File.separator + "projects" + File.separator;
         rootFolderTF.setText(path);
         
-        path.concat(System.getProperty("file.separator") + "output" + System.getProperty("file.separator"));
-        path = path.replace("\\\\", "\\");
+        path.concat(File.separator + "output" + File.separator);
         outputFolderTF.setText(path);
         rootFolderString = path;
     }
@@ -223,8 +222,7 @@ public class SaveAsWindow extends CaptorFrame implements KeyListener, ActionList
     }
     
     public void keyReleased(KeyEvent e) {
-        String path =  rootFolderString + System.getProperty("file.separator") + projectNameTF.getText() + System.getProperty("file.separator");
-        path = path.replace("\\\\", "\\");
+        String path =  rootFolderString + File.separator + projectNameTF.getText() + File.separator;
         rootFolderTF.setText(path);
     }
     

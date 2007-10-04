@@ -69,7 +69,7 @@ public class ShowDetails extends FITCard  implements KeyListener  {
         
         int width = (int) (project.getPath().length() * factor);
         maxWidth = width;
-        label = new JLabel(project.getPath().concat("  ").replace("\\\\", "\\"));
+        label = new JLabel(project.getPath().concat("  "));
         label.setBounds(x2, y,  1400, labelHeight);
         add(label);
         
@@ -79,7 +79,7 @@ public class ShowDetails extends FITCard  implements KeyListener  {
         label.setFont(new Font("Default", Font.BOLD, 12));
         label.setForeground(c);
         add(label);
-        label = new JLabel(project.getInputFolder().concat("  ").replace("\\\\", "\\"));
+        label = new JLabel(project.getInputFolder().concat("  "));
         
         width = (int) (project.getInputFolder().length() * factor);
         if ( width > maxWidth)
@@ -95,7 +95,7 @@ public class ShowDetails extends FITCard  implements KeyListener  {
         label.setForeground(c);
         add(label);
         
-        label = new JLabel(project.getOutputFolder().concat("  ").replace("\\\\", "\\"));
+        label = new JLabel(project.getOutputFolder().concat("  "));
         
         width = (int) (project.getOutputFolder().length() * factor);
         if ( width > maxWidth)

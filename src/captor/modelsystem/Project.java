@@ -66,7 +66,7 @@ public class Project extends Observable  {
      * @return Returns the inputFolder.
      */
     public String getInputFolder() {
-        return inputFolder.replace("\\\\", "\\");
+        return inputFolder;
     }
     /**
      * @param inputFolder The inputFolder to set.
@@ -78,7 +78,7 @@ public class Project extends Observable  {
      * @return Returns the outputFolder.
      */
     public String getOutputFolder() {
-        return outputFolder.replace("\\\\", "\\");
+        return outputFolder;
     }
     /**
      * @param outputFolder The outputFolder to set.
@@ -143,7 +143,7 @@ public class Project extends Observable  {
      * @return Returns the path.
      */
     public String getPath() {
-        return path.replace("\\\\", "\\");
+        return path;
     }
     /**
      * @param path The path to set.
@@ -183,13 +183,12 @@ public class Project extends Observable  {
                 model.getGui().getGuiView().setErrorView("Captor Exception: Cannot open properties files.<br>Check if the files " + ppath + " exists.<br>");
                 return;
             }
-        }
-        else  {
-            path = "c:\\";
+        } else {
+            path = System.getProperty("user.home");
             name = "Blank project";
             domain = "GRN";
-            inputFolder = "c:\\input";
-            outputFolder = "c:\\output";
+            inputFolder = path + File.separator + "input";
+            outputFolder = path + File.separator + "output";
             status = SAVED;
             overwriteResources = true;
         }

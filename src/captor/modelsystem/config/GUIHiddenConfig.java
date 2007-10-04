@@ -61,13 +61,7 @@ public class GUIHiddenConfig extends Observable  {
 
     public void addLastOpenProject(String projectName)  {
         String aux1, aux2, aux3, aux4;
-        
-        projectName = projectName.replace("\\\\", "\\");
-        lastOpenProject1 = lastOpenProject1.replace("\\\\", "\\");
-        lastOpenProject2 = lastOpenProject2.replace("\\\\", "\\");
-        lastOpenProject3 = lastOpenProject3.replace("\\\\", "\\");
-        lastOpenProject4 = lastOpenProject4.replace("\\\\", "\\");
-        
+              
         if ( projectName.equals(lastOpenProject1) )  {
             return;
         }

@@ -47,13 +47,6 @@ public class TailoredXPathUtil {
         }
         
         String aux = ret.toString();
-        String replacement = new String(System.getProperty("file.separator"));
-        if ( replacement.equals("\\"))
-            replacement = "\\\\";
-        
-        aux = aux.replaceAll("/", replacement);
-        aux = aux.replaceAll("\\\\", replacement);
-        
         return aux;
     }
     

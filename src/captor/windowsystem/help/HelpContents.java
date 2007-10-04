@@ -3,6 +3,7 @@ package captor.windowsystem.help;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 import java.net.URL;
 import java.net.URLClassLoader;
 import java.util.Vector;
@@ -104,11 +105,10 @@ public class HelpContents implements ActionListener  {
         
         String path = "file:"; 
         path = path.concat(model.getConfig().getSystemConfig().getInstallPath());
-        path = path.concat(System.getProperty("file.separator"));
+        path = path.concat(File.separator);
         path = path.concat("help");
-        path = path.concat(System.getProperty("file.separator"));
+        path = path.concat(File.separator);
         path = path.concat("output");
-        path = path.replace("\\\\", "\\");
         
         Vector v = new Vector();
         try {
