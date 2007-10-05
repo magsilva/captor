@@ -1,5 +1,5 @@
 /*
-Copyright (C) 2005 Edison Kicho Shimabukuro Junior <edison.kicho@gmail.com>
+Copyright (C) 2007 Marco Aurélio Graciotto Silva <magsilva@gmail.com>
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -17,40 +17,26 @@ limitations under the License.
 package captor;
 
 import org.apache.commons.cli.CommandLine;
+import org.apache.commons.cli.Options;
 
-import captor.windowsystem.MainWindow;
-
-
-/**
- * This class initialize a new application.
- * 
- * <p>
- * It can receive an argument representing the installPath
- * or can be called without arguments.
- * </p>
- * 
- * <p>
- * If the installPath argument is not set, the main method
- * will try to find out the installPath by itself.
-  */
-public class Captor extends CaptorGui
+public class CaptorCmdline extends CaptorCore
 {
-	protected Captor(String installPathname, String language)
+	public CaptorCmdline(String installPath)
 	{
-		super(installPathname, language);
+		super(installPath);
+	}
+
+	protected static Options getOptions()
+	{
+		Options options = new Options();
+		return options;
 	}
 	
-	protected void startGui()
-	{
-	    MainWindow frame = new MainWindow(model);
-	    frame.setVisible(true);
-	}
-
 	public static void main(String[] args)
     {
     	CommandLine cmdline = processCmdline(args, getOptions());
     	String installPath = cmdline.getOptionValue('d');
-    	String language = cmdline.getOptionValue('l', "en");
-    	CaptorGui captor = new Captor(installPath, language);
+    	CaptorCmdline captor = new CaptorCmdline(installPath);
     }
+
 }

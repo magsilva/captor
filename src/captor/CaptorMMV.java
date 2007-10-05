@@ -16,20 +16,22 @@ limitations under the License.
 
 package captor;
 
-import java.util.HashMap;
+
+import org.apache.commons.cli.CommandLine;
+
 import captor.windowsystem.MetaModelValidatorWindow;
 
 /**
  * Meta-model validator.
  */
-public class MMV extends Captor
+public class CaptorMMV extends CaptorGui
 {
-	protected MMV(HashMap<String, Object> args)
+	protected CaptorMMV(String installPathname, String language)
 	{
-		super(args);
+		super(installPathname, language);
 	}
 
-	protected void start()
+	protected void startGui()
 	{
         MetaModelValidatorWindow mmv = new MetaModelValidatorWindow(model);
         mmv.setVisible(true);
@@ -37,7 +39,9 @@ public class MMV extends Captor
 	
     public static void main(String[] args)
     {
-      	MMV mmv = new MMV(parseArguments(args));
-    	mmv.start();
+    	CommandLine cmdline = processCmdline(args, getOptions());
+    	String installPath = cmdline.getOptionValue('d');
+    	String language = cmdline.getOptionValue('l', "en");
+      	CaptorGui mmv = new CaptorMMV(installPath, language);
     } 
 }
