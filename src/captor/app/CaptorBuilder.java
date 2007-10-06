@@ -14,34 +14,43 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-package captor;
-
+package captor.app;
 
 import org.apache.commons.cli.CommandLine;
 
-import captor.windowsystem.MetaModelValidatorWindow;
+import captor.windowsystem.MainWindow;
+
 
 /**
- * Meta-model validator.
- */
-public class CaptorMMV extends CaptorGui
+ * This class initialize a new application.
+ * 
+ * <p>
+ * It can receive an argument representing the installPath
+ * or can be called without arguments.
+ * </p>
+ * 
+ * <p>
+ * If the installPath argument is not set, the main method
+ * will try to find out the installPath by itself.
+  */
+public class CaptorBuilder extends CaptorGui
 {
-	protected CaptorMMV(String installPathname, String language)
+	protected CaptorBuilder(String installPathname, String language)
 	{
 		super(installPathname, language);
 	}
-
+	
 	protected void startGui()
 	{
-        MetaModelValidatorWindow mmv = new MetaModelValidatorWindow(model);
-        mmv.setVisible(true);
+	    MainWindow frame = new MainWindow(model);
+	    frame.setVisible(true);
 	}
-	
-    public static void main(String[] args)
+
+	public static void main(String[] args)
     {
     	CommandLine cmdline = processCmdline(args, getOptions());
     	String installPath = cmdline.getOptionValue('d');
     	String language = cmdline.getOptionValue('l', "en");
-      	CaptorGui mmv = new CaptorMMV(installPath, language);
-    } 
+    	CaptorGui captor = new CaptorBuilder(installPath, language);
+    }
 }

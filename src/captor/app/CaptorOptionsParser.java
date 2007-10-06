@@ -15,7 +15,7 @@ limitations under the License.
 */
 
 
-package captor;
+package captor.app;
 
 import java.io.File;
 import java.io.IOException;

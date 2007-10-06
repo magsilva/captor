@@ -14,42 +14,23 @@ See the License for the specific language governing permissions and
 limitations under the License.
  */
 
-package captor;
-
-import java.io.BufferedOutputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.File;
+package captor.app;
 
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.HelpFormatter;
 import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
 
-import captor.lib.util.FITPrintStream;
-import captor.modelsystem.Model;
+import captor.Captor;
+import captor.app.CaptorOptionsParser;
 
-public class CaptorCore
+public class CaptorApp extends Captor
 {
-	protected Model model;
-
-	protected CaptorCore(String installPathname)
+	protected CaptorApp(String installPathname)
 	{
-		if (! installPathname.endsWith(File.separator)) {
-			installPathname = installPathname + File.separator;
-		}
-        model = new Model();
-        model.load(installPathname);
+		super(installPathname);
 	}
 	
-	/**
-	 * Start logging service.
-	 */
-	protected static void startLog(Model model)
-	{
-		BufferedOutputStream bos = new BufferedOutputStream(new ByteArrayOutputStream());
-		new FITPrintStream(model, bos, true);
-	}
-
 	protected static Options getOptions(Options options)
 	{
 		if (options == null) {

@@ -21,6 +21,7 @@ import javax.swing.tree.DefaultMutableTreeNode;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
+import captor.domainsystem.FormId;
 import captor.lib.def.Constant;
 import captor.lib.intl.MyIntl;
 import captor.modelsystem.Model;
@@ -203,8 +204,8 @@ public class NextFormsPanel extends FormComponent implements ActionListener  {
                             Node node3 = nodeList3.item(k);
                             if ( node3.getNodeName().toUpperCase().equals("ID") )  {
                                 id = node3.getFirstChild().getNodeValue();
-                                String ids[] = id.split("\\.");
-                                id = ids[0];
+                                FormId formId = new FormId(id);
+                                id = formId.getPart(0);
                             }
                             if ( node3.getNodeName().toUpperCase().equals("MINCHILDS") )  {
                                 minChilds = node3.getFirstChild().getNodeValue();

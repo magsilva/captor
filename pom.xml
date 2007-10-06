@@ -27,15 +27,13 @@
 		<url>http://www.labes.icmc.usp.br</url>
 	</organization>
 
+	<!-- 
 	<repositories>
 		<repository>
 			<id>central</id>
 			<name>Maven Repository Switchboard</name>
 			<layout>default</layout>
 			<url>http://repo1.maven.org/maven2</url>
-			<!--
-			<url>http://mirrors.ibiblio.org/pub/mirrors/maven2</url>
-			-->
 			<releases>
 				<enabled>true</enabled>
 				<updatePolicy>always</updatePolicy>
@@ -43,66 +41,12 @@
 			</releases>
 			<snapshots>
 				<enabled>true</enabled>
-				<!--
 				<updatePolicy>always</updatePolicy>
-				-->
 				<updatePolicy>interval:60</updatePolicy>
 				<checksumPolicy>warn</checksumPolicy>
 			</snapshots>
 		</repository>
 
-		<repository>
-			<id>codehaus-repository</id>
-			<name>Codehaus Repository</name>
-			<url>http://repository.codehaus.org</url>
-		</repository>
-
-		<repository>
-			<id>codehaus-legacy-repository</id>
-			<name>Codehaus Legacy Repository</name>
-			<url>http://dist.codehaus.org</url>
-			<layout>legacy</layout>
-		</repository>
-
-		<repository>
-			<id>Tomcat</id>
-			<name>Tomcat's Staging Repository</name>
-			<layout>default</layout>
-			<url>http://tomcat.apache.org/dev/dist/m2-repository/org/apache/tomcat/</url>
-			<releases>
-				<enabled>true</enabled>
-				<updatePolicy>always</updatePolicy>
-				<checksumPolicy>warn</checksumPolicy>
-			</releases>
-			<snapshots>
-				<enabled>true</enabled>
-				<!--
-				<updatePolicy>always</updatePolicy>
-				-->
-				<updatePolicy>interval:60</updatePolicy>
-				<checksumPolicy>warn</checksumPolicy>
-			</snapshots>
-		</repository>
-
-		<!-- http://wiki.apache.org/myfaces/Using_MyFaces_in_a_Project_built_with_Maven -->
-		<repository>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-			<id>myfaces.staging</id>
-			<name>MyFaces Staging Repository</name>
-			<url>http://myfaces.zones.apache.org/dist/maven-repository</url>
-		</repository>
-
-		<repository>
-			<id>java.net</id>
-			<name>java.net Maven Repository</name>
-			<url>https://maven-repository.dev.java.net/nonav/repository</url>
-			<layout>legacy</layout>
-		</repository>
 	</repositories>
 
 	<pluginRepositories>
@@ -118,8 +62,32 @@
 				<updatePolicy>never</updatePolicy>
 			</releases>
 		</pluginRepository>
-	</pluginRepositories>
 
+		<pluginRepository>
+			<id>apache-snapshot</id>
+			<name>Maven Plugin Snapshots</name>
+			<url>http://people.apache.org/repo/m2-snapshot-repository</url>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</pluginRepository>
+
+		<pluginRepository>
+			<id>codehaus-snapshot</id>
+			<name>CodeHaus Plugin Snapshots</name>
+			<url>http://snapshots.repository.codehaus.org</url>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</pluginRepository>
+	</pluginRepositories>
+	-->
 
 	<dependencies>
 		<dependency>
@@ -138,6 +106,12 @@
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-io</artifactId>
 			<version>1.3.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-cli</groupId>
+			<artifactId>commons-cli</artifactId>
+			<version>1.1</version>
 		</dependency>
 
 		<dependency>
@@ -170,27 +144,23 @@
 		<finalName>${artifactId}-${version}</finalName>
 
 		<directory>target</directory>
+
+		<sourceDirectory>src</sourceDirectory>
+		<testSourceDirectory>tests</testSourceDirectory>
+
 		<outputDirectory>target/classes</outputDirectory>
 		<testOutputDirectory>target/test-classes</testOutputDirectory>
 
-		<sourceDirectory>src</sourceDirectory>
-		<!--
-		<scriptSourceDirectory>src/</scriptSourceDirectory>
-		-->
-		<testSourceDirectory>tests</testSourceDirectory>
-
-		<!--
 		<resources>
 			<resource>
-				<directory>web</directory>
+				<targetPath>lib/</targetPath>
+				<filtering>false</filtering>
+				<directory>${basedir}/lib</directory>
+				<includes>
+					<include>res.jar</include>
+				</includes>
 			</resource>
 		</resources>
-		<testResources>
-			<testResource>
-				<directory>web</directory>
-			</testResource>
-		</testResources>
-		-->
 
 		<plugins>
 			<plugin>
@@ -209,47 +179,48 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
 				<configuration>
+					<classesDirectory>${project.build.outputDirectory}</classesDirectory>
+					<finalName>captor</finalName>
+					<outputDirectory>${project.build.directory}</outputDirectory>
 					<archive>
-						<addMavenDescriptor>false</addMavenDescriptor>
+						<index>true</index>
+						<!-- 
+						<manifestEntries>
+								<mode>development</mode>
+								<url>${pom.url}</url>
+						</manifestEntries>
+ 						-->
 						<manifest>
-							<mainClass>captor.Captor</mainClass>
+							<mainClass>captor.app.CaptorBuilder</mainClass>
+							<packageName>captor</packageName>
 							<addClasspath>true</addClasspath>
+							<classpathPrefix>lib</classpathPrefix>
+							<!--
+							<addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+							<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+							-->
 						</manifest>
 					</archive>
 				</configuration>
 			</plugin>
-
-			<!-- https://jaxb.dev.java.net/jaxb-maven2-plugin/ -->
-			<!--
+			
 			<plugin>
-				<groupId>com.sun.tools.xjc.maven2</groupId>
-				<artifactId>maven-jaxb-plugin</artifactId>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<configuration>
+					<descriptors>
+						<descriptor>pom-assembly-release.xml</descriptor>
+					</descriptors>
+				</configuration>
 				<executions>
 					<execution>
+						<id>make-assembly</id>
+						<phase>package</phase>
 						<goals>
-							<goal>generate</goal>
+							<goal>attached</goal>
 						</goals>
 					</execution>
 				</executions>
-				<configuration>
-					<schemaDirectory>${basedir}/doc/scripts/jaxb</schemaDirectory>
-					<generatePackage>org.example.package</generatePackage>
-					<includeSchemas>
-						<includeSchema>**/*.xsd</includeSchema>
-						<includeSchema>**/*.dtd</includeSchema>
-					</includeSchemas>
-					<excludeSchemas>
-						<excludeSchema>test*.xsd</excludeSchema>
-					</excludeSchemas>
-					<includeBindings>
-						<includeBinding>*.xjb</includeBinding>
-					</includeBindings>
-					<readOnly>true</readOnly>  
-					<strict>true</strict>
-					<verbose>true</verbose>    
-				</configuration>
 			</plugin>
-			-->
 		</plugins>
 	</build>
 

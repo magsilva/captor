@@ -74,7 +74,7 @@ public class GuiView extends Observable  {
      * @param errorView The errorView to set.
      */
     public void setErrorView(String errorView) {
-        this.errorView = errorView;
+        this.errorView = errorView + "<br>";
         setChanged();
         notifyObservers(Constant.PRINT_ERROR);
     }

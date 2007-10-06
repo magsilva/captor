@@ -14,12 +14,12 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-package captor;
+package captor.app;
 
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.Options;
 
-public class CaptorCmdline extends CaptorCore
+public class CaptorCmdline extends CaptorApp
 {
 	public CaptorCmdline(String installPath)
 	{

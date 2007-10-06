@@ -14,7 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-package captor;
+package captor.app;
 
 import java.io.File;
 
@@ -28,7 +28,7 @@ import captor.lib.intl.MyIntlPortuguese;
 import captor.modelsystem.Model;
 import captor.windowsystem.util.IconUtil;
 
-public abstract class CaptorGui extends CaptorCore
+public abstract class CaptorGui extends CaptorApp
 {
 	protected CaptorGui(String installPathname, String language)
 	{

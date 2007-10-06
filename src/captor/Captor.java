@@ -12,45 +12,36 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
-*/
+ */
 
 package captor;
 
-import org.apache.commons.cli.CommandLine;
+import java.io.BufferedOutputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
 
-import captor.windowsystem.MainWindow;
+import captor.lib.util.FITPrintStream;
+import captor.modelsystem.Model;
 
-
-/**
- * This class initialize a new application.
- * 
- * <p>
- * It can receive an argument representing the installPath
- * or can be called without arguments.
- * </p>
- * 
- * <p>
- * If the installPath argument is not set, the main method
- * will try to find out the installPath by itself.
-  */
-public class Captor extends CaptorGui
+public class Captor
 {
-	protected Captor(String installPathname, String language)
+	protected Model model;
+
+	protected Captor(String installPathname)
 	{
-		super(installPathname, language);
+		if (! installPathname.endsWith(File.separator)) {
+			installPathname = installPathname + File.separator;
+		}
+        model = new Model();
+        model.load(installPathname);
 	}
 	
-	protected void startGui()
+	/**
+	 * Start logging service.
+	 */
+	protected static void startLog(Model model)
 	{
-	    MainWindow frame = new MainWindow(model);
-	    frame.setVisible(true);
+		BufferedOutputStream bos = new BufferedOutputStream(new ByteArrayOutputStream());
+		new FITPrintStream(model, bos, true);
 	}
-
-	public static void main(String[] args)
-    {
-    	CommandLine cmdline = processCmdline(args, getOptions());
-    	String installPath = cmdline.getOptionValue('d');
-    	String language = cmdline.getOptionValue('l', "en");
-    	CaptorGui captor = new Captor(installPath, language);
-    }
 }
