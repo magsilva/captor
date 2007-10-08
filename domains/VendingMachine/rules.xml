@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<composer name="FIT">
+	<main>		
+		<for-each select="/formsData/forms/form/form">
+			<if test="equal(/formsData/current/form/@id,'2.1')">
+				<callTask id="product" />
+			</if>
+		</for-each>
+		
+		<for-each select="/formsData/forms/form/form">
+			<if test="equal(/formsData/current/form/@id,'3.1')">
+				<callTask id="money" />
+			</if>
+		</for-each>
+	</main>
+
+	<tasks>
+		<task id="product">
+			<compose>
+				<template>Product.xsl</template>
+				<newFilename>src/com/ironiacorp/vendingmachine/product/${formsData/current/form/data/textatt[@name='name']}.java</newFilename>
+			</compose>
+		</task>
+
+		<task id="money">
+			<compose>
+				<template>Money.xsl</template>
+				<newFilename>src/com/ironiacorp/vendingmachine/money/${formsData/current/form/data/textatt[@name='name']}.java</newFilename>
+			</compose>
+		</task>
+	</tasks>
+</composer>

@@ -81,8 +81,8 @@ public class FormId
 		
 		for (int i = 0; i < getCount(); i++) {
 			if (! getPart(i).equals(id.getPart(i))) {
-				if (hasWildcard) {
-					return true;
+				if (i == (getCount() - 1)) {
+					return (hasWildcard || id.hasWildcard);
 				} else {
 					return false;
 				}
@@ -90,5 +90,4 @@ public class FormId
 		}
 		return true;
 	}
-	
 }

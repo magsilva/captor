@@ -1,0 +1,33 @@
+<?xml version="1.0" standalone="yes"?>
+
+<project name="Blank" default="exec" basedir="../">
+
+	<!--______________________________________________________________________-->
+
+<!--PROJECT_GENERATED_DATA - DO_NOT_EDIT-->
+<property name="project_path" location="/home/windows/Captor/projects/ABC"/>
+<property name="project_output_path" location="/tmp"/>
+<property name="install_path" location="/home/magsilva/Projects-ICMC/Captor/"/>
+<property name="project_name" value="ABC"/>
+<property name="interaction_0" value="0"/>
+<!--PROJECT_GENERATED_DATA - DO_NOT_EDIT-->
+
+	<!--______________________________________________________________________-->
+
+	<target name="exec">
+		<copy todir="${project_output_path}/interaction_0/src">
+			<fileset dir="${install_path}/domains/VendingMachine/resources/">
+				<include name="**/*.java" />
+			</fileset>
+		</copy>
+		<copy 
+			file="${install_path}/domains/VendingMachine/resources/build.xml"
+			tofile="${project_output_path}/interaction_0/build.xml"
+		/>
+	</target>
+	
+	<!--______________________________________________________________________-->
+	
+</project>	
+	
+	

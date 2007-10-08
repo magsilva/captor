@@ -1,0 +1,58 @@
+<?xml version="1.0" standalone="yes"?>
+
+<project name="Persistence" default="compile" basedir=".">
+
+	<!--______________________________________________________________________-->
+
+	<property name="src" location="src"/>
+	<property name="bin" location="bin"/>
+
+	<!--SET THE CLASSPATH-->
+	<path id="classpath">
+		<fileset dir="lib">
+			<include name="*.jar"/>
+			<include name="**/*.jar"/>
+		</fileset>
+	</path>
+
+	<!--______________________________________________________________________-->
+
+	<target name="clean" description="clean up" >
+		<!-- Delete the ${bin} directory trees -->
+		<delete dir="${bin}"/>
+	</target>
+	
+	<!--______________________________________________________________________-->
+
+	<target name="init" depends="clean">
+		<!-- Create the time stamp -->
+		<tstamp/>
+		<!-- Create the bin directory structure used by compile -->
+		<mkdir dir="${bin}"/>
+	</target>
+	
+	<!--______________________________________________________________________-->
+	
+	<target name="compile" depends="init" description="compile the source " >
+		<!-- Compile the java code from ${src} into ${bin} -->
+		<javac srcdir="${src}" destdir="${bin}" classpathref="classpath"/>
+		
+	</target>
+	
+	<!--______________________________________________________________________-->
+	
+	<target name="run" description="run application" >
+	   <java classname="Main">
+         <arg value="."/>
+         <classpath>
+           <pathelement location="lib/mysql-connector-java-3.1.11-bin.jar"/>
+           <pathelement location="lib/pconnection.jar"/>
+           <pathelement location="bin"/>
+         </classpath>
+       </java>
+			
+	</target>
+	
+</project>	
+	
+	

@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<forms>
+      <name>VendingMachine</name>
+
+      <form isRoot="true">
+            <id>1.1</id>
+
+            <enabled>true</enabled>
+
+            <name>System Description</name>
+
+            <variant>Default</variant>
+
+            <nextForms>
+ 				<nextForm>
+ 					<id>2.*</id>
+ 					<minChilds>1</minChilds>
+ 					<maxChilds>1</maxChilds>
+ 				</nextForm>
+ 				<nextForm>
+ 					<id>3.*</id>
+ 					<minChilds>1</minChilds>
+ 					<maxChilds>N</maxChilds>
+ 				</nextForm>
+            </nextForms>
+
+            <help />
+
+            <formComponents>
+            	<formComponent>
+            		<fullname>captor.windowsystem.formcomponent.std.textpanel.TextPanel</fullname>
+            		<parameters>
+            			<parameter>
+            				<name>id</name>
+            				<value>systemName</value>
+            			</parameter>
+            			<parameter>
+            				<name>label</name>
+            				<value>System name</value>
+            			</parameter>
+            		</parameters>
+            	</formComponent>
+            </formComponents>
+      </form>
+
+
+      <form>
+            <id>2.1</id>
+
+            <enabled>true</enabled>
+
+            <name>Product</name>
+
+            <variant>Default</variant>
+
+            <nextForms>
+            </nextForms>
+
+            <help/>
+
+            <formComponents>
+            	<formComponent>
+            		<fullname>captor.windowsystem.formcomponent.std.textpanel.TextPanel</fullname>
+            		<parameters>
+            			<parameter>
+            				<name>id</name>
+            				<value>name</value>
+            			</parameter>
+            			<parameter>
+            				<name>label</name>
+            				<value>Name</value>
+            			</parameter>
+            			<parameter>
+            				<name>regexp</name>
+            				<value>[A-Z][a-zA-Z0-9]*</value>
+            			</parameter>
+            		</parameters>
+            	</formComponent>
+            	<formComponent>
+            		<fullname>captor.windowsystem.formcomponent.std.textpanel.TextPanel</fullname>
+            		<parameters>
+            			<parameter>
+            				<name>id</name>
+            				<value>price</value>
+            			</parameter>
+            			<parameter>
+            				<name>label</name>
+            				<value>Price</value>
+            			</parameter>
+            			<parameter>
+            				<name>regexp</name>
+            				<value>([0-9]+)(*\\.)([0-9]{0,2})</value>
+            			</parameter>
+            		</parameters>
+            	</formComponent>
+            </formComponents>
+      </form>
+
+      <form>
+            <id>3.1</id>
+
+            <enabled>true</enabled>
+
+            <name>Money</name>
+
+            <variant>Default</variant>
+
+            <nextForms>
+            </nextForms>
+
+            <help/>
+
+            <formComponents>
+            	<formComponent>
+            		<fullname>captor.windowsystem.formcomponent.std.textpanel.TextPanel</fullname>
+            		<parameters>
+            			<parameter>
+            				<name>id</name>
+            				<value>name</value>
+            			</parameter>
+            			<parameter>
+            				<name>label</name>
+            				<value>Name</value>
+            			</parameter>
+            			<parameter>
+            				<name>regexp</name>
+            				<value>[A-Z][a-zA-Z0-9]*</value>
+            			</parameter>
+            		</parameters>
+            	</formComponent>
+            	<formComponent>
+            		<fullname>captor.windowsystem.formcomponent.std.comboboxpanel.ComboBoxPanel</fullname>
+            		<parameters>
+            			<parameter>
+            				<name>id</name>
+            				<value>medium</value>
+            			</parameter>
+            			<parameter>
+            				<name>elements</name>
+            				<value>Banknote:Coin</value>
+            			</parameter>
+            			<parameter>
+            				<name>label</name>
+            				<value>Medium of exchange</value>
+            			</parameter>
+            		</parameters>
+            	</formComponent>
+            	<formComponent>
+            		<fullname>captor.windowsystem.formcomponent.std.textpanel.TextPanel</fullname>
+            		<parameters>
+            			<parameter>
+            				<name>id</name>
+            				<value>faceValue</value>
+            			</parameter>
+            			<parameter>
+            				<name>label</name>
+            				<value>Value</value>
+            			</parameter>
+            			<parameter>
+            				<name>regexp</name>
+            				<value>[0-9]+\\.[0-9]{2}</value>
+            			</parameter>
+            		</parameters>
+            	</formComponent>
+            </formComponents>
+      </form>
+</forms>
