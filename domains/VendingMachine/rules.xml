@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <composer name="FIT">
-	<main>		
+	<main>
+		<callTask id="vendingmachine" />
+		
 		<for-each select="/formsData/forms/form/form">
 			<if test="equal(/formsData/current/form/@id,'2.1')">
 				<callTask id="product" />
@@ -16,6 +18,13 @@
 	</main>
 
 	<tasks>
+		<task id="vendingmachine">
+			<compose>
+				<template>VendingMachine.xsl</template>
+				<newFilename>src/com/ironiacorp/vendingmachine/VendingMachine.java</newFilename>
+			</compose>
+		</task>
+	
 		<task id="product">
 			<compose>
 				<template>Product.xsl</template>

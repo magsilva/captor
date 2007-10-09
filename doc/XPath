@@ -1,0 +1,66 @@
+A path expression is an expression used for selecting a node set by following a path or steps.
+Although the complete set of path expressions includes a much larger group of operators, here
+are some of the most useful ones:
+
+element					Selects all element children of the context node.
+
+/						Select from the root node of the current document, of the node in context.
+
+//						Selects nodes in the document from the current context that matches the
+						selection no matter where they are. When used with a context, this operator
+						selects all descendant nodes in the context, no matter how many levels deep
+						they are.
+	
+
+Axis: An axis returns a list of nodes, based on the context of the original node.
+		
+self			.		This selects the current node in the context. If the context node contains
+						a text value, insert this value.
+
+ancestor				This selects a path of all parent and parent-of-parent nodes of the current
+						node, starting from the first parent above the context node.
+			
+parent  		..		This selects only the single parent of the context node.
+
+attribute   	@		This selects all the attributes of an element.
+
+child					Selects all the children of the current node. This is the default in
+						the abbreviated syntax.
+
+
+Predicate
+The Axis helps us to find nodes around the current node. To be able to find a sub-node
+that contains a specific value, we use a predicate. It consists of a 'qualifying expression'
+to do the query.
+
+[]  	Use square brackets around the expression. The expression is inside the brackets.
+
+Examples of predicates:
+article[position()=2]
+	This is syntax to find the second 'article' element.
+
+article[starts-with(name, "B")]
+	This is syntax to find all article nodes, whose name element starts with 'B'.
+	
+	
+Expressions
+Filter patterns can consist of expressions, such as booleans (and, or, etc.), substring
+and others. These expressions are found as the expression in the predicate or they can
+stand on their own.
+
+
+Node-sets expressions
+Expressions return a node-set selected by the operators, path locations and filters used 
+in the query.
+
+and, or			logical and, or
+=				equal to
+!=				not equal to
+>, >=			greater than, greater than or equal to
+<, <=			less than, less than or equal to
+				Remember to code the < character as the XML entity &lt; in the XSL file.
++, -, *, div	addition, subtraction, multiply, divide
+mod				modular, returns the integer remainder of a division
+|				Computes (unions) two node sets
+
+	

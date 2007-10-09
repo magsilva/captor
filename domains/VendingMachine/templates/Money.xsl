@@ -44,9 +44,8 @@ package com.ironiacorp.vendingmachine.money;
 
 import java.math.BigDecimal;
 
-public class <xsl:value-of select="$className" />
+public class <xsl:value-of select="$className" /> implements Money
 {
-	@Override
 	public BigDecimal value()
 	{
 		return new BigDecimal("<xsl:value-of select="$faceValue" />");
