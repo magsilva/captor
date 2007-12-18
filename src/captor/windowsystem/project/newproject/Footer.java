@@ -147,7 +147,7 @@ public class Footer extends JPanel implements ActionListener  {
         
         //se path nao existir, criar como diretorio
         if  ( !file.exists() )  {
-            if ( !file.mkdir() )  {
+            if ( !file.mkdirs() )  {
                 String errorMsg = "<font color=\"#FF0000\"><b>Create project error.</b></font><br>Cannot create project because the directory \"" + model.getProject().getPath() + "\" cannot be created.<br>";
                 model.getGui().getGuiView().setErrorView(errorMsg);
             }
@@ -160,7 +160,7 @@ public class Footer extends JPanel implements ActionListener  {
         //criar o output folder e o input folder se for necessario
         file = new File(model.getProject().getOutputFolder());
         if  ( !file.exists() )  {
-            if ( !file.mkdir() )  {
+            if ( !file.mkdirs() )  {
                 String errorMsg = "<font color=\"#FF0000\"><b>Create project error.</b></font><br>Cannot create project because the directory \"" + model.getProject().getOutputFolder() + "\" cannot be created.<br>";
                 model.getGui().getGuiView().setErrorView(errorMsg);
             }
@@ -172,7 +172,7 @@ public class Footer extends JPanel implements ActionListener  {
 
         file = new File(model.getProject().getInputFolder());
         if  ( !file.exists() )  {
-            if ( !file.mkdir() )  {
+            if ( !file.mkdirs() )  {
                 String errorMsg = "<font color=\"#FF0000\"><b>Create project error.</b></font><br>Cannot create project because the directory \"" + model.getProject().getInputFolder() + "\" cannot be created.<br>";
                 model.getGui().getGuiView().setErrorView(errorMsg);
             }

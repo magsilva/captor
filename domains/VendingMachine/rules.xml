@@ -5,13 +5,13 @@
 		<callTask id="vendingmachine" />
 		
 		<for-each select="/formsData/forms/form/form">
-			<if test="equal(/formsData/current/form/@id,'2.1')">
+			<if test="equal($current/form/@id,'2.1')">
 				<callTask id="product" />
 			</if>
 		</for-each>
 		
 		<for-each select="/formsData/forms/form/form">
-			<if test="equal(/formsData/current/form/@id,'3.1')">
+			<if test="equal($current/form/@id,'3.1')">
 				<callTask id="money" />
 			</if>
 		</for-each>
@@ -28,14 +28,14 @@
 		<task id="product">
 			<compose>
 				<template>Product.xsl</template>
-				<newFilename>src/com/ironiacorp/vendingmachine/product/${formsData/current/form/data/textatt[@name='name']}.java</newFilename>
+				<newFilename>src/com/ironiacorp/vendingmachine/product/${$current/form/data/textatt[@name='name']}.java</newFilename>
 			</compose>
 		</task>
 
 		<task id="money">
 			<compose>
 				<template>Money.xsl</template>
-				<newFilename>src/com/ironiacorp/vendingmachine/money/${formsData/current/form/data/textatt[@name='name']}.java</newFilename>
+				<newFilename>src/com/ironiacorp/vendingmachine/money/${$current/form/data/textatt[@name='name']}.java</newFilename>
 			</compose>
 		</task>
 	</tasks>

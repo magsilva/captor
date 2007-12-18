@@ -1,44 +1,36 @@
 <composer name="FIT">
 
-	<!--______________________________________________________________________-->
-
 	<main>
-
-		<callTask id="sql"/>
+		<callTask id="sql" />
 
 		<for-each select="/formsData/forms/form/form/form">
-			<if test="equal(/formsData/forms/form/form/form/@id,'3.1')">
-				<callTask id="class"/>
+				
+<!-- 			<if test="equal($current/@id,'3.1')">  
+			<if test="equal(/formsData/forms/form/form/form/@id,'3.1')"> -->
+				<!-- <callTask id="class" />  -->
+ 			<if test="equal($current/@id,'3.1')">
+				<callTask id="sql" />
 			</if>
 		</for-each>
-		
 	</main>
 
-	<!--______________________________________________________________________-->
-
 	<tasks>
-
 		<task id="sql">
-		
-				<compose>
-					<template>sql.xsl</template>
-					<newFilename>scripts.sql</newFilename>
-				</compose>
-				
+			<compose>
+				<template>sql.xsl</template>
+				<newFilename>scripts.sql</newFilename>
+			</compose>
 		</task>
-		
-		<task id="class">
-		
-				<compose>
-					<template>class.xsl</template>
-					
-					<newFilename>src/${formsData/current/form/data/textatt[@name='packageName']}/${formsData/current/form/data/textatt[@name='className']}.java</newFilename>
-				</compose>
-				
-		</task>
-	
-	</tasks>
-	
-	<!--______________________________________________________________________-->
 
+		<!-- 
+		<task id="class">
+			<compose>
+				<template>class.xsl</template>
+				<newFilename>
+					src/${$current/form/data/textatt[@name='packageName']}/${$current/form/data/textatt[@name='className']}.java
+				</newFilename>
+			</compose>
+		</task>
+		-->
+	</tasks>
 </composer>

@@ -31,11 +31,11 @@
 	<!-- End of general purpose functions -->
 
 	<xsl:variable name="faceValue">
-		<xsl:value-of select="/formsData/current/form/data/textatt[@name='faceValue']"/>
+		<xsl:value-of select="$current/form/data/textatt[@name='faceValue']"/>
 	</xsl:variable>
 
 	<xsl:variable name="className">
-		<xsl:value-of select="/formsData/current/form/data/textatt[@name='name']"/>
+		<xsl:value-of select="$current/form/data/textatt[@name='name']"/>
 	</xsl:variable>
 
 

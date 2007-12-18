@@ -19,7 +19,7 @@ import javax.swing.JScrollPane;
 import captor.lib.intl.MyIntl;
 import captor.modelsystem.Model;
 import captor.windowsystem.project.newproject.Header;
-import captor.windowsystem.project.newproject.cards.ShowDetails;
+import captor.windowsystem.project.newproject.ShowDetails;
 
 
 

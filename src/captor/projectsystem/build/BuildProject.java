@@ -23,13 +23,16 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Properties;
 import java.util.Stack;
+import java.util.UUID;
 import java.util.Vector;
 
 import javax.swing.JOptionPane;
 import javax.xml.transform.OutputKeys;
+import javax.xml.xpath.XPath;
+import javax.xml.xpath.XPathConstants;
+import javax.xml.xpath.XPathExpressionException;
 
-import org.apache.xalan.templates.OutputProperties;
-import org.apache.xpath.XPathAPI;
+import org.w3c.dom.Attr;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -57,12 +60,9 @@ import captor.projectsystem.build.mapper.TaskType;
 import captor.projectsystem.build.mapper.TasksType;
 import captor.projectsystem.util.LongTask;
 
-/**
- * @author Kicho
- * 
- */
 public class BuildProject
 {
+	public static Stack<Node> currentNodes = new Stack<Node>();
 
 	private Model model;
 	private LongTask task;
@@ -78,17 +78,12 @@ public class BuildProject
 	Document document;
 	File xmlSourceFile;
 	
-	Stack<Node> currentNodes;
-
 	public BuildProject(Model model, LongTask task)
 	{
 		this.model = model;
 		this.task = task;
 		separator = System.getProperty("file.separator");
-		currentNodes = new Stack<Node>();
 	}
-
-	// -------------------------------------------------------------------------
 
 	public boolean build()
 	{
@@ -105,17 +100,8 @@ public class BuildProject
 		return build(mapperFilePath);
 	}
 
-	// -------------------------------------------------------------------------
-
 	public boolean build(String mapperFile)
 	{
-		// aguarda 1 segundo
-		try {
-			Thread.sleep(1000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-
 		// faz verifica��es nos dados do projeto
 		if (model.getProject() == null) {
 			JOptionPane.showMessageDialog(model.getGui().getBuildWindow(), MyIntl.MSG3);
@@ -168,8 +154,6 @@ public class BuildProject
 			task.setError(true);
 			return false;
 		}
-
-		// ---------------------------------------------------------------------
 
 		// Fazer diversas verifica��es no sistema de arquivos nos diretorio de
 		// output
@@ -225,7 +209,9 @@ public class BuildProject
 
 		model.getGui().getGuiView().setConsoleView(MyIntl.VE_BUILDPROJECT_1);
 		res = runTasks(composer);
-		removeNodeCurrent();
+		while (! currentNodes.empty()) {
+			currentNodes.pop();
+		}
 		saveDocument();
 
 		if (res) {
@@ -334,8 +320,9 @@ public class BuildProject
 		GuiView gv = model.getGui().getGuiView();
 		
 		try {
-			nodeList = XPathAPI.selectNodeList(document, select);
-		} catch (Exception e) {
+	        XPath xpath = TailoredXPathUtil.newInstance();
+	        nodeList = (NodeList) xpath.evaluate(select, document, XPathConstants.NODESET);
+		} catch (XPathExpressionException e) {
 			gv.setErrorView(StringUtil.formatMessage(MyIntl.VE_BUILDPROJECT_6, select));
 			return false;
 		}
@@ -361,11 +348,17 @@ public class BuildProject
 
 		for (int i = 0; i < nodeList.getLength(); i++) {
 			Node node = nodeList.item(i);
-			Node currentNode = node.cloneNode(true);
-			pushCurrentNode(root, currentNode);
 
+			String uuidValue = UUID.randomUUID().toString();
+			Element element = (Element) node;
+			element.setAttribute("uuid", uuidValue);
+			currentNodes.push(node);
+			
 			res = parseStatements(calltasksList, iftasksList, foreachtasksList, interaction);
-			popCurrentNode(root);
+			
+			currentNodes.pop();
+			element.removeAttribute("uuid");
+			
 			if (! res) {
 				return false;
 			}
@@ -433,37 +426,35 @@ public class BuildProject
 		if (task.isCancelled() || task.isDone()) {
 			return true;
 		}
+		
+		GuiView view = model.getGui().getGuiView();
+		
 		ComposeType ct = tt.getCompose();
-
 		String templateFileName = ct.getTemplate();
 		String newFilename = ct.getNewFilename();
 
 		File templateFile = new File(templatePath, templateFileName);
-		if (!templateFile.exists()) {
-			model.getGui().getGuiView().setErrorView(
-					StringUtil.formatMessage(MyIntl.VE_BUILDPROJECT_12, templateFile.getAbsolutePath(), tt
-							.getId()));
+		if (! templateFile.exists()) {
+			view.setErrorView(
+					StringUtil.formatMessage(MyIntl.VE_BUILDPROJECT_12, templateFile.getAbsolutePath(), tt.getId()));
 			throw new MapperException(MapperException.INVALID_TEMPLATE_PATH, StringUtil.formatMessage(
 					MyIntl.VE_BUILDPROJECT_12, templateFile.getAbsolutePath(), tt.getId()));
 		}
 
 		newFilename = TailoredXPathUtil.evaluateXPath(model, newFilename, document);
 		if (newFilename == null) {
-			model.getGui().getGuiView().setErrorView(
+			view.setErrorView(
 					StringUtil.formatMessage(MyIntl.VE_BUILDPROJECT_13, tt.getId(), newFilename));
-			// just a warning, just cancel this buildOutputFile and dont set the
-			// error...
-			// return true
-			// for now nops
+			// just a warning, just cancel this buildOutputFile and dont set the error
 			return false;
 		}
 
 		File outputDir = new File(model.getProject().getOutputFolder());
 		outputDir = new File(outputDir, "interaction_".concat(new Integer(interaction).toString()));
 
-		if (!outputDir.exists()) {
-			if (!outputDir.mkdir()) {
-				model.getGui().getGuiView().setErrorView(
+		if (! outputDir.exists()) {
+			if (! outputDir.mkdirs()) {
+				view.setErrorView(
 						StringUtil.formatMessage(MyIntl.VE_BUILDPROJECT_14, outputDir.getAbsolutePath()));
 				throw new MapperException(MapperException.CANNOT_CREATE_OUTPUT_DIR, StringUtil.formatMessage(
 						MyIntl.VE_BUILDPROJECT_14, outputDir.getAbsolutePath()));
@@ -472,7 +463,7 @@ public class BuildProject
 
 		File newFile = BuildUtil.createFile(model, outputDir, newFilename);
 		if (newFile == null) {
-			model.getGui().getGuiView().setConsoleView(
+			view.setConsoleView(
 					StringUtil.formatMessage(MyIntl.VE_BUILDPROJECT_15, newFilename));
 			return true;
 		}
@@ -481,7 +472,7 @@ public class BuildProject
 		if (res) {
 			return BuildUtil.buildXSL(model, task, templateFile, xmlSourceFile, newFile, document);
 		} else {
-			model.getGui().getGuiView().setErrorView(
+			view.setErrorView(
 					StringUtil.formatMessage(MyIntl.VE_BUILDPROJECT_16, newFilename));
 			return true;
 		}
@@ -494,7 +485,7 @@ public class BuildProject
 
 		try {
 			FileOutputStream OS = new FileOutputStream(xmlSourceFile.getAbsolutePath());
-			Properties OP = OutputProperties.getDefaultMethodProperties("xml");
+			Properties OP = new Properties();
 			OP.setProperty(OutputKeys.METHOD, "xml");
 			OP.setProperty(OutputKeys.INDENT, "yes");
 			org.apache.xalan.serialize.Serializer serializer = org.apache.xalan.serialize.SerializerFactory
@@ -510,67 +501,5 @@ public class BuildProject
 							StringUtil.formatOutput(e.toString())));
 			return false;
 		}
-
-		// try {
-		// TransformerFactory xfFactory = TransformerFactory.newInstance();
-		// Transformer transformer = xfFactory.newTransformer();
-		// DOMSource source = new DOMSource(document);
-		// StreamResult result = new StreamResult(new
-		// File(xmlSourceFile.getAbsolutePath()));
-		// transformer.transform(source,result);
-		// } catch (TransformerConfigurationException e) {
-		// String msgError = "Cannot save source file '" +
-		// xmlSourceFile.getAbsolutePath() + ".\n\n" + e;
-		// model.getGui().getGuiView().setErrorView(msgError);
-		// } catch (TransformerFactoryConfigurationError e) {
-		// String msgError = "Cannot save source file '" +
-		// xmlSourceFile.getAbsolutePath() + ".\n\n" + e;
-		// model.getGui().getGuiView().setErrorView(msgError);
-		// } catch (TransformerException e) {
-		// String msgError = "Cannot save source file '" +
-		// xmlSourceFile.getAbsolutePath() + ".\n\n" + e;
-		// model.getGui().getGuiView().setErrorView(msgError);
-		// }
 	}
-
-	// -------------------------------------------------------------------------
-
-	private void pushCurrentNode(Node root, Node currentNode)
-	{
-		Element el = document.createElement("current");
-		
-		NodeList nl = root.getChildNodes();
-		for (int j = 0; j < nl.getLength(); j++) {
-			Node n = nl.item(j);
-			if (n.getNodeName().equals("current")) {
-				currentNodes.push(n);
-				root.removeChild(n);
-			}
-		}
-		
-		root.appendChild(el);
-		el.appendChild(currentNode);
-	}
-
-	private void removeNodeCurrent()
-	{
-		popCurrentNode(document.getFirstChild());
-	}
-
-	private void popCurrentNode(Node root)
-	{
-		NodeList nl = root.getChildNodes();
-		for (int i = 0; i < nl.getLength(); i++) {
-			Node n = nl.item(i);
-			if (n.getNodeName().equals("current")) {
-				root.removeChild(n);
-				if (! currentNodes.empty()) {
-					Node n2 = currentNodes.pop();
-					root.appendChild(n2);
-				}
-			}
-		}
-	}
-
-	// -------------------------------------------------------------------------
 }

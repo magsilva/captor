@@ -7,23 +7,23 @@
 	<xsl:output method="text"/>
 
 	<xsl:variable name="data">
-		<xsl:value-of select="/formsData/current/form/data"/>
+		<xsl:value-of select="$current/form/data"/>
 	</xsl:variable>
 
 	<xsl:variable name="packageName">
 	      <xsl:call-template name="replace-string"> <!-- imported template -->
-        <xsl:with-param name="text" select="/formsData/current/form/data/textatt[@name='packageName']"/>
+        <xsl:with-param name="text" select="$current/form/data/textatt[@name='packageName']"/>
         <xsl:with-param name="replace" select="'/'"/>
         <xsl:with-param name="with" select="'.'"/>
       </xsl:call-template>
 	</xsl:variable>
 
 	<xsl:variable name="className">
-		<xsl:value-of select="/formsData/current/form/data/textatt[@name='className']"/>
+		<xsl:value-of select="$current/form/data/textatt[@name='className']"/>
 	</xsl:variable>
 	
 	<xsl:variable name="tableName">
-		<xsl:value-of select="/formsData/current/form/data/textatt[@name='tableName']"/>
+		<xsl:value-of select="$current/form/data/textatt[@name='tableName']"/>
 	</xsl:variable>
 	<!--______________________________________________________________________-->
 
@@ -61,19 +61,19 @@ import connection.PConnection;
 public class <xsl:value-of select="$className"/>  {
 
   private int id;
-	<xsl:for-each select="/formsData/current/form/data/table/row">
+	<xsl:for-each select="$current/form/data/table/row">
   private <xsl:value-of select="col[@number='2']/value"/><xsl:text> </xsl:text><xsl:value-of select="col[@number='0']/value"/>;</xsl:for-each>
 	
   private PConnection con;
 	
-	public <xsl:value-of select="/formsData/current/form/data/textatt[@name='className']"/>(PConnection con)  {
+	public <xsl:value-of select="$current/form/data/textatt[@name='className']"/>(PConnection con)  {
 		
 		this.con = con;<xsl:text>
 </xsl:text>
 		id = 0;<xsl:text>
 </xsl:text>
 
-<xsl:for-each select="/formsData/current/form/data/table/row">
+<xsl:for-each select="$current/form/data/table/row">
 <xsl:text>		</xsl:text><xsl:value-of select="col[@number='0']/value"/><xsl:text> = </xsl:text>
     <xsl:if test="col[@number='2']/value='String'">new String();</xsl:if>
     <xsl:if test="col[@number='2']/value='int'">0;</xsl:if><xsl:text>
@@ -88,7 +88,7 @@ public class <xsl:value-of select="$className"/>  {
 		public void setId(int id)  {
 			this.id = id;	
 		}
-<xsl:for-each select="/formsData/current/form/data/table/row">
+<xsl:for-each select="$current/form/data/table/row">
 	
 	<xsl:variable name="capitalAttName">
 		<xsl:call-template name="str:capitalise">
@@ -115,11 +115,11 @@ public class <xsl:value-of select="$className"/>  {
 		Statement stmt = null;
 
 <xsl:variable name="tableAttStr">
-<xsl:for-each select="/formsData/current/form/data/table/row">, <xsl:value-of select="col[@number='1']/value"/></xsl:for-each>
+<xsl:for-each select="$current/form/data/table/row">, <xsl:value-of select="col[@number='1']/value"/></xsl:for-each>
 </xsl:variable>
 
 <xsl:variable name="tableAttValuesStr">
-	<xsl:for-each select="/formsData/current/form/data/table/row">
+	<xsl:for-each select="$current/form/data/table/row">
 			<xsl:if test="col[@number='2']/value='String'">, <xsl:text>'</xsl:text><xsl:value-of select="col[@number='0']/value"/><xsl:text>_'</xsl:text></xsl:if>
 			<xsl:if test="col[@number='2']/value='int'">, <xsl:value-of select="col[@number='0']/value"/>_</xsl:if>
 	</xsl:for-each>
@@ -129,7 +129,7 @@ public class <xsl:value-of select="$className"/>  {
 
 		query = query.replaceFirst("ID_", new Integer(id).toString());
 		
-<xsl:for-each select="/formsData/current/form/data/table/row">
+<xsl:for-each select="$current/form/data/table/row">
 <xsl:text>		query = query.replaceFirst("</xsl:text><xsl:value-of select="col[@number='0']/value"/><xsl:text>_", </xsl:text>
 <xsl:if test="col[@number='2']/value='int'">new Integer(<xsl:value-of select="col[@number='0']/value"/>).toString());</xsl:if>
 <xsl:if test="col[@number='2']/value='String'"><xsl:value-of select="col[@number='0']/value"/>);</xsl:if><xsl:text>
@@ -172,7 +172,7 @@ public class <xsl:value-of select="$className"/>  {
 			
 			while (rs.next() )  {
 				this.id = rs.getInt("ID");
-<xsl:for-each select="/formsData/current/form/data/table/row">
+<xsl:for-each select="$current/form/data/table/row">
 <xsl:text>				</xsl:text><xsl:value-of select="col[@number='0']/value"/> = <xsl:if test="col[@number='2']/value='int'">rs.getInt("<xsl:value-of select="col[@number='1']/value"/>");</xsl:if><xsl:if test="col[@number='2']/value='String'">rs.getString("<xsl:value-of select="col[@number='1']/value"/>");</xsl:if><xsl:text>
 </xsl:text></xsl:for-each>			}			
 			

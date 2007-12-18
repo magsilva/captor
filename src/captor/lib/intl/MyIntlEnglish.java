@@ -244,7 +244,7 @@ public class MyIntlEnglish
 
         //JOptionDialog Messages
         MyIntl.MSG1 = "Please, create or open a project before use de location pane.";
-        MyIntl.MSG2 = "An error occured in the template generation.\nSee error view and log view for details.";
+        MyIntl.MSG2 = "An error occurred in the template generation.\nSee error view and log view for details.";
         MyIntl.MSG3 = "There is no open project to build.";
         MyIntl.MSG4 = "The project is not saved.\nSave it first.";
         MyIntl.MSG5 = "File: $1 not found.";

@@ -7,11 +7,11 @@
 	<xsl:output method="text"/>
 
 	<xsl:variable name="productName">
-		<xsl:value-of select="/formsData/current/form/data/textatt[@name='name']"/>
+		<xsl:value-of select="$current/form/data/textatt[@name='name']"/>
 	</xsl:variable>
 
 	<xsl:variable name="productPrice">
-		<xsl:value-of select="/formsData/current/form/data/textatt[@name='price']"/>
+		<xsl:value-of select="$current/form/data/textatt[@name='price']"/>
 	</xsl:variable>
 
 	<xsl:template match="/">

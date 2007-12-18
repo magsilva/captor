@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<forms>
+
+      <name>Simulator</name>
+
+      <form isRoot="true">
+            <id>1.1</id>
+
+            <enabled>true</enabled>
+
+            <name>Simulated object</name>
+
+            <variant>Default</variant>
+
+            <nextForms>
+                  <nextForm>                        <id>2.*</id>                        <minChilds>1</minChilds>                        <maxChilds>N</maxChilds>                  </nextForm>
+            </nextForms>
+
+            <help>The simulator shall have a name! And can simulate just one type
+of object.</help>
+
+            <formComponents><formComponent><fullname>captor.windowsystem.formcomponent.std.TextPanel</fullname><parameters><parameter><name>id</name><value>name</value></parameter><parameter><name>label</name><value>Name</value></parameter><parameter><name>regexp</name><value>[a-zA-Z]([a-zA-Z\-_0-9])*</value></parameter><parameter><name>use</name><value>required</value></parameter></parameters></formComponent><formComponent><fullname>captor.windowsystem.formcomponent.std.TextPanel</fullname><parameters><parameter><name>id</name><value>type</value></parameter><parameter><name>label</name><value>Object type</value></parameter><parameter><name>regexp</name><value>[a-zA-Z]([a-zA-Z\-_0-9])*</value></parameter><parameter><name>use</name><value>required</value></parameter></parameters></formComponent></formComponents>
+      </form>
+
+      <form>
+            <id>2.1</id>
+
+            <enabled>true</enabled>
+
+            <name>State Pattern</name>
+
+            <variant>TransitionWithinState</variant>
+
+            <nextForms>
+                  <nextForm>                        <id>4.*</id>                        <minChilds>1</minChilds>                        <maxChilds>1</maxChilds>                  </nextForm>
+                  <nextForm>                        <id>3.*</id>                        <minChilds>1</minChilds>                        <maxChilds>N</maxChilds>                  </nextForm>
+            </nextForms>
+
+            <help>Object to be simulated</help>
+
+            <formComponents><formComponent><fullname>captor.windowsystem.formcomponent.std.TextPanel</fullname><parameters><parameter><name>id</name><value>name</value></parameter><parameter><name>regexp</name><value>[a-zA-Z]([a-zA-Z\\-_0-9])*</value></parameter><parameter><name>label</name><value>Name</value></parameter><parameter><name>use</name><value>required</value></parameter></parameters></formComponent></formComponents>
+      </form>
+
+      <form>
+            <id>3.1</id>
+
+            <enabled>true</enabled>
+
+            <name>Interface</name>
+
+            <variant>Default</variant>
+
+            <nextForms>
+                  <nextForm>                        <id>6.*</id>                        <minChilds>1</minChilds>                        <maxChilds>N</maxChilds>                  </nextForm>
+                  <nextForm>                        <id>5.*</id>                        <minChilds>1</minChilds>                        <maxChilds>N</maxChilds>                  </nextForm>
+            </nextForms>
+
+            <help>The operations the states implements and the attributes the
+simulated object has.</help>
+
+            <formComponents><formComponent><fullname>captor.windowsystem.formcomponent.std.TextPanel</fullname><parameters><parameter><name>id</name><value>name</value></parameter><parameter><name>label</name><value>Name</value></parameter><parameter><name>use</name><value>required</value></parameter><parameter><name>regexp</name><value>[a-zA-Z]([a-zA-Z\-_0-9])*</value></parameter></parameters></formComponent></formComponents>
+      </form>
+
+      <form>
+            <id>4.1</id>
+
+            <enabled>true</enabled>
+
+            <name>State Machine</name>
+
+            <variant>Default</variant>
+
+            <nextForms>
+            </nextForms>
+
+            <help>The object's behaviour is described by a (rough) state machine.
+The transitions are triggered within the states (and not by the
+simulated object or application context).
+
+I could tell this is the the heart of the State Pattern
+implementation.</help>
+
+            <formComponents><formComponent><fullname>captor.windowsystem.formcomponent.std.TextPanel</fullname><parameters><parameter><name>id</name><value>initialState</value></parameter><parameter><name>label</name><value>Initial State</value></parameter><parameter><name>regexp</name><value>[a-zA-Z]([a-zA-Z\-_0-9])*</value></parameter><parameter><name>use</name><value>required</value></parameter></parameters></formComponent><formComponent><fullname>captor.windowsystem.formcomponent.std.TablePanel</fullname><parameters><parameter><name>id</name><value>finalState</value></parameter><parameter><name>colname1</name><value>State name</value></parameter><parameter><name>regexp1</name><value>[a-zA-Z]([a-zA-Z\-_0-9])*</value></parameter><parameter><name>label</name><value>Final states</value></parameter></parameters></formComponent><formComponent><fullname>captor.windowsystem.formcomponent.std.TablePanel</fullname><parameters><parameter><name>id</name><value>transitions</value></parameter><parameter><name>colname1</name><value>Source state</value></parameter><parameter><name>regexp1</name><value>[a-zA-Z]([a-zA-Z\-_0-9])*</value></parameter><parameter><name>colname2</name><value>Target state</value></parameter><parameter><name>regexp2</name><value>[a-zA-Z]([a-zA-Z\-_0-9])*</value></parameter><parameter><name>label</name><value>Transitions</value></parameter></parameters></formComponent></formComponents>
+      </form>
+
+      <form>
+            <id>5.1</id>
+
+            <enabled>true</enabled>
+
+            <name>Operation</name>
+
+            <variant>Default</variant>
+
+            <nextForms>
+            </nextForms>
+
+            <help>State dependent operation supported by the simulated object</help>
+
+            <formComponents><formComponent><fullname>captor.windowsystem.formcomponent.std.TextPanel</fullname><parameters><parameter><name>id</name><value>name</value></parameter><parameter><name>regexp</name><value>[a-zA-Z]([a-zA-Z\-_0-9])*</value></parameter><parameter><name>use</name><value>required</value></parameter><parameter><name>label</name><value>Name</value></parameter></parameters></formComponent><formComponent><fullname>captor.windowsystem.formcomponent.std.TablePanel</fullname><parameters><parameter><name>id</name><value>1</value></parameter><parameter><name>colname1</name><value>Name</value></parameter><parameter><name>label</name><value>Arguments</value></parameter><parameter><name>regexp1</name><value>[a-zA-Z]([a-zA-Z\-_0-9])*</value></parameter><parameter><name>colname2</name><value>Type</value></parameter><parameter><name>regexp2</name><value>[a-zA-Z]([a-zA-Z\-_0-9])*</value></parameter></parameters></formComponent></formComponents>
+      </form>
+
+      <form>
+            <id>6.1</id>
+
+            <enabled>true</enabled>
+
+            <name>Attribute</name>
+
+            <variant>Default</variant>
+
+            <nextForms>
+            </nextForms>
+
+            <help>Attributes the simulated object make public, world available.
+The states usually have to modify them.</help>
+
+            <formComponents><formComponent><fullname>captor.windowsystem.formcomponent.std.TextPanel</fullname><parameters><parameter><name>id</name><value>name</value></parameter><parameter><name>label</name><value>Name</value></parameter><parameter><name>regexp</name><value>[a-zA-Z]([a-zA-Z\-_0-9])*</value></parameter><parameter><name>use</name><value>required</value></parameter></parameters></formComponent><formComponent><fullname>captor.windowsystem.formcomponent.std.TextPanel</fullname><parameters><parameter><name>id</name><value>type</value></parameter><parameter><name>label</name><value>Type</value></parameter><parameter><name>regexp</name><value>[a-zA-Z][a-zA-Z\-_0-9]*(\.[a-zA-Z][a-zA-Z\-_0-9]*)*</value></parameter><parameter><name>use</name><value>required</value></parameter></parameters></formComponent></formComponents>
+      </form>
+
+</forms>

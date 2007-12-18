@@ -29,7 +29,7 @@
 
             <formComponents>
             	<formComponent>
-            		<fullname>captor.windowsystem.formcomponent.std.textpanel.TextPanel</fullname>
+            		<fullname>captor.windowsystem.formcomponent.std.TextPanel</fullname>
             		<parameters>
             			<parameter>
             				<name>id</name>
@@ -61,7 +61,7 @@
 
             <formComponents>
             	<formComponent>
-            		<fullname>captor.windowsystem.formcomponent.std.textpanel.TextPanel</fullname>
+            		<fullname>captor.windowsystem.formcomponent.std.TextPanel</fullname>
             		<parameters>
             			<parameter>
             				<name>id</name>
@@ -78,7 +78,7 @@
             		</parameters>
             	</formComponent>
             	<formComponent>
-            		<fullname>captor.windowsystem.formcomponent.std.textpanel.TextPanel</fullname>
+            		<fullname>captor.windowsystem.formcomponent.std.TextPanel</fullname>
             		<parameters>
             			<parameter>
             				<name>id</name>
@@ -113,7 +113,7 @@
 
             <formComponents>
             	<formComponent>
-            		<fullname>captor.windowsystem.formcomponent.std.textpanel.TextPanel</fullname>
+            		<fullname>captor.windowsystem.formcomponent.std.TextPanel</fullname>
             		<parameters>
             			<parameter>
             				<name>id</name>
@@ -130,7 +130,7 @@
             		</parameters>
             	</formComponent>
             	<formComponent>
-            		<fullname>captor.windowsystem.formcomponent.std.comboboxpanel.ComboBoxPanel</fullname>
+            		<fullname>captor.windowsystem.formcomponent.std.ComboBoxPanel</fullname>
             		<parameters>
             			<parameter>
             				<name>id</name>
@@ -147,7 +147,7 @@
             		</parameters>
             	</formComponent>
             	<formComponent>
-            		<fullname>captor.windowsystem.formcomponent.std.textpanel.TextPanel</fullname>
+            		<fullname>captor.windowsystem.formcomponent.std.TextPanel</fullname>
             		<parameters>
             			<parameter>
             				<name>id</name>

@@ -2,7 +2,7 @@ package captor.modelsystem;
 
 import java.util.Observable;
 
-import captor.lib.util.system.SystemConfig;
+import captor.lib.util.SystemConfig;
 import captor.modelsystem.config.GUIConfig;
 import captor.modelsystem.config.GUIHiddenConfig;
 import captor.modelsystem.config.ProjectDefaultConfig;

@@ -13,35 +13,11 @@ import org.apache.commons.io.FileUtils;
  *
  */
 public class FileUtil {
-
-	public static boolean isAbsoluteFilename(String filename)
-	{
-		if (filename.substring(0,1).equals(File.separator)) {
-			return true;
-		}
-		if (filename.substring(0,3).equals("c:" + File.separator)) {
-			return true;
-		}
-		
-		return false;
-	}
-	
-    //-------------------------------------------------------------------------
-
-    public static String getExtension(String filename) {
-        int index = filename.lastIndexOf('.');
-
-        if (-1 == index)
-            return "";
-        
-        return filename.substring(index + 1);
-    }
-    
     //-------------------------------------------------------------------------
 
     public static boolean cloneDir(File source, File destination) {
         destination = new File(destination, source.getName());
-        if ( ! destination.mkdir() )  {
+        if ( ! destination.mkdirs() )  {
             return false;
         } 
         
@@ -71,7 +47,7 @@ public class FileUtil {
     public static boolean cloneDir2(File source, File destination) {
         destination = new File(destination, source.getName());
         
-        if ( !destination.mkdir() )    {
+        if ( !destination.mkdirs() )    {
             return false;
         }
         

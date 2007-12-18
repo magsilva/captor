@@ -26,12 +26,12 @@
 			</nextForm>
 		</nextForms>
 		
-		<help>Este formulário ajuda a configurar
-o sistema de bóias náuticas.</help>
+		<help>Este formulï¿½rio ajuda a configurar
+o sistema de bï¿½ias nï¿½uticas.</help>
 		
 		<formComponents>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.std.textpanel.TextPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.std.TextPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>id</name>
@@ -53,7 +53,7 @@ o sistema de bóias náuticas.</help>
 			</formComponent>
 			
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.std.textpanel.TextPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.std.TextPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>id</name>
@@ -87,13 +87,13 @@ o sistema de bóias náuticas.</help>
 		<name>Simulator Specification</name>
  		<variant>Default</variant>
  		
-		<help>Este formulário ajuda a configurar
-o ambiente de simulação do sistema.</help>
+		<help>Este formulï¿½rio ajuda a configurar
+o ambiente de simulaï¿½ï¿½o do sistema.</help>
 		
 		<formComponents>
 		
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.std.textpanel.TextPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.std.TextPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>id</name>
@@ -115,7 +115,7 @@ o ambiente de simulação do sistema.</help>
 			</formComponent>
 
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.std.textpanel.TextPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.std.TextPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>id</name>
@@ -141,7 +141,7 @@ o ambiente de simulação do sistema.</help>
 			</formComponent>
 
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.std.textpanel.TextPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.std.TextPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>id</name>
@@ -163,7 +163,7 @@ o ambiente de simulação do sistema.</help>
 			</formComponent>
 
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.std.textpanel.TextPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.std.TextPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>id</name>
@@ -209,13 +209,13 @@ o ambiente de simulação do sistema.</help>
 			</nextForm>
 		</nextForms>
 		
-		<help>Este formulário ajuda a configurar
-o sistema de bóias náuticas.</help>
+		<help>Este formulï¿½rio ajuda a configurar
+o sistema de bï¿½ias nï¿½uticas.</help>
 		
 		<formComponents>
 		
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.std.comboboxpanel.ComboBoxPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.std.ComboBoxPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>id</name>
@@ -241,7 +241,7 @@ o sistema de bóias náuticas.</help>
 			</formComponent>
 
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.std.comboboxpanel.ComboBoxPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.std.ComboBoxPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>id</name>
@@ -267,7 +267,7 @@ o sistema de bóias náuticas.</help>
 			</formComponent>
 
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.std.comboboxpanel.ComboBoxPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.std.ComboBoxPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>id</name>
@@ -293,7 +293,7 @@ o sistema de bóias náuticas.</help>
 			</formComponent>
 
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.std.comboboxpanel.ComboBoxPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.std.ComboBoxPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>id</name>
@@ -319,7 +319,7 @@ o sistema de bóias náuticas.</help>
 			</formComponent>
 
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.std.comboboxpanel.ComboBoxPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.std.ComboBoxPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>id</name>
@@ -345,7 +345,7 @@ o sistema de bóias náuticas.</help>
 			</formComponent>
 
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.std.comboboxpanel.ComboBoxPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.std.ComboBoxPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>id</name>
@@ -371,7 +371,7 @@ o sistema de bóias náuticas.</help>
 			</formComponent>
 
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.fws.fwsvalidator.FWSValidator</fullname>
+				<fullname>captor.windowsystem.formcomponent.fws.FWSValidator</fullname>
 			</formComponent>
 
 		</formComponents>
@@ -387,13 +387,13 @@ o sistema de bóias náuticas.</help>
 		<name>Sensor Configuration</name>
  		<variant>Default</variant>
  		
-		<help>Este formulário ajuda a configurar
-uma bóia náutica.</help>
+		<help>Este formulï¿½rio ajuda a configurar
+uma bï¿½ia nï¿½utica.</help>
 		
 		<formComponents>
 		
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.std.comboboxpanel.ComboBoxPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.std.ComboBoxPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>id</name>

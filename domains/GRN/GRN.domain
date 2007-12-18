@@ -21,14 +21,14 @@
 			</nextForm>
 		</nextForms>
 		
-		<help>Este padrão ajuda a identificar o
-recurso que será utilizado na gestão
-de recursos de negócio.</help>
+		<help>Este padrï¿½o ajuda a identificar o
+recurso que serï¿½ utilizado na gestï¿½o
+de recursos de negï¿½cio.</help>
 		
 		<formComponents>
 		
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -45,7 +45,7 @@ de recursos de negócio.</help>
 				</parameters>
 			</formComponent>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -77,7 +77,7 @@ de recursos de negócio.</help>
 		
 		<formComponents>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -109,7 +109,7 @@ de recursos de negócio.</help>
 		
 		<formComponents>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -126,7 +126,7 @@ de recursos de negócio.</help>
 				</parameters>
 			</formComponent>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -144,7 +144,7 @@ de recursos de negócio.</help>
 			</formComponent>
 			
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -162,7 +162,7 @@ de recursos de negócio.</help>
 			</formComponent>
 			
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -183,7 +183,7 @@ de recursos de negócio.</help>
 				</parameters>
 			</formComponent>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -212,12 +212,12 @@ de recursos de negócio.</help>
 	<form>
 		<id>1.4</id>
 		<name>IDENTIFICAR O RECURSO</name>
-		<variant>Tipos aninhados - Um nível</variant>
+		<variant>Tipos aninhados - Um nï¿½vel</variant>
 		<extends>1.1</extends>
 
 		<formComponents>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -226,7 +226,7 @@ de recursos de negócio.</help>
 				</parameters>
 			</formComponent>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -235,7 +235,7 @@ de recursos de negócio.</help>
 				</parameters>
 			</formComponent>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -252,12 +252,12 @@ de recursos de negócio.</help>
 	<form>
 		<id>1.5</id>
 		<name>IDENTIFICAR O RECURSO</name>
-		<variant>Tipos aninhados - Dois níveis</variant>
+		<variant>Tipos aninhados - Dois nï¿½veis</variant>
 		<extends>1.1</extends>
 
 		<formComponents>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -274,7 +274,7 @@ de recursos de negócio.</help>
 				</parameters>
 			</formComponent>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -283,7 +283,7 @@ de recursos de negócio.</help>
 				</parameters>
 			</formComponent>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -292,7 +292,7 @@ de recursos de negócio.</help>
 				</parameters>
 			</formComponent>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -341,14 +341,14 @@ de recursos de negócio.</help>
 			
 		</nextForms>
 		
-		<help>Este padrão ajuda a quantificar
-o recurso de negócio que será 
-utilizado na gestão de recursos 
-de negócio.</help>
+		<help>Este padrï¿½o ajuda a quantificar
+o recurso de negï¿½cio que serï¿½ 
+utilizado na gestï¿½o de recursos 
+de negï¿½cio.</help>
 
 		<formComponents>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -375,7 +375,7 @@ de negócio.</help>
 
 		<formComponents>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -388,7 +388,7 @@ de negócio.</help>
 				</parameters>
 			</formComponent>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -421,12 +421,12 @@ de negócio.</help>
 	<form>
 		<id>2.3</id>
 		<name>QUANTIFICAR RECURSO</name>
-		<variant>Recurso mensurável</variant>
+		<variant>Recurso mensurï¿½vel</variant>
 		<extends>2.1</extends>
 
 		<formComponents>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -435,7 +435,7 @@ de negócio.</help>
 				</parameters>
 			</formComponent>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -457,7 +457,7 @@ de negócio.</help>
 		
 		<formComponents>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -466,7 +466,7 @@ de negócio.</help>
 				</parameters>
 			</formComponent>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -475,7 +475,7 @@ de negócio.</help>
 				</parameters>
 			</formComponent>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -495,13 +495,13 @@ de negócio.</help>
 		<name>ARMAZENAR O RECURSO</name>
 		<variant>Default</variant>
 		
-		<help>Este padrão ajuda a armazenar o
-recurso que será utilizado na gestão
-de recursos de negócios.</help>
+		<help>Este padrï¿½o ajuda a armazenar o
+recurso que serï¿½ utilizado na gestï¿½o
+de recursos de negï¿½cios.</help>
 
 		<formComponents>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -514,7 +514,7 @@ de recursos de negócios.</help>
 				</parameters>
 			</formComponent>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -523,7 +523,7 @@ de recursos de negócios.</help>
 				</parameters>
 			</formComponent>
 				<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -532,7 +532,7 @@ de recursos de negócios.</help>
 				</parameters>
 			</formComponent>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -541,7 +541,7 @@ de recursos de negócios.</help>
 				</parameters>
 			</formComponent>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -550,7 +550,7 @@ de recursos de negócios.</help>
 				</parameters>
 			</formComponent>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -601,14 +601,14 @@ de recursos de negócios.</help>
 			
 		</nextForms>
 		
-		<help>Este padrão tem por finalidade
-ajudar na configuração da locação do 
+		<help>Este padrï¿½o tem por finalidade
+ajudar na configuraï¿½ï¿½o da locaï¿½ï¿½o do 
 recurso que esta sendo editado.</help>
 		
 		
 		<formComponents>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -622,7 +622,7 @@ recurso que esta sendo editado.</help>
 			</formComponent>
 			
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -668,7 +668,7 @@ recurso que esta sendo editado.</help>
 			</formComponent>
 			
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -685,7 +685,7 @@ recurso que esta sendo editado.</help>
 				</parameters>
 			</formComponent>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -714,7 +714,7 @@ recurso que esta sendo editado.</help>
 				</parameters>
 			</formComponent>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -748,7 +748,7 @@ recurso que esta sendo editado.</help>
 
 		<formComponents>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -757,7 +757,7 @@ recurso que esta sendo editado.</help>
 				</parameters>
 			</formComponent>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -766,7 +766,7 @@ recurso que esta sendo editado.</help>
 				</parameters>
 			</formComponent>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -775,7 +775,7 @@ recurso que esta sendo editado.</help>
 				</parameters>
 			</formComponent>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -788,7 +788,7 @@ recurso que esta sendo editado.</help>
 				</parameters>
 			</formComponent>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -801,7 +801,7 @@ recurso que esta sendo editado.</help>
 				</parameters>
 			</formComponent>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -842,7 +842,7 @@ recurso que esta sendo editado.</help>
 		</nextForms>
 		<formComponents>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -851,7 +851,7 @@ recurso que esta sendo editado.</help>
 				</parameters>
 			</formComponent>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -860,7 +860,7 @@ recurso que esta sendo editado.</help>
 				</parameters>
 			</formComponent>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -869,7 +869,7 @@ recurso que esta sendo editado.</help>
 				</parameters>
 			</formComponent>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -878,7 +878,7 @@ recurso que esta sendo editado.</help>
 				</parameters>
 			</formComponent>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -936,7 +936,7 @@ recurso que esta sendo editado.</help>
 		
 		<formComponents>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -945,7 +945,7 @@ recurso que esta sendo editado.</help>
 				</parameters>
 			</formComponent>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -954,7 +954,7 @@ recurso que esta sendo editado.</help>
 				</parameters>
 			</formComponent>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -963,7 +963,7 @@ recurso que esta sendo editado.</help>
 				</parameters>
 			</formComponent>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -988,7 +988,7 @@ recurso que esta sendo editado.</help>
 		<extends>6.1</extends>
 		<formComponents>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -997,7 +997,7 @@ recurso que esta sendo editado.</help>
 				</parameters>
 			</formComponent>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -1006,7 +1006,7 @@ recurso que esta sendo editado.</help>
 				</parameters>
 			</formComponent>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -1015,7 +1015,7 @@ recurso que esta sendo editado.</help>
 				</parameters>
 			</formComponent>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -1060,7 +1060,7 @@ recurso que esta sendo editado.</help>
 		</nextForms>
 		<formComponents>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -1069,7 +1069,7 @@ recurso que esta sendo editado.</help>
 				</parameters>
 			</formComponent>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -1078,7 +1078,7 @@ recurso que esta sendo editado.</help>
 				</parameters>
 			</formComponent>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -1087,7 +1087,7 @@ recurso que esta sendo editado.</help>
 				</parameters>
 			</formComponent>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -1096,7 +1096,7 @@ recurso que esta sendo editado.</help>
 				</parameters>
 			</formComponent>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -1105,7 +1105,7 @@ recurso que esta sendo editado.</help>
 				</parameters>
 			</formComponent>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -1151,7 +1151,7 @@ recurso que esta sendo editado.</help>
 	
 		<formComponents>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -1160,7 +1160,7 @@ recurso que esta sendo editado.</help>
 				</parameters>
 			</formComponent>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -1169,7 +1169,7 @@ recurso que esta sendo editado.</help>
 				</parameters>
 			</formComponent>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -1178,7 +1178,7 @@ recurso que esta sendo editado.</help>
 				</parameters>
 			</formComponent>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 							<name>class</name>
@@ -1187,7 +1187,7 @@ recurso que esta sendo editado.</help>
 				</parameters>
 			</formComponent>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -1211,7 +1211,7 @@ recurso que esta sendo editado.</help>
 		<extends>8.1</extends>
 		<formComponents>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -1220,7 +1220,7 @@ recurso que esta sendo editado.</help>
 				</parameters>
 			</formComponent>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -1229,7 +1229,7 @@ recurso que esta sendo editado.</help>
 				</parameters>
 			</formComponent>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -1238,7 +1238,7 @@ recurso que esta sendo editado.</help>
 				</parameters>
 			</formComponent>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -1247,7 +1247,7 @@ recurso que esta sendo editado.</help>
 				</parameters>
 			</formComponent>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -1306,7 +1306,7 @@ recurso que esta sendo editado.</help>
 		</nextForms>
 		<formComponents>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -1315,7 +1315,7 @@ recurso que esta sendo editado.</help>
 				</parameters>
 			</formComponent>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -1324,7 +1324,7 @@ recurso que esta sendo editado.</help>
 				</parameters>
 			</formComponent>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -1333,7 +1333,7 @@ recurso que esta sendo editado.</help>
 				</parameters>
 			</formComponent>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -1347,10 +1347,10 @@ recurso que esta sendo editado.</help>
 
 	<!--==============================================================================================-->
 
-	<!--COTAR A MANUTENÇÃO-->
+	<!--COTAR A MANUTENï¿½ï¿½O-->
 	<form>
 		<id>10.1</id>
-		<name>COTAR A MANUTENÇÃO</name>
+		<name>COTAR A MANUTENï¿½ï¿½O</name>
 		<variant>Default</variant>
 		<nextForms>
 			<nextForm>
@@ -1375,7 +1375,7 @@ recurso que esta sendo editado.</help>
 		
 		<formComponents>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -1384,7 +1384,7 @@ recurso que esta sendo editado.</help>
 				</parameters>
 			</formComponent>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -1393,7 +1393,7 @@ recurso que esta sendo editado.</help>
 				</parameters>
 			</formComponent>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -1402,7 +1402,7 @@ recurso que esta sendo editado.</help>
 				</parameters>
 			</formComponent>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -1411,7 +1411,7 @@ recurso que esta sendo editado.</help>
 				</parameters>
 			</formComponent>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -1425,14 +1425,14 @@ recurso que esta sendo editado.</help>
 
 	<!--==============================================================================================-->
 
-	<!--IDENTIFICAR AS TAREFAS DA MANUTENÇÃO-->
+	<!--IDENTIFICAR AS TAREFAS DA MANUTENï¿½ï¿½O-->
 	<form>
 		<id>14.1</id>
-		<name>IDENTIFICAR AS TAREFAS DA MANUTENÇÃO</name>
+		<name>IDENTIFICAR AS TAREFAS DA MANUTENï¿½ï¿½O</name>
 		<variant>Default</variant>
 		<formComponents>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -1441,7 +1441,7 @@ recurso que esta sendo editado.</help>
 				</parameters>
 			</formComponent>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -1450,7 +1450,7 @@ recurso que esta sendo editado.</help>
 				</parameters>
 			</formComponent>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -1459,7 +1459,7 @@ recurso que esta sendo editado.</help>
 				</parameters>
 			</formComponent>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -1474,12 +1474,12 @@ recurso que esta sendo editado.</help>
 	
 	<form>
 		<id>14.2</id>
-		<name>IDENTIFICAR AS TAREFAS DA MANUTENÇÃO</name>
+		<name>IDENTIFICAR AS TAREFAS DA MANUTENï¿½ï¿½O</name>
 		<variant>Sem executor por tarefa</variant>
 		<extends>14.1</extends>
 		<formComponents>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -1488,7 +1488,7 @@ recurso que esta sendo editado.</help>
 				</parameters>
 			</formComponent>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -1497,7 +1497,7 @@ recurso que esta sendo editado.</help>
 				</parameters>
 			</formComponent>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -1511,15 +1511,15 @@ recurso que esta sendo editado.</help>
 	
 	<!--==============================================================================================-->
 	
-	<!--IDENTIFICAR AS PEÇAS DA MANUTENÇÃO-->
+	<!--IDENTIFICAR AS PEï¿½AS DA MANUTENï¿½ï¿½O-->
 	<form>
 		<id>15.1</id>
-		<name>IDENTIFICAR AS PEÇAS DA MANUTENÇÃO</name>
+		<name>IDENTIFICAR AS PEï¿½AS DA MANUTENï¿½ï¿½O</name>
 		<variant>Default</variant>
 		
 		<formComponents>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -1528,7 +1528,7 @@ recurso que esta sendo editado.</help>
 				</parameters>
 			</formComponent>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -1537,7 +1537,7 @@ recurso que esta sendo editado.</help>
 				</parameters>
 			</formComponent>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -1546,7 +1546,7 @@ recurso que esta sendo editado.</help>
 				</parameters>
 			</formComponent>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -1559,16 +1559,16 @@ recurso que esta sendo editado.</help>
 	
 	<!--==============================================================================================-->
 
-	<!--ITEMIZAR A TRANSAÇÃO DO RECURSO-->
+	<!--ITEMIZAR A TRANSAï¿½ï¿½O DO RECURSO-->
 	<form>
 		<id>11.1</id>
 		<enabled>true</enabled>
 
-		<name>ITEMIZAR A TRANSAÇÃO DO RECURSO</name>
+		<name>ITEMIZAR A TRANSAï¿½ï¿½O DO RECURSO</name>
 		<variant>Default</variant>
 		<formComponents>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -1584,7 +1584,7 @@ recurso que esta sendo editado.</help>
 			</formComponent>
 			
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -1599,7 +1599,7 @@ recurso que esta sendo editado.</help>
 				</parameters>
 			</formComponent>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -1627,16 +1627,16 @@ recurso que esta sendo editado.</help>
 		</formComponents>
 	</form>
 
-	<!--ITEMIZAR A TRANSAÇÃO DO RECURSO-->
+	<!--ITEMIZAR A TRANSAï¿½ï¿½O DO RECURSO-->
 	<form>
 		<id>16.1</id>
 		<enabled>true</enabled>
 
-		<name>ITEMIZAR A TRANSAÇÃO DO RECURSO</name>
+		<name>ITEMIZAR A TRANSAï¿½ï¿½O DO RECURSO</name>
 		<variant>Default</variant>
 		<formComponents>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -1652,7 +1652,7 @@ recurso que esta sendo editado.</help>
 			</formComponent>
 			
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -1667,7 +1667,7 @@ recurso que esta sendo editado.</help>
 				</parameters>
 			</formComponent>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -1695,16 +1695,16 @@ recurso que esta sendo editado.</help>
 		</formComponents>
 	</form>
 
-	<!--ITEMIZAR A TRANSAÇÃO DO RECURSO-->
+	<!--ITEMIZAR A TRANSAï¿½ï¿½O DO RECURSO-->
 	<form>
 		<id>17.1</id>
 		<enabled>true</enabled>
 
-		<name>ITEMIZAR A TRANSAÇÃO DO RECURSO</name>
+		<name>ITEMIZAR A TRANSAï¿½ï¿½O DO RECURSO</name>
 		<variant>Default</variant>
 		<formComponents>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -1720,7 +1720,7 @@ recurso que esta sendo editado.</help>
 			</formComponent>
 			
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -1735,7 +1735,7 @@ recurso que esta sendo editado.</help>
 				</parameters>
 			</formComponent>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -1765,15 +1765,15 @@ recurso que esta sendo editado.</help>
 
 	<!--==============================================================================================-->
 
-	<!--PAGAR PELA TRANSAÇÃO DO RECURSO-->
+	<!--PAGAR PELA TRANSAï¿½ï¿½O DO RECURSO-->
 	<form>
 		<id>12.1</id>
-		<name>PAGAR PELA TRANSAÇÃO DO RECURSO</name>
+		<name>PAGAR PELA TRANSAï¿½ï¿½O DO RECURSO</name>
 		<variant>Default</variant>
 
 		<formComponents>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -1782,7 +1782,7 @@ recurso que esta sendo editado.</help>
 				</parameters>
 			</formComponent>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -1791,7 +1791,7 @@ recurso que esta sendo editado.</help>
 				</parameters>
 			</formComponent>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -1800,7 +1800,7 @@ recurso que esta sendo editado.</help>
 				</parameters>
 			</formComponent>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -1809,7 +1809,7 @@ recurso que esta sendo editado.</help>
 				</parameters>
 			</formComponent>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -1818,7 +1818,7 @@ recurso que esta sendo editado.</help>
 				</parameters>
 			</formComponent>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -1827,7 +1827,7 @@ recurso que esta sendo editado.</help>
 				</parameters>
 			</formComponent>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -1836,7 +1836,7 @@ recurso que esta sendo editado.</help>
 				</parameters>
 			</formComponent>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -1845,7 +1845,7 @@ recurso que esta sendo editado.</help>
 				</parameters>
 			</formComponent>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -1854,7 +1854,7 @@ recurso que esta sendo editado.</help>
 				</parameters>
 			</formComponent>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -1863,7 +1863,7 @@ recurso que esta sendo editado.</help>
 				</parameters>
 			</formComponent>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -1872,7 +1872,7 @@ recurso que esta sendo editado.</help>
 				</parameters>
 			</formComponent>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -1885,14 +1885,14 @@ recurso que esta sendo editado.</help>
 
 	<!--==============================================================================================-->
 
-	<!--IDENTIFICAR O EXECUTOR DA TRANSAÇÃO-->
+	<!--IDENTIFICAR O EXECUTOR DA TRANSAï¿½ï¿½O-->
 	<form>
 		<id>13.1</id>
-		<name>IDENTIFICAR O EXECUTOR DA TRANSAÇÃO</name>
+		<name>IDENTIFICAR O EXECUTOR DA TRANSAï¿½ï¿½O</name>
 		<variant>Default</variant>
 		<formComponents>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -1901,7 +1901,7 @@ recurso que esta sendo editado.</help>
 				</parameters>
 			</formComponent>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -1910,7 +1910,7 @@ recurso que esta sendo editado.</help>
 				</parameters>
 			</formComponent>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -1919,7 +1919,7 @@ recurso que esta sendo editado.</help>
 				</parameters>
 			</formComponent>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -1934,12 +1934,12 @@ recurso que esta sendo editado.</help>
 	
 	<form>
 		<id>13.2</id>
-		<name>IDENTIFICAR O EXECUTOR DA TRANSAÇÃO</name>
+		<name>IDENTIFICAR O EXECUTOR DA TRANSAï¿½ï¿½O</name>
 		<variant>Comissao de acordo com as transacoes</variant>
 		<extends>13.1</extends>
 		<formComponents>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -1948,7 +1948,7 @@ recurso que esta sendo editado.</help>
 				</parameters>
 			</formComponent>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -1957,7 +1957,7 @@ recurso que esta sendo editado.</help>
 				</parameters>
 			</formComponent>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -1966,7 +1966,7 @@ recurso que esta sendo editado.</help>
 				</parameters>
 			</formComponent>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -1975,7 +1975,7 @@ recurso que esta sendo editado.</help>
 				</parameters>
 			</formComponent>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -1991,12 +1991,12 @@ recurso que esta sendo editado.</help>
 	
 	<form>
 		<id>14.3</id>
-		<name>IDENTIFICAR O EXECUTOR DA TRANSAÇÃO</name>
+		<name>IDENTIFICAR O EXECUTOR DA TRANSAï¿½ï¿½O</name>
 		<variant>Sem comissao</variant>
 		<extends>13.1</extends>
 		<formComponents>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -2005,7 +2005,7 @@ recurso que esta sendo editado.</help>
 				</parameters>
 			</formComponent>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>
@@ -2014,7 +2014,7 @@ recurso que esta sendo editado.</help>
 				</parameters>
 			</formComponent>
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.gren.classpanel.GRENClassPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.gren.GRENClassPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>class</name>

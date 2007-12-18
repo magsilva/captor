@@ -23,7 +23,7 @@ import java.io.File;
 import captor.lib.util.FITPrintStream;
 import captor.modelsystem.Model;
 
-public class Captor
+public abstract class Captor
 {
 	protected Model model;
 

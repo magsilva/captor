@@ -1,0 +1,6 @@
+- Adicionar os formulários InitialState, FinalState (além do padrão).
+Associar esses formulários ao formulário máquina de estado, assegurando
+assim os requisitos básicos de uma máquina de estado.
+
+- Adicionar uma variação de implementação da máquina de estado,
+utilizando efetivamente uma FSM.

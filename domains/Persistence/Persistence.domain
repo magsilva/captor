@@ -28,7 +28,7 @@
             <formComponents>
             
               <formComponent>
-            	  <fullname>captor.windowsystem.formcomponent.std.textareapanel.TextAreaPanel</fullname>
+            	  <fullname>captor.windowsystem.formcomponent.std.TextAreaPanel</fullname>
             		
             		<parameters>
             		  <parameter>
@@ -74,7 +74,7 @@
             <formComponents>
             
               <formComponent>
-            	  <fullname>captor.windowsystem.formcomponent.std.textpanel.TextPanel</fullname>
+            	  <fullname>captor.windowsystem.formcomponent.std.TextPanel</fullname>
             		
             		<parameters>
             		  <parameter>
@@ -113,7 +113,7 @@
 		<formComponents>
 
               <formComponent>
-            	  <fullname>captor.windowsystem.formcomponent.std.textpanel.TextPanel</fullname>
+            	  <fullname>captor.windowsystem.formcomponent.std.TextPanel</fullname>
             		
             		<parameters>
             		  <parameter>
@@ -133,7 +133,7 @@
             	</formComponent>
 
               <formComponent>
-            	  <fullname>captor.windowsystem.formcomponent.std.textpanel.TextPanel</fullname>
+            	  <fullname>captor.windowsystem.formcomponent.std.TextPanel</fullname>
             		
             		<parameters>
             		  <parameter>
@@ -157,7 +157,7 @@
             	</formComponent>
 
               <formComponent>
-            	  <fullname>captor.windowsystem.formcomponent.std.textpanel.TextPanel</fullname>
+            	  <fullname>captor.windowsystem.formcomponent.std.TextPanel</fullname>
             		
             		<parameters>
             		  <parameter>
@@ -181,7 +181,7 @@
             	</formComponent>
 
               <formComponent>
-            	  <fullname>captor.windowsystem.formcomponent.std.tablepanel.TablePanel</fullname>
+            	  <fullname>captor.windowsystem.formcomponent.std.TablePanel</fullname>
             		
             		<parameters>
             		  <parameter>

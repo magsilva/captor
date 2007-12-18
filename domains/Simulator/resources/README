@@ -1,0 +1,8 @@
+Build Instructions
+------------------
+
+You must rename the Java package directories to lowercase before
+building the application. Unfortunately, the Captor is limited
+to XPath expressions when setting the (directory and) filename,
+so cannot convert it to lowercase (as we do within the classes
+source code files). 

@@ -11,9 +11,6 @@ import captor.lib.intl.MyIntl;
 import captor.modelsystem.Model;
 import captor.modelsystem.Project;
 import captor.windowsystem.CaptorFrame;
-import captor.windowsystem.project.newproject.cards.CreateProject;
-import captor.windowsystem.project.newproject.cards.SelectProjectType;
-import captor.windowsystem.project.newproject.cards.ShowDetails;
 
 
 public class Body extends JPanel {

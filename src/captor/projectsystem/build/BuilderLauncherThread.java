@@ -19,6 +19,7 @@ package captor.projectsystem.build;
 import javax.swing.JOptionPane;
 
 import captor.lib.intl.MyIntl;
+import captor.lib.util.StringUtil;
 import captor.modelsystem.Model;
 import captor.projectsystem.build.buildutil.AntRunner;
 import captor.projectsystem.util.LongTask;
@@ -58,6 +59,8 @@ public class BuilderLauncherThread extends Thread
 
 			String msg = MyIntl.MSG2 + e;
 			JOptionPane.showMessageDialog(model.getGui().getCaptorWindow(), msg);
+			model.getGui().getGuiView().setErrorView(e.getMessage());
+			e.printStackTrace();
 		}
 	}
 }

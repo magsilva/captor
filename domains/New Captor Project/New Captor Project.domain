@@ -21,13 +21,13 @@
 			
 		</nextForms>
 		
-		<help>Este formulário descreve um novo
+		<help>Este formulï¿½rio descreve um novo
 projeto da ferramenta Captor.</help>
 		
 		<formComponents>
 
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.std.textareapanel.TextAreaPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.std.TextAreaPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>id</name>
@@ -63,8 +63,8 @@ projeto da ferramenta Captor.</help>
 			
 		</nextForms>
 		
-		<help>Este padrão ajuda a definir um
-novo padrão.</help>
+		<help>Este padrï¿½o ajuda a definir um
+novo padrï¿½o.</help>
 		
 		<formComponents>
 
@@ -91,7 +91,7 @@ novo padrão.</help>
 			</formComponent>
 
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.ncp.nextpatternspanel.NextFormsPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.ncp.NextFormsPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>id</name>
@@ -113,7 +113,7 @@ novo padrão.</help>
 		<name>Variant</name>
  		<variant>Default</variant>
  		
-		<help>Este padrão ajuda a definir uma
+		<help>Este padrï¿½o ajuda a definir uma
 nova variante.</help>
 		
 		<formComponents>
@@ -145,7 +145,7 @@ nova variante.</help>
 			</formComponent>
 
 			<formComponent>
-				<fullname>captor.windowsystem.formcomponent.std.textareapanel.TextAreaPanel</fullname>
+				<fullname>captor.windowsystem.formcomponent.std.TextAreaPanel</fullname>
 				<parameters>
 					<parameter>
 						<name>id</name>

@@ -5,10 +5,17 @@
 	<!--______________________________________________________________________-->
 
 <!--PROJECT_GENERATED_DATA - DO_NOT_EDIT-->
+<<<<<<< .mine
+<property name="project_path" location="/home/magsilva/Projects-ICMC/Captor/projects/Teste123/"/>
+<property name="project_output_path" location="/home/magsilva/Projects-ICMC/Captor/projects/Teste123/output/"/>
+<property name="install_path" location="/home/magsilva/Projects-ICMC/Captor/"/>
+<property name="project_name" value="Teste123"/>
+=======
 <property name="project_path" location="/home/magsilva/Projects-ICMC/CaptorStable/projects/Teste123/"/>
 <property name="project_output_path" location="/home/magsilva/Projects-ICMC/CaptorStable/projects/Teste123/output/"/>
 <property name="install_path" location="/home/magsilva/Projects-ICMC/CaptorStable/"/>
 <property name="project_name" value="Teste123"/>
+>>>>>>> .r65
 <property name="interaction_0" value="0"/>
 <!--PROJECT_GENERATED_DATA - DO_NOT_EDIT-->
 

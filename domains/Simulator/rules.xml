@@ -1,0 +1,101 @@
+<composer name="FIT">
+	<main>
+		<!-- The main application -->
+		<for-each select="/formsData/forms/form">
+			<if test="equal($current/@id,'1.1')">
+				<callTask id="simulator" />
+			</if>
+		</for-each>
+		
+		<!-- Object type state -->
+		<!-- 
+		<for-each select="/formsData/forms/form">
+			<if test="equal($current/form/@id,'1.1')">
+				<callTask id="objectTypeState" />
+			</if>
+		</for-each>
+		-->
+		
+		<!-- The interface -->
+		<!-- 
+		<for-each select="/formsData/forms/form/form/form">
+			<if test="equal($current/form/@id,'3.1')">
+				<callTask id="interface" />
+			</if>
+		</for-each>
+		-->
+
+		<!-- Simulated objects -->
+		<!-- 
+		<for-each select="/formsData/forms/form/form">
+			<if test="equal($current/form/@id,'2.1')">
+				<callTask id="object" />
+			</if>
+		</for-each>
+		-->
+		
+		<!-- Simulated object abstract state -->
+		<!-- 
+		<for-each select="/formsData/forms/form/form">
+			<if test="equal($current/form/@id,'2.1')">
+				<callTask id="objectState" />
+			</if>
+		</for-each>
+		-->
+		
+		<!-- Simulated object states -->
+		<!-- 
+		<for-each select="/formsData/forms/form/form/form/form">
+			<if test="equal($current/form/@id,'7.1')">
+				<callTask id="state" />
+			</if>
+		</for-each>
+		-->
+	</main>
+
+	<tasks>
+		<task id="simulator">
+			<compose>
+				<template>Simulator.xsl</template>
+				<newFilename>com/ironiacorp/games/${formsData/forms/form[@id='1.1']/data/textatt[@name='name']}/${$current/form/data/textatt[@name='name']}.java</newFilename>
+			</compose>
+		</task>
+
+		<task id="objectTypeState">
+			<compose>
+				<template>ObjectTypeState.xsl</template>
+				<newFilename>com/ironiacorp/games/${formsData/forms/form[@id='1.1']/data/textatt[@name='name']}/state/${$current/form/data/textatt[@name='type']}State.java</newFilename>
+			</compose>
+		</task>
+		
+		
+		<task id="interface">
+			<compose>
+				<template>Interface.xsl</template>
+				<newFilename>com/ironiacorp/games/${formsData/forms/form[@id='1.1']/data/textatt[@name='name']}/${$current/form/data/textatt[@name='name']}.java</newFilename>
+			</compose>
+		</task>
+		
+		<task id="object">
+			<compose>
+				<template>Object.xsl</template>
+				<newFilename>com/ironiacorp/games/${formsData/forms/form[@id='1.1']/data/textatt[@name='name']}/${$current/form/data/textatt[@name='name']}.java</newFilename>
+			</compose>
+		</task>
+
+		<task id="objectState">
+			<compose>
+				<template>ObjectState.xsl</template>
+				<newFilename>com/ironiacorp/games/${formsData/forms/form[@id='1.1']/data/textatt[@name='name']}/state/${$current/form/data/textatt[@name='name']}State.java</newFilename>
+			</compose>
+		</task>
+		
+		<task id="state">
+			<compose>
+				<template>State.xsl</template>
+				<newFilename>com/ironiacorp/games/${formsData/forms/form[@id='1.1']/data/textatt[@name='name']}/state/${$current/form/data/textatt[@name='name']}.java</newFilename>
+			</compose>
+		</task>
+		
+	</tasks>
+</composer>

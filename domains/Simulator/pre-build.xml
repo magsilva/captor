@@ -1,0 +1,25 @@
+<?xml version="1.0" standalone="yes"?>
+
+<project name="Blank" default="exec" basedir="../">
+
+	<!--______________________________________________________________________-->
+
+<!--PROJECT_GENERATED_DATA - DO_NOT_EDIT-->
+<property name="project_path" location="/home/magsilva/Projects-ICMC/Captor/projects/RocketSim1"/>
+<property name="project_output_path" location="/home/magsilva/Projects-ICMC/Captor/projects/RocketSim1/output/"/>
+<property name="install_path" location="/home/magsilva/Projects-ICMC/Captor/"/>
+<property name="project_name" value="RocketSim1"/>
+<property name="interaction_0" value="0"/>
+<!--PROJECT_GENERATED_DATA - DO_NOT_EDIT-->
+
+	<!--______________________________________________________________________-->
+
+	<target name="exec">
+		<!-- Do something -->
+	</target>
+	
+	<!--______________________________________________________________________-->
+	
+</project>	
+	
+	

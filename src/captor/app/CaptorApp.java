@@ -24,7 +24,7 @@ import org.apache.commons.cli.ParseException;
 import captor.Captor;
 import captor.app.CaptorOptionsParser;
 
-public class CaptorApp extends Captor
+public abstract class CaptorApp extends Captor
 {
 	protected CaptorApp(String installPathname)
 	{

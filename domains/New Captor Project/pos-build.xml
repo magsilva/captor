@@ -5,10 +5,10 @@
 	<!--______________________________________________________________________-->
 
 <!--PROJECT_GENERATED_DATA - DO_NOT_EDIT-->
-<property name="project_path" location="/home/windows/Captor/projects/SuperVendorMachine"/>
-<property name="project_output_path" location="/tmp"/>
+<property name="project_path" location="/home/magsilva/Projects-ICMC/Captor/projects/Simulator"/>
+<property name="project_output_path" location="/home/magsilva/Projects-ICMC/Captor/projects/Simulator/output/"/>
 <property name="install_path" location="/home/magsilva/Projects-ICMC/Captor/"/>
-<property name="project_name" value="SuperVendorMachine"/>
+<property name="project_name" value="Simulator"/>
 <property name="interaction_0" value="0"/>
 <!--PROJECT_GENERATED_DATA - DO_NOT_EDIT-->
 	

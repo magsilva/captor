@@ -67,12 +67,12 @@ public class SaveProjectAs {
         //------------------------------------------------------------------
         
         if ( !filePathDir.exists() )  {
-            filePathDir.mkdir();
+            filePathDir.mkdirs();
         }
 
         File outputDirectory = new File(outputDir);
         if ( !outputDirectory.exists() )  {
-            outputDirectory.mkdir();
+            outputDirectory.mkdirs();
         }
         if ( !outputDirectory.isDirectory() )  {
             JOptionPane.showMessageDialog(model.getGui().getCaptorWindow(), StringUtil.formatMessage(MyIntl.MSG48, outputDirectory.getAbsolutePath()));
@@ -95,7 +95,7 @@ public class SaveProjectAs {
         
         File fileInputDir = new File(filePathDir.getAbsolutePath(), "input");
         if ( !fileInputDir.exists() )  { 
-            if ( !fileInputDir.mkdir() )  {
+            if ( !fileInputDir.mkdirs() )  {
                 JOptionPane.showMessageDialog(model.getGui().getCaptorWindow(), StringUtil.formatMessage(MyIntl.MSG51, fileInputDir.getAbsolutePath()));
             }
         }

@@ -21,7 +21,7 @@
             <formComponents>
             
               <formComponent>
-            	  <fullname>captor.windowsystem.formcomponent.std.textpanel.TextPanel</fullname>
+            	  <fullname>captor.windowsystem.formcomponent.std.TextPanel</fullname>
             		
             		<parameters>
             		  <parameter>
