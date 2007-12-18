@@ -5,10 +5,10 @@
 	<!--______________________________________________________________________-->
 
 <!--PROJECT_GENERATED_DATA - DO_NOT_EDIT-->
-<property name="project_path" location="C:\Documents and Settings\edisonj\Desktop\Mestrado\Dev\Captor\projects\FWS123\"/>
-<property name="project_output_path" location="C:\Documents and Settings\edisonj\Desktop\Mestrado\Dev\Captor\projects\"/>
-<property name="install_path" location="C:\Documents and Settings\edisonj\Desktop\Mestrado\Dev\Captor\"/>
-<property name="project_name" value="FWS123"/>
+<property name="project_path" location="/home/magsilva/Projects-ICMC/CaptorStable/projects/Teste123/"/>
+<property name="project_output_path" location="/home/magsilva/Projects-ICMC/CaptorStable/projects/Teste123/output/"/>
+<property name="install_path" location="/home/magsilva/Projects-ICMC/CaptorStable/"/>
+<property name="project_name" value="Teste123"/>
 <property name="interaction_0" value="0"/>
 <!--PROJECT_GENERATED_DATA - DO_NOT_EDIT-->
 
