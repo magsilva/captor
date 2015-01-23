@@ -16,20 +16,13 @@ limitations under the License.
 
 package captor.projectsystem.build.buildutil.interpreter;
 
-import java.io.FileWriter;
-import java.io.PrintWriter;
-import java.util.List;
 import java.util.Vector;
 
 import javax.xml.xpath.XPath;
 import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathExpressionException;
 
-import org.apache.xalan.trace.PrintTraceListener;
-import org.apache.xpath.NodeSet;
 import org.w3c.dom.Document;
-
-import com.ironiacorp.commons.xml.DomDumper;
 
 import captor.lib.intl.MyIntl;
 import captor.lib.util.StringUtil;
