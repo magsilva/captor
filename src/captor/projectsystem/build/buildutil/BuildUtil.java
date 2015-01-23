@@ -27,14 +27,17 @@ import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
 
+import net.sf.saxon.s9api.XsltTransformer;
+
 import org.apache.commons.io.FileUtils;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-import com.ironiacorp.commons.IoUtil;
-import com.ironiacorp.commons.xml.XsltTransformer;
+import com.ironiacorp.computer.ComputerSystem;
+import com.ironiacorp.computer.Filesystem;
+import com.ironiacorp.computer.OperationalSystem;
 
 import captor.lib.intl.MyIntl;
 import captor.lib.util.StringUtil;
@@ -70,8 +73,11 @@ public class BuildUtil
 		}
 
 		Vector xmlSources = new Vector();
+		OperationalSystem os = ComputerSystem.getCurrentOperationalSystem();
+        Filesystem fs = os.getFilesystem();
+
 		for (File f : xmlDir.listFiles()) {
-			if (f.isFile() && IoUtil.getExtension(f.getName()).toUpperCase().equals("FIT")) {
+			if (f.isFile() && fs.getExtension(f.getName()).toUpperCase().equals("FIT")) {
 				xmlSources.add(f);
 			}
 		}
@@ -81,8 +87,11 @@ public class BuildUtil
 	public static File createFile(Model model, File outputDir, String filename)
 	{
 		String fullFileName = "";
+		OperationalSystem os = ComputerSystem.getCurrentOperationalSystem();
+        Filesystem fs = os.getFilesystem();
+
 		// this is not a absolute path
-		if (IoUtil.isAbsoluteFilename(filename)) {
+		if (fs.isAbsoluteFilename(filename)) {
 			fullFileName = filename;
 		} else {
 			fullFileName = outputDir.getAbsolutePath() + System.getProperty("file.separator") + filename;
@@ -187,8 +196,8 @@ public class BuildUtil
 			StreamSource xsltSource = new StreamSource(stylesheet);
 			StreamSource xmlSource = new StreamSource(xmlSourceFile.getAbsolutePath());
 			Result result = new StreamResult(os);
-			Transformer transformer = XsltTransformer.getTransform(xsltSource);
-			transformer.setErrorListener(new BuildErrorListener(model));
+			// Transformer transformer = XsltTransformer.getTransform(xsltSource);
+			Transformer transformer = TransformerFactory.newInstance().newTransformer(xsltSource);
 			transformer.setParameter("current", CurrentResolver.currentValue());
 			transformer.transform(xmlSource, result);
 
