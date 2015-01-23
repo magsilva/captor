@@ -27,67 +27,31 @@
 		<url>http://www.labes.icmc.usp.br</url>
 	</organization>
 
-	<!-- 
+	<distributionManagement>
+		<repository>
+			<id>IroniaCorp</id>
+			<url>dav:http://www.ironiacorp.com/repo/maven2</url>
+		</repository>
+	</distributionManagement>
+
 	<repositories>
 		<repository>
-			<id>central</id>
-			<name>Maven Repository Switchboard</name>
-			<layout>default</layout>
-			<url>http://repo1.maven.org/maven2</url>
-			<releases>
-				<enabled>true</enabled>
-				<updatePolicy>always</updatePolicy>
-				<checksumPolicy>warn</checksumPolicy>
-			</releases>
-			<snapshots>
-				<enabled>true</enabled>
-				<updatePolicy>always</updatePolicy>
-				<updatePolicy>interval:60</updatePolicy>
-				<checksumPolicy>warn</checksumPolicy>
-			</snapshots>
-		</repository>
-
-	</repositories>
-
-	<pluginRepositories>
-		<pluginRepository>
-			<id>central</id>
-			<name>Maven Plugin Repository</name>
-			<url>http://repo1.maven.org/maven2</url>
-			<layout>default</layout>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
+			<id>repo1</id>
+			<url>http://repo1.maven.org/maven2/</url>
 			<releases>
 				<updatePolicy>never</updatePolicy>
 			</releases>
-		</pluginRepository>
+		</repository>
 
-		<pluginRepository>
-			<id>apache-snapshot</id>
-			<name>Maven Plugin Snapshots</name>
-			<url>http://people.apache.org/repo/m2-snapshot-repository</url>
+		<repository>
+			<id>IroniaCorp</id>
+			<url>http://www.ironiacorp.com/repo/maven2</url>
 			<releases>
-				<enabled>false</enabled>
+				<updatePolicy>never</updatePolicy>
 			</releases>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-		</pluginRepository>
-
-		<pluginRepository>
-			<id>codehaus-snapshot</id>
-			<name>CodeHaus Plugin Snapshots</name>
-			<url>http://snapshots.repository.codehaus.org</url>
-			<releases>
-				<enabled>false</enabled>
-			</releases>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-		</pluginRepository>
-	</pluginRepositories>
-	-->
+		</repository>
+	</repositories>
+	
 
 	<dependencies>
 		<dependency>
@@ -140,8 +104,13 @@
 		
 		<dependency>
 			<groupId>ironiacorp</groupId>
-			<artifactId>ironia-commons</artifactId>
-			<version>1.0.0</version>
+			<artifactId>commons-xml</artifactId>
+			<version>5.0.0-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>ironiacorp</groupId>
+			<artifactId>commons-computer</artifactId>
+			<version>5.0.0-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
 
@@ -228,8 +197,4 @@
 			</plugin>
 		</plugins>
 	</build>
-
-	<reporting>
-		<outputDirectory>site</outputDirectory>
-	</reporting>
 </project>
